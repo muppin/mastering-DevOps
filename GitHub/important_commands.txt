@@ -13,8 +13,14 @@ git branch -m <old-name> <new-name> - renaming a particular branch
 git switch <branch-name> - switches to a particular branch
 git checkout -b <new-branch-name> - creates a new branch and switches simultaneously
 git branch -d <branch-name> - deletes a branch if it has been pushed 
-git branch -D ,branch-name> - forcefully deletes a branch even if hasnt been pushed to remote
+git branch -D <branch-name> - forcefully deletes a branch even if hasnt been pushed to remote
 
 #### User add ####
 git config --global user.name "username"
 git config --global user.email "useremail"
+
+#### Remote ####
+git remote -v - shows the remote repo urls
+git remote add origin "url" - adds the remote url and names it as origin
+git remote set-url --add origin "url" - adds the new url to origin
+git remote set-url --delete origin "url" - deletes the url stored under origin
