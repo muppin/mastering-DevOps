@@ -12,6 +12,8 @@ git branch -m <new-name> - renames a current branch
 git branch -m <old-name> <new-name> - renaming a particular branch
 git switch <branch-name> - switches to a particular branch
 git checkout -b <new-branch-name> - creates a new branch and switches simultaneously
+git branch -d <branch-name> - deletes a branch if it has been pushed 
+git branch -D ,branch-name> - forcefully deletes a branch even if hasnt been pushed to remote
 
 #### User add ####
 git config --global user.name "username"
