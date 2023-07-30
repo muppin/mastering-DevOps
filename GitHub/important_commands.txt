@@ -5,6 +5,11 @@ git add -p <file name> - helps committing the part of a file at a time
 git commit -m "commit message" - creates a commit to the local repo with the commit message
 git log - shows the commit meaages in detail
 git log --oneline - shows the commits in a single line
+git stash - stores staged or untracked things in a temporary location
+git stash list - shows the list of temporary storage
+git stash pop stash@{} - brings back the temporarily stored things
+git pull origin <branch-name> - pull the new changes from the remote branch to the local
+
 
 ####Branches####
 git branch <branch-name> - creates a new branch
