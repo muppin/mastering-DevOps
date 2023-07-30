@@ -1,6 +1,18 @@
 git init - initialises the git the folder and makes it a git repository in the local
+git add <file-name> - adds the file to staging area
+git add . - adds everything from working directory to staging area
 git add -p <file name> - helps committing the part of a file at a time
+git commit -m "commit message" - creates a commit to the local repo with the commit message
+git log - shows the commit meaages in detail
+git log --oneline - shows the commits in a single line
+
+####Branches####
+git branch <branch-name> - creates a new branch
 git branch -m <new-name> - renames a current branch
 git branch -m <old-name> <new-name> - renaming a particular branch
 git switch <branch-name> - switches to a particular branch
 git checkout -b <new-branch-name> - creates a new branch and switches simultaneously
+
+#### User add ####
+git config --global user.name "username"
+git config --global user.email "useremail"
