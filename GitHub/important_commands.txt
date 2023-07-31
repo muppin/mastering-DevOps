@@ -27,5 +27,5 @@ git config --global user.email "useremail"
 #### Remote ####
 git remote -v - shows the remote repo urls
 git remote add origin "url" - adds the remote url and names it as origin
-git remote set-url --add origin "url" - adds the new url to origin
-git remote set-url --delete origin "url" - deletes the url stored under origin
+git remote set-url --add origin url - adds the new url to origin
+git remote set-url --delete origin url - deletes the url stored under origin
