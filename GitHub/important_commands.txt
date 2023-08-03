@@ -9,6 +9,13 @@ git stash - stores staged or untracked things in a temporary location
 git stash list - shows the list of temporary storage
 git stash pop stash@{} - brings back the temporarily stored things
 git pull origin <branch-name> - pull the new changes from the remote branch to the local
+git fetch - It fetches the changes from remote repo including all branches and asks you to merge it.
+git push origin <branch name> - It pushes the new commits from local to remote repo
+git merge <target branch name> -- merges the commits from one target branch to source branch
+git rebase <branch name> - It rebases the feature branch
+git cherry-pick <commit id> -- It merges the specified commit id 
+#git rebase -i HEAD~<no of commits> - It merges all commits into one single commit and
+git merge --squash source_branch - It merges all commits into one commit and we need to add that commit 
 
 
 ####Branches####
