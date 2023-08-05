@@ -2,9 +2,6 @@
 git init - initialises the git the folder and makes it a git repository in the local
 git add <file-name> - adds the file to staging area
 git add . - adds everything from working directory to staging area
-git clean -n - Show a list of untracked files and directories to be removed (dry-run)
-git clean -f - Remove untracked files and directories
-git clean -f -d - Remove untracked files, directories, and subdirectories
 git add -p <file name> - helps committing the part of a file at a time
 git commit -m "commit message" - creates a commit to the local repo with the commit message
 git log - shows the commit meaages in detail
@@ -24,6 +21,9 @@ git revert <commit id1> <commit id2> - creates a new commit that undoes the chan
 git reset --soft <commit id> - to reset to a specific commit, but preserve the changes in the staging area.
 git reset --mixed <commit id> - to reset to a specific commit and unstage the changes. (git reset <commit id>)
 git reset --hard <commit id> - to reset to a specific commit, discarding all changes after that commit.
+git clean -n - Show a list of untracked files and directories to be removed (dry-run)
+git clean -f - Remove untracked files and directories
+git clean -f -d - Remove untracked files, directories, and subdirectories
 
 
 #### Branches ####
