@@ -1,1 +1,12 @@
-
+docker pull <image name>:tag - pulls the image from (docker.io/library/imagename:tag) docker hub.
+docker images - lists the images on the docker host
+docker run <image name> - if the image present on the host then simply creates a container, if not pulls the image from docker hub and creates a container
+docker run -d --name <container-name> <image name> - runs the container in a detached mode and also gives the name
+docker run -it <image name> - runs the container in interactive mode and takes the prompt inside the container
+docker ps - lists all containers 
+docker ps -a - lists all running containers
+docker attach <container_name/id> - takes you inside the container
+docker start <container_name/id> - starts the container 
+docker stop <container_name/id> - stops the container
+docker exec <container_name/id> <command> - executes a command inside the container.
+docker stats - shows the stats of a host like usage of memory cpu etc.
