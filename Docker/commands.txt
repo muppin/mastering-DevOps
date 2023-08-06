@@ -6,7 +6,14 @@ docker run -it <image name> - runs the container in interactive mode and takes t
 docker ps - lists all containers 
 docker ps -a - lists all running containers
 docker attach <container_name/id> - takes you inside the container
+ctrlP+ctrlQ - exits the container but the container is in running state
+exit - exits the container and the container also stops.
 docker start <container_name/id> - starts the container 
 docker stop <container_name/id> - stops the container
 docker exec <container_name/id> <command> - executes a command inside the container.
 docker stats - shows the stats of a host like usage of memory cpu etc.
+docker rm -f <container_name/id> - deletes thr container (-f forcefully deletes even the container is running)
+docker rmi -f <image_name/id> - deletes the image (-f forcefully deletes the image even it is in use)
+docker build -t <image_name:tag> <path of dockerfile> -  creates a Docker image from a Dockerfile
+docker login - logs into your dockerhub account
+docker push <image_name> - pushes the image to your dockerhub
