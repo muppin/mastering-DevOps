@@ -1,3 +1,4 @@
+#### Docker basics ####
 docker pull <image name>:tag - pulls the image from (docker.io/library/imagename:tag) docker hub.
 docker images - lists the images on the docker host
 docker run <image name> - if the image present on the host then simply creates a container, if not pulls the image from docker hub and creates a container
@@ -5,9 +6,7 @@ docker run -d --name <container-name> <image name> - runs the container in a det
 docker run -it <image name> - runs the container in interactive mode and takes the prompt inside the container
 docker ps - lists all containers 
 docker ps -a - lists all running containers
-docker attach <container_name/id> - takes you inside the container
-ctrlP+ctrlQ - exits the container but the container is in running state
-exit - exits the container and the container also stops.
+docker attach <container_name/id> - takes you inside the container (ctrlP+ctrlQ - exits the container but the container is in running state)(exit - exits the container and the container also stops)
 docker start <container_name/id> - starts the container 
 docker stop <container_name/id> - stops the container
 docker exec <container_name/id> <command> - executes a command inside the container.
@@ -17,3 +16,10 @@ docker rmi -f <image_name/id> - deletes the image (-f forcefully deletes the ima
 docker build -t <image_name:tag> <path of dockerfile> -  creates a Docker image from a Dockerfile
 docker login - logs into your dockerhub account
 docker push <image_name> - pushes the image to your dockerhub
+
+#### Docker Volumes ####
+docker volume create my-vol - Create a volume
+docker volume ls - lists the volume on host
+docker volume inspect my-vol - inspects the my-vol volume
+docker volume rm my-vol - removes the my-vol volume
+docker run -d --mount source=my-vol2, target=/app <image_name> - start a container with volume
