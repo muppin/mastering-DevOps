@@ -23,3 +23,7 @@ docker volume ls - lists the volume on host
 docker volume inspect my-vol - inspects the my-vol volume
 docker volume rm my-vol - removes the my-vol volume
 docker run -d --mount source=my-vol2, target=/app <image_name> - start a container with volume
+
+#### Docker Network ####
+docker network create mynetwork - creates a custom bridge network
+docker run -d --network mynetwork <image_name> - Runs a container on Custom network
