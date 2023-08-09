@@ -16,6 +16,8 @@ docker rmi -f <image_name/id> - deletes the image (-f forcefully deletes the ima
 docker build -t <image_name:tag> <path of dockerfile> -  creates a Docker image from a Dockerfile
 docker login - logs into your dockerhub account
 docker push <image_name> - pushes the image to your dockerhub
+docker container prune - removes all stopped containers
+docker image prune - removes all unused images
 
 #### Docker Volumes ####
 docker volume create my-vol - Create a volume
