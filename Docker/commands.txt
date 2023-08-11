@@ -29,3 +29,10 @@ docker run -d --mount source=my-vol2, target=/app <image_name> - start a contain
 #### Docker Network ####
 docker network create mynetwork - creates a custom bridge network
 docker run -d --network mynetwork <image_name> - Runs a container on Custom network
+
+#### Docker Compose ####
+docker-compose -  is a command-line tool that is used to define and manage multi-container Docker applications using a single configuration file.
+docker-compose up - command to start your application
+docker-compose down - command to stop your application
+docker-compose logs - command to can view the logs of the containers
+docker-compose config - command can inspect the current configuration of your application
