@@ -6,6 +6,7 @@ pipeline{
                 sh 'echo building the application'
                 sh 'echo test'
                 sh 'echo push'
+                sh 'echo test2'
             }
         }
         stage("test"){
