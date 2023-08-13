@@ -5,6 +5,7 @@ pipeline{
             steps{
                 sh 'echo building the application'
                 sh 'echo test'
+                sh 'echo push'
             }
         }
         stage("test"){
