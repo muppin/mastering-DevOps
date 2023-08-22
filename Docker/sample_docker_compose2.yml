@@ -8,6 +8,8 @@ services:
     networks:
       coffee:
         ipv4_address: 192.168.92.22
+    volumes:
+      - volume1:/var/lib/ghost/content
 
   website2:
     image: httpd:latest
@@ -23,3 +25,5 @@ networks:
       driver: default
       config:
         - subnet: "192.168.92.0/24"
+volumes:
+  volume1:
