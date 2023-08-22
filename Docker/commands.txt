@@ -18,6 +18,8 @@ docker login - logs into your dockerhub account
 docker push <image_name> - pushes the image to your dockerhub
 docker container prune - removes all stopped containers
 docker image prune - removes all unused images
+docker container rm $(docker container ls -aq) - removes all containers
+docker image rm $(docker image ls -aq) - removes all images
 
 #### Docker Volumes ####
 docker volume create my-vol - Create a volume
