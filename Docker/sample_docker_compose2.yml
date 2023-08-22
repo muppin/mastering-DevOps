@@ -1,0 +1,25 @@
+version: "3"
+services:
+  website:
+    image: nginx:latest
+    ports:
+      - "8081:80"
+    restart: always
+    networks:
+      coffee:
+        ipv4_address: 192.168.92.22
+
+  website2:
+    image: httpd:latest
+    ports:
+      - "8082:80"
+    restart: always
+    networks:
+      coffee:
+        ipv4_address: 192.168.92.21
+networks:
+  coffee:
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.92.0/24"
