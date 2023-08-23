@@ -1,1 +1,1 @@
-
+https://www.coachdevops.com/2019/02/jenkins-master-slave-setup-jenkins.html - Jenkins master slave configuration
