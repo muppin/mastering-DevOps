@@ -1,1 +1,2 @@
 https://www.coachdevops.com/2019/02/jenkins-master-slave-setup-jenkins.html - Jenkins master slave configuration
+https://www.coachdevops.com/2021/06/jenkins-build-agent-setup-how-to-setup.html - Jenkins master slave configuration
