@@ -2,8 +2,8 @@ Basically, why Kubernetes?
 The Docker had man problems in day-to-day life in the industry,
 Four main problems of the docker that are,
 •	Single host
-•	Auto scaling
-•	Auto Healing
+•	Not capable of Auto scaling
+•	Not capable of Auto Healing
 •	Docker is not of Enterprise Nature
 So, if we wonder how all these problems are solved, here comes the Kubernetes.
 Kubernetes is an Open-source platform for managing containerized applications. It automates the deployment, scaling and management of these applications. It is portable, extensible and declarative, and has a large and growing ecosystem of services and tools. 
