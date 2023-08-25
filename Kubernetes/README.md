@@ -1,1 +1,51 @@
+Basically, why Kubernetes?
+The Docker had many problems in day-to-day life in the industry,
+Four main problems of the docker that are,
+    •	Single host
+    •	Not capable of Auto scaling
+    •	Not capable of Auto Healing
+    •	Docker is not of Enterprise Nature
+So, if we wonder how all these problems are solved, here comes the Kubernetes.
+Kubernetes is an Open-source platform for managing containerized applications. It automates the deployment, scaling and management of these applications. It is portable, extensible and declarative, and has a large and growing ecosystem of services and tools. 
+So, Kubernetes came up with a solution for all those docker problems.
 
+How did it solve the problem of single host?
+By default, Kubernetes is a cluster, cluster is group of nodes. So, Kubernetes on production is installed in terms of Master node architecture just like Jenkins. 
+If there are 100s of containers running and if one of the container lifecycles is affecting any of the containers, what Kubernetes does is, it just picks up the affected container and puts into the other node to resume its capability without any intervention.
+
+How does it solve Auto scaling?
+Kubernetes has something called replica set.
+So, if a container is experiencing a huge load on a certain time (the no of users hitting the application n increases). We have replicaset.yaml file and increase the replicas and bring up the new containers manually. Kubernetes also supports HPA (Horizontal pod Auto scaler) using which we can increase the no of containers whenever we experience the load.
+
+How does it solve Auto healing?
+Kubernetes controls and fix the damage.
+If one of the containers goes down, using the Auto healing feature Kubernetes will spin up a new container before the old one dies.
+We have something called API server in k8s, this API servers receives the signal of container going down, immediately the k8s rolls out a new container before the old one goes down. The user doesn’t even experience of any shutdown of the application.
+
+How will it support Enterprise Nature?
+People at Google Built Enterprise level container orchestration platform called Kubernetes.
+Since Docker is not of enterprise nature (Load balancer support, firewall support, auto healing, auto scaling, Api gateways, blacklisting ips etc.). so, it is never used in Production platform. Kubernetes is aiming to solve these problems.
+
+Kubernetes Architecture
+Master Node (Control Plane) 	Worker Node (Data plane)
+API Server	                    Kubelet
+Scheduler	                    Kubeproxy
+etcd	                        Container Runtime
+Controller Manager	
+CCM (Cloud Controller manager)	
+
+To explain this, in docker simplest thing is container and k8s simplest thing is pod.
+When a container is created in docker using a docker run command, what happens behind the scenes. when we use docker run command, to execute this process we should have container run time env which is called Dockershim.
+Similarly in Kubernetes, we have master node architecture. When a pod is deployed on k8s it goes through Master node and executed on worker node.
+
+Worker Node
+Kubelet – this is responsible for running/maintaining a pod. If the pod goes down it reminds a component in control plane to fix or control this issue.
+Container Runtime - in order to run a pod in k8s we should have a container runtime and here unlike docker, docker is not mandatory. We can user either dockershim or containerd or crio(all these are container runtimes)
+Kubeproxy – Like default bridge network(docker0) in Docker, this kube-proxy basically provides us the networking, it allocates the ips to every pods we are creating and also provides the load balancing capability since, k8s supports auto scaling capability. It uses IP tables in Linux.
+
+Master Node
+API sever – Acts as a core component in K8s and takes all incoming requests. It basically exposes K8s to the external world.
+Scheduler – it is responsible for scheduling the pods/resources on the K8s. for example, it schedules the pod1 to run on one of the available nodes.
+etcd – it is key-value storage, and the entire cluster related information is stored as objects/ key-value pairs inside etcd. It helps in restoring the cluster related information when required.
+Controller manager – since k8s supports auto scaling therefore k8s has something called as Controllers. For example, replica sets. This replica sets is maintaining state of K8s and help in auto scaling.
+CCM – K8s can be run on different cloud platforms. When a user requests to create load balancer on EKS to k8s. Firstly k8s must understand the underlying cloud providers and translate the user request on to the API request that the cloud provider must understand. This mechanism is implemented on the CCM. So that load balancer gets created on the EKS.
