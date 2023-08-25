@@ -23,10 +23,10 @@ People at Google Built Enterprise level container orchestration platform called 
 Since Docker is not of enterprise nature (Load balancer support, firewall support, auto healing, auto scaling, Api gateways, blacklisting ips etc.). so, it is never used in Production platform. Kubernetes is aiming to solve these problems.
 
 Kubernetes Architecture
-Master Node (Control Plane)	Worker Node (Data plane)
-API Server	Kubelet
-Scheduler	Kubeproxy
-etcd	Container Runtime
+Master Node (Control Plane)	        Worker Node (Data plane)
+API Server	                         Kubelet
+Scheduler	                           Kubeproxy
+etcd	                               Container Runtime
 Controller Manager	
 CCM (Cloud Controller manager)	
 
