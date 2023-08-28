@@ -87,6 +87,11 @@ Similarly in Kubernetes, we have master node architecture. When a pod is deploye
 
 ## Interview Questions 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/c1019d65-f499-4edb-9c4b-f3e0f46d3f1c)
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/69863387-677d-4803-99cb-9dd7f3e06d68)
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/fd75878d-dc15-46ea-8ecc-77da9661d573)
 
+**Day-to-Day activities on Kubernetes?**
+
+As part of the DevOps Engineer role we manage clusters of our organisations and also ensure that the applications are deployed on the clusters and have no issues with the application. We have setup monitoring capability on our Cluster. and we also do some maintainance activities for example we have kubernetes cluster with 2 Master nodes and 7 worker nodes, we have to do continuous maintainance activities on the worker nodes probably upgrading the versions of worker node and installing the default packages, ensuring the worker nodes are not exposed to security vulnarability 
 
  
