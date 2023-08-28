@@ -85,4 +85,8 @@ Similarly in Kubernetes, we have master node architecture. When a pod is deploye
 
 ***CCM*** – K8s can be run on different cloud platforms. When a user requests to create load balancer on EKS to k8s. Firstly k8s must understand the underlying cloud providers and translate the user request on to the API request that the cloud provider must understand. This mechanism is implemented on the CCM. So that load balancer gets created on the EKS.
 
+## Interview Questions 
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/c1019d65-f499-4edb-9c4b-f3e0f46d3f1c)
+
+
  
