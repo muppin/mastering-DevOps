@@ -1,1 +1,12 @@
-
+kubectl get pods - lists all the pods
+kubectl get deploy - lists all the deployments
+kubectl get rs - lists all the replica sets
+kubectl get svc - lists all the services
+kubectl create deployment <deployment-name> --image=<imagename> - creates a deployment and creates a default yaml file for it
+kubectl edit deployment <deployment-name> - opens a configuration file and you can edit.
+kubectl logs <pod-name> -  provides the logs of a pod
+kubectl describe pod <pod-name> - shows the state changes happened inside the pod
+kubectl exec -it <pod-name> -- bin/bash - enters inside the pod and helps in debugging
+kubectl delete deploy <deployment-name> - deletes an existing deployment.
+kubectl delete pod <pod-name> - deletes a pod.
+kubectl apply -f <file-name> - creates a kubernetes services according to the file.
