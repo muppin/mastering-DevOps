@@ -50,3 +50,8 @@ etcd – it is key-value storage, and the entire cluster related information is 
 Controller manager – since k8s supports auto scaling therefore k8s has something called as Controllers. For example, replica sets. This replica sets is maintaining state of K8s and help in auto scaling.
 CCM – K8s can be run on different cloud platforms. When a user requests to create load balancer on EKS to k8s. Firstly k8s must understand the underlying cloud providers and translate the user request on to the API request that the cloud provider must understand. This mechanism is implemented on the CCM. So that load balancer gets created on the EKS.
 
+Each Configuration file has 3 parts:
+1. Metadata
+2. Specification
+3. Status - this one is automatically generated and added by Kubernetes.
+
