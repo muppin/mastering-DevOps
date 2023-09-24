@@ -75,5 +75,19 @@ kube-public: contains publicely accesble data like configmap, which contains clu
 kube-node-lease: holds the heartbeats of nodes, determines the availability of nodes
 default: resources you create without any particular namespace are located here. 
 
+Use cases of namespace:
+1. Resource grouped in Namespaces : logically grouping of resources inside a cluster
+2. Confilcts: many teams, same application : each team can work in their own namespace without disrupting others.
+3. Resource Sharing: Staging and development : namespaces can hold the common resources and these resouces can be shared across staging and development, rathar than creating in both of them.
+4. Resource Sharing: Blue/Green Deployment: (Blue/green deployment: it is live production and coming up production instances) these both production instances can use common resources deployed under a namespace.
+5> Access and resource Limits on Namespaces : limits authentication to the users based on the namespace. It also limits the available resource to the namespaces in the cluster.
+
+Characterstics of a namespace:
+1. Each NS must define own ConfigMap.
+2. each NS must define own Secrets.
+3. Service can be shared across Namespace
+4. Some Components, which cant be created within namespace are volume, node.
+
+
 
 
