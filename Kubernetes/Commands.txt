@@ -10,3 +10,8 @@ kubectl exec -it <pod-name> -- bin/bash - enters inside the pod and helps in deb
 kubectl delete deploy <deployment-name> - deletes an existing deployment.
 kubectl delete pod <pod-name> - deletes a pod.
 kubectl apply -f <file-name> - creates a kubernetes services according to the file.
+kubectl delete -f <file-name> - deletes a kubernetes services according to the file.
+kubectl get pods -o wide - lists the pods with complete information.
+kubectl get deploy nginx-deployment -o yaml - list the particular deployment with complete information like status etc.
+
+
