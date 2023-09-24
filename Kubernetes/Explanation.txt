@@ -55,3 +55,17 @@ Each Configuration file has 3 parts:
 2. Specification
 3. Status - this one is automatically generated and added by Kubernetes.
 
+Layers of Abstractions
+
+when you create a deployment, by default it creates replica set and a pod. Therefore,
+Deployment manages a ReplicaSet
+ReplicaSet manages a Pod
+Pod is an abstarction of Container
+
+Connecting Components
+
+The connection is established by Labels, selectorsand ports.  
+Metadata part contains Labels and Specification part contains Selectors
+
+
+
