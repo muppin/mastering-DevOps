@@ -99,6 +99,25 @@ The service provides the capabilities like:
 2. Node port : this mode of service allows only people having access to the node where application resides ( basically people inside the organisation)
 3. Load balancer: this mode of service exposes the application to the internet, where it creates a public IP address.
 
+While accessing the application from the outside world, the kubernetes generates an external ip, you can access the application via http://<external ip>:<service_port>
+while accessing the application using Node ip, you can use the Node ip address by the command kubectl get nodes -o wide, like http://<node_ip>:<node_port>. To access the particular node_port you need to allow the port access in the firewall settings. 
+gcloud compute firewall-rules create test-node-port \
+    --allow tcp:NODE_PORT
+
+Ingress:
+without ingress in the kubernetes, the application did not have the luxuries of Enterprise application like:
+1. Ratio based LoadBalancing : 40% of req has to go to one pod and 60% of req has to go to other
+2. Sticky sessions - particular user traffic has to reach particular pod
+3. Path based loadbalancing
+4. Domain Based Load Balancing
+5. Black and white listing
+
+Another problem was, if the application had some 1000 microservices then the service type of LoadBalancer will have 1000s of static public ip address which the cloud provider will create, so tthis would bear a huge cost on the company.
+
+Ingress Controller:
+This is a component which looks for a Ingress resouce. This is just Load Balancer and Api Gateway.
+
+
 
 
 
