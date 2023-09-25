@@ -55,15 +55,13 @@ Each Configuration file has 3 parts:
 2. Specification
 3. Status - this one is automatically generated and added by Kubernetes.
 
-Layers of Abstractions
-
+Layers of Abstractions:
 when you create a deployment, by default it creates replica set and a pod. Therefore,
 Deployment manages a ReplicaSet
 ReplicaSet manages a Pod
 Pod is an abstarction of Container
 
-Connecting Components
-
+Connecting Components:
 The connection is established by Labels, selectorsand ports.  
 Metadata part contains Labels and Specification part contains Selectors
 
@@ -87,6 +85,19 @@ Characterstics of a namespace:
 2. each NS must define own Secrets.
 3. Service can be shared across Namespace
 4. Some Components, which cant be created within namespace are volume, node.
+
+Service:
+Why service is needed?
+so in the world of kubernetes, when the pod goes down and comes back due to its auto healing capability, the pod gets a different ip address every time a pod goes down and comes back, so a user cant access the application using Ip address. therefore kubernetes introduces a service for this purpose and application can be accessed via service,
+
+The service provides the capabilities like:
+1. Load balancing: It distributes the incoming requests to the available pods equally
+2. Service Discovery: Services uses Labels and Selectors to talk to the pods instead of Ip addresses.
+3. Exposes the application to the external Network: The service helps in exposing the application running inside the pods to the external network in 3 different ways i.e. 1) Cluster IP 2) Node Port 3) Load balancer
+
+1. Cluster IP: this mode of service will allow only people having access to cluster can access the application.
+2. Node port : this mode of service allows only people having access to the node where application resides ( basically people inside the organisation)
+3. Load balancer: this mode of service exposes the application to the internet, where it creates a public IP address.
 
 
 
