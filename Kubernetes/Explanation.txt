@@ -116,6 +116,9 @@ Another problem was, if the application had some 1000 microservices then the ser
 
 Ingress Controller:
 This is a component which looks for a Ingress resouce. This is just Load Balancer and Api Gateway.
+To install the ingress controller: https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke
+To check the logs of the ingress controller : kubectl logs <pod name> -n <namespace>
+to configure the cloud DNS watch: https://www.youtube.com/watch?v=1lsFYHtWbEc
 
 
 
