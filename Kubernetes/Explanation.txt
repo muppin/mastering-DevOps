@@ -127,7 +127,9 @@ Kubernetes RBAC:
 
 Kubernetes offloads the user management to Identity providers. for example if you are working in aws EKS cluster, the user related stuffs are taken care by IAM, this is how it offloads the user management to Identity providers 
 Roles are the set of permissions defined in the yaml file and then users or service accounts are assined these roles. Cliuster roles are defined at cluster level.
-Role Binding is binding roles to the user or service acconts.
+Role Binding is binding roles to the user or service accounts.
+
+Service Account is an identity that a Pod can use to interact with the Kubernetes API server and access various resources within the cluster. It's similar to how a user account represents a human user in a traditional operating system, but a Service Account is used for applications and Pods running inside the cluster. Service Accounts are mainly used for authentication and authorization purposes.
 
 
 
