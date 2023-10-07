@@ -120,6 +120,15 @@ To install the ingress controller: https://kubernetes.github.io/ingress-nginx/de
 To check the logs of the ingress controller : kubectl logs <pod name> -n <namespace>
 to configure the cloud DNS watch: https://www.youtube.com/watch?v=1lsFYHtWbEc
 
+Kubernetes RBAC:
+1. users/ service accounts
+2. Roles/ Cluster roles
+3. Role Binding/ Cluster Role Binding
+
+Kubernetes offloads the user management to Identity providers. for example if you are working in aws EKS cluster, the user related stuffs are taken care by IAM, this is how it offloads the user management to Identity providers 
+Roles are the set of permissions defined in the yaml file and then users or service accounts are assined these roles. Cliuster roles are defined at cluster level.
+Role Binding is binding roles to the user or service acconts.
+
 
 
 
