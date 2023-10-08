@@ -131,7 +131,14 @@ Role Binding is binding roles to the user or service accounts.
 
 Service Account is an identity that a Pod can use to interact with the Kubernetes API server and access various resources within the cluster. It's similar to how a user account represents a human user in a traditional operating system, but a Service Account is used for applications and Pods running inside the cluster. Service Accounts are mainly used for authentication and authorization purposes.
 
+Kubernetes Custom Resources:
+Kubernetes Custom Resources (CRs), also known as Custom Resource Definitions (CRDs), allow you to extend the Kubernetes API and create your own resource types tailored to your specific application or use case. 
+Firstly as a Devops Engineer, you create a Custom Resource Definition(CRD) which validates the custom resources created by the users.
+secondly you create a custom resources based on that definition.
+After defining CRDs and creating CRs, you typically need custom controllers to manage and reconcile the state of your custom resources. Custom controllers are software components that watch for changes in CRs and take action to ensure the desired state is met. They are responsible for the lifecycle management of custom resources.
 
+Uses of Custom Resources:
+Custom Resources are commonly used for managing complex applications, databases, stateful services, and other resources that don't have built-in Kubernetes resource types.
 
 
 
