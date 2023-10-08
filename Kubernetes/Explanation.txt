@@ -133,12 +133,15 @@ Service Account is an identity that a Pod can use to interact with the Kubernete
 
 Kubernetes Custom Resources:
 Kubernetes Custom Resources (CRs), also known as Custom Resource Definitions (CRDs), allow you to extend the Kubernetes API and create your own resource types tailored to your specific application or use case. 
-Firstly as a Devops Engineer, you create a Custom Resource Definition(CRD) which validates the custom resources created by the users.
-secondly you create a custom resources based on that definition.
+Firstly as a Devops Engineer, you create a Custom Resource Definition(CRD), CRDs define the structure and schema for your custom resources. They specify what fields and metadata your custom resources can have, much like a blueprint. and also validates the custom resources created by the users.
+secondly you create a custom resources based on that definition. CRs follow the schema defined in the associated CRD and can have fields and values specific to your application.
 After defining CRDs and creating CRs, you typically need custom controllers to manage and reconcile the state of your custom resources. Custom controllers are software components that watch for changes in CRs and take action to ensure the desired state is met. They are responsible for the lifecycle management of custom resources.
 
 Uses of Custom Resources:
 Custom Resources are commonly used for managing complex applications, databases, stateful services, and other resources that don't have built-in Kubernetes resource types.
+
+Config maps and secrets:
+
 
 
 
