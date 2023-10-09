@@ -141,6 +141,15 @@ Uses of Custom Resources:
 Custom Resources are commonly used for managing complex applications, databases, stateful services, and other resources that don't have built-in Kubernetes resource types.
 
 Config maps and secrets:
+In Kubernetes, ConfigMaps and Secrets are two important resources used for managing configuration data and sensitive information, respectively. They allow you to decouple configuration from your application code and keep sensitive data secure.
+
+Config maps:
+ConfigMaps are used to store configuration data in a key-value format, which can be consumed by Pods as environment variables, command-line arguments, or as files in volumes.
+ConfigMaps are typically used for storing non-sensitive configuration data, such as environment variables, application configuration files, or any other settings that your application needs.
+
+Secrets:
+Secrets are used to store sensitive data, such as passwords, API tokens, and SSL certificates, in a more secure manner than ConfigMaps. They are base64-encoded by default but can be used to store binary data as well.
+Secrets are typically used for storing sensitive data that should not be exposed in plain text. This data is often needed for authentication, encryption, or other security-related purposes.
 
 
 
