@@ -151,6 +151,12 @@ Secrets:
 Secrets are used to store sensitive data, such as passwords, API tokens, and SSL certificates, in a more secure manner than ConfigMaps. They are base64-encoded by default but can be used to store binary data as well.
 Secrets are typically used for storing sensitive data that should not be exposed in plain text. This data is often needed for authentication, encryption, or other security-related purposes.
 
+Persistent Volume, Persistent volume claims and Storage classes
+PV:A Persistent Volume (PV) in Kubernetes is a resource that represents a piece of storage in a cluster, such as a physical disk or network storage. PVs are used to store data that should persist beyond the lifecycle of a single pod or container. They provide a way to manage and decouple storage from the application, making it possible to reuse storage across different pods, even if the pods are rescheduled or replaced.
+PVC: A Persistent Volume Claim (PVC) in Kubernetes is a request for a specific amount of storage with certain characteristics, like access mode and storage class. PVCs are used by pods to claim access to Persistent Volumes (PVs). PVCs act as an intermediary between the storage resources that are defined by Persistent Volumes and the storage requirements of pods.
+**Dynamic Provisioning**:PVCs can be used with Storage Classes to enable dynamic provisioning. In this case, when a PVC is created, a PV is automatically created to meet the storage requirements if no suitable pre-existing PV is available.
+Staorage Class: A Storage Class in Kubernetes is a resource object that defines the type and properties of storage that can be dynamically provisioned for Persistent Volume Claims (PVCs). Storage Classes allow you to abstract and standardize the provisioning of storage, making it easier to manage and allocate storage resources in a Kubernetes cluster. 
+
 
 
 
