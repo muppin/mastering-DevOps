@@ -23,20 +23,55 @@ NAT (Network Address Translator) gates which are deployed in the public subnets 
 so basically when a user tries to access the application inside the private subnet, he has to access via ip/DNS name of Load balancer. so the request first hits the internet gateway then reaches the load balancer in the public subnet, then checks the target groups and with the help of route tables reaches the server after security checks(Security groups at instance level, NACL at subnets level). 
 
 
-Learnings - 		
-  • Create VPC -> VPC & more
-	• Create Autoscaling group -> launch template
-	• Create bastion host, auto assign public ip
-	• Bastion host/Jump server: Acts a mediator between instances in private subnet and public subnet.
-	• Scp pem file from local to bastion host- scp -i VPC-key.pem VPC-key.pem ubuntu@publicIP  {Need to be in the same folder where .pem file is located}
-	• Login to bastion host- ssh -i aws_login.pem ubuntu@pubIPofBastionHost
-	• Login to EC2 in private subnet- ssh -i aws_login.pem ubuntu@PrivateIpOfEC2
-	• Run python app- python3 -m http.server 8000
-  • Run in background mode- nohup python3 -m http.server 8000 &
-	• While creating Traget groups, always mention port on which app is running
-  • Create ALB, open HTTP-80 and attach target group
-  • Later validate health checks
-  • Access with DNS of load balancer.
+# Learnings
+
+- **Create VPC**
+  - Creating a Virtual Private Cloud (VPC) and more.
+
+- **Create Autoscaling group**
+  - Using launch templates for creating an Autoscaling group.
+
+- **Create Bastion Host with Auto-assign Public IP**
+  - Setting up a Bastion host with an auto-assigned public IP.
+
+- **Bastion Host/Jump Server**
+  - Acting as a mediator between instances in the private subnet and public subnet.
+
+- **Copy PEM File to Bastion Host**
+  - Using SCP to copy a PEM file from the local machine to the Bastion host.
+  - Command: `scp -i VPC-key.pem VPC-key.pem ubuntu@publicIP` 
+  - *(Note: You need to be in the same folder where the .pem file is located.)*
+
+- **Login to Bastion Host**
+  - Logging in to the Bastion host.
+  - Command: `ssh -i aws_login.pem ubuntu@pubIPofBastionHost`
+
+- **Login to EC2 in Private Subnet**
+  - Logging in to an EC2 instance in the private subnet.
+  - Command: `ssh -i aws_login.pem ubuntu@PrivateIpOfEC2`
+
+- **Run Python App**
+  - Running a Python application.
+  - Command: `python3 -m http.server 8000`
+
+- **Run in Background Mode**
+  - Running a command in the background.
+  - Command: `nohup python3 -m http.server 8000 &`
+
+- **Creating Target Groups**
+  - When creating Target Groups, always mention the port on which the application is running.
+
+- **Create Application Load Balancer (ALB)**
+  - Creating an Application Load Balancer.
+  - Opening HTTP port 80 and attaching the previously defined Target Group.
+
+- **Validate Health Checks**
+  - Later, validate health checks to ensure proper functioning.
+
+- **Access with DNS of Load Balancer**
+  - Access the application using the DNS of the Load Balancer.
+
+
 
 
 
