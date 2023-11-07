@@ -21,3 +21,22 @@ Application load balancer receives the traffic from internet gateway and is requ
 NAT (Network Address Translator) gates which are deployed in the public subnets are connected to ec2 instances(private subnet) via route tables. These NAT gates help ec2 instances to talk to internet(updating, downloading application) and also mask the ip addresses of ec2 instances in the outside world for security purposes.
 
 so basically when a user tries to access the application inside the private subnet, he has to access via ip/DNS name of Load balancer. so the request first hits the internet gateway then reaches the load balancer in the public subnet, then checks the target groups and with the help of route tables reaches the server after security checks(Security groups at instance level, NACL at subnets level). 
+
+
+Learnings - 		
+  • Create VPC -> VPC & more
+	• Create Autoscaling group -> launch template
+	• Create bastion host, auto assign public ip
+	• Bastion host/Jump server: Acts a mediator between instances in private subnet and public subnet.
+	• Scp pem file from local to bastion host- scp -i VPC-key.pem VPC-key.pem ubuntu@publicIP  {Need to be in the same folder where .pem file is located}
+	• Login to bastion host- ssh -i aws_login.pem ubuntu@pubIPofBastionHost
+	• Login to EC2 in private subnet- ssh -i aws_login.pem ubuntu@PrivateIpOfEC2
+	• Run python app- python3 -m http.server 8000
+  • Run in background mode- nohup python3 -m http.server 8000 &
+	• While creating Traget groups, always mention port on which app is running
+  • Create ALB, open HTTP-80 and attach target group
+  • Later validate health checks
+  • Access with DNS of load balancer.
+
+
+
