@@ -29,10 +29,10 @@
 
 ### Workspace Commands
 
-- **terraform workspace new <name>**
+- **terraform workspace new <name> **
   - Creates a new workspace.
 
-- **terraform workspace select <name>**
+- **terraform workspace select <name> **
   - Switches between workspaces.
 
 - **terraform workspace list**
@@ -41,5 +41,5 @@
 - **terraform workspace show**
   - Displays the current workspace.
 
-- **terraform workspace delete <name>**
+- **terraform workspace delete <name> **
   - Deletes a workspace.
