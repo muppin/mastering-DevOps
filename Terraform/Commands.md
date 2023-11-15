@@ -74,3 +74,12 @@ Backups: If you have regular backups of your state file, you can restore it from
 **Collaboration and Documentation**: If you're working in a team, check if any of your team members have a copy of the state file. If not, gather information about the resources from cloud provider consoles, APIs, or other documentation. While this won't recover the state directly, it can help you recreate your infrastructure configuration more accurately.
  
 **Rebuilding and Testing**: In the worst-case scenario where the state is entirely lost and there are no backups or documentation available, you might need to start from scratch. This involves recreating your infrastructure configuration, testing thoroughly, and making sure the new resources match the desired state.
+
+### Important
+**ssh-keygen -t rsa** -> it will create a public private key on local
+
+**nohup sudo python3 app.py** > output.log 2>&1 & - In background
+
+**protocol is set to "-1," which often means all protocols**
+
+
