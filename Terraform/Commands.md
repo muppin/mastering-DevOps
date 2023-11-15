@@ -78,7 +78,7 @@ Backups: If you have regular backups of your state file, you can restore it from
 ### Important
 **ssh-keygen -t rsa** -> it will create a public private key on local
 
-**nohup sudo python3 app.py > output.log 2>&1 & ** - In background
+**nohup sudo python3 app.py > output.log 2>&1 &** - In background
 
 **protocol is set to "-1," which often means all protocols**
 
