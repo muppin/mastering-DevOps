@@ -81,14 +81,16 @@ Backups: If you have regular backups of your state file, you can restore it from
 **nohup sudo python3 app.py > output.log 2>&1 &** - In background
 
 **protocol is set to "-1," which often means all protocols**
-**To create elastic IP and associate with EC2 Instance** - 
+
+**To create elastic IP and associate with EC2 Instance** - create eip and eip_association
+
 resource "aws_instance" "example" {
-  # Your existing EC2 instance configuration goes here...
+  ### Your existing EC2 instance configuration goes here...
 }
 
 resource "aws_eip" "example_eip" {
   instance = aws_instance.example.id # Associate with the specific instance
-  # Optionally specify VPC and other settings for the EIP
+  ### Optionally specify VPC and other settings for the EIP
 }
 
 resource "aws_eip_association" "example_eip_assoc" {
