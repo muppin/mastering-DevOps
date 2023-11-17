@@ -192,3 +192,176 @@ resource "aws_lb_listener" "example_listener" {
         target_group_arn = aws_lb_target_group.example.arn
     }
 }
+
+__________________________________________________________________________________________________________________
+
+
+
+provider "aws" {
+  region = "us-east-1" # Specify your desired AWS region
+}
+
+# Create VPC
+resource "aws_vpc" "my_vpc" {
+  cidr_block = "10.0.0.0/16"
+  enable_dns_support = true
+  enable_dns_hostnames = true
+  tags = {
+    Name = "my-vpc"
+  }
+}
+
+# Create Internet Gateway
+resource "aws_internet_gateway" "my_igw" {
+  vpc_id = aws_vpc.my_vpc.id
+  tags = {
+    Name = "my-igw"
+  }
+}
+
+# Create two public subnets
+resource "aws_subnet" "public_subnet_1" {
+  vpc_id                  = aws_vpc.my_vpc.id
+  cidr_block              = "10.0.1.0/24"
+  availability_zone       = "us-east-1a"
+  map_public_ip_on_launch = true
+  tags = {
+    Name = "public-subnet-1"
+  }
+}
+
+resource "aws_subnet" "public_subnet_2" {
+  vpc_id                  = aws_vpc.my_vpc.id
+  cidr_block              = "10.0.2.0/24"
+  availability_zone       = "us-east-1b"
+  map_public_ip_on_launch = true
+  tags = {
+    Name = "public-subnet-2"
+  }
+}
+
+# Create two private subnets
+resource "aws_subnet" "private_subnet_1" {
+  vpc_id                  = aws_vpc.my_vpc.id
+  cidr_block              = "10.0.3.0/24"
+  availability_zone       = "us-east-1a"
+  tags = {
+    Name = "private-subnet-1"
+  }
+}
+
+resource "aws_subnet" "private_subnet_2" {
+  vpc_id                  = aws_vpc.my_vpc.id
+  cidr_block              = "10.0.4.0/24"
+  availability_zone       = "us-east-1b"
+  tags = {
+    Name = "private-subnet-2"
+  }
+}
+
+# Create a route table for public subnets
+resource "aws_route_table" "public_route_table" {
+  vpc_id = aws_vpc.my_vpc.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.my_igw.id
+  }
+  tags = {
+    Name = "public-route-table"
+  }
+}
+
+# Associate public subnets with the public route table
+resource "aws_route_table_association" "public_subnet_association_1" {
+  subnet_id      = aws_subnet.public_subnet_1.id
+  route_table_id = aws_route_table.public_route_table.id
+}
+
+resource "aws_route_table_association" "public_subnet_association_2" {
+  subnet_id      = aws_subnet.public_subnet_2.id
+  route_table_id = aws_route_table.public_route_table.id
+}
+
+# Create a route table for private subnets
+resource "aws_route_table" "private_route_table" {
+  vpc_id = aws_vpc.my_vpc.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.my_nat_gateway.id
+  }
+  tags = {
+    Name = "private-route-table"
+  }
+}
+
+# Associate private subnets with the private route table
+resource "aws_route_table_association" "private_subnet_association_1" {
+  subnet_id      = aws_subnet.private_subnet_1.id
+  route_table_id = aws_route_table.private_route_table.id
+}
+
+resource "aws_route_table_association" "private_subnet_association_2" {
+  subnet_id      = aws_subnet.private_subnet_2.id
+  route_table_id = aws_route_table.private_route_table.id
+}
+
+
+# Create a NAT gateway in the public subnet
+resource "aws_nat_gateway" "my_nat_gateway" {
+  allocation_id = aws_eip.my_eip.id
+  subnet_id     = aws_subnet.public_subnet_1.id
+}
+
+# Allocate an Elastic IP for the NAT gateway
+resource "aws_eip" "my_eip" {
+    
+}
+
+# (Optional) Create an EC2 instance for the NAT gateway (if not using NAT Gateway)
+resource "aws_security_group" "asg_security_group" {
+  vpc_id = aws_vpc.my_vpc.id
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] # Allow incoming traffic from anywhere (update as needed)
+  }
+  ingress {
+    from_port   = 8000
+    to_port     = 8000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] # Allow incoming traffic from anywhere (update as needed)
+  }
+  # Add additional ingress rules as needed
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"] # Allow outgoing traffic to anywhere (update as needed)
+  }
+}
+
+resource "aws_launch_configuration" "my_launch_config" {
+  name = "my-launch-config"
+  image_id = "ami-0261755bbcb8c4a84" # Specify your desired AMI ID
+  instance_type = "t2.micro" # Specify your desired instance type
+
+  # Additional configuration options such as user_data, key_name, etc.
+
+  security_groups = [aws_security_group.asg_security_group.name]
+}
+
+resource "aws_autoscaling_group" "my_asg" {
+  desired_capacity     = 2
+  max_size             = 4
+  min_size             = 1
+  vpc_zone_identifier  = [aws_subnet.private_subnet_1.id, aws_subnet.private_subnet_2.id]
+  launch_configuration = aws_launch_configuration.my_launch_config.id
+
+  # Additional Auto Scaling Group options as needed
+  health_check_type          = "EC2"
+  health_check_grace_period  = 300
+  force_delete               = true
+}
+
+
