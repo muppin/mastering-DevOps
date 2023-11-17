@@ -84,13 +84,15 @@ Backups: If you have regular backups of your state file, you can restore it from
 
 **To create elastic IP and associate with EC2 Instance** - create eip and eip_association
 
+**While refrencing security group, always use- security_groups = ["${aws_security_group.bastion_sg.id}"]**
+
 resource "aws_instance" "example" {
-  ### Your existing EC2 instance configuration goes here...
+  **Your existing EC2 instance configuration goes here...**
 }
 
 resource "aws_eip" "example_eip" {
   instance = aws_instance.example.id # Associate with the specific instance
-  ### Optionally specify VPC and other settings for the EIP
+  **Optionally specify VPC and other settings for the EIP**
 }
 
 resource "aws_eip_association" "example_eip_assoc" {
