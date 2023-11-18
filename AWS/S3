@@ -1,0 +1,29 @@
+### Amazon S3 Use cases
+
+- Backup and Storage
+- Application hosting
+- Archive
+- Static website 
+- Disaster recovery
+- Hybrid cloud storage
+- Data lakes and Big data analytics
+- Software Delivery
+- Media hosting
+
+
+**Buckets must have a globally unique name (accross all regions)**
+**Buckets are defined at the region level.**
+**S3 looks like a global service but buckets are created in a region.**
+
+### Naming convention for S3:
+
+- Bucket names must be between 3 (min) and 63 (max) characters long.
+- Bucket names can consist only of lowercase letters, numbers, dots (.), and hyphens (-).
+- Bucket names must begin and end with a lowercase letter or number.
+- Not an IP
+- No underscore, no uppercase.
+
+**Objects (files) have key, and key is the full path.**
+**Max Object size is 5TB.**
+
+
