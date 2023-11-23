@@ -1,3 +1,4 @@
 - **Implemented a Logging, Monitoring and Storage solution for EC2 instances** - Installed cloudwatch agent on EC2 instance, which was sending all EC2 logs to cloudwatch log group and exported the logs to S3 bucket.
-- **CloudWatch Alarms** _ Created a CloudWatch alarm that monitors CPUUtilization and triggers an email when a it reaches above 50%.
+- **CloudWatch Alarms** - Created a CloudWatch alarm that monitors CPUUtilization and triggers an email when a it reaches above 50%.
+- **Lambda Function** - 
 - 
