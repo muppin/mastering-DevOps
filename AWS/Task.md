@@ -1,4 +1,7 @@
 - **Implemented a Logging, Monitoring and Storage solution for EC2 instances** - Installed cloudwatch agent on EC2 instance, which was sending all EC2 logs to cloudwatch log group and exported the logs to S3 bucket.
 - **CloudWatch Alarms** - Created a CloudWatch alarm that monitors CPUUtilization and triggers an email when a it reaches above 50%.
-- **Lambda Function** - 
-- 
+- **Lambda Function** - We implemented a lambda function that has python code which checks for stale snapshots and perform the deletion of the snapshop based on the EventBridge rule
+- **S3** - we have performed a tasks related to s3 versioning, replication and static website hosting, also setup some lifecycle rules configurations.
+- **VPC** - Designed and implemented AWS Virtual Private Cloud (VPC) architecture for public and private subnets, ensuring high availability, scalability, and security.
+- **ALB & ASG** - Horizontal scaling of EC2 instances using an Auto Scaling Group with an Application Load Balancer
+- **IAM** -  we created inline policies and attached it to Roles, created some IAM users.
