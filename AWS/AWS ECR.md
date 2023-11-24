@@ -1,1 +1,2 @@
-
+- **ECR** - Elastic Container Registry
+- ECR is used to store and manage containers.
