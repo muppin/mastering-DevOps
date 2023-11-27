@@ -129,3 +129,7 @@ ________________________________________________________________________________
 
 ## DAY 37
 #### Kubernetes Services Deep Dive
+
+port - service port for load balancer type service
+target port- should be same as container port in deployment.yml
+node port - 30000-32767, should be used with node ip address to access the app
