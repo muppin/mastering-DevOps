@@ -1,1 +1,2 @@
-
+- **ECS (Amazon Elastic Container Service)** is a scalable container orchestration solution for running, stopping, and managing containers in a cluster. 
+- **EKS (Amazon Elastic Kubernetes Service)** on the other hand, assists teams in deploying Kubernetes clusters on AWS without the need to manually install Kubernetes on EC2 instances.
