@@ -74,9 +74,11 @@ ________________________________________________________________________________
 - A wrapper of containers.
 - POD will have ClusterIP and containers can be reached via that cluster IP.
 - Definition Of how to run a container, in form of YAML file.
-- Can be a single container or multiple containers.
+- Can be a single container or multiple containers. Example- service mesh
 - POD provides shared network and storage to all containers.
 
+**If we already utilize containers, what's the rationale behind employing Pods?**
+Pods represent the running specification of containers and can encompass either one or multiple containers. Consider a service mesh with a primary container and sidecar containers containing APIs or load balancing rules. Alternatively, think of a container hosting an app that another main application relies upon. This setup facilitates shared network and storage, enabling seamless communication among all containers.
 
 **Minikube**
 - Minikube is a single node cluster.
@@ -85,7 +87,45 @@ ________________________________________________________________________________
 - use command-> minikube start --memory=4096 --driver=hyperkit
 - if you give only- minikube start, then by default it uses docker driver
 
-____________________________________________________________________________________________________________________________________________________________________________________________
-
-## DAY34
+___________________________________________________________________________________________________________________________________________________________________________________________
+## DAY 34
 ### Kubernetes Deployment
+
+**When we have Pods, why is Deployment necessary?**
+Pods offer a running environment for containers, but Deployments provide critical management and scaling functionalities. They enable easy rollout of updates, version controls, scaling adjustments, and automated rollout strategies for Pods. Deployments ensure reliability, manageability, and seamless maintenance of the underlying Pods, offering a higher level of control and flexibility in managing containerized applications. Provides auto-scaling and auto-healing.
+
+Deployment -->  Replica Set --> Pods
+**Controllers** - always ensure the actual state == Desired State
+
+**Deployment Vs. ReplicaSet**
+Deployments focus on managing the overall lifecycle and updates of Pods, including their scaling and rollback, while ReplicaSets concentrate on maintaining a set number of identical Pods, ensuring reliability and scalability for the application. Replica set is a controller that provides auto healing capabilities.
+
+**In real production environment, you will never create a POD, you need to create a Deployment and this deployment will create a replicaset. Replicaset will create POD.**
+What is the ideal pod size?
+It depends on number of concurrent users and number of connections one replica of  POD can handle.
+
+___________________________________________________________________________________________________________________________________________________________________________________________
+
+## DAY 35
+### Kubernetes Services
+
+**What If there is no service??**
+- Suppose a container goes down, with the help of auto-healing feature it will come up again but the IP address will be changed. So to address this problem we can create service.yml which can provide load balancing capabilities.
+- Without a service defined, the Pods might still function within the cluster, but they won't have a consistent and accessible endpoint for other components or external systems to interact with them.
+- Instead of accessing IP, users can access services.
+
+**What problems Services are solving??**
+- **Load Balancing** - 
+- **Service Discovery** - Unlike manually keeping track of IP addresses, service will only watch Labels and selectors. Service will keep track of all the pods with the help of labels, all the pods will have same label. If any pod goes down also again it will get new IP address but service will watch for Label and assign the traffic to that POD.
+- **Expose to external world** - Normally to access App, need to ssh to cluster and then curl to pod IP. But to users we can't ask to do the same. Service will expose the app to outside world, it will make ur app accessible outside K8s cluster.
+
+
+**Types Of K8s services**
+- **Cluster IP** - Its the default service. App will be still accessible only inside Cluster. It only provides Service discovery and Load balancing.
+- **NodePort** - It allows to access application inside ur organization, which means only ppl who have access to worker node IP, and they don't have access to cluster can access the app.
+- **Load Balancing** - this mode of service exposes the application to the internet/external world, where it creates a public IP address. It will only work on cloud providers.
+
+______________________________________________________________________________________________________________________________________________________________________________________
+
+## DAY 37
+#### Kubernetes Services Deep Dive
