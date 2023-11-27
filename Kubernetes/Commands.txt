@@ -14,5 +14,6 @@ kubectl delete -f <file-name> - deletes a kubernetes services according to the f
 kubectl get pods -o wide - lists the pods with complete information.
 kubectl get pods -w   -> used to watch (observe) changes in the Pods within the Kubernetes cluster in real-time.
 kubectl get deploy nginx-deployment -o yaml - list the particular deployment with complete information like status etc.
+kubectl describe service SERVICE_NAME -n NAMESPACE -> To verify if services are aligned with the running Pods in Kubernetes.
 
 
