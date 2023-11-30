@@ -133,3 +133,29 @@ ________________________________________________________________________________
 port - service port for load balancer type service
 target port- should be same as container port in deployment.yml
 node port - 30000-32767, should be used with node ip address to access the app
+
+_______________________________________________________________________________________________________________________________________________________________________________________
+
+## DAY 38
+#### Kubernetes RBAC
+
+**Two primary responsibilities of RBAC**
+- User Mgmt/user
+- Managing the access on K8 services/service accounts
+
+**Three major things to define RBAC in K8s**
+- Service account/Users
+- Roles/Cluster Roles
+- Binding/ Cluster Role Binding
+
+- K8s does not deal user mgmt, intead it Offloads the user mgmt to identity providers.
+- Most popular offloading example is Sign in with google.
+- The API server of K8s will act as a OAUTH Server, which will offload the user management to some identity provider.
+- Whenever u create a Pod, a service account will be created, this SA will used to connect with any resource.
+
+
+**To define access/to manage config/rules K8s provides two resources -**
+- Roles/Cluster Roles - Role is a YMAL file where will provide all the access permission details
+- Binding/ Cluster Role Binding - To attach role to a user, we use role binding. Used to attach role and service account. SA will take care of users, Role will take care of permissions and RB will take care of binding.
+
+___________________________________________________________________________________________________________________________________________________________________________________________
