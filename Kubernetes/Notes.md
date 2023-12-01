@@ -174,6 +174,7 @@ ________________________________________________________________________________
 - Yo need to create and manage them by yourself.
 - Use that physical storage in spec section.
 - PV's are not namespaced.
+- PV should be created before pod
 
 
 **Local PV's**
@@ -181,5 +182,18 @@ ________________________________________________________________________________
     - Bieng tied to a specific node
     - surving cluster crashes
     - not suitable for DB persistance
+**Remote PV's**
+- Example- google cloud, aws
+
+**Persistant Volume Claim (PVC)**
+- Applications has to claim the persistant volume, that can be done with PVC.
+- PVC are the used inside pod configuration
+
+**Lifecycle**
+- Pod requests the volume through the PV claim.
+- Claim tries to find a volume in cluster.
+- Volume has the actual storage backend.
+- Claims must exist in the same namespace as of pod.
+      
 
 - 
