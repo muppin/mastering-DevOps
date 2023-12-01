@@ -159,3 +159,27 @@ ________________________________________________________________________________
 - Binding/ Cluster Role Binding - To attach role to a user, we use role binding. Used to attach role and service account. SA will take care of users, Role will take care of permissions and RB will take care of binding.
 
 ___________________________________________________________________________________________________________________________________________________________________________________________
+
+#### Persistent Volumes & Persistenet Volume Claims
+
+- Whenever a pod restarts, all existing will not be saved.
+- K8s does not give you data persistance out f the box.
+- You need to configure it, basically we need a storage thst does'nt depend on pod lifecycle.
+- Storage must be available on all pods.
+- Storage need to survive even if the cluster crashes.
+
+**Persistent Volumes-**
+- Its a cluster resource used to store data.
+- You need to decide what type of storage u need?
+- Yo need to create and manage them by yourself.
+- Use that physical storage in spec section.
+- PV's are not namespaced.
+
+
+**Local PV's**
+- Local PV's violate below two data persistance requirements-
+    - Bieng tied to a specific node
+    - surving cluster crashes
+    - not suitable for DB persistance
+
+- 
