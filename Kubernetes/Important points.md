@@ -38,5 +38,58 @@ In Kubernetes, API groups are used to organize and categorize resources within t
    - Example: `apiGroups: ["authorization.k8s.io"]`
 
 These are some of the core and well-known API groups in Kubernetes. As Kubernetes evolves, new API groups may be introduced to support additional features and extensions. When creating RBAC roles or cluster roles, understanding the relevant API group for the resources you are managing is crucial for specifying the correct rules.
-
 **For Yaml files refer to this - https://github.com/saikiranpi/RBAC**
+
+## CrashLoopBackOff
+
+The "CrashLoopBackOff" error in Kubernetes occurs when a container within a Pod repeatedly crashes immediately after starting, causing the container to enter a back-off state where Kubernetes attempts to restart it, but it continues to fail.
+
+Here are some common reasons for the "CrashLoopBackOff" error and steps to troubleshoot:
+
+1. **Check Container Logs:**
+   - Use the following command to view the logs of the failing container: 
+     ```bash
+     kubectl logs <pod-name> -c <container-name>
+     ```
+   - Replace `<pod-name>` and `<container-name>` with the actual names.
+
+2. **Correct Application Issues:**
+   - Identify and fix any issues with your application code, dependencies, or configuration that may be causing the crash.
+
+3. **Resource Constraints:**
+   - Insufficient resources (CPU, memory) for the container can lead to crashes. Check the resource requests and limits in the Pod specification.
+
+4. **Check Image and ImagePullPolicy:**
+   - Ensure that the container image specified in the Pod is correct and exists.
+   - Verify the `imagePullPolicy` to make sure it's appropriate for your scenario (e.g., set to `Always` if the image is frequently updated).
+
+5. **Volumes and Mounts:**
+   - Verify that any volumes and mounts are configured correctly.
+   - Ensure that the paths specified in the volume mounts exist and have the necessary permissions.
+
+6. **Startup Probes and Liveness Probes:**
+   - If you have defined startup probes or liveness probes, check their configurations.
+   - Adjust probe settings to accommodate the actual startup time of your application.
+
+7. **Check for Crash Loop on Init Containers:**
+   - If there are init containers, check their logs for errors as well.
+   - Init containers must successfully complete before the main container starts.
+
+8. **Update and Rollback:**
+   - Ensure that you are using the correct version of your application and dependencies.
+   - Consider rolling back to a previous working version if a recent deployment caused the issue.
+
+9. **Pod Events and Descriptions:**
+   - Check events and descriptions for the Pod to get more insights into why it is crashing:
+     ```bash
+     kubectl describe pod <pod-name>
+     kubectl get events
+     ```
+
+10. **Check Cluster-Level Issues:**
+   - Investigate whether there are cluster-level issues impacting the proper functioning of the Pod.
+
+11. **Pod Security Policies:**
+   - If Pod Security Policies are in place, ensure that the Pod complies with the policies.
+
+By systematically going through these steps and investigating the logs, you should be able to identify the root cause of the "CrashLoopBackOff" error and take appropriate actions to resolve it.
