@@ -248,3 +248,9 @@ In summary, a Helm chart packages Kubernetes resources, a Helm repository stores
 Helm v2 is more of release management and it has Client and server(Tiller) architecture. whenever install or upgrade is done everything is stored inside the architecture as a history.
 The main cause of upgrading to v3 is the tiller has a high power in the kubernetes cluster like create, update and delete, which leads to security issue. 
 
+_______________________________________________________________________________________________________________________________________________________________________________________
+
+#### Horizontal Pod Autoscaler
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/dca992f8-cd1c-4bd4-85c3-0d6acfa555c0)
+
+
