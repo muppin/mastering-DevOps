@@ -214,6 +214,15 @@ Here's a general flow of how it works:
 5. **Binding PV to PVC:** Finally, Kubernetes binds the PVC to the dynamically provisioned PV, allowing the PVC to access the provisioned storage.
 
 This dynamic provisioning mechanism allows Kubernetes to automate the creation of storage resources in the cloud provider (such as AWS) based on the defined policies in the StorageClass, providing users with on-demand storage that meets their specified requirements without manual intervention.
+___________________________________________________________________________________________________________________________________________________________________________________________
+
+HELM
+- Package manager
+- Helm helps you in managing K8s config
+- Helm charts help you define, install and upgrade complex k8s application
+- Helm is the best way to find, share and use software built on k8s
+- it supports rollback and upgrades
+- 
       
 
 - 
