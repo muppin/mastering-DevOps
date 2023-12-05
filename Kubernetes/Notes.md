@@ -254,3 +254,19 @@ ________________________________________________________________________________
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/dca992f8-cd1c-4bd4-85c3-0d6acfa555c0)
 
 
+
+________________________________________________________________________________________________________________________________________________________________________________________
+
+#### Resource Management in Kubernetes
+
+CPU is compressible, means whenever an application is using maximum CPU it is throttled meaning it cuts down the CPU cycle and slows down the response rate instead of killing process.
+Memory is not compressible, means once a process gets a chunck of memory, it can't be taken away from it until it is released by the process itself.
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/51d7bb49-8f49-4211-889f-831e2b9848a4)
+
+K8s compares the resource request defined in the POD, with the available resource on each node in the cluster and automatically assigns a node in the cluster to the pod.
+
+**Request** - With request we define the minimum resources that should be available on a node to schedule a pod.
+**Limit** - 
+
+
+
