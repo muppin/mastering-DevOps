@@ -257,16 +257,52 @@ ________________________________________________________________________________
 
 ________________________________________________________________________________________________________________________________________________________________________________________
 
-#### Resource Management in Kubernetes
+### Resource Management in Kubernetes
 
-CPU is compressible, means whenever an application is using maximum CPU it is throttled meaning it cuts down the CPU cycle and slows down the response rate instead of killing process.
-Memory is not compressible, means once a process gets a chunck of memory, it can't be taken away from it until it is released by the process itself.
+- CPU is compressible, means whenever an application is using maximum CPU it is throttled meaning it cuts down the CPU cycle and slows down the response rate instead of killing process.
+- Memory is not compressible, means once a process gets a chunck of memory, it can't be taken away from it until it is released by the process itself.
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/51d7bb49-8f49-4211-889f-831e2b9848a4)
 
-K8s compares the resource request defined in the POD, with the available resource on each node in the cluster and automatically assigns a node in the cluster to the pod.
+**K8s compares the resource request defined in the POD, with the available resource on each node in the cluster and automatically assigns a node in the cluster to the pod.**
 
-**Request** - With request we define the minimum resources that should be available on a node to schedule a pod.
-**Limit** - 
+- **Request** - With request we define the minimum resources that should be available on a node to schedule a pod.
+- **Limit** - With limits we define a maximum resource a pod can use.
+- If we don't define the requests and limits, the K8s scheduler may schedule all our pods onto the same node without triggering any auto scaling which will eventually make the K8s node overloaded and unstable. And our application performance will suffer as the request will start throtlling, the maximim CPU is used and our pods will be killed as there is no enough memory is available.
+- Once a pod is created resources (request/limits) can't be modified. Delete the pod and apply again.
+- kubectl top command consumes the metrics exposed by the metric server through API server.
+- To check the pod resource consumption, we need to enable the metrics server.
+
+**OOMKilled error** - Out Of Memory killed, when the pod uses the more memory than defined in limit block. Suppose in limit limit we specified 3gigabyte but the pod is using 4GB of memory.
+
+**Conclusion**
+- When the pod uses more CPU than we define then the CPU is throttled.
+- When the pod uses more memory than defined, the pod gets killed and restarted.
+- Requests and limits are defined at the container level, not at the pod level.
+
+**Memory Management**
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/53150a09-f2fa-4c91-a49b-7f4f093bf23a)
+K8s scheduler looks for the unalloacted resources not at the free resources, even though we have 3gb free memory pods will not be scheduled as K8s scheduler will look for unallocated memory.
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ce6d33c7-33e8-4ff6-9852-03473ea9fe27)
+K8s will decide which pod to kill based on 3 classes-
+
+### **Quality Of Service Class**
+- We don't set this class to any pod, K8s will automatically assigns this class to the pod based on the requests and limits defined.
+- **1. Best Effort Class**
+       - When we don't define any requets/limits, K8s will assign Best Effort class to the pod.
+       - Applies to both memory and CPU.
+       - When k8s need to decide which pod to kill, it will kill pods in best effort class.
+
+- **2. Guarenteed Class**
+       - When we define equal request and memory to a pod, K8s assign Guarenteed class to the pod.
+
+- **3. Burstable class**
+       - Request =! resouces, come under this class.
+
+- **Conclusion**-
+       - When the system is over commited the quality of service calss determines which class should be killed so the freed resouces can be given to the high priority pod.
+       - Pods with the best effort classes are killed first, followed by the burstable class and finally guarenteed pods.
+
+
 
 
 
