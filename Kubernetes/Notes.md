@@ -287,6 +287,8 @@ K8s will decide which pod to kill based on 3 classes-
 
 ### **Quality Of Service Class**
 - We don't set this class to any pod, K8s will automatically assigns this class to the pod based on the requests and limits defined.
+
+  
 **1. Best Effort Class**
 - When we don't define any requets/limits, K8s will assign Best Effort class to the pod.
 - Applies to both memory and CPU.
