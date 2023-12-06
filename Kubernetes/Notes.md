@@ -295,14 +295,23 @@ K8s will decide which pod to kill based on 3 classes-
 - When k8s need to decide which pod to kill, it will kill pods in best effort class.
 
 **2. Guarenteed Class**
-- When we define equal request and memory to a pod, K8s assign Guarenteed class to the pod.
+- When we define equal request and limit to a pod, K8s assign Guarenteed class to the pod.
 
 **3. Burstable class**
-- Request =! resouces, come under this class.
+- Request =! limit, come under this class.
 
 **Conclusion**-
 - When the system is over commited the quality of service calss determines which class should be killed so the freed resouces can be given to the high priority pod.
 - Pods with the best effort classes are killed first, followed by the burstable class and finally guarenteed pods.
+
+**Limit Range**-
+- When pod doesn't have any request and limit fields, K8s admin creates limit range for defining default limit.
+- Whenever admin defines limitRange.yaml, need to specify default , min and max resources.
+- Request should lie b/w min and max in order to get created, and if not it will go with defaults.
+
+**Resource Quota**-
+- With resource quota we can restrict the req and limit at the namespace level, instead of pod/container level.
+  
 
 
 
