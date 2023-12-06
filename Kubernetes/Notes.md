@@ -287,20 +287,20 @@ K8s will decide which pod to kill based on 3 classes-
 
 ### **Quality Of Service Class**
 - We don't set this class to any pod, K8s will automatically assigns this class to the pod based on the requests and limits defined.
-- **1. Best Effort Class**
-          - When we don't define any requets/limits, K8s will assign Best Effort class to the pod.
-          - Applies to both memory and CPU.
-          - When k8s need to decide which pod to kill, it will kill pods in best effort class.
+**1. Best Effort Class**
+- When we don't define any requets/limits, K8s will assign Best Effort class to the pod.
+- Applies to both memory and CPU.
+- When k8s need to decide which pod to kill, it will kill pods in best effort class.
 
-- **2. Guarenteed Class**
-          - When we define equal request and memory to a pod, K8s assign Guarenteed class to the pod.
+**2. Guarenteed Class**
+- When we define equal request and memory to a pod, K8s assign Guarenteed class to the pod.
 
-- **3. Burstable class**
-          - Request =! resouces, come under this class.
+**3. Burstable class**
+- Request =! resouces, come under this class.
 
-- **Conclusion**-
-          - When the system is over commited the quality of service calss determines which class should be killed so the freed resouces can be given to the high priority pod.
-          - Pods with the best effort classes are killed first, followed by the burstable class and finally guarenteed pods.
+**Conclusion**-
+- When the system is over commited the quality of service calss determines which class should be killed so the freed resouces can be given to the high priority pod.
+- Pods with the best effort classes are killed first, followed by the burstable class and finally guarenteed pods.
 
 
 
