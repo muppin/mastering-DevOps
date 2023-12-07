@@ -228,6 +228,21 @@ This dynamic provisioning mechanism allows Kubernetes to automate the creation o
 - Volume should be at container level.
 - Volume mount should be inside container.
 
+**Storing the data at container level**
+if a container is deleted or restarted, data will not persist and also it cant be shared between the containers inside the pod
+ 
+**Storinf the data at pod level**
+- we user volume and volumeMounts to store the data at pod with emptyDir:{}
+- the data is shared between the containers
+- if the pod goes down the data will be lost and the data cant be shared between the pods.
+ 
+**Storing the data at Node level**
+- we use volume and volumeMounts to store data at the node level with hostPath:{}
+- the data is shared between the pods
+- if the node goes down the data will be lost and the data cant be shared among nodes.
+ 
+The best practice would be storing the data at Remote storage for ex: cloud storage(Recommended), Local storage
+
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
 HELM
