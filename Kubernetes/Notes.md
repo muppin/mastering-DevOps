@@ -184,19 +184,20 @@ ________________________________________________________________________________
 - ReadWriteOncePod(RWOP): with this mode, the volume can be mounted to a particular single pod.
 
 
-**Local PV's**
+*Local PV's*
 - Local PV's violate below two data persistance requirements-
     - Bieng tied to a specific node
     - surving cluster crashes
     - not suitable for DB persistance
-**Remote PV's**
+      
+*Remote PV's*
 - Example- google cloud, aws
 
 **Persistant Volume Claim (PVC)**
 - Applications has to claim the persistant volume, that can be done with PVC.
 - PVC are used inside pod configuration
 
-**Lifecycle**
+*Lifecycle*
 - Pod requests the volume through the PV claim.
 - Claim tries to find a volume the exact pv that fulfills the reuirement mentioned in pvc
 - Volume has the actual storage backend.
@@ -208,7 +209,7 @@ ________________________________________________________________________________
 - we can also delete using finalizers, but it is not recommended due to scurity thing.
 - when the status of pv is released, you cant use that pv further and it should eventually be deleted.
 
-### **Storage Class**
+**Storage Class**
 
 In Kubernetes, when a StorageClass is defined, it serves as an abstraction layer that defines how dynamic provisioning of PersistentVolumes (PVs) should be handled. When a PersistentVolumeClaim (PVC) references a StorageClass, Kubernetes automatically creates a PV based on the defined StorageClass rules. 
 
@@ -242,6 +243,7 @@ This dynamic provisioning mechanism allows Kubernetes to automate the creation o
 - Volume mount should be inside container.
 
 **Storing the data at container level**
+
 if a container is deleted or restarted, data will not persist and also it cant be shared between the containers inside the pod
  
 **Storinf the data at pod level**
@@ -256,7 +258,6 @@ if a container is deleted or restarted, data will not persist and also it cant b
  
 The best practice would be storing the data at Remote storage for ex: cloud storage(Recommended), Local storage
 
-**Persistent
 
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
