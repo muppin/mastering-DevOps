@@ -169,12 +169,19 @@ ________________________________________________________________________________
 - Storage need to survive even if the cluster crashes.
 
 **Persistent Volumes-**
-- Its a cluster resource used to store data.
-- You need to decide what type of storage u need?
-- Yo need to create and manage them by yourself.
+- Its a cluster resource used to create storage and store the data in it.
+- You need to decide what type of storage u need? (Local or remote)
+- Yo need to create and manage them by yourself. (task of a kubernetes admin)
 - Use that physical storage in spec section.
 - PV's are not namespaced.
-- PV should be created before pod
+- PV should be created before pod.
+
+*Access Modes*
+- ReadWriteMany(RWX): This mode allows the volume to be mounted as read-write by multiple nodes simultaneously. However, not all storage types support this mode. It's suitable for scenarios where multiple nodes need read-write access to the same volume, such as shared file storage.
+- ReadWriteOnce(RWO): This mode allows the volume to be mounted as read-write by a single node. It's suitable for scenarios where the volume should be mounted as read-write by a single node, such as with a single-node application.
+- ReadOnlyMany(ROX): With this mode, the volume can be mounted as read-only by multiple nodes. It's useful when the volume needs to be accessed in read-only mode by multiple nodes, such as for shared configuration or logs.
+- ReadOnlyOnce(ROO): With this mode, the volume can be mounted as resd-only by a single node. Its useful when the volume needs to be accessed in read-only mode by single node, such as witha single-node application.
+- ReadWriteOncePod(RWOP): with this mode, the volume can be mounted to a particular single pod.
 
 
 **Local PV's**
@@ -187,13 +194,19 @@ ________________________________________________________________________________
 
 **Persistant Volume Claim (PVC)**
 - Applications has to claim the persistant volume, that can be done with PVC.
-- PVC are the used inside pod configuration
+- PVC are used inside pod configuration
 
 **Lifecycle**
 - Pod requests the volume through the PV claim.
-- Claim tries to find a volume in cluster.
+- Claim tries to find a volume the exact pv that fulfills the reuirement mentioned in pvc
 - Volume has the actual storage backend.
 - Claims must exist in the same namespace as of pod.
+
+*Deletion Process*
+- Deletion of pvc only happens if the claimed pod is deleted or modified in the yaml and if it has not been claimed.
+- Deletion of Pv only happens if the claimed pvc is deleted and if it has not been claimed
+- we can also delete using finalizers, but it is not recommended due to scurity thing.
+- when the status of pv is released, you cant use that pv further and it should eventually be deleted.
 
 ### **Storage Class**
 
@@ -242,6 +255,8 @@ if a container is deleted or restarted, data will not persist and also it cant b
 - if the node goes down the data will be lost and the data cant be shared among nodes.
  
 The best practice would be storing the data at Remote storage for ex: cloud storage(Recommended), Local storage
+
+**Persistent
 
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
