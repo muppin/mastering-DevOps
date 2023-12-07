@@ -225,6 +225,8 @@ This dynamic provisioning mechanism allows Kubernetes to automate the creation o
 - With k8s volumes above two problems are solved, it helps in sharing the data and in data persistence.
 - data will be stored on the node where pod is running.
 - storing data to empty dir volume is not a perfect solution.
+- Volume should be at container level.
+- Volume mount should be inside container.
 
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
