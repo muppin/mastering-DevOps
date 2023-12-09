@@ -258,6 +258,24 @@ if a container is deleted or restarted, data will not persist and also it cant b
  
 The best practice would be storing the data at Remote storage for ex: cloud storage(Recommended), Local storage
 
+___________________________________________________________________________________________________________________________________________________________________________________________
+
+### Statefulsets
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d765e295-f5bb-481c-a75b-d401310bdb77)
+
+**Problem 1**
+To acheive high avalability, we need to increase the number of replicas, and when we use deployments all replicas will use the same persistent volumes. But in distributed DB if we use same PV for all the replicas then all pods will write to same DB which leads to data inconsistency.
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/a0faf5ab-a84c-4829-90be-99b9c27e92f7)
+
+**Solution**
+Solution to this problem is a way to use separate PVC's for each replica, this can acheived using stateful sets.
+In stateful set define the volume claim template, based on these templates separate volume claims are used for each pod which creates separate PVs.
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/240d349c-a4bf-4c5d-aae4-dff73a75ded6)
+
+**Problem 2**
+In a typica master slave architecture, there are two types ofnodes-> Master and slaves. Master handles read/write where as slave handles read only
+
+
 
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
