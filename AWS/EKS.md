@@ -66,4 +66,39 @@ It determines the scope for resource management and visibility.
 - **Deploy the deployment, service and Ingress**
   ```
   kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/examples/2048/2048_full.yaml
+
+- Basically we just deployed deployment, svc, ingress and in order to read the ingress we need to have the ingress contoller, so we have to deploy the ingress controller
+- when ingress controller is created it looks for ingress resource then goes to create a load balancer which we need and also configure the whole ALB.
+- Ingress controller(looks for) -> ingress resource -> (then creates) ALB (also configures the requirements like Target groups, application port etc)
+
+Before creating Ing ctrl always configure OIDC provides with IAM
+- **commands to configure IAM OIDC provider**
+  ```
+  eksctl utils associate-iam-oidc-provider --cluster $cluster_name --approve
+
+- So ALB controller or Ing controller that we are creating is actually a pod and this has to have the permission to access aws services (here we should have for ALB) so that it is going to create a ALB and for that we need role.
+  
+- **Download IAM policy**
+    ```
+    curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/install/iam_policy.json
+
+- **Create IAM Policy**
+  ```
+  aws iam create-policy \
+    --policy-name AWSLoadBalancerControllerIAMPolicy \
+    --policy-document file://iam_policy.json
+  
+- Roles are attached to service accounts then further this service account is attached to a pod, so that pod can have the privilages of the role.
+- **Create IAM Role**
+  ```
+  eksctl create iamserviceaccount \
+  --cluster=<your-cluster-name> \
+  --namespace=kube-system \
+  --name=aws-load-balancer-controller \
+  --role-name AmazonEKSLoadBalancerControllerRole \
+  --attach-policy-arn=arn:aws:iam::<your-aws-account-id>:policy/AWSLoadBalancerControllerIAMPolicy \
+  --approve
+*--role-name AmazonEKSLoadBalancerControllerRole: Specifies the name of the IAM role that will be created and associated with the service account.*
+
+
   
