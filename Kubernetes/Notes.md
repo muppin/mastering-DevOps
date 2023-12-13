@@ -273,7 +273,37 @@ In stateful set define the volume claim template, based on these templates separ
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/240d349c-a4bf-4c5d-aae4-dff73a75ded6)
 
 **Problem 2**
-In a typica master slave architecture, there are two types ofnodes-> Master and slaves. Master handles read/write where as slave handles read only
+In a typica master slave architecture, there are two types of pods-> Master and slaves. Master handles read/write where as slave handles read only
+Basically when we create a deployment, all replicas come up at a time.
+
+**solution**
+when we use statefule set, First master pod comes and then salve 1 followed by slave 2.(Ordered)
+if master pod doesnt come up, then there is no coming up of slaves as well.
+while deletion as well the last pod is deleted first then at last master pod gets deleted.
+
+for data to be written, the master pod gets the data written first, then slave 1 copies from master and slave 2 copies from slave 1.
+
+**problem 3**
+in a deployment name of the pod changes every time, when the pod restarts
+
+**solution**
+when we use statefulset, name of the pod doesnt change even if it restarts, called like Sticky identity.
+Since the name of the pod is not changed, the pod again points to the same pv(this is taken care by Stateful sets).
+
+**problem 4**
+In a deployment when we use use service(it is kind of LB), the traffic goea to random pods
+
+**solution**
+in stateful set the service has to talk to a specific pod i.e. all writes should go to master and then salve1 should copy from it and slave 2 will get from slave1..... this goes on......
+so we havce create a headless service, just by mention clusterIP = none
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/7e5636e7-0f7e-4201-9391-72756bdebb30)
+
+then, each pod gets a dns entry with name like mentioned above, so every time request goes to master pod.
+
+
+
+
+
 
 
 
