@@ -141,3 +141,37 @@ Here are some common reasons and steps to troubleshoot and resolve the "CreateCo
    - If Pod Security Policies are in place, ensure that the Pod complies with the policies.
 
 By systematically going through these steps and examining logs, you can identify the underlying cause of the "CreateContainerConfigError" and take appropriate actions to resolve it. Each case may be unique, so it's essential to gather information from logs and configurations to pinpoint the issue accurately.
+
+The `kube-system` namespace in Kubernetes is a reserved namespace that is typically used for system-level components, infrastructure services, and cluster-wide resources that are crucial for the proper functioning and management of the Kubernetes cluster itself. It's a convention in Kubernetes to organize and separate these system components from user applications and workloads.
+
+Key characteristics of the `kube-system` namespace include:
+
+1. **System Components:**
+   - Essential Kubernetes system components, such as the kube-controller-manager, kube-scheduler, kube-proxy, and other core controllers and services, are often deployed in the `kube-system` namespace.
+
+2. **Cluster-Wide Services:**
+   - Services that provide functionality across the entire cluster, such as DNS (CoreDNS or kube-dns), cluster networking components (like Flannel or Calico), and the Kubernetes API server, are commonly found in the `kube-system` namespace.
+
+3. **Controller Managers:**
+   - Various controller managers, including those responsible for managing nodes, pods, and other resources, are often deployed in the `kube-system` namespace.
+
+4. **Infrastructure Components:**
+   - Infrastructure-related components like the Kubernetes Dashboard, cloud provider-specific controllers, and storage-related controllers may also be deployed in the `kube-system` namespace.
+
+5. **Security and Permissions:**
+   - The `kube-system` namespace is protected, and access to resources within this namespace often requires elevated permissions. This helps ensure that only authorized users or system components can manage and interact with critical infrastructure services.
+
+6. **Separation from User Workloads:**
+   - Placing system-level components in a dedicated namespace helps separate them from user applications and workloads, reducing the risk of unintended interference. It also aids in resource organization and management.
+
+It's important to note that while the `kube-system` namespace is a common convention, it's not mandatory, and the specific organization of namespaces may vary based on cluster configurations and policies. However, many Kubernetes distributions and setups follow this convention to provide a clear separation between system components and user workloads.
+
+Here's a simplified example of viewing resources in the `kube-system` namespace:
+
+```bash
+kubectl get pods --namespace=kube-system
+```
+
+This command retrieves information about pods running in the `kube-system` namespace. You can replace `kube-system` with the specific namespace you want to inspect.
+
+Always refer to your specific Kubernetes distribution's documentation and best practices for guidance on namespace organization and the placement of system components.
