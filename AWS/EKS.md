@@ -56,7 +56,8 @@ It determines the scope for resource management and visibility.
 ### Project Implementaion (https://github.com/iam-veeramalla/aws-devops-zero-to-hero/blob/main/day-22)
 
 - **create fargate profile**
-  ```eksctl create fargateprofile \
+  ```
+  eksctl create fargateprofile \
     --cluster demo-cluster \
     --region us-east-1 \
     --name alb-sample-app \
