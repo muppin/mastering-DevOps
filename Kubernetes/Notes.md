@@ -300,6 +300,10 @@ so we havce create a headless service, just by mention clusterIP = none
 
 then, each pod gets a dns entry with name like mentioned above, so every time request goes to master pod.
 
+**deployments vs statefulsets**
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/73bbf172-ecba-41e0-92f9-250b3ad60928)
+
+
 
 
 
