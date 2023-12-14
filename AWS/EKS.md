@@ -115,13 +115,11 @@ Before creating Ing ctrl always configure OIDC provides with IAM
 
 - *Install*
   ```
-  helm install aws-load-balancer-controller eks/aws-load-balancer-controller \            
-  -n kube-system \
-  --set clusterName=<your-cluster-name> \
-  --set serviceAccount.create=false \
-  --set serviceAccount.name=aws-load-balancer-controller \
-  --set region=<region> \
-  --set vpcId=<your-vpc-id>
+  helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system \                              --set clusterName=demo-cluster77 \
+--set serviceAccount.create=false \
+--set serviceAccount.name=aws-load-balancer-controller \
+--set region=us-east-1 \
+--set vpcId=vpc-0049f3778c2c891dc
 
 - *Verify that the deployments are running.*
   ```
