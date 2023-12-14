@@ -30,7 +30,7 @@ Error: failed to create cluster "my-new-cluster1"
 To integrate with any identity provider (okta, ldap).
 
 **Fargate Profile**
-Restricted to a namespace, If u want to add new K8s resources, u need to add a new fargate profile.
+Restricted to a namespace, If u want to add new K8s namespaces, u need to add a new fargate profile.
 
 **command** - aws eks update-kubeconfig --name demo-cluster1234 --region us-east-1
 
