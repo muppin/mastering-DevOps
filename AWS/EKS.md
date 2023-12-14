@@ -33,7 +33,9 @@ To integrate with any identity provider (okta, ldap).
 Restricted to a namespace, If u want to add new K8s resources, u need to add a new fargate profile.
 
 **command** - aws eks update-kubeconfig --name demo-cluster1234 --region us-east-1
+
 **why do we update kubeconfig file** - kubeconfig is a configuration file used by the kubectl command-line tool to interact with Kubernetes clusters. It contains information about a Kubernetes cluster, including cluster authentication details, the cluster's API server endpoint, and the default context (a combination of cluster, user, and namespace). The kubeconfig file allows users to specify multiple clusters and switch between them easily.
+
 **Output** - Added new context arn:aws:eks:us-east-1:379475144136:cluster/demo-cluster1234 to C:\Users\avasishtha\.kube\config
 
 **To list context**
