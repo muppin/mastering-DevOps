@@ -439,6 +439,7 @@ Any Pod/app can be in unhealthy state due various reasons, shown as below:
   - If the liveness probe command gives the exit code as 1, which indicates Failure, k8s assumes the pod is unhealthy and kubelet starts the pod.
   - Exit code=0, means suucess (pod is healthy)
   - In short **Liveness probe insures the the pod is always healthy**.
+  - If the liveness probe fails, pod is automatically restarted.
     ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/10125364-ccda-482b-91b6-645f541fb343)
 
     #### Probing Mechanisms
@@ -459,7 +460,96 @@ Any Pod/app can be in unhealthy state due various reasons, shown as below:
       - The probe succeseeds if the specific container port is accepting traffic.
       - fails if port is not accepting the traffic.
 
-    ![Uploading image.png…]()
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8df348d8-8175-4b3e-9000-931a9b3c0028)
+
+
+  #### Probing Customizations
+    
+ ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/e27ebe99-e75e-4080-9ccf-1c0c3f070b60)
+
+
+ **Readiness Probe**
+ - This probe identifies when a pod is ready to handle external traffic received from a service.
+ - If the readiness probe fails then k8s removes the ip address of pod from the endpoint of all services it belongs to.
+ - This probe is very helpful in instructing k8s that a running container should not get any traffic until it is ready.
+
+
+**Difference between Liveness Probe and readiness probe**
+
+If a liveness probe fails, the the pod will be restarted where as if a readiness probe fails the it would not be restarted, but it will be removed from the end pint list of all the services and it will not recieve any traffic.
+And when the readiness probe is successful again, pod ip is added backand it will start receiving traffic.
+
+**Startup Probe**
+- Startup probe provides a way to delay the execution of Liveness probe and readiness probe until a container indicates that is is able to handle them.
+- Liveness and readiness probe is executed only if the startup probe is succeeds.
+- If a container fails its startup probe, container is killed and follows the pod restart policy.
+- restart policy can be defined in spec section of pod
+
+*Restart Policy*
+In Kubernetes, the restart policy defines how containers in a pod should behave after they terminate, whether gracefully or due to a failure. The restart policy is set at the pod level and applies to all containers within that pod. There are three main restart policies:
+
+### 1. Always (default):
+- **RestartPolicy:** If a container terminates for any reason (graceful shutdown or failure), Kubernetes will always attempt to restart it.
+- **Use Case:** Suitable for critical services that should always be running and resilient to temporary failures.
+
+Example YAML snippet:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  restartPolicy: Always
+  containers:
+  - name: my-container
+    image: my-image
+    # ... other container configurations
+```
+
+### 2. OnFailure:
+- **RestartPolicy:** Kubernetes restarts the container only if it exits with a non-zero status code, indicating a failure.
+- **Use Case:** Ideal for batch jobs or processes that might occasionally fail but should not be restarted on successful termination.
+
+Example YAML snippet:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: my-container
+    image: my-image
+    # ... other container configurations
+```
+
+### 3. Never:
+- **RestartPolicy:** Kubernetes does not restart the container, regardless of how it terminates (successful or unsuccessful).
+- **Use Case:** Suitable for containers that perform a one-time task or are not intended to run continuously.
+
+Example YAML snippet:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  restartPolicy: Never
+  containers:
+  - name: my-container
+    image: my-image
+    # ... other container configurations
+```
+
+Choose the appropriate restart policy based on the behavior and requirements of your application or service running within the pod. This setting determines how Kubernetes manages container lifecycle and resilience against failures.
+- 
+
+
+
 
     
     
