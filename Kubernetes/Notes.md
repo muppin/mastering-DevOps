@@ -411,7 +411,7 @@ K8s will decide which pod to kill based on 3 classes-
 
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
-#### Probes in Kubernetes
+### Probes in Kubernetes
 
 Any Pod/app can be in unhealthy state due various reasons, shown as below:
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/78d9acd9-85ca-4253-ae91-369b87aafb3b)
@@ -441,7 +441,26 @@ Any Pod/app can be in unhealthy state due various reasons, shown as below:
   - In short **Liveness probe insures the the pod is always healthy**.
     ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/10125364-ccda-482b-91b6-645f541fb343)
 
-    **Probing Mechanisms**
+    #### Probing Mechanisms
+    
+    - **Exec** -
+      - here we ask k8s to execute a command within a container.
+      - If exit code is 0-> Healthy  and 1-> unhealthy.
+      - 
+    - **HTTP**
+      - By making Network calls.
+      - In this meachanism we ask kubernetes to make a http call to a url within the container.
+      - K8s assumes a container is healthy if http response is in range - 200-399
+      - and unhealthy if response is other than 200-399
+
+
+    - **TCP**
+      - With this meachanism we try to open a port.
+      - The probe succeseeds if the specific container port is accepting traffic.
+      - fails if port is not accepting the traffic.
+
+    ![Uploading image.png…]()
+
     
     
  
