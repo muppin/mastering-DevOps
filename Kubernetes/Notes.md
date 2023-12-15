@@ -486,6 +486,7 @@ And when the readiness probe is successful again, pod ip is added backand it wil
 - restart policy can be defined in spec section of pod
 
 *Restart Policy*
+
 In Kubernetes, the restart policy defines how containers in a pod should behave after they terminate, whether gracefully or due to a failure. The restart policy is set at the pod level and applies to all containers within that pod. There are three main restart policies:
 
 ### 1. Always (default):
@@ -545,8 +546,17 @@ spec:
     # ... other container configurations
 ```
 
-Choose the appropriate restart policy based on the behavior and requirements of your application or service running within the pod. This setting determines how Kubernetes manages container lifecycle and resilience against failures.
-- 
+**Summary**
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/e46f235b-f1bb-4f62-91c8-1d9b41b3d3cc)
+
+**Best Practices**
+- A probe which runs too frequently wastes the resources and affects the app performance.
+- A probe which runs infrequently can let containers sit in an unhealthy state for too long.
+- Probes should be as light as possible to ensure our checks are executed quickly.
+- A probe which does heavy lifting can slow down the container
+  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7fe9b6da-2a5d-4743-9970-d08b8677a85c)
+
+
 
 
 
