@@ -408,6 +408,45 @@ K8s will decide which pod to kill based on 3 classes-
 
 **Resource Quota**-
 - With resource quota we can restrict the req and limit at the namespace level, instead of pod/container level.
+
+___________________________________________________________________________________________________________________________________________________________________________________________
+
+#### Probes in Kubernetes
+
+Any Pod/app can be in unhealthy state due various reasons, shown as below:
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/78d9acd9-85ca-4253-ae91-369b87aafb3b)
+
+- In all these situations it looks like pod is working at outside but internal functionality is broken due to these bugs and user will not be able to access the app.
+- In all these cases we expect container to restart but K8s will not restart the containers because K8s by default just checks the containers main process and decides if the container is healthy or not, it doesn't checks the internal functionality of our app.
+- Only if the main process crashes, kubelet will restart the container.
+- If we don't treat these unhealthy pods our service becomes unstable.
+- Debugging such pods is also tricky as the pod status shows running but we dont get the expected output.
+
+  **To solve above issue, k8s probes comes into picture**
+  
+  **Probes**-
+  - Investigates the pods if they are working correctly or not.
+  - Basically they are customizing the behaviour of K8s to check if container is healthy or not.
+  - Define the probes at the container level and not the pod level.
+ 
+  **Types Of Probes**
+  - Liveness
+  - Readiness
+  - Startup
+ 
+  **Liveness Probe**
+  - With liveness probe we can construct k8s on how to detect weather a pod is live or not/ healthy or not, by the use of commands or network request inside the container.
+  - If the liveness probe command gives the exit code as 1, which indicates Failure, k8s assumes the pod is unhealthy and kubelet starts the pod.
+  - Exit code=0, means suucess (pod is healthy)
+  - In short **Liveness probe insures the the pod is always healthy**.
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/10125364-ccda-482b-91b6-645f541fb343)
+
+    **Probing Mechanisms**
+    
+    
+ 
+  
+
   
 
 
