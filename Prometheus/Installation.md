@@ -18,6 +18,6 @@ This is required to access prometheus-server using your browser.
 
 `kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-ext`
 
-## Create firewall route
+## Create firewall rule
 `gcloud compute firewall-rules create test-node-port \
     --allow tcp:NODE_PORT`
