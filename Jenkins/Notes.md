@@ -31,4 +31,8 @@ As a best practice to use both webhook and polling, as webhooks are sometimes un
 ![Uploading image.png…]()
 
 
+Payload url- for webhook
+example- http://52.91.12.115:8080/github-webhook/
+
+
 
