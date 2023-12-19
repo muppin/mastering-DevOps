@@ -21,4 +21,7 @@
 **Jenkins File**
 ![Uploading image.png…]()
 
+- If u want to modify jenkins file without commiting it on gitrepo - then navigate to Pipeline- select one of the build -> replay -> edit and run
+-  **Restart from stage** - Go to specific build -> dropdown -> Restart from stage -> BY this u can run a specific stage and this will skip other stages.
+
 
