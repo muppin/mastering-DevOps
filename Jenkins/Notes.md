@@ -19,9 +19,16 @@
   
 
 **Jenkins File**
-![Uploading image.png…]()
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ed8a9c85-9bc4-4852-bd20-e1962a1c81c3)
 
 - If u want to modify jenkins file without commiting it on gitrepo - then navigate to Pipeline- select one of the build -> replay -> edit and run
 -  **Restart from stage** - Go to specific build -> dropdown -> Restart from stage -> BY this u can run a specific stage and this will skip other stages.
+
+
+**Trigger Jenkins Build Automatically**
+As a best practice to use both webhook and polling, as webhooks are sometimes unreliable.
+
+![Uploading image.png…]()
+
 
 
