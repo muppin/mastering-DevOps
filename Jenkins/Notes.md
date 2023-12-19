@@ -1,5 +1,5 @@
 - Jenkins by default runs on port 8080
-- ![Uploading image.png…]()
+- ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/a421d99b-b0ec-416f-9f36-9deedadc6965)
 
 
 **Credentials**
@@ -15,4 +15,10 @@
 
 **Discover Branches**
 - Filter by name - Regular expression. Example: `^dev|master.*$ `
+- For all branches `.*`  (Any character, any number of times)
+  
+
+**Jenkins File**
+![Uploading image.png…]()
+
 
