@@ -35,4 +35,20 @@ Payload url- for webhook
 example- http://52.91.12.115:8080/github-webhook/
 
 
+**Post Attribute**
+- Executes some logic after all stages are executed.
+- Example: Build status or build status changes
+- Conditions:
+     - Always: Code inside the post block will aways be executed, no matter if build fails or suceeds.
+     - Success: Executes only if the build suceeds.
+     - Failure: Will execute if the build fails.
+
+**Conditionals**
+``` when {
+        expression {
+          }
+    }
+```
+
+
 
