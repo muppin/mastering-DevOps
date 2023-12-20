@@ -44,11 +44,29 @@ example- http://52.91.12.115:8080/github-webhook/
      - Failure: Will execute if the build fails.
 
 **Conditionals**
-``` when {
+```
+    when {
         expression {
+            BRANCH_NAME == dev    \\ stage will only execute if current branch is dev
           }
     }
 ```
+
+
+- Branch name is always provided as an env variable by jenkins out of the box.
+- Environment var- BRANCH_NAME
+
+
+**Environment Variables**
+- To check which variables are available from jenkins- see at  /env-vars.html
+  ```
+    environment {
+           NEW_VERSION == '1.6'
+                }
+  ```
+
+  You can use this env var inside stages as-
+  ` ${NEW_VERSION} `
 
 
 
