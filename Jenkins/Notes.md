@@ -64,9 +64,17 @@ example- http://52.91.12.115:8080/github-webhook/
            NEW_VERSION == '1.6'
                 }
   ```
-
   You can use this env var inside stages as-
   ` ${NEW_VERSION} `
+
+  
+**Credentials**
+- credentials(credentialID) binds the credentials to you env variable
+- WithCredentials() wrapper -
+
+  ``` With
+
+  
 
 
 
