@@ -557,6 +557,21 @@ spec:
   ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7fe9b6da-2a5d-4743-9970-d08b8677a85c)
 
 
+  _________________________________________________________________________________________________________________________________________________________________________________________
+
+  #### Kubernetes Operators
+
+  **K8s controller** - It maintains the state of resouces in k8s cluster.
+  
+  **Types of K8s controllers**
+     - Native controllers- Replica set
+     - Custom controllers- Argo CD, ISTIO, NGINX
+
+
+**K8s Operators**
+- Operators Bundles, packages and manages k8s controllers.
+
+
 
 
 
