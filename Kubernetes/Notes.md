@@ -614,6 +614,15 @@ Kubernetes Operators and Helm are both tools used in Kubernetes but serve differ
 Both Kubernetes Operators and Helm serve essential roles in the Kubernetes ecosystem, catering to different aspects of application management, packaging, and automation within Kubernetes clusters.
 
 
+__________________________________________________________________________________________________________________________________________________________________________
+**Reconciliation**
+
+**Helm does not provide reconciliation** - Means if someone modifies deployment, services wrongly then helm does not have the capability to overrride these changes.
+**Operators have reconciliation logic** - Operators will continously monitor and overrides any wrong changes.
+___________________________________________________________________________________________________________________________________________________________________________
+
+
+
 
 
 
