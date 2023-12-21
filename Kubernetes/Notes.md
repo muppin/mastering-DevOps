@@ -618,9 +618,22 @@ ________________________________________________________________________________
 **Reconciliation**
 
 **Helm does not provide reconciliation** - Means if someone modifies deployment, services wrongly then helm does not have the capability to overrride these changes.
-**Operators have reconciliation logic** - Operators will continously monitor and overrides any wrong changes.
+
+**Operators have reconciliation logic** - Operators will continously monitor and overrides any wrong changes. Auto-healing.
 ___________________________________________________________________________________________________________________________________________________________________________
 
+**Updates**
+
+**Helm** - With helm then its our responsibility to create and deploy the new version of helm charts.
+
+**Operators** - If we use operators and enable automatic sync/upgrades. It automatically upgrades the new version of controllers.
+____________________________________________________________________________________________________________________________________________________________________________
+
+**operatorhub.io** - where all the approved k8s operators are there.
+
+**OLM** 
+- Operator lifecycle manager
+- OLM will create operator related resources.
 
 
 
