@@ -9,4 +9,5 @@
 - Scripting scenario based question - how to get the things from the static file that contains 100s of application and has fields like name, cpu, memory, error status and get - the application where it has no error?
 - how to troubleshoot if you get a timeout error while accessing it from external world? 
 - how two vpcs can communicate in the aws?
+- how do you manage secrets? where do you store the credentials?
 
