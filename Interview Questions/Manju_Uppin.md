@@ -12,4 +12,5 @@
 - how do you manage secrets? where do you store the credentials?
 - explain the cicd process and let me know what are the stages that are used in your project?
 - what are the best practices of a cicd pipeline?
+- what is the difference btwn ebs vs efs storage in aws?
 
