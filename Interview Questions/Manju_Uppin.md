@@ -10,4 +10,6 @@
 - how to troubleshoot if you get a timeout error while accessing it from external world? 
 - how two vpcs can communicate in the aws?
 - how do you manage secrets? where do you store the credentials?
+- explain the cicd process and let me know what are the stages that are used in your project?
+- what are the best practices of a cicd pipeline?
 
