@@ -8,7 +8,8 @@
 - how the application in the container can able to access the other services in AWS?
 - how the containers in the pod communicate each other?
 - how the container in a pod can communicate to the container that is running on different pod?
-- Scripting scenario based question - how to get the things from the static file that contains 100s of application and has fields like name, cpu, memory, error status and get the application where it has no error?
+- Scripting scenario based question - how to get the things from the static file that contains 100s of application and has fields like name, cpu, memory, error status and 
+  get the application where it has no error?
 - how to troubleshoot if you get a timeout error while accessing it from external world? 
 - how two vpcs can communicate in the aws?
 - how do you manage secrets? where do you store the credentials?
@@ -30,4 +31,37 @@
 - have you used Terraform function??
 - have you seen terraform logs??
 - suppose you are creating a ec2 instance of ami of t2.micro and aws will increase the version of ami and they update the ami value... then how do update the ami value??
+- explain the kubernetes architecture?
+- is containerd present in Control plane?
+- Have you used any add-ons with the eks?
+- how did you use alb in the kubernetes application?
+- how will your kubernetes know that alb should be created in which subnet?
+- what is secrets? how are you managing ? what if you store the credentials in hashicorp vault?
+- what are the day-to-day tasks that you do in kubernetes?
+- how do you troubleshoot the scenario pod is in pending state?
+- Provided me the resource.yaml file and asked me if the specified limits are correct? and asked what are the possibilities of pod starting?
+- what is PDB in kubernetes?
+- how is scaling done in your application? and explain the different types of scaling?
+- Have you used package manager?
+- what are different types of services?
+- have you come accross the service mesh?
+- what are the probes in kubernetes and explain?
+- how to fetch the data that is stored inside the pod?
+- what is eni?
+- what is cdn?
+- what is route53? types of records that can be created?
+- what is web application firewalls?
+- what are types of load balancers?
+- explain network type load balancer and gateway type load balancer?
+- what are the targets for the ALB? ec2 and eks?
+- what are the targets for the NLB?
+- what is SCP?
+- how to block the certain incoming traffic to the targets?
+- what is the identity provider that you guys are using?
+- what are the commands for network in linux?
+- which command do you use to know where the traffic is being blocked?
+- what is shadow file and passwd file?
+- which type of pipeline that you guys are using and explain me the steps involved in it?
+- what is difference between Continuous delivery and continous Deployment?
+- 
 - 
