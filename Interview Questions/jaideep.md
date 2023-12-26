@@ -1,19 +1,20 @@
 ## Linux
-- port no of http / https / ftp / dns / ssh / grafana / jenkins ?
-- What is KERNEL PANIC Error in Linux? 
+- port no of http / https / ftp / dns / ssh / grafana / jenkins ? --> 80,443,21,53,22,3000,8080
+- What is KERNEL PANIC Error in Linux? --> initramfs file gets corrupted or deleted
+- scp in linux , diff between scp & rsync ? scp command --> scp -pr <file_name> root@serverip:/<path>
 - What is a process in Linux ? diff between orphan process vs zombie process?
 - what is run level in Linux?
-- Linux folder is 100% filled, troubleshoot
-- server slowness/performance issue in linux , troubleshoot
+- Linux folder is 100% filled, troubleshoot  --> df -h , du -sh* | sort -hr | head 
+- server slowness/performance issue in linux , troubleshoot --> Identify high CPU processes: ps -eo pid,ppid,%cpu,%mem,cmd --sort=-%cpu | head
 - df -HT got stuck troubleshoot ( no load issue)   -->strace package
 - diff between yum and rpm?  --> rpm install single package, yum installs with all dependencies.
 - how to check who installed package and when ? --> yum history
 - install/uninstall a package ? --> rpm -ivh <package_name> , rpm -e <package_name>
 - what is special user access in Linux ?  -->setfacl /setuid /setgid /stickybit 
 - what is swap memory in Linxu & how to configure it? (X2)
-- change permission of File ?
-- How to create / extend a file system?
-- what is inode in Linux?
+- change permission of File ? --> chmod 774 filename
+- How to create / extend a file system? --> extend PV VG LV
+- what is inode in Linux? --> node contains important metadata about the file system object including file type, permissions, file size, timestamps, ownership
 - Configure TLs certificates
 - where is the local user password stored in Linux? --> /etc/shadow
 - NFS config file?   --> /etc/exports file
