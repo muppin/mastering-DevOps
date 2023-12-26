@@ -24,7 +24,7 @@
 - Install argo CD on GKE cluster. (https://argo-cd.readthedocs.io/en/stable/getting_started/)
     ```
         kubectl create namespace argocd
-        kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml```
+        kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 - Create Application on Argocd -> give repo url and path in order to fetch the manifest file.
 
@@ -47,6 +47,7 @@ ________________________________________________________________________________
  **If jenkins file is present in source code, then there is no need to checkout stage. But if its in jenkins pipeline, as a script then checkout stage is required.**
 
  **What is the difference between mvn clean package and mvn clean install?**
+ 
     - If we want to push the archieve files (war, jar) to artifactory (ex. nexsus)
 
 **pom.xml is responsible for getting the dependencies runtime and deploying the app. pom.xml is used for java apps only**
