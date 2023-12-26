@@ -24,7 +24,8 @@
 - Install argo CD on GKE cluster. (https://argo-cd.readthedocs.io/en/stable/getting_started/)
 ```
 kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml ```
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml```
+
 - Create Application on Argocd -> give repo url and path in order to fetch the manifest file.
 
 _____________________________________________________________________________________________________________________________________________________________________________________
