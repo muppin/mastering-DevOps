@@ -14,5 +14,8 @@
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c3ae1f4b-d791-4f73-add4-965908eef8a3)
 
 
+For argocd CLI refer to - https://argo-cd.readthedocs.io/en/stable/user-guide/commands/argocd/
+
+
 
 
