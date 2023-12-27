@@ -30,10 +30,24 @@ ________________________________________________________________________________
 
 ## Argocd Architecture
 
+### Components
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/4ca8f490-50b2-4d85-9887-6d4128792b3d)
+
+### API Server
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/e5c04b39-938b-424f-9ab2-3ed411296353)
+
+### Repo Server
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/47fb0fc5-f076-459e-bc14-ff07ff5f14c5)
+
+### Application Controller
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/f40cb5b3-55bd-4bcd-bd6c-532edf65b19e)
+
+
+
 **Microservices**
-- Repo Server- It will connect to git and get the state of resources
+- Repo Server- It will connect to git and get the state of resources. Cloning of git repo. Generate K8s manifests.
 - Application Controller - Connect to k8s and get the state of k8s resources. It will compare both the states and try to sync. Statefulset.
-- API Server - Used by users to connect with argocd via UI/CLI. Manages authentication.
+- API Server - Used by users to connect with argocd via UI/CLI. Manages authentication. Exposes the API consumed b web CLI/UI.
 - Dex - Light weight OIDC. Proxy server which can connect with any of your existing providers. It provides SSO capabilities for API server.
 - Redis - Used for caching.
 - ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d0424126-e89f-4e60-84a0-ec8f901aeb1b)
@@ -56,9 +70,9 @@ ________________________________________________________________________________
 
 ## Desired State Vs. Actual State
 
-**Desired state** - Described in git
-**Actual state** - What is actually running in K8s cluster.
-**Sync** - Process of making desired state == actual state
+- **Desired state** - Described in git
+- **Actual state** - What is actually running in K8s cluster.
+- **Sync** - Process of making desired state == actual state
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7038bffc-cbc8-4d29-b487-81cfb752c70d)
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/432da3cc-5f64-40ae-8de5-e676dc80bb8b)
