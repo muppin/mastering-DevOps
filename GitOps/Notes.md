@@ -35,4 +35,43 @@
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/1e1471ac-76da-4c6e-90a6-31f8538a45f5)
 
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+#### GitOps Push Vs. Pull
+
+GitOps leverages Git as the source of truth for managing infrastructure and application configurations. The primary difference between the push and pull models in GitOps lies in how changes are propagated to the target environments.
+
+1. **Push Model:**
+   - In the push model of GitOps, changes are pushed directly to the Git repository.
+   - When changes are committed and pushed to the repository, a CI/CD system or an operator continuously monitors the repository.
+   - The CI/CD system detects changes and triggers the deployment process based on those changes. It pulls configurations from the Git repository and applies them to the target environment.
+   - The continuous synchronization between the Git repository and the target environment ensures that the actual state matches the desired state defined in the repository.
+
+2. **Pull Model:**
+   - In the pull model of GitOps, a controller or an agent running within the target environment continuously pulls or synchronizes with the Git repository.
+   - The controller periodically checks the repository for changes and compares the current state in the target environment with the desired state defined in the repository.
+   - If any discrepancies are found, the controller automatically initiates the synchronization process by pulling the updated configurations from the Git repository and applying them to the target environment.
+
+**Advantages:**
+
+- **Push Model:**
+  - Immediate deployment: Changes trigger deployments as soon as they are pushed to the repository.
+  - Controlled trigger: Changes can be precisely controlled and triggered based on commit and push events.
+
+- **Pull Model:**
+  - Autonomy: The target environment can periodically check for changes, allowing it to be more self-sufficient.
+  - Continuous reconciliation: Ensures continuous alignment between the desired state and the actual state.
+
+**Considerations:**
+
+- **Push Model:**
+  - Continuous monitoring and triggering from the CI/CD system or operator are necessary.
+  - The deployment process might rely heavily on the availability and configuration of the CI/CD system.
+
+- **Pull Model:**
+  - Requires an agent or controller running within the target environment, which needs to be managed and maintained.
+  - Synchronization intervals need to be configured appropriately to balance resource consumption and responsiveness.
+
+Both models have their strengths, and the choice between push and pull models in GitOps often depends on the specific requirements of the organization, infrastructure, and deployment workflows. Some organizations might prefer the immediate trigger of the push model, while others may value the autonomy and continuous reconciliation offered by the pull model.
+
 
