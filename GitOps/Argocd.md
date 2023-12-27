@@ -104,17 +104,19 @@ ________________________________________________________________________________
 
  - Note: by default in Argo CD, helm release name is equal to app name unless we specify it explicitly.
    
- - ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ca88417b-bf5f-46de-b768-b36f7ee70df0)
 
       ```helm:
-            release-name: 
+            release-name: my-app   //my-app release name will be added to the resources
 ___________________________________________________________________________________________________________________________________________________________________________________
+**Directory options**
 
          ```Directory:
               recurse: true     //list all files in sub-directories as well.
 
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/aa40ac01-b116-4421-8534-49e01c1d65d6)
+
+____________________________________________________________________________________________________________________________________________________________________________________
 
 
 
