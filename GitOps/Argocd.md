@@ -40,9 +40,12 @@ ________________________________________________________________________________
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/47fb0fc5-f076-459e-bc14-ff07ff5f14c5)
 
 ### Application Controller
-![image](https://github.com/muppin/mastering-DevOps/assets/56094875/f40cb5b3-55bd-4bcd-bd6c-532edf65b19e)
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/b4a513b4-13ee-45b8-aa57-f2d4b8c035bb)
 
+### Additional Services
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/b497fc21-7d60-4991-93fe-4ffe033f46f2)
 
+.......................................................................................................................................................................................
 
 **Microservices**
 - Repo Server- It will connect to git and get the state of resources. Cloning of git repo. Generate K8s manifests.
