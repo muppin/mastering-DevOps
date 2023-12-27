@@ -6,6 +6,10 @@
 - Git integrated approach for CD.
 
 
+**Some popular GitOps Tools**
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/741fdec4-6066-4a56-b5c8-575ba0f57700)
+
+
 **Why GitOps?**
 
 - To track changes made in K8s cluster over a period of time.
