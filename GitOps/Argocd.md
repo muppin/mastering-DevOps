@@ -101,6 +101,10 @@ ________________________________________________________________________________
 
  - Prune option in Sync- Will delete the resources with the old name and create the new ones.
 
+ - Note: by default in Argo CD, helm release name is equal to app name unless we specify it explicitly.
+ - ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ca88417b-bf5f-46de-b768-b36f7ee70df0)
+
+
 
 
 
