@@ -90,5 +90,17 @@ ________________________________________________________________________________
 For argocd CLI refer to - https://argo-cd.readthedocs.io/en/stable/user-guide/commands/argocd/
 
 
+To fetch decoded password for argocd UI- 
+``` kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+
+_______________________________________________________________________________________________________________________________________________________________________________________
+
+**helm options**
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ac134ad9-857c-40ac-bd99-3ac01eefd2d1)
+
+Prune option in Sync- Will delete the resources with the old name and create the new ones.
+
+
+
 
 
