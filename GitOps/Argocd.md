@@ -89,9 +89,12 @@ ________________________________________________________________________________
 
 For argocd CLI refer to - https://argo-cd.readthedocs.io/en/stable/user-guide/commands/argocd/
 
-
-To fetch decoded password for argocd UI- 
+_____________________________________________________________________________________________________________________________________________________________________________________
+- To fetch decoded password for argocd UI- 
     ``` kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+
+- Prune option in Sync- Will delete the resources with the old name and create the new ones.
+
 
 _______________________________________________________________________________________________________________________________________________________________________________________
 
@@ -99,10 +102,22 @@ ________________________________________________________________________________
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ac134ad9-857c-40ac-bd99-3ac01eefd2d1)
 
- - Prune option in Sync- Will delete the resources with the old name and create the new ones.
-
  - Note: by default in Argo CD, helm release name is equal to app name unless we specify it explicitly.
+   
  - ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ca88417b-bf5f-46de-b768-b36f7ee70df0)
+
+      ```helm:
+            release-name: 
+___________________________________________________________________________________________________________________________________________________________________________________
+
+         ```Directory:
+              recurse: true     //list all files in sub-directories as well.
+
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/aa40ac01-b116-4421-8534-49e01c1d65d6)
+
+
+
 
 
 
