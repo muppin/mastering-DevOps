@@ -55,7 +55,7 @@ ________________________________________________________________________________
 - Redis - Used for caching.
 - ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d0424126-e89f-4e60-84a0-ec8f901aeb1b)
 
-____________________________________________________________________________________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________________________________________________________________________________
 
 ## Application Source - Tools
 
@@ -82,23 +82,29 @@ ________________________________________________________________________________
 
 
 
-____________________________________________________________________________________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________________________________________________________________________________
+
 **Scenarios**
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c3ae1f4b-d791-4f73-add4-965908eef8a3)
 
 
-For argocd CLI refer to - https://argo-cd.readthedocs.io/en/stable/user-guide/commands/argocd/
+
 
 _____________________________________________________________________________________________________________________________________________________________________________________
-- To fetch decoded password for argocd UI- 
+
+- **To fetch decoded password for argocd UI-**
+  
     ``` kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 
-- Prune option in Sync- Will delete the resources with the old name and create the new ones.
+
+- **Prune option in Sync-** Will delete the resources with the old name and create the new ones.
+
+- **For argocd CLI refer to -** https://argo-cd.readthedocs.io/en/stable/user-guide/commands/argocd/
 
 
 _______________________________________________________________________________________________________________________________________________________________________________________
 
-**helm options**
+## helm options
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ac134ad9-857c-40ac-bd99-3ac01eefd2d1)
 
@@ -108,7 +114,8 @@ ________________________________________________________________________________
       ```helm:
             release-name: my-app   //my-app release name will be added to the resources
 ___________________________________________________________________________________________________________________________________________________________________________________
-**Directory options**
+
+## Directory options
 
          ```Directory:
               recurse: true     //list all files in sub-directories as well.
@@ -118,7 +125,7 @@ ________________________________________________________________________________
 
 ____________________________________________________________________________________________________________________________________________________________________________________
 
-**Kustomize Options**
+## Kustomize Options
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c819d5c0-c84e-4f89-91d2-1b3e7585d13b)
 
@@ -129,11 +136,12 @@ ________________________________________________________________________________
              
 _____________________________________________________________________________________________________________________________________________________________________________________
 
-### Multiple Sources for an application
+## Multiple Sources for an application
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/34eda0fd-70f9-4240-8310-80385a8f89ce)
 
 **Use Cases** -
+
 - **Combine related resources that exist is different repos into one application.**
         - ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d517e4d1-f8c2-45a9-b615-d2e057a26cd8)
   
@@ -142,30 +150,30 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________________________________________________________________________________________________
 
-### Projects
+## Projects
 
-- Projects provides a logical grouping of applications.
+- **Projects provides a logical grouping of applications.**
   
  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/1e96c820-abad-4912-ba54-15365ae77f22)
 
-- Project Manifest
+- **Project Manifest**
   
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/dc713034-9994-460a-83ea-525b23ea17e1)
 
-- After allowing specific scoped resources-
+- **After allowing specific scoped resources-**
   
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/9bc17ac6-7937-46a5-a0d3-e1a2f98e7855)
 
-- Notes:
+- **Notes:**
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8c254783-ceb0-4820-8758-39c65f2e12fd)
 
--Roles
+- **Roles**
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/271db4e5-64c6-4b45-b0b3-52af9d93e374)
 
 
--Creating Tokens
+- **Creating Tokens**
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/6de10a3a-fa3d-40dd-8a9e-3e71bef0582b)
 
@@ -175,7 +183,7 @@ ________________________________________________________________________________
 _________________________________________________________________________________________________________________________________________________________________________________________
 
 
-
+## Using Private Git repos in argocd
 
 
 
