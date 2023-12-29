@@ -9,8 +9,10 @@
   
 
   **To sync app**
+  
        ``` argocd app sync app-name
 
 
   **To list projects**
+  
       ``` kubectl get appproject -n argocd
