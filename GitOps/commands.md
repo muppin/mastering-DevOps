@@ -16,3 +16,8 @@
 - **To list projects**
   
       ``` kubectl get appproject -n argocd
+
+
+- **To create token for role**
+
+      ``` argocd proj role create-token PROJECT-NAME ROLE-NAME
