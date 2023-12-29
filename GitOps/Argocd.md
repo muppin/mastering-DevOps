@@ -207,7 +207,59 @@ ________________________________________________________________________________
 
 
 **Define and create k8s secret in order to connect private git repo with Argo CD.**
-    ``` 
+
+    ``` apiVersion: v1
+kind: Secret
+metadata:
+  name: private-repo-ssh
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: https://github.com/Vasishtha15/ArgoPractice.git
+  sshPrivateKey: |
+
+
+
+  _________________________________________________________________________________________________________________________________________________________________________________
+
+  ## Private Helm Repos
+
+  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/fb036b0c-aa98-44e4-8c38-b8a12440ea4d)
+
+
+  - 1. Declarative
+       
+       ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/0d86d7a2-1adb-48e5-9a73-f849332fcf6c)
+
+    2. CLI
+
+      ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/1fa75aa8-638e-4994-8353-b1f6cf3a270d)
+
+    3. UI
+____________________________________________________________________________________________________________________________________________________________________________________
+
+## Credential Templates
+
+credential templates are used to connect to multiple private repos without having to repeat credentials for each repository
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7e43ecfb-4eb1-4d70-92a4-da2ebcd24189)
+
+
+- **Declarative**
+  
+  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/518bc118-7a4c-4402-aad1-fef3c020ba1f)
+
+- **CLI**
+  
+  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/66e5266a-99cc-43ad-b647-5e484846ff7b)
+
+  __________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
 
 
 
