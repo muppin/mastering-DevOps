@@ -206,6 +206,8 @@ ________________________________________________________________________________
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c0ba08b2-0305-47d3-ad55-ada130c8360a)
 
 
+**Define and create k8s secret in order to connect private git repo with Argo CD.**
+    ``` 
 
 
 
