@@ -145,16 +145,20 @@ ________________________________________________________________________________
 ### Projects
 
 - Projects provides a logical grouping of applications.
-- ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/1e96c820-abad-4912-ba54-15365ae77f22)
+  
+ ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/1e96c820-abad-4912-ba54-15365ae77f22)
 
 - Project Manifest
-      ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/dc713034-9994-460a-83ea-525b23ea17e1)
+  
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/dc713034-9994-460a-83ea-525b23ea17e1)
 
 - After allowing specific scoped resources-
-      ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/9bc17ac6-7937-46a5-a0d3-e1a2f98e7855)
+  
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/9bc17ac6-7937-46a5-a0d3-e1a2f98e7855)
 
 - Notes:
-      ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8c254783-ceb0-4820-8758-39c65f2e12fd)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8c254783-ceb0-4820-8758-39c65f2e12fd)
 
 
 
