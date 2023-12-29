@@ -212,17 +212,18 @@ ________________________________________________________________________________
 
 **Define and create k8s secret in order to connect private git repo with Argo CD.**
 
-    ``` apiVersion: v1
-kind: Secret
-metadata:
-  name: private-repo-ssh
-  namespace: argocd
-  labels:
-    argocd.argoproj.io/secret-type: repository
-stringData:
-  type: git
-  url: https://github.com/Vasishtha15/ArgoPractice.git
-  sshPrivateKey: |
+    ``` 
+       apiVersion: v1
+       kind: Secret
+       metadata:
+         name: private-repo-ssh
+         namespace: argocd
+         labels:
+           argocd.argoproj.io/secret-type: repository
+       stringData:
+         type: git
+         url: https://github.com/Vasishtha15/ArgoPractice.git
+         sshPrivateKey: |
 
 
 
