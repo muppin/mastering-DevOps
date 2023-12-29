@@ -258,6 +258,35 @@ credential templates are used to connect to multiple private repos without havin
   __________________________________________________________________________________________________________________________________________________________________________________
 
 
+   ## Sync Policies and Options
+
+  - **Automated Sync**
+    
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/1883af07-8e0f-4c05-8ee9-a0d4f55afd80)
+
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/6fd10340-8069-401e-a146-c4c8825a5e67)
+
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/e847d28e-8dfa-44b3-8120-754087bf07ad)
+
+
+    ________________________________________________________________________________________________________________________________________________________________________________
+
+     **Automated PRune**
+- Enable auto prune if u want the resources to be removed from the cluster (web UI) as well as they are removed from the git.
+
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/4d6864a6-07ed-4961-b140-9eb4ac28c701)
+
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/58fa51de-6a27-425a-a308-22a9a845e434)
+
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/b878444a-e65e-4c65-aa40-d60a45b97aa2)
+
+  ________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+    
+
+
 
 
 
