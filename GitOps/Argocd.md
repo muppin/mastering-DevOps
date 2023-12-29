@@ -160,6 +160,22 @@ ________________________________________________________________________________
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8c254783-ceb0-4820-8758-39c65f2e12fd)
 
+-Roles
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/271db4e5-64c6-4b45-b0b3-52af9d93e374)
+
+
+-Creating Tokens
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/6de10a3a-fa3d-40dd-8a9e-3e71bef0582b)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/f2d1744f-b49a-4ae9-bee9-b32a6cdd4923)
+
+
+_________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
 
 
 
