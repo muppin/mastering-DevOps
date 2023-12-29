@@ -21,3 +21,8 @@
 - **To create token for role**
 
       ``` argocd proj role create-token PROJECT-NAME ROLE-NAME
+
+
+- **To delete app with generated token**
+  
+      ``` argocd app delete demo --grpc-web --auth-token TOKEN_VALUE
