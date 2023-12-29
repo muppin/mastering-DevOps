@@ -118,6 +118,39 @@ ________________________________________________________________________________
 
 ____________________________________________________________________________________________________________________________________________________________________________________
 
+**Kustomize Options**
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c819d5c0-c84e-4f89-91d2-1b3e7585d13b)
+
+        ``` kustomize:
+              namePrefix: staging-
+              commonLabels:
+                app: demo
+             
+_____________________________________________________________________________________________________________________________________________________________________________________
+
+### Multiple Sources for an application
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/34eda0fd-70f9-4240-8310-80385a8f89ce)
+
+**Use Cases** -
+- **Combine related resources that exist is different repos into one application.**
+        - ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d517e4d1-f8c2-45a9-b615-d2e057a26cd8)
+  
+- **Remote helm chart with git hosted values file.**
+        - ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/b12e790f-6894-4037-94e0-be8d7636892b)
+
+
+
+
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8c254783-ceb0-4820-8758-39c65f2e12fd)
+
+
+
+
+
+
 
 
 
