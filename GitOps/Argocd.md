@@ -185,6 +185,31 @@ ________________________________________________________________________________
 
 ## Using Private Git repos in argocd
 
+- Public repos can be directly used in argocd.
+- Private repos need to be registered in argocd with proper authentication before using it in applications.
+- Argocd support connecting to private repos using below ways:
+       - HTTPS: using usrname, password and access tokens.
+       - SSH: Using ssh private key
+       - Github/ Github Enterprise: Github app credentials
+- Private repo credentails are stored in normal k8s secrets.
+- You can register the private repos using declarative approach, cli or UI.
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8994ee48-7634-4f23-a03f-559475975059)
+
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/28be74dd-5d79-4a7a-8a69-3f69c42d8109)
+
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/416816f4-7455-4deb-8a23-16345ce63776)
+
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c0ba08b2-0305-47d3-ad55-ada130c8360a)
+
+
+
+
+
+
 
 
 
