@@ -39,3 +39,9 @@
   ls /path/to/core_dump_directory/*.core
   ```
 
+
+### To compare to files
+
+```bash
+sdiff -s application1.yaml application2.yaml
+```
