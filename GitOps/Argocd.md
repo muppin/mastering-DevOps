@@ -304,9 +304,11 @@ ________________________________________________________________________________
  There are certain options
  - No prune - argocd prvents an object from being pruned, even though the app will be out of syn it will not prune the object in the cluster.
  - Disable kubectl validation - in confusion
+ - ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7e5dfd11-c030-4abc-8921-30beda2ac272)
+
  - Selective sync - selective sync will sync only out-of-sync resources.
  - Prune Last - argocd will prune this application or resource at last if it were deployed as part of multiple application.
- - Replace resources - if enabled, argocd will replace all the resources during the sync operation. 
+ - Replace resources - if enabled, argocd will replace all the resources during the sync operation. At resource level set replace = true under annotaions. At app level set it under sync options. Manifests level: You can use the replace annotation at manifest level to achieve this. (argocd.argoproj.io/sync-options: Replace=true)
  - Fail on shared resource -if enabled, argocd will fail if any resource in this application is found in other applications. Argo CD will make multiple attempts to sync the resources but it will fail.
 
 
@@ -314,6 +316,41 @@ Note:
 - Prevent pruning can be achieved at manifests level or entire application level (by default pruning disabled at application level unless you enable it).
 - Selective sync option will sync only out-of-sync resources. You need it when you have thousands of resources in which sync take a long time and puts pressure on API server.
 - For Fail on shared resource - By default Argo CD will apply the resources even if it was available in multiple applications, unless we configure the sync to fail option if any resource is found in other applications.
+
+
+
+  The `validate=false` option in ArgoCD disables validation of resources during application deployment. By default, ArgoCD validates resources against Kubernetes schema and manifests to ensure correctness before applying changes. However, using `validate=false` allows deploying resources without pre-deployment validation, which can be useful in certain scenarios where strict validation might hinder deployments.
+
+**Example/Usecase:**
+
+Consider a scenario where you have custom Kubernetes resources or manifests that aren't fully compliant with the strict validation rules. In such cases, when you attempt to deploy these resources using ArgoCD, it might fail due to validation errors even though the resources could potentially function without issues.
+
+Let's say you have a custom resource definition (CRD) that ArgoCD doesn't fully recognize or validate against. To deploy these resources without validation, you can use the `validate=false` flag. For instance:
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+spec:
+  destination:
+    namespace: my-namespace
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: <URL_TO_YOUR_REPO>
+    path: manifests/
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false  # Use validate=false to skip validation
+```
+
+By setting `validate=false` in the `syncOptions` of the application manifest, ArgoCD will proceed with deployment without validating the resources against the Kubernetes schema. This can be useful when you have custom resources or specific use cases where strict validation might interfere with the deployment process.
+
+However, it's crucial to use `validate=false` judiciously because it bypasses validation checks, potentially allowing invalid configurations to be applied to your cluster. It's recommended to understand the implications and only use this option when necessary, ensuring the deployed resources won't cause unexpected issues in your cluster.
  
 
     
