@@ -265,7 +265,7 @@ credential templates are used to connect to multiple private repos without havin
 
    ## Sync Policies and Options
 
-  - **Automated Sync**
+  **Automated Sync**
     
     ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/1883af07-8e0f-4c05-8ee9-a0d4f55afd80)
 
@@ -276,7 +276,7 @@ credential templates are used to connect to multiple private repos without havin
 
     ________________________________________________________________________________________________________________________________________________________________________________
 
-     **Automated PRune**
+ **Automated PRune**
 - Enable auto prune if u want the resources to be removed from the cluster (web UI) when they are removed from the git to sync(desired state = actual atate).
 
     ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/4d6864a6-07ed-4961-b140-9eb4ac28c701)
@@ -287,12 +287,28 @@ credential templates are used to connect to multiple private repos without havin
 
   ________________________________________________________________________________________________________________________________________________________________________________
 
-   **Automated Self Healing**
+ **Automated Self Healing**
   - on Enabling automated self healing, argocd tries to keep in sync i.e desired state= actual state.
   - If auser does anything like manually updating the k8s resorces in the cluster, argocd will detect this and self heals the resources in order to keep in syn.  
   - enabling the self heal declaratively
   
-    ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9d870b59-01f3-487f-b302-5577dd222bff)
+    ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9d870b59-01f3-487f-b302-5577dd222bff
+
+___________________________________________________________________________________________________________________________________________________________________________
+
+**Sync Options**
+ - Users can customise how the resorces are synced between the target cluster amd desired state
+    - Most of the options are available at application level
+    - some of the options available using resorce annotations
+
+ There are certain options
+ - No prune - argocd prvents an object from being pruned, even though the app will be out of syn it will not prune the object in the cluster.
+ - Disable kubectl validation - in confusion
+ - Selective sync - selective sync will sync only out-of-sync resources.
+ - Prune Last - argocd will prune this application or resource at last if it were deployed as part of multiple application.
+ - Replace resources - if enabled, argocd will replace all the resources during the sync operation. 
+ - Fail on shared resource -if enabled, argocd will fail if any resource in this application is found in other applications.
+ 
 
     
 
