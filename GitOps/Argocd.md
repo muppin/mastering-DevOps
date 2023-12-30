@@ -277,7 +277,7 @@ credential templates are used to connect to multiple private repos without havin
     ________________________________________________________________________________________________________________________________________________________________________________
 
      **Automated PRune**
-- Enable auto prune if u want the resources to be removed from the cluster (web UI) as well as they are removed from the git.
+- Enable auto prune if u want the resources to be removed from the cluster (web UI) when they are removed from the git to sync(desired state = actual atate).
 
     ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/4d6864a6-07ed-4961-b140-9eb4ac28c701)
 
@@ -287,7 +287,14 @@ credential templates are used to connect to multiple private repos without havin
 
   ________________________________________________________________________________________________________________________________________________________________________________
 
+   **Automated Self Healing**
+  - on Enabling automated self healing, argocd tries to keep in sync i.e desired state= actual state.
+  - If auser does anything like manually updating the k8s resorces in the cluster, argocd will detect this and self heals the resources in order to keep in syn.  
+  - enabling the self heal declaratively
+  
+    ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9d870b59-01f3-487f-b302-5577dd222bff)
 
+    
 
     
 
