@@ -307,12 +307,13 @@ ________________________________________________________________________________
  - Selective sync - selective sync will sync only out-of-sync resources.
  - Prune Last - argocd will prune this application or resource at last if it were deployed as part of multiple application.
  - Replace resources - if enabled, argocd will replace all the resources during the sync operation. 
- - Fail on shared resource -if enabled, argocd will fail if any resource in this application is found in other applications.
+ - Fail on shared resource -if enabled, argocd will fail if any resource in this application is found in other applications. Argo CD will make multiple attempts to sync the resources but it will fail.
 
 
 Note: 
 - Prevent pruning can be achieved at manifests level or entire application level (by default pruning disabled at application level unless you enable it).
 - Selective sync option will sync only out-of-sync resources. You need it when you have thousands of resources in which sync take a long time and puts pressure on API server.
+- For Fail on shared resource - By default Argo CD will apply the resources even if it was available in multiple applications, unless we configure the sync to fail option if any resource is found in other applications.
  
 
     
