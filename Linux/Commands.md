@@ -43,5 +43,5 @@
 ### To compare to files
 
 ```bash
-sdiff -s application1.yaml application2.yaml
+sdiff -s application1.yaml application2.yaml  // -s to suppress the common lines
 ```
