@@ -7,3 +7,5 @@
 - computer understands these in bits and bytes, (1 byte = 8 bits)
 - ipv4 contains 4 bytes = 32 bits, each byte seperated by dots
   ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/996a0eb5-e3a6-40f3-9d04-4d04bfb1b015)
+  ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/5955f9bd-176c-45ec-bf82-87fdb3babc8b)
+
