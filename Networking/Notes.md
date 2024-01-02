@@ -43,5 +43,15 @@
      resolves then proceeds with the TCP handshake.
    - TCP handshake - (3 way handshake)
      ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/de1cfe5f-63d8-41c0-8fcb-14d896121d88)
-- 
-
+- OSI model begins from here after the TCP handshake is done
+   - L7 (Application Layer) - Initiating the HTTP/HTTPS/FTP requests, passing headers and providing authentication.
+   - L6 (Presentation Layer) - Data is transferred through multiple routers and it has to be encrypted beacause of security purpose(if and only if it is https request.
+   - L5 (Session layer) - here the session is created, so that multiple authentication is not required.
+   - together L7, L6, L5 are taken care  by browser.
+   - L4 (Transport Layer) - heres the data segmentation is done and it is done through TCP/UDP protocols. if the request is of http/https then TCP is identified.
+   - *Network Segmentation*: In computer networking, data segmentation involves dividing a network into smaller segments or subnetworks.
+   - L3 (Networking Layer) - transmission of data is done here, the data is sent in the form of packets from source ip to the destination ip through multiple routers.
+     - packets will be having certain info like how to travel and which path to take. all this decision is taken by your router.
+   - L2 (DataLink Layer) -  after sending the data to router, then if router has switches in it(ethernet ports/LAN ports), here the transmission medium is changed. in order to send the data throgh switches the data should be in Frames. it also contains MAC addresses.
+   - L1 (Physical Layer) - here the transmission of data is sent via OFC(optical fibre cables).and here it is converted as electronic signals.
+     ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/b8f688c6-502c-4fe6-9fcb-0e282f59bb54)
