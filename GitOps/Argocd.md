@@ -373,6 +373,7 @@ ________________________________________________________________________________
 Note- 
 - Tags are good for production as they are more stable and less frequently changed.
 - Most restricted way is to track with a specific commit.
+- Tag is like a published copy, can't be modified.
 
 In ArgoCD, `targetRevision: HEAD` and `targetRevision: master` refer to different states within a Git repository that the application will deploy.
 
