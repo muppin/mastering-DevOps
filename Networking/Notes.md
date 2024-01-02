@@ -37,3 +37,11 @@
    - Dynamic or private ports (49152-65535): Also known as ephemeral ports, these are used for temporary connections.
 - Ports are a crucial part of the TCP/IP protocol suite, specifically in the Transport layer. They help ensure that data reaches the correct application or service on a device by using both the IP address and the port number as part of the addressing information.
 
+**OSI Model**
+- before entering seven layers there are other 2 other concepts
+   - DNS resolution - it tries to resolve or check in local cache for the domain name that has been mapped to ceratin IP address, that we want to access. Further if it 
+     resolves then proceeds with the TCP handshake.
+   - TCP handshake - (3 way handshake)
+     ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/de1cfe5f-63d8-41c0-8fcb-14d896121d88)
+- 
+
