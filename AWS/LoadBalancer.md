@@ -118,9 +118,28 @@ Understanding the differences between these protocols helps in choosing the righ
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/7f8904fe-2617-436a-80dc-4d88223078ae)
 
-![Uploading image.png…]()
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/ffa94829-4bd9-46c8-95e8-436f81b4b89f)
 
-![Uploading image.png…]()
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/668df298-bc61-4ab6-bce6-12716a73b3a2)
+
+**Scaling Policies**
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9cf290bb-ff8e-4653-a9dd-2e1c358f3429)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/403870fc-bc38-4a25-be76-2692ba985ce7)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/683e3875-e299-4535-8537-4bdab77d2b09)
+
+**Scaling cooldown**
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/168da490-c9ff-4eca-bf7c-abf4da2ffc02)
+
+
+
+
+
+
+
 
 
 
