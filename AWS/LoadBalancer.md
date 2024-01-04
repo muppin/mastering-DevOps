@@ -110,6 +110,13 @@ Understanding the differences between these protocols helps in choosing the righ
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## Coonection Draining
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/4bb97bea-9cb4-4fd3-a0b1-eeacb273b5ce)
+
+
+_________________________________________________________________________________________________________________________________________________________________________________
+
 ## Auto Scaling Groups
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/5262ca00-5473-4fd4-ae5f-3059f2a9915a)
