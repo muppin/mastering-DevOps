@@ -60,7 +60,7 @@ ________________________________________________________________________________
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/984bdb0a-b5ab-473d-8176-5f19443df933)
 
-![Uploading image.png…]()
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/abc18337-a644-4a5a-99ed-05601f176c79)
 
 To configure SSL certs-
 - Go to ALB/NLB
@@ -107,6 +107,25 @@ HTTP (Hypertext Transfer Protocol), TCP (Transmission Control Protocol), and UDP
    - TCP is suitable for applications where data accuracy and reliability are essential, such as web browsing (HTTP), email (SMTP), and file transfer (FTP). UDP is preferred for real-time applications like streaming media, online gaming, and VoIP due to its lower latency.
 
 Understanding the differences between these protocols helps in choosing the right one for specific networking needs based on priorities like speed, reliability, and overhead requirements.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Auto Scaling Groups
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/5262ca00-5473-4fd4-ae5f-3059f2a9915a)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/d90a5c05-715b-4ea2-b0f7-a21036add67e)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/7f8904fe-2617-436a-80dc-4d88223078ae)
+
+![Uploading image.png…]()
+
+![Uploading image.png…]()
+
+
+
+
+
 
 
 
