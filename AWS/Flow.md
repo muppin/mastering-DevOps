@@ -1,4 +1,4 @@
-![image](https://github.com/muppin/mastering-DevOps/assets/121821200/c3ee96d4-46c2-4589-b66e-5a81d833f624)### External traffic reaching to the application
+### External traffic reaching to the application
 
 **Accessing the app using loadbalancer DNS** 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/77eede58-69c7-4db5-b0f9-4014cb1d6744)
