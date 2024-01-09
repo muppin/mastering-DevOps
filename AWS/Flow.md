@@ -11,5 +11,8 @@
 
 *go through this for demo: https://youtu.be/JQP96EjRM98?feature=shared*
 
+
 **How TLS works**
 - TLS works using a technique called public key cryptography, which relies on a pair of keys — a public key and a private key. Anything encrypted with the public key can be decrypted only with the private key
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/2f2282f1-8f18-4705-bb1f-8c3476a0b344)
