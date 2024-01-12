@@ -86,5 +86,7 @@
 - how to check logs for ALB.
 - what is vpc , subnet, firewall?
 - when load average is very high on system , is there any effect on cpu / memory?
-- what is the difference in instance health check vs system health check ? (hint 2/2 while provisioning)
+- what is the difference in instance health check vs system health check ? (hint 2/2 while provisioning).
+- how to connect ec2 with rds , what firewall rules will you apply.
+
 
