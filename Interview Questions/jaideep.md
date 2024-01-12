@@ -49,9 +49,42 @@
 - steps to create ec2
 - what is needed to host a website on ec2
 - what is cloud front, route 53?
--  what is vpc, what all resources get  created when we create a vpc
+- what is vpc, what all resources get  created when we create a vpc
 - what is a subnet?
 - types of load balancer , types?
 -  what is target group in aws?
 -  how to acess get conmtents of s3 buckets via cli?
 - what is vpc peering , how to configure?
+
+  
+## QBurst Tech (SRE Profile)
+- what is special permissions in linux, explain about sticky bit . --> setuid / setgid / stickybit
+- explain boot process in linux.
+- how to check which ports are open in server.
+- write a script to ping 10 servers at once.
+- scenario - you have written a script , executed it, you want to ensure the script runs even after server reboot, how to do .
+- explain about Kubernetes architecture? role of kube proxy , kubelet
+- explain why we need service in kubernetes. different types. explain load balancer service in detail.
+- what is headless service in kubernetes, why is it used?
+- how to check how many pods are running?
+- suddenly 1 pod stopped running, how to check what happened.
+- what is namespace , why do we need it
+- diff between CMD and ENTRYPOINT in Docker, Explain with real world scenario.
+- You have to go out for next 2 days , how will you ensure your docker containers are up and running even if it restarts. (not using kubernetes , with docker context)
+- in docker compose file  I have 2 applocations , I want to run only one of the applications how to do.
+- what is state file in terraform?
+- what will happen if state file gets deleted in terraform.
+- difference between provisioners and providers in terraform.
+- which resources have you created using terraform,
+- while creating an instance using terraform explain what all fields are required in main.tf file.
+- how are SRE Engineers different from Devops Engineers.
+- Which load balancers have you used in AWS
+- can we use 2 load balancers in same application
+- what is sticky session in load balancers , explain with real world scenario.
+- we have 3 aws accounts A,B,C, A,B are connected , B,C are connected , how to connect A,C
+- how resources in vpc of account A can communicate with vpc of account C?
+- how to check logs for ALB.
+- what is vpc , subnet, firewall?
+- when load average is very high on system , is there any effect on cpu / memory?
+- what is the difference in instance health check vs system health check ? (hint 2/2 while provisioning)
+
