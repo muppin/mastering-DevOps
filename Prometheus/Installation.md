@@ -21,3 +21,6 @@ This is required to access prometheus-server using your browser.
 ## Create firewall rule
 `gcloud compute firewall-rules create test-node-port \
     --allow tcp:NODE_PORT`
+
+## find the below Url to install the resources required to run eks cluster
+*https://jhooq.com/prometheous-k8s-aws-setup/*
