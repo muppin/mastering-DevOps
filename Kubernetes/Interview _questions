@@ -5,4 +5,4 @@ Ans : With the help of ingress. Ingress will expose to http/https traffic.
 Ans : With the help of helm charts. For every env, we have different values.yml.
 For cost cutting we don't use HPA for sit where as HPA is imp in pre-prod and prod.
 
-3. 
+3.
