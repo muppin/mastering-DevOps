@@ -27,4 +27,10 @@ If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary```
 
+__________________________________________________________________________________________________________________________________________________________________________________
+
+Demo - https://www.youtube.com/watch?v=acnpInts120
+repo- https://github.com/ravdy/youtube_terraform
+After creating cluster, modify kubeconfig file-
+aws eks update-kubeconfig --region ap-south-1 --name ed-eks-01
 
