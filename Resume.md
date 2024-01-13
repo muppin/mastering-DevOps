@@ -9,10 +9,11 @@
 - I've set up a Lambda function with Python code to identify outdated snapshots and execute their deletion based on the EventBridge rule.
 - Executed tasks concerning S3 versioning, replication, and configured lifecycle rules as well.
 - Designed and implemented AWS Virtual Private Cloud (VPC) architecture for public and private subnets, ensuring high availability, scalability, and security.
-Performed POC for any new service to be introduced in the system.
-Responsible for Documenting the entire Infra Setup for future reference.
-Led knowledge-sharing sessions on CI/CD and automation, empowering team members to
-take ownership of their workflows.
+- Automate deployment and scaling of Kubernetes clusters and applications
+- Design and implement CI/CD pipelines for Kubernetes applications
+- Performed POC for any new service to be introduced in the system.
+- Responsible for Documenting the entire Infra Setup for future reference.
+- Led knowledge-sharing sessions on CI/CD and automation, empowering team members to take ownership of their workflows.
 Resolved critical production incidents promptly, maintaining system availability and minimizing
 business impact.
 Demonstrated proficiency in Ansible and Terraform, creating infrastructure on AWS using
