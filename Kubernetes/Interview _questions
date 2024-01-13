@@ -1,2 +1,7 @@
 1. If you are using cluster ip, how u are exposing it to the outside world?
 Ans : With the help of ingress. Ingress will expose to http/https traffic.
+
+2. How u are managing files on diff environments?
+Ans : With the help of helm charts. For every env, we have different values.yml.
+
+3. 
