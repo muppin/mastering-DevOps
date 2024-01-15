@@ -320,6 +320,12 @@ HELM
 - Helm is the best way to find, share and use software built on k8s
 - it supports rollback and upgrades
 
+
+**Helm Chart Structure**
+- chart.yaml
+- templates
+- values.yaml
+
 In Helm, a chart, a repository, and a release are key concepts used for managing applications and their deployments within Kubernetes:
 
 1. **Chart:** 
