@@ -34,7 +34,24 @@ ________________________________________________________________________________
 
 ## Steps to Upgrade helm release
 
+- Update the version in chart.yaml, according to semantic versionong.
+- For example. V1= 0.1.0 then v2 should be 0.1.1
+- Update replica count in values.yaml
+- then upgrade the release -  helm upgrade releasename chartname
 
+__________________________________________________________________________________________________________________________
+
+## Rollback to previous version
+
+- helm rollback releasename versionNumber
+- example- helm rollback v1 1
+- Note - In helm, you will always get a new revision number weather you have rollbacked or upgraded.
+
+  ____________________________________________________________________________________________________________________________
+
+## Delete Release
+
+helm delete releaseName
 
 
 
