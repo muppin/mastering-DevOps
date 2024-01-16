@@ -23,8 +23,12 @@ ________________________________________________________________________________
 ## HELM COMMANDS
 
 - helm create chartname    // to create new helm chart
-- helm template chartname  // to display all resources with values        execute it at home level (outside the chart)
-- helm lint chartname      // to show if any errors/failures in chart     execute it at home level (outside the chart)
+execute below commands at home level (outside the chart)
+- helm template chartname  // to display all resources with values        
+- helm lint chartname      // to show if any errors/failures in chart     
+- helm install v1 --debug --dry-run demochart   //v1 is the release name here
+- helm install v1 chartname //v1 is the release name here
+
 
 
 
