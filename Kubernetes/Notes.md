@@ -326,7 +326,7 @@ HELM
 - templates
 - values.yaml
 
-![image](https://github.com/muppin/mastering-DevOps/assets/56094875/04905765-2850-4765-815f-8e339cf2afef)
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7847549a-2d14-47ad-b52f-b2a9408e66d1)
 
 
 In Helm, a chart, a repository, and a release are key concepts used for managing applications and their deployments within Kubernetes:
