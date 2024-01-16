@@ -20,14 +20,19 @@ kubectl get pods -v=7  -> used to retrieve information about pods in a K8s clust
 
 ______________________________________________________________________________________________________________________
 
-## HELM COMMANDS
+## Steps to create and deploy helm charts
 
 - helm create chartname    // to create new helm chart
 execute below commands at home level (outside the chart)
 - helm template chartname  // to display all resources with values        
-- helm lint chartname      // to show if any errors/failures in chart     
+- helm lint chartname      // to show if any errors/failures in chart    Compilation   
 - helm install v1 --debug --dry-run demochart   //v1 is the release name here
 - helm install v1 chartname //v1 is the release name here
+- helm list -a      //to list releases
+
+___________________________________________________________________________________________________________________________
+
+## Steps to Upgrade helm release
 
 
 
