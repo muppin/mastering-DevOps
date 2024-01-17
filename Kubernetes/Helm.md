@@ -102,7 +102,7 @@ Basically, the repo is nothing but the collection of helm charts. There are five
 - update the helm repo **helm repo update**
 - install the chart from the above repo **helm install prometheus prometheus-community/prometheus**
 
-## NOTE-
+#### NOTE-
 When you run helm repo update, Helm contacts the specified chart repositories and updates the local cache or index of charts. This ensures that you have the latest information about the charts and their versions available in those repositories. It's similar to running apt-get update or yum update on a package manager for a traditional operating system.
 
 ____________________________________________________________________________________________________________________________
