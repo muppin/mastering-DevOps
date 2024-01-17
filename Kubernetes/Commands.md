@@ -1,0 +1,18 @@
+- kubectl get pods - lists all the pods
+- kubectl get deploy - lists all the deployments
+- kubectl get rs - lists all the replica sets
+- kubectl get svc - lists all the services
+- kubectl create deployment *deployment-name* --image=*imagename* - creates a deployment and creates a default yaml file for it
+- kubectl edit deployment *deployment-name* - opens a configuration file and you can edit.
+- kubectl logs *pod-name* -  provides the logs of a pod
+- kubectl describe pod *pod-name* - shows the state changes happened inside the pod
+- kubectl exec -it *pod-name* -- bin/bash - enters inside the pod and helps in debugging
+- kubectl delete deploy *deployment-name* - deletes an existing deployment.
+- kubectl delete pod *pod-name* - deletes a pod.
+- kubectl apply -f *file-name* - creates a kubernetes services according to the file.
+- kubectl delete -f *file-name* - deletes a kubernetes services according to the file.
+- kubectl get pods -o wide - lists the pods with complete information.
+- kubectl get pods -w   -> used to watch (observe) changes in the Pods within the Kubernetes cluster in real-time.
+- kubectl get deploy nginx-deployment -o yaml - list the particular deployment with complete information like status etc.
+- kubectl describe service SERVICE_NAME -n NAMESPACE -> To verify if services are aligned with the running Pods in Kubernetes.
+- kubectl get pods -v=7  -> used to retrieve information about pods in a K8s cluster with verbose output level 7. The -v flag is used to set the verbosity level, providing more detailed and verbose information about the pods.
