@@ -99,6 +99,8 @@ Basically, the repo is nothing but the collection of helm charts. There are five
 - helm repo remove *repoName*  // removes chart repo
 - helm search repo *RepoName*  // It should return you back with all the charts which are available inside bitnami 
   repository
+- helm search hub wordpress // searches all the repos of wordpress
+- helm search hub wordpress  --max-col-width=0 // searches all the repos of wordpress with complete url
 
 **Take an example to add on the prometheus monitoring to you kubernetes cluster**
 - firstly you will add the helm repo i.e. **helm repo add prometheus-community https://prometheus-community.github.io/helm-charts**
