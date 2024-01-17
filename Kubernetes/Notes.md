@@ -345,9 +345,9 @@ In summary, a Helm chart packages Kubernetes resources, a Helm repository stores
 
 **Helm Installation**
 
-       `curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3`
-       `chmod 700 get_helm.sh`
-       `./get_helm.sh`    
+      `curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+       chmod 700 get_helm.sh
+       ./get_helm.sh`    
 
 **Helm create command**
 - It will create a directory structure
