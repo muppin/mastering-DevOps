@@ -56,7 +56,7 @@ ________________________________________________________________________________
 
 ## Adding Upstream Repo
 
-There are five repo commands provided by Helm which can be used for add,list,remove,update,index the chart repository.
+Basically, the repo is nothing but the collection of helm charts. There are five repo commands provided by Helm which can be used for add,list,remove,update,index the chart repository.
 
 - **add**: Add chart repository
 - helm repo add <REPOSITORY_NAME> <REPOSITORY_URL>
@@ -70,5 +70,10 @@ There are five repo commands provided by Helm which can be used for add,list,rem
 - helm repo remove *repoName*  // removes chart repo
 - helm search repo *RepoName*  // It should return you back with all the charts which are available inside bitnami 
   repository
+
+- Take an example to add on the prometheus monitoring to you kubernetes cluster
+- firstly you will add the helm repo i.e. **helm repo add prometheus-community https://prometheus-community.github.io/helm-charts**
+- update the helm repo **helm repo update**
+- install the chart from the above repo **helm install prometheus prometheus-community/prometheus**
  
 
