@@ -58,15 +58,11 @@ ________________________________________________________________________________
 
 There are five repo commands provided by Helm which can be used for add,list,remove,update,index the chart repository.
 
-add : Add chart repository
-
-list : List chart repository
-
-update : Update the chart information locally
-
-index : For generating the index file
-
-remove : Remove chart repository
+- add : Add chart repository
+- list : List chart repository
+- update : Update the chart information locally
+- index : For generating the index file
+- remove : Remove chart repository
 
 - helm repo add <REPOSITORY_NAME> <REPOSITORY_URL>
 - helm repo list   // lists all the repos available in cluster
