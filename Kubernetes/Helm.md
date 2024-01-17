@@ -119,6 +119,10 @@ To use Helm plugins, you typically need to install them and then run them as com
      ```bash
      helm plugin install https://github.com/databus23/helm-diff
      ```
+   - **Command**
+     ```bash
+     helm diff revision releaseName 1 2
+     ```
 
 2. **helm-secrets:**
    - **Description:** A plugin for managing Helm secrets.
