@@ -2,15 +2,15 @@
 - kubectl get deploy - lists all the deployments
 - kubectl get rs - lists all the replica sets
 - kubectl get svc - lists all the services
-- kubectl create deployment <deployment-name> --image=<imagename> - creates a deployment and creates a default yaml file for it
-- kubectl edit deployment <deployment-name> - opens a configuration file and you can edit.
-- kubectl logs <pod-name> -  provides the logs of a pod
-- kubectl describe pod <pod-name> - shows the state changes happened inside the pod
-- kubectl exec -it <pod-name> -- bin/bash - enters inside the pod and helps in debugging
-- kubectl delete deploy <deployment-name> - deletes an existing deployment.
-- kubectl delete pod <pod-name> - deletes a pod.
-- kubectl apply -f <file-name> - creates a kubernetes services according to the file.
-- kubectl delete -f <file-name> - deletes a kubernetes services according to the file.
+- kubectl create deployment *deployment-name* --image=*imagename* - creates a deployment and creates a default yaml file for it
+- kubectl edit deployment *deployment-name* - opens a configuration file and you can edit.
+- kubectl logs *pod-name* -  provides the logs of a pod
+- kubectl describe pod *pod-name* - shows the state changes happened inside the pod
+- kubectl exec -it *pod-name* -- bin/bash - enters inside the pod and helps in debugging
+- kubectl delete deploy *deployment-name* - deletes an existing deployment.
+- kubectl delete pod *pod-name* - deletes a pod.
+- kubectl apply -f *file-name* - creates a kubernetes services according to the file.
+- kubectl delete -f *file-name* - deletes a kubernetes services according to the file.
 - kubectl get pods -o wide - lists the pods with complete information.
 - kubectl get pods -w   -> used to watch (observe) changes in the Pods within the Kubernetes cluster in real-time.
 - kubectl get deploy nginx-deployment -o yaml - list the particular deployment with complete information like status etc.
@@ -65,8 +65,8 @@ There are five repo commands provided by Helm which can be used for add,list,rem
 - *update* : Update the chart information locally
 - helm repo update  // updates the repo
 - *index* : For generating the index file
-- helm repo index <<chartname>>  // generates the index.yaml for the chart
+- helm repo index *chartname*  // generates the index.yaml for the chart
 - *remove* : Remove chart repository
-- helm repo remove <repoName>  // removes chart repo
+- helm repo remove *repoName*  // removes chart repo
 
 
