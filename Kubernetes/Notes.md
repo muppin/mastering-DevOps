@@ -160,7 +160,7 @@ ________________________________________________________________________________
 
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
-#### Persistent Volumes & Persistenet Volume Claims
+### Persistent Volumes & Persistenet Volume Claims
 
 - Whenever a pod restarts, all existing will not be saved.
 - K8s does not give you data persistance out f the box.
@@ -258,7 +258,7 @@ if a container is deleted or restarted, data will not persist and also it cant b
  
 The best practice would be storing the data at Remote storage for ex: cloud storage(Recommended), Local storage
 
-___________________________________________________________________________________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________________
 
 ### Statefulsets
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d765e295-f5bb-481c-a75b-d401310bdb77)
@@ -313,7 +313,8 @@ then, each pod gets a dns entry with name like mentioned above, so every time re
 
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
-HELM
+## HELM
+
 - Package manager
 - Helm helps you in managing K8s config
 - Helm charts help you define, install and upgrade complex k8s application
@@ -341,7 +342,14 @@ In Helm, a chart, a repository, and a release are key concepts used for managing
    - A release in Helm represents a particular deployment of a Helm chart onto a Kubernetes cluster. It is an instance of a chart combined with specific configuration settings and options. Each deployment of a chart creates a unique release, allowing multiple instances of the same application with different configurations.
 
 In summary, a Helm chart packages Kubernetes resources, a Helm repository stores and distributes these charts, and a release is an instance of a chart deployed onto a Kubernetes cluster with specific configurations. This structure allows for easy management, versioning, and deployment of applications within Kubernetes using Helm.
-      
+
+**Helm Installation**
+ '''
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+    chmod 700 get_helm.sh
+    ./get_helm.sh
+
+
 
 **Helm create command**
 - It will create a directory structure
@@ -354,7 +362,9 @@ In summary, a Helm chart packages Kubernetes resources, a Helm repository stores
 Helm v2 is more of release management and it has Client and server(Tiller) architecture. whenever install or upgrade is done everything is stored inside the architecture as a history.
 The main cause of upgrading to v3 is the tiller has a high power in the kubernetes cluster like create, update and delete, which leads to security issue. 
 
-_______________________________________________________________________________________________________________________________________________________________________________________
+
+
+___________________________________________________________________________________________________________________________
 
 #### Horizontal Pod Autoscaler
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/dca992f8-cd1c-4bd4-85c3-0d6acfa555c0)
