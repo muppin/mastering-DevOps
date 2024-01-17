@@ -1,24 +1,6 @@
-- kubectl get pods - lists all the pods
-- kubectl get deploy - lists all the deployments
-- kubectl get rs - lists all the replica sets
-- kubectl get svc - lists all the services
-- kubectl create deployment *deployment-name* --image=*imagename* - creates a deployment and creates a default yaml file for it
-- kubectl edit deployment *deployment-name* - opens a configuration file and you can edit.
-- kubectl logs *pod-name* -  provides the logs of a pod
-- kubectl describe pod *pod-name* - shows the state changes happened inside the pod
-- kubectl exec -it *pod-name* -- bin/bash - enters inside the pod and helps in debugging
-- kubectl delete deploy *deployment-name* - deletes an existing deployment.
-- kubectl delete pod *pod-name* - deletes a pod.
-- kubectl apply -f *file-name* - creates a kubernetes services according to the file.
-- kubectl delete -f *file-name* - deletes a kubernetes services according to the file.
-- kubectl get pods -o wide - lists the pods with complete information.
-- kubectl get pods -w   -> used to watch (observe) changes in the Pods within the Kubernetes cluster in real-time.
-- kubectl get deploy nginx-deployment -o yaml - list the particular deployment with complete information like status etc.
-- kubectl describe service SERVICE_NAME -n NAMESPACE -> To verify if services are aligned with the running Pods in Kubernetes.
-- kubectl get pods -v=7  -> used to retrieve information about pods in a K8s cluster with verbose output level 7. The -v flag is used to set the verbosity level, providing more detailed and verbose information about the pods.
 
 
-______________________________________________________________________________________________________________________
+
 
 ## Steps to create and deploy helm charts
 
@@ -80,26 +62,48 @@ ________________________________________________________________________________
 
 ## Helm Plugins
 
-Helm plugins are extensions that provide additional functionality to Helm, a package manager for Kubernetes applications. Helm plugins can be used to enhance Helm's capabilities or to integrate it with other tools. 
+As of my last knowledge update in January 2022, Helm plugins are extensions that provide additional functionality to Helm, a package manager for Kubernetes applications. Helm plugins can be used to enhance Helm's capabilities or to integrate it with other tools. Keep in mind that Helm and its ecosystem are actively developed, so there may be new plugins or changes after my last update.
 
 To use Helm plugins, you typically need to install them and then run them as commands alongside the standard Helm commands. Here are some examples of Helm plugins:
 
-helm-diff:
+1. **helm-diff:**
+   - **Description:** Shows the differences between releases.
+   - **Installation:**
+     ```bash
+     helm plugin install https://github.com/databus23/helm-diff
+     ```
 
-Description: Shows the differences between releases.
-Installation:
-bash
-Copy code
-helm plugin install https://github.com/databus23/helm-diff
-helm-secrets:
+2. **helm-secrets:**
+   - **Description:** A plugin for managing Helm secrets.
+   - **Installation:**
+     ```bash
+     helm plugin install https://github.com/zendesk/helm-secrets
+     ```
 
-Description: A plugin for managing Helm secrets.
-Installation:
-bash
-Copy code
-helm plugin install https://github.com/zendesk/helm-secrets
-helm-git:
+3. **helm-git:**
+   - **Description:** A Helm plugin to load values from Git repositories.
+   - **Installation:**
+     ```bash
+     helm plugin install https://github.com/aslafy-z/helm-git
+     ```
 
+4. **helm-gcs:**
+   - **Description:** Helm plugin to install charts directly from Google Cloud Storage (GCS).
+   - **Installation:**
+     ```bash
+     helm plugin install https://github.com/hayorov/helm-gcs
+     ```
+
+5. **helm-search:**
+   - **Description:** Allows you to search Helm hub and GitHub repositories.
+   - **Installation:**
+     ```bash
+     helm plugin install https://github.com/cwds/helm-search
+     ```
+
+To find the latest Helm plugins and their documentation, it's a good idea to check the Helm Hub and the official Helm GitHub organization. The Helm Hub is a centralized repository for discovering and sharing Helm charts and plugins.
+
+Please note that Helm and its ecosystem are evolving, so be sure to refer to the official Helm documentation and the specific documentation for each plugin for the most up-to-date information.
 Description: A Helm plugin to load values from Git repositories.
 Installation:
 bash
