@@ -101,27 +101,5 @@ To use Helm plugins, you typically need to install them and then run them as com
      helm plugin install https://github.com/cwds/helm-search
      ```
 
-To find the latest Helm plugins and their documentation, it's a good idea to check the Helm Hub and the official Helm GitHub organization. The Helm Hub is a centralized repository for discovering and sharing Helm charts and plugins.
-
-Please note that Helm and its ecosystem are evolving, so be sure to refer to the official Helm documentation and the specific documentation for each plugin for the most up-to-date information.
-Description: A Helm plugin to load values from Git repositories.
-Installation:
-bash
-Copy code
-helm plugin install https://github.com/aslafy-z/helm-git
-helm-gcs:
-
-Description: Helm plugin to install charts directly from Google Cloud Storage (GCS).
-Installation:
-bash
-Copy code
-helm plugin install https://github.com/hayorov/helm-gcs
-helm-search:
-
-Description: Allows you to search Helm hub and GitHub repositories.
-Installation:
-bash
-Copy code
-helm plugin install https://github.com/cwds/helm-search
  
 
