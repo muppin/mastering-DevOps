@@ -344,12 +344,12 @@ In Helm, a chart, a repository, and a release are key concepts used for managing
 In summary, a Helm chart packages Kubernetes resources, a Helm repository stores and distributes these charts, and a release is an instance of a chart deployed onto a Kubernetes cluster with specific configurations. This structure allows for easy management, versioning, and deployment of applications within Kubernetes using Helm.
 
 **Helm Installation**
- 
-    ```code
-        curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-        chmod 700 get_helm.sh
-        ./get_helm.sh
-    ```
+
+    ```bash
+ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+ chmod 700 get_helm.sh
+ ./get_helm.sh
+
 
 **Helm create command**
 - It will create a directory structure
