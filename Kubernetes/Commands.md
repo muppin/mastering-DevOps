@@ -75,5 +75,49 @@ Basically, the repo is nothing but the collection of helm charts. There are five
 - firstly you will add the helm repo i.e. **helm repo add prometheus-community https://prometheus-community.github.io/helm-charts**
 - update the helm repo **helm repo update**
 - install the chart from the above repo **helm install prometheus prometheus-community/prometheus**
+
+____________________________________________________________________________________________________________________________
+
+## Helm Plugins
+
+Helm plugins are extensions that provide additional functionality to Helm, a package manager for Kubernetes applications. Helm plugins can be used to enhance Helm's capabilities or to integrate it with other tools. 
+
+To use Helm plugins, you typically need to install them and then run them as commands alongside the standard Helm commands. Here are some examples of Helm plugins:
+
+helm-diff:
+
+Description: Shows the differences between releases.
+Installation:
+bash
+Copy code
+helm plugin install https://github.com/databus23/helm-diff
+helm-secrets:
+
+Description: A plugin for managing Helm secrets.
+Installation:
+bash
+Copy code
+helm plugin install https://github.com/zendesk/helm-secrets
+helm-git:
+
+Description: A Helm plugin to load values from Git repositories.
+Installation:
+bash
+Copy code
+helm plugin install https://github.com/aslafy-z/helm-git
+helm-gcs:
+
+Description: Helm plugin to install charts directly from Google Cloud Storage (GCS).
+Installation:
+bash
+Copy code
+helm plugin install https://github.com/hayorov/helm-gcs
+helm-search:
+
+Description: Allows you to search Helm hub and GitHub repositories.
+Installation:
+bash
+Copy code
+helm plugin install https://github.com/cwds/helm-search
  
 
