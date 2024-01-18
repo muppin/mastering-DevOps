@@ -175,3 +175,10 @@ kubectl get pods --namespace=kube-system
 This command retrieves information about pods running in the `kube-system` namespace. You can replace `kube-system` with the specific namespace you want to inspect.
 
 Always refer to your specific Kubernetes distribution's documentation and best practices for guidance on namespace organization and the placement of system components.
+
+### Error
+
+- (Problem) Warning  FailedScheduling  8s (x3 over 10m)  default-scheduler  0/2 nodes are available: 2 Too many pods. preemption: 0/2 nodes are available: 2 No preemption victims fou
+nd for incoming pod..
+- (solution) The warning you're seeing indicates that the Kubernetes scheduler is unable to schedule a pod because there are no nodes available for it. The error message specifically mentions that there are too many pods and preemption is not possible as there are no preemption victims found.
+- check the node resources using kubectl top nodes and kubectl describe node *nodename*
