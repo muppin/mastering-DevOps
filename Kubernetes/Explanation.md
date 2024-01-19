@@ -276,19 +276,24 @@ to deploy all our replicas on one single node then we specify the nodename. not 
 - in short affinity is an alternative to nodeselector and allows us to instruct kubernetes to schedule our pod onto specifc nodes based on condition with advanced operators.
   - **nodeAffinity**-used to select the nodes to schedule the pods
       - **requiredDuringSchedulingIgnoredDuringExecution**(Hard)- Required means node should meet all the conditions specified in the pod specification in order to schedule the pod. *IgnoredDuringExecution* the running pods that are already on a node doesnt get impacted.
+        
         ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/86aad24d-f9f3-4ed5-b862-02cad37b7067)
 
       - **prefferredDuringSchedulingIgnoredDuringExecution**(soft) - we provide the prefernce with the weight, based on this nodes are ranked
+        
         ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/623eff4d-e4ff-4f13-b4c2-8aecffa1dcb8)
         ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/c56a683d-33f2-4100-9a82-06535bb79c76)
 
 **NOTE** - if we use both nodeAffinity and nodeSelector both must be satisfied.
   - **podAffinity**- it is used to colocate the pods, imagine two application needs to communicate too frequently, so they must be deployed in the same node, this is where podAffinity helps.
+    
     ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/5638daff-1563-47c6-aa44-4d76bb79c93c)
   - **podAntiAffinity**- contrast of podAffinity
-  ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/2911cfe3-d41f-4005-b21f-4297692a4441)
+    
+    ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/2911cfe3-d41f-4005-b21f-4297692a4441)
 
 **Taints and Toleration**
+
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/94909a82-d599-4ad6-8a2d-4c9fd1b9be50)
 
 - With this you can keep pods away from the nodes and attaract the tolerant pods to the nodes.
