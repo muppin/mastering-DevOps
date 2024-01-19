@@ -303,6 +303,7 @@ to deploy all our replicas on one single node then we specify the nodename. not 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/782c2893-9dfd-4d33-bd04-d8acf84166d6)
 
 when the tolerations value match the taint value added, based on the the taint effect mentioned to that node, pods are scheduled
+
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/985064bd-549f-4145-a835-664e9165b066)
 
 **Summary**
