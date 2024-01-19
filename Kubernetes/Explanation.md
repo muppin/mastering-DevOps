@@ -245,5 +245,68 @@ The basic components of a Helm chart include:
 - Helm v2 is more of release management and it has Client and server(Tiller) architecture. whenever install or upgrade is done everything is stored inside the architecture as a history.
 - The main cause of upgrading to v3 is the tiller has a high power in the kubernetes cluster like create, update and delete, which leads to security issue. 
 
+___________________________________________________________________________________________________________________________
+
+## Advance Scheduling in kubernetes
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/b6b3c0f7-a9e8-4aaf-8b78-67393a80cfa0)
+
+- Kubernetes considers the pod resource requirements and other customizations, then schedules the pod onto a node.
+- Most of the time we do not need to guide the scheduler, it does the job for us.
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/76034b8c-b327-4f8c-a6d7-dd4350653dbb)
+
+There may be cases where we need to deploy our pod onto a specific nodes then we need to guide the scheduler using the different ways
+- nodeName 
+- nodeSelector
+- Affinity
+   - Node Affinity
+   - Pod Affinity
+- Taints and Tolerations
+
+**nodeName**
+to deploy all our replicas on one single node then we specify the nodename. not recommended way though.
+
+**nodeSelector**
+- To run our pods on multiple nodes, we should use the nodeselector type.
+- Here we should add the labels to the node using, **kubectl label node *nodename* *team=analytics***, label should be in the form key value pair.
+- The in the deployment.yaml we mention nodeselector with the label. so that pods having the label gets deployed in the nodes that matches with the label. (same labels can be given to multiple nodes).
+
+**affinity**
+- in short affinity is an alternative to nodeselector and allows us to instruct kubernetes to schedule our pod onto specifc nodes based on condition with advanced operators.
+  - **nodeAffinity**-used to select the nodes to schedule the pods
+      - **requiredDuringSchedulingIgnoredDuringExecution**(Hard)- Required means node should meet all the conditions specified in the pod specification in order to schedule the pod. *IgnoredDuringExecution* the running pods that are already on a node doesnt get impacted.
+        ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/86aad24d-f9f3-4ed5-b862-02cad37b7067)
+
+      - **prefferredDuringSchedulingIgnoredDuringExecution**(soft) - we provide the prefernce with the weight, based on this nodes are ranked
+        ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/623eff4d-e4ff-4f13-b4c2-8aecffa1dcb8)
+        ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/c56a683d-33f2-4100-9a82-06535bb79c76)
+
+**NOTE** - if we use both nodeAffinity and nodeSelector both must be satisfied.
+  - **podAffinity**- it is used to colocate the pods, imagine two application needs to communicate too frequently, so they must be deployed in the same node, this is where podAffinity helps.
+    ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/5638daff-1563-47c6-aa44-4d76bb79c93c)
+  - **podAntiAffinity**- contrast of podAffinity
+  ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/2911cfe3-d41f-4005-b21f-4297692a4441)
+
+**Taints and Toleration**
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/94909a82-d599-4ad6-8a2d-4c9fd1b9be50)
+
+- With this you can keep pods away from the nodes and attaract the tolerant pods to the nodes.
+- Taints are added to node
+- tolerations are specified to pods
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/782c2893-9dfd-4d33-bd04-d8acf84166d6)
+
+when the tolerations value match the taint value added, based on the the taint effect mentioned to that node, pods are scheduled
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/985064bd-549f-4145-a835-664e9165b066)
+
+**Summary**
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/1a10fe47-139b-4472-9a6c-8701d3874acd)
+
+
+
+
+
+
 
 
