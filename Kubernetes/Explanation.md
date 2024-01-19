@@ -31,12 +31,17 @@ So, Kubernetes came up with a solution for all those docker problems.
 - Since Docker is not of enterprise nature (Load balancer support, firewall support, auto healing, auto scaling, Api gateways, blacklisting ips etc.). so, it is never used in Production platform. Kubernetes is aiming to solve these problems.
 
 **Kubernetes Architecture**
-- Master Node (Control Plane) 	- Worker Node (Data plane)
-- API Server	                - Kubelet
-- Scheduler	                    - Kubeproxy
-- etcd	                        - Container Runtime
+- **Master Node (Control Plane)**
+- API Server	                
+- Scheduler	                    
+- etcd	                        
 - Controller Manager	
-- CCM (Cloud Controller manager)	
+- CCM (Cloud Controller manager)
+
+- **Worker Node (Data plane)**
+- Kubelet
+- Kubeproxy
+- Container Runtime
 
 - To explain this, in docker simplest thing is container and k8s simplest thing is pod.
 - When a container is created in docker using a docker run command, what happens behind the scenes. when we use docker run command, to execute this process we should have container run time env which is called Dockershim.
@@ -73,6 +78,7 @@ ________________________________________________________________________________
 - Metadata part contains Labels and Specification part contains Selectors
 
 ___________________________________________________________________________________________________________________________
+
 ### Namespace
 
 **What is Namespace?**
@@ -163,6 +169,8 @@ ________________________________________________________________________________
 **Uses of Custom Resources:**
 - Custom Resources are commonly used for managing complex applications, databases, stateful services, and other resources that don't have built-in Kubernetes resource types.
 
+___________________________________________________________________________________________________________________________
+
 ### Config maps and secrets:
 - In Kubernetes, ConfigMaps and Secrets are two important resources used for managing configuration data and sensitive information, respectively. They allow you to decouple configuration from your application code and keep sensitive data secure.
 
@@ -173,6 +181,8 @@ ________________________________________________________________________________
 **Secrets:**
 - Secrets are used to store sensitive data, such as passwords, API tokens, and SSL certificates, in a more secure manner than ConfigMaps. They are base64-encoded by default but can be used to store binary data as well.
 - Secrets are typically used for storing sensitive data that should not be exposed in plain text. This data is often needed for authentication, encryption, or other security-related purposes.
+
+___________________________________________________________________________________________________________________________
 
 ### Persistent Volume, Persistent volume claims and Storage classes
 
@@ -201,6 +211,8 @@ For AWS specifically, when a PVC requests storage from a StorageClass, Kubernete
 5. **Binding PV to PVC:** Finally, Kubernetes binds the PVC to the dynamically provisioned PV, allowing the PVC to access the provisioned storage.
 
 This dynamic provisioning mechanism allows Kubernetes to automate the creation of storage resources in the cloud provider (such as AWS) based on the defined policies in the StorageClass, providing users with on-demand storage that meets their specified requirements without manual intervention.
+
+___________________________________________________________________________________________________________________________
 
 ### Helm Charts:
 Helm is a package manager for Kubernetes that simplifies the deployment and management of containerized applications. Helm uses packages called "charts" to define, install, and upgrade even the most complex Kubernetes applications. Helm charts are like pre-configured application packages that can be easily installed and managed within a Kubernetes cluster.
