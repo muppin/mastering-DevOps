@@ -1,4 +1,4 @@
-## Kubernates
+## Kubernetes
 
 **Basically, why Kubernetes?**
 - The Docker had many problems in day-to-day life in the industry,
