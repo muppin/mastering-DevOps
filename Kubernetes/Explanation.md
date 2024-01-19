@@ -119,13 +119,17 @@ ________________________________________________________________________________
 - Exposes the application to the external Network:
 - The service helps in exposing the application running inside the pods to the external network in 3 different ways i.e. 1) Cluster IP 2) Node Port 3) Load balancer
 
+  
+Explaining the different ways
 - Cluster IP: this mode of service will allow only people having access to cluster can access the application.
 - Node port : this mode of service allows only people having access to the node where application resides ( basically people inside the organisation)
 - Load balancer: this mode of service exposes the application to the internet, where it creates a public IP address.
 
-- While accessing the application from the outside world, the kubernetes generates an external ip, you can access the application via http://<external ip>:<service_port>
-- while accessing the application using Node ip, you can use the Node ip address by the command kubectl get nodes -o wide, like http://<node_ip>:<node_port>. To access the particular node_port you need to allow the port access in the firewall settings. 
-- gcloud compute firewall-rules create test-node-port \
+While accessing the application from the outside world, the kubernetes generates an external ip, you can access the application via http://<external ip>:<service_port>
+
+while accessing the application using Node ip, you can use the Node ip address by the command kubectl get nodes -o wide, like http://<node_ip>:<node_port>. To access the particular node_port you need to allow the port access in the firewall settings. 
+
+gcloud compute firewall-rules create test-node-port \
     --allow tcp:NODE_PORT
 
 ___________________________________________________________________________________________________________________________
@@ -155,11 +159,13 @@ ________________________________________________________________________________
 - Roles/ Cluster roles
 - Role Binding/ Cluster Role Binding
 
-  Kubernetes offloads the user management to Identity providers. for example if you are working in aws EKS cluster, the user related stuffs are taken care by IAM, this is how it offloads the user management to Identity providers 
-- Roles are the set of permissions defined in the yaml file and then users or service accounts are assined these roles. Cliuster roles are defined at cluster level.
-- Role Binding is binding roles to the user or service accounts.
+Kubernetes offloads the user management to Identity providers. for example if you are working in aws EKS cluster, the user related stuffs are taken care by IAM, this is how it offloads the user management to Identity providers
+  
+Roles are the set of permissions defined in the yaml file and then users or service accounts are assined these roles. Cliuster roles are defined at cluster level.
 
-- Service Account is an identity that a Pod can use to interact with the Kubernetes API server and access various resources within the cluster. It's similar to how a user account represents a human user in a traditional operating system, but a Service Account is used for applications and Pods running inside the cluster. Service Accounts are mainly used for authentication and authorization purposes.
+Role Binding is binding roles to the user or service accounts.
+
+Service Account is an identity that a Pod can use to interact with the Kubernetes API server and access various resources within the cluster. It's similar to how a user account represents a human user in a traditional operating system, but a Service Account is used for applications and Pods running inside the cluster. Service Accounts are mainly used for authentication and authorization purposes.
 
  __________________________________________________________________________________________________________________________
 
@@ -189,13 +195,13 @@ ________________________________________________________________________________
 
 ### Persistent Volume, Persistent volume claims and Storage classes
 
-- **PV**:A Persistent Volume (PV) in Kubernetes is a resource that represents a piece of storage in a cluster, such as a physical disk or network storage. PVs are used to store data that should persist beyond the lifecycle of a single pod or container. They provide a way to manage and decouple storage from the application, making it possible to reuse storage across different pods, even if the pods are rescheduled or replaced.
+**PV**:A Persistent Volume (PV) in Kubernetes is a resource that represents a piece of storage in a cluster, such as a physical disk or network storage. PVs are used to store data that should persist beyond the lifecycle of a single pod or container. They provide a way to manage and decouple storage from the application, making it possible to reuse storage across different pods, even if the pods are rescheduled or replaced.
 
-- **PVC**: A Persistent Volume Claim (PVC) in Kubernetes is a request for a specific amount of storage with certain characteristics, like access mode and storage class. PVCs are used by pods to claim access to Persistent Volumes (PVs). PVCs act as an intermediary between the storage resources that are defined by Persistent Volumes and the storage requirements of pods.
+**PVC**: A Persistent Volume Claim (PVC) in Kubernetes is a request for a specific amount of storage with certain characteristics, like access mode and storage class. PVCs are used by pods to claim access to Persistent Volumes (PVs). PVCs act as an intermediary between the storage resources that are defined by Persistent Volumes and the storage requirements of pods.
 
-- **Dynamic Provisioning**:PVCs can be used with Storage Classes to enable dynamic provisioning. In this case, when a PVC is created, a PV is automatically created to meet the storage requirements if no suitable pre-existing PV is available.
+**Dynamic Provisioning**:PVCs can be used with Storage Classes to enable dynamic provisioning. In this case, when a PVC is created, a PV is automatically created to meet the storage requirements if no suitable pre-existing PV is available.
 
-- **Staorage Class**: A Storage Class in Kubernetes is a resource object that defines the type and properties of storage that can be dynamically provisioned for Persistent Volume Claims (PVCs). Storage Classes allow you to abstract and standardize the provisioning of storage, making it easier to manage and allocate storage resources in a Kubernetes cluster. 
+**Staorage Class**: A Storage Class in Kubernetes is a resource object that defines the type and properties of storage that can be dynamically provisioned for Persistent Volume Claims (PVCs). Storage Classes allow you to abstract and standardize the provisioning of storage, making it easier to manage and allocate storage resources in a Kubernetes cluster. 
 
 In Kubernetes, when a StorageClass is defined, it serves as an abstraction layer that defines how dynamic provisioning of PersistentVolumes (PVs) should be handled. When a PersistentVolumeClaim (PVC) references a StorageClass, Kubernetes automatically creates a PV based on the defined StorageClass rules. 
 
