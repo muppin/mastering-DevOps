@@ -31,21 +31,24 @@ So, Kubernetes came up with a solution for all those docker problems.
 - Since Docker is not of enterprise nature (Load balancer support, firewall support, auto healing, auto scaling, Api gateways, blacklisting ips etc.). so, it is never used in Production platform. Kubernetes is aiming to solve these problems.
 
 **Kubernetes Architecture**
-- **Master Node (Control Plane)**
+
+**Master Node (Control Plane)**
 - API Server	                
 - Scheduler	                    
 - etcd	                        
 - Controller Manager	
 - CCM (Cloud Controller manager)
 
-- **Worker Node (Data plane)**
+**Worker Node (Data plane)**
 - Kubelet
 - Kubeproxy
 - Container Runtime
 
-- To explain this, in docker simplest thing is container and k8s simplest thing is pod.
-- When a container is created in docker using a docker run command, what happens behind the scenes. when we use docker run command, to execute this process we should have container run time env which is called Dockershim.
-- Similarly in Kubernetes, we have master node architecture. When a pod is deployed on k8s it goes through Master node and executed on worker node.
+To explain this, in docker simplest thing is container and k8s simplest thing is pod.
+
+When a container is created in docker using a docker run command, what happens behind the scenes. when we use docker run command, to execute this process we should have container run time env which is called Dockershim.
+
+Similarly in Kubernetes, we have master node architecture. When a pod is deployed on k8s it goes through Master node and executed on worker node.
 
 **Worker Node**
 - Kubelet – this is responsible for running/maintaining a pod. If the pod goes down it reminds a component in control plane to fix or control this issue.
