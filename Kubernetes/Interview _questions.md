@@ -52,3 +52,26 @@ By combining Route 53 and AWS WAF, you create a more comprehensive solution for 
 
 - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/e07efc89-fb31-4873-94c6-b78168d4bec9)
 
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/8dadf063-122f-406e-86d2-28134a95ea05)
+
+- **how ttwo containers inside the pod communicate each other?**
+  using localhost:portnumber
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/4f11b6e2-fcca-43a9-b835-495dff1f5ef2)
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/af9047cb-0631-4910-aed4-e8aeb91750c9)
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/c3324a58-9fde-408c-98b6-5f3014a4fe8a)
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/b55e5c99-77ca-4c98-9a75-e3f7cb8082ae)
+
+- **What is a custom controller?**
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/1d199768-c07e-40ba-a629-85460a0b0757)
+
+
+
+
+
+
+
