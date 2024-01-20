@@ -70,6 +70,44 @@ so basically when a user tries to access the application inside the private subn
 
 - **Access with DNS of Load Balancer**
   - Access the application using the DNS of the Load Balancer.
+ 
+  __________________________________________________________________________________________________________________________
+
+  ### ENI
+
+  In Amazon Web Services (AWS), an Elastic Network Interface (ENI) is a virtual network interface that you can attach to an instance in your Virtual Private Cloud (VPC). ENIs provide networking capabilities to instances, enabling them to communicate with other instances in the same VPC, as well as with resources outside the VPC, such as the internet.
+
+Here are some key points to understand about Elastic Network Interfaces in AWS:
+
+1. **Attachment to Instances:**
+   - You can attach one or more ENIs to an EC2 instance, depending on the instance type and your network requirements.
+   - Each ENI is associated with a private IP address within the IP address range of your VPC.
+
+2. **Attributes:**
+   - ENIs have various attributes, including a MAC address, private IP address, and a set of security groups.
+   - You can also assign Elastic IP addresses to an ENI, providing a static public IP that remains associated with the network interface even if it is detached and reattached to another instance.
+
+3. **Security Groups:**
+   - ENIs are associated with security groups, which act as virtual firewalls controlling inbound and outbound traffic.
+   - You can control access to the instances by configuring the security group rules associated with the ENI.
+
+4. **Elastic Load Balancing:**
+   - ENIs play a crucial role in AWS Elastic Load Balancing (ELB). When you attach an instance to a load balancer, AWS creates an ENI for the instance to manage the traffic flow through the load balancer.
+
+5. **High Availability and Failover:**
+   - ENIs can be used to create highly available and fault-tolerant architectures. You can attach multiple ENIs to an instance, distribute network traffic across them, and use them for failover scenarios.
+
+6. **Network and Routing:**
+   - ENIs allow you to configure multiple private IP addresses, each with its own MAC address.
+   - You can also configure additional routes for each ENI, enabling advanced network configurations.
+
+7. **Instance Resizing:**
+   - When you resize an instance (e.g., change the instance type), you can move the attached ENIs from the old instance to the new one, preserving the network configuration.
+
+8. **Use Cases:**
+   - ENIs are commonly used in scenarios where you need additional network interfaces for specialized tasks, such as creating a multi-tier application architecture or implementing network appliances.
+
+In summary, Elastic Network Interfaces in AWS provide flexibility and control over the networking capabilities of your EC2 instances, allowing you to design and implement complex network architectures tailored to your specific requirements.
 
 
 
