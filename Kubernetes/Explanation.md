@@ -253,6 +253,7 @@ ________________________________________________________________________________
 
 - Kubernetes considers the pod resource requirements and other customizations, then schedules the pod onto a node.
 - Most of the time we do not need to guide the scheduler, it does the job for us.
+- Must be specified at pod level, not container level.
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/76034b8c-b327-4f8c-a6d7-dd4350653dbb)
 
