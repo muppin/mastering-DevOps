@@ -714,6 +714,107 @@ Here are the general steps to work with Network Policies on Amazon EKS:
 
 Keep in mind that the specific steps may vary depending on the CNI plugin and Kubernetes version used in your EKS cluster. Always refer to the documentation provided by Amazon EKS and the chosen CNI plugin for the most accurate and up-to-date information.
 
+___________________________________________________________________________________________________________________________
+
+### how to set the admission contol policies to avoid running the privilagedcontainers
+
+To prevent the execution of privileged containers in your Kubernetes cluster, you can use admission control policies. Kubernetes provides admission controllers that allow you to define policies and rules for handling requests to the API server. One such admission controller is the `PodSecurityPolicy` (PSP), which can be used to control various security-related aspects of pod creation, including preventing privileged containers.
+
+Here are the general steps to set up a `PodSecurityPolicy` to avoid running privileged containers:
+
+1. **Enable the PodSecurityPolicy admission controller:**
+   Ensure that the `PodSecurityPolicy` admission controller is enabled on your Kubernetes API server. This can be done by modifying the Kubernetes API server configuration.
+
+   For example, you might need to add the `PodSecurityPolicy` admission controller to the `--enable-admission-plugins` flag in your Kubernetes API server configuration file. Edit the file and look for a line similar to:
+
+   ```yaml
+   - --enable-admission-plugins=...
+   ```
+
+   Add `PodSecurityPolicy` to the list.
+
+2. **Create a PodSecurityPolicy:**
+   Create a `PodSecurityPolicy` manifest file specifying the desired policies, including the one that prevents privileged containers. Save the following YAML to a file, e.g., `restrict-privileged-containers-psp.yaml`:
+
+   ```yaml
+   apiVersion: policy/v1beta1
+   kind: PodSecurityPolicy
+   metadata:
+     name: restrict-privileged-containers
+   spec:
+     privileged: false
+     # Add other policies as needed
+     # ...
+   ```
+
+   Note: In the example above, `privileged: false` ensures that pods cannot be run with the `privileged` security context.
+
+3. **Apply the PodSecurityPolicy:**
+   Apply the `PodSecurityPolicy` to the cluster using `kubectl`:
+
+   ```bash
+   kubectl apply -f restrict-privileged-containers-psp.yaml
+   ```
+
+4. **Create a ClusterRole and ClusterRoleBinding for the PSP:**
+   Create a `ClusterRole` and a `ClusterRoleBinding` to associate the `PodSecurityPolicy` with a set of users or service accounts. For example:
+
+   ```yaml
+   apiVersion: rbac.authorization.k8s.io/v1
+   kind: ClusterRole
+   metadata:
+     name: psp:restrict-privileged-containers
+   rules:
+   - apiGroups: ['policy']
+     resources: ['podsecuritypolicies']
+     verbs: ['use']
+     resourceNames: ['restrict-privileged-containers']
+
+   ---
+
+   apiVersion: rbac.authorization.k8s.io/v1
+   kind: ClusterRoleBinding
+   metadata:
+     name: psp:restrict-privileged-containers
+   roleRef:
+     apiGroup: rbac.authorization.k8s.io
+     kind: ClusterRole
+     name: psp:restrict-privileged-containers
+   subjects:
+   - kind: Group
+     name: system:serviceaccounts
+     namespace: default
+   ```
+
+   This example binds the `PodSecurityPolicy` to service accounts in the `default` namespace.
+
+5. **Update RBAC Roles:**
+   Ensure that your existing roles and role bindings include the necessary permissions for using the `PodSecurityPolicy`. This might include granting permission to specific users or service accounts.
+
+6. **Test:**
+   Create a pod to test whether the `PodSecurityPolicy` is applied:
+
+   ```yaml
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     name: test-pod
+   spec:
+     containers:
+     - name: test-container
+       image: nginx
+   ```
+
+   Apply the pod manifest:
+
+   ```bash
+   kubectl apply -f test-pod.yaml
+   ```
+
+   Verify that the pod is not created due to the `PodSecurityPolicy` restrictions.
+
+Remember to carefully review and adapt the policies to fit your security requirements. The example provided is a basic illustration, and you might need to customize the policies based on your specific use case and security needs.
+
 
 
 
