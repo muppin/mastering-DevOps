@@ -69,6 +69,8 @@ By combining Route 53 and AWS WAF, you create a more comprehensive solution for 
 
 - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/1d199768-c07e-40ba-a629-85460a0b0757)
 
+- **What is PSP(Pod security policy)?**
+
 
 
 
