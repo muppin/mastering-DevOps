@@ -815,6 +815,52 @@ Here are the general steps to set up a `PodSecurityPolicy` to avoid running priv
 
 Remember to carefully review and adapt the policies to fit your security requirements. The example provided is a basic illustration, and you might need to customize the policies based on your specific use case and security needs.
 
+___________________________________________________________________________________________________________________________
+
+### PDB (Pod Disruption Budget)
+
+A Pod Disruption Budget (PDB) is a resource policy in Kubernetes that allows you to control the disruption caused by voluntary disruptions, such as when performing rolling updates or draining nodes. It helps ensure the availability of applications during such disruptions by limiting the number of pods that can be simultaneously unavailable within a specified set of pods.
+
+Here are key components and aspects of a Pod Disruption Budget:
+
+1. **Objective:**
+   - The primary goal of a Pod Disruption Budget is to ensure high availability of applications during planned disruptions. It helps prevent scenarios where too many pods are taken down simultaneously, potentially causing downtime or degraded performance.
+
+2. **Specifying the Budget:**
+   - A PDB is specified as a resource object in the Kubernetes cluster. It defines the maximum number of concurrently disrupted pods allowed within a specified set of pods.
+
+3. **Selectors and Labels:**
+   - The PDB applies to a set of pods defined by selectors and labels. You specify a selector in the PDB to identify the pods that fall under the budget. Only the pods matching the selector will be subject to the constraints defined in the PDB.
+
+4. **MaxUnavailable:**
+   - The key parameter in a PDB is `maxUnavailable`, which specifies the maximum number or percentage of pods that can be unavailable simultaneously. For example, you might set `maxUnavailable: 1` to allow only one pod to be down at any given time during disruptions.
+
+5. **Usage Scenarios:**
+   - PDBs are often used in conjunction with controllers like Deployments or StatefulSets during rolling updates. When updating or scaling down, the PDB ensures that the disruption is gradual, avoiding a sudden loss of availability.
+
+6. **Pod Deletion Order:**
+   - PDBs work in coordination with the pod deletion order specified by controllers. Controllers, when rolling out updates, adhere to the PDB constraints to ensure that the specified maximum number of pods is not exceeded.
+
+7. **Example PDB Definition:**
+   ```yaml
+   apiVersion: policy/v1beta1
+   kind: PodDisruptionBudget
+   metadata:
+     name: example-pdb
+   spec:
+     maxUnavailable: 1
+     selector:
+       matchLabels:
+         app: my-app
+   ```
+
+   In this example, the PDB named `example-pdb` allows a maximum of 1 pod to be unavailable at a time, and it applies to pods labeled with `app: my-app`.
+
+8. **Status Information:**
+   - The PDB provides status information, including the number of disruptions allowed based on the specified constraints. This information can be helpful for monitoring and troubleshooting.
+
+By using Pod Disruption Budgets, you can ensure that updates and maintenance activities are performed in a controlled manner, minimizing the impact on your application's availability. It's particularly valuable in scenarios where maintaining a certain level of service is crucial.
+
 
 
 
