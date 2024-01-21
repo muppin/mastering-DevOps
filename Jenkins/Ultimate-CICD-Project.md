@@ -120,6 +120,18 @@ Explaining a CI/CD pipeline for deploying Java code, which is containerized and 
 ### 6. **Dockerization:**
    - Containerize the Java application by building a Docker image. The Docker image includes the application code, dependencies, and necessary configurations. This step ensures a consistent and reproducible deployment environment.
    - Explain the dockerfile :
+       - ```bash
+         FROM adoptopenjdk/openjdk11:alpine-jre
+         
+         ARG artifact=target/spring-boot-web.jar
+
+         WORKDIR /opt/app
+
+         COPY ${artifact} app.jar
+
+         ENTRYPOINT ["java","-jar","app.jar"]
+         ```
+         
        - this Dockerfile sets up a containerized environment for a Spring Boot application. It uses a lightweight OpenJDK 
          11 Alpine image, sets the working directory, copies the Spring Boot JAR file into the container, and specifies 
          the command to run the application when the container starts. The use of build arguments allows flexibility in 
