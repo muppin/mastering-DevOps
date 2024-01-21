@@ -34,7 +34,7 @@
 
 ___________________________________________________________________________________________________________________________
 
-### important points
+### Important points
 
 **Why we use docker container as a agent?**
 
@@ -137,7 +137,7 @@ Explaining a CI/CD pipeline for deploying Java code, which is containerized and 
          the command to run the application when the container starts. The use of build arguments allows flexibility in 
          specifying the location of the application artifact during the build process.
 
-### 7. ** Static code analysis*
+### 7. ** Static code analysis**
    - mvn sonar:sonar target is used to do the static code analysis using sonarqube.
        - The mvn sonar:sonar command is used to analyze a Maven project using SonarQube. It triggers the SonarQube 
          analysis and sends the results to the SonarQube server for further inspection and reporting.
