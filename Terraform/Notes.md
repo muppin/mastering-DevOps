@@ -9,7 +9,7 @@
 - Instead of hardcoding the values in the conf files, we use variables
 - There are 2 types of variables
     - Input - to provide the values to the configuration files, we write variables.tf file.
-    - Output - this shows the output on the console, we have to mention the the fields which has to output in the outputs.tf file.
+    - Output - this shows the output on the console, we have to mention the fields which has to output in the outputs.tf file.
 
 **terraform.tfvars**
 
