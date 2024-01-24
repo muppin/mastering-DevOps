@@ -20,4 +20,16 @@
 
 - refer this *https://github.com/iam-veeramalla/terraform-zero-to-hero/blob/main/Day-2/08-conditional-expressions.md#conditional-expressions*
 
+### Terraform functions
+
+- these are built-in functions available in Terraform
+- The Terraform language includes a number of built-in functions that you can call from within expressions to transform and combine values. The general syntax for function calls is a function name followed by comma-separated arguments in parentheses
+- The Terraform language does not support user-defined functions, and so only the functions built in to the language are available for use
+- For ex:
+   -  concat(list1, list2)
+   -  element(list, index)
+   -  length(list)
+   -  map(key, value): Creates a map from a list of keys and a list of values.
+  
+
 For more information *https://github.com/iam-veeramalla/terraform-zero-to-hero/blob/main/Day-2*
