@@ -27,6 +27,10 @@ If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary```
 
+- When we hit terraform apply, terraform will check if someone is holding the lockfile or not, if someone holds the lock it will say plz wait someone is holding the lock, once they relaese the lock u can use it.
+- Lockfile- This file is maintained automatically by "terraform init".
+- .terraform folder gets created when u hit terraform init. And this folder contains provider info.
+
 ____________________________________________________________________________________________________________________________
 
 - Demo - https://www.youtube.com/watch?v=acnpInts120
