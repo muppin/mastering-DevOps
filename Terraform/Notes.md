@@ -40,4 +40,11 @@ For more information *https://github.com/iam-veeramalla/terraform-zero-to-hero/b
 - This file, often named terraform.tfstate, is a JSON or HCL (HashiCorp Configuration Language) formatted file that contains important information about the infrastructure's current state, such as resource attributes, dependencies, and metadata.
 
 Advantages of State file
-- 
+- Resource tracking - keeps track of resources, attributes and dependencies so that we can update and destroy easily.
+- Concurrency Control - tf uses statefile to lock resources, so multiple users dont modify simultaneously.
+- Plan Configuration - tf uses statefile to display difference between desired state(tf code) and actual state(infrastructure)
+- Resource Metadata - stores all metadata about each resource, like unique identifiers which is crucial for managing resources.
+
+Drawbacks
+
+
