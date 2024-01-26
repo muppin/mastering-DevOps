@@ -91,6 +91,86 @@ ________________________________________________________________________________
     module or configuration block.
 
 In summary, variables are used for input configuration and customization, while locals are used for internal configuration and reducing duplication within your Terraform code.
+
+_________________________________________________________________________________________________________________________________________________________________________________________
+
+### Loops
+
+- Loops work with collections like list, map or sets.
+- For each loop works only with sets or maps not with list.
+
+In Terraform, you can use different constructs to iterate over lists or maps and perform actions based on each element. Three commonly used constructs for iteration are the `for` expression, the `for_each` meta-argument, and the `count` meta-argument.
+
+**1. `for` Expression:**
+The `for` expression allows you to iterate over a list or map and generate new values based on each element. It is often used within resource blocks to dynamically create multiple instances of a resource.
+
+Example:
+```hcl
+variable "instance_names" {
+  type    = list(string)
+  default = ["web-1", "web-2", "web-3"]
+}
+
+resource "aws_instance" "example" {
+  for_each = { for idx, name in var.instance_names : name => idx }
+
+  ami           = "ami-12345678"
+  instance_type = "t2.micro"
+  tags = {
+    Name = each.key
+    Index = each.value
+  }
+}
+```
+
+In this example, `for_each` iterates over the `instance_names` list, creating an instance for each element. It generates a map where the key is the instance name and the value is the index of the element in the list.
+
+**2. `for_each` Meta-Argument:**
+The `for_each` meta-argument allows you to create multiple instances of a resource or module based on the elements of a map. It's useful when you want to manage a collection of resources where each element has a unique identifier.
+
+Example:
+```hcl
+variable "subnets" {
+  type = map(string)
+  default = {
+    subnet1 = "10.0.1.0/24"
+    subnet2 = "10.0.2.0/24"
+  }
+}
+
+resource "aws_subnet" "example" {
+  for_each = var.subnets
+
+  vpc_id            = "vpc-12345678"
+  cidr_block        = each.value
+  availability_zone = "${var.availability_zone}"
+}
+```
+
+Here, `for_each` iterates over the `subnets` map, creating a subnet resource for each element. Each subnet is uniquely identified by its key in the map.
+
+**3. `count` Meta-Argument:**
+The `count` meta-argument specifies the number of resource instances to create. It's typically used when you want to create a fixed number of instances of a resource, such as in a simple array or list.
+
+Example:
+```hcl
+variable "instance_count" {
+  type    = number
+  default = 3
+}
+
+resource "aws_instance" "example" {
+  count         = var.instance_count
+  ami           = "ami-12345678"
+  instance_type = "t2.micro"
+}
+```
+
+In this example, `count` determines the number of `aws_instance` resources to create based on the value of the `instance_count` variable.
+
+Each of these constructs has its own use cases and advantages, so choose the one that best fits your requirements based on the structure of your data and the desired outcome.
+
+________________________________________________________________________________________________________________________________________________________________________________________
 Drawbacks
 
 
