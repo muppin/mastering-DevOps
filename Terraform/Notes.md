@@ -45,6 +45,44 @@ Advantages of State file
 - Plan Configuration - tf uses statefile to display difference between desired state(tf code) and actual state(infrastructure)
 - Resource Metadata - stores all metadata about each resource, like unique identifiers which is crucial for managing resources.
 
+  ___________________________________________________________________________________________________________________________________________________________________________________________
+
+### Terraform Locals
+
+In Terraform, "locals" is a feature that allows you to declare reusable values within your configuration. These values can be used across multiple resources, modules, or expressions within your Terraform code. Locals are defined within the `locals` block and are scoped to the module or configuration where they are declared.
+
+Here's a breakdown of how Terraform locals work:
+
+1. **Declaration:** Locals are defined using the `locals` block within your Terraform configuration. Inside this block, you specify the names and values of the variables you want to define.
+
+2. **Reusable Values:** Locals are useful for defining values that are used repeatedly within your configuration. Instead of repeating the same value in multiple places, you define it once as a local and reference it wherever needed.
+
+3. **Scoping:** Locals are scoped to the module or configuration where they are defined. This means they are only accessible within the same module or configuration file.
+
+4. **Immutable:** Locals are immutable, meaning their values cannot be changed once they are defined. They are evaluated only once during Terraform's execution and remain constant throughout the execution.
+
+5. **Syntax:** The syntax for defining locals looks like this:
+   ```hcl
+   locals {
+     variable_name = value
+     another_variable = "some_value"
+     staging_env = "staging"
+   }
+   ```
+
+6. **Usage:** Locals are referenced using the `local` keyword followed by the name of the local variable. For example:
+   ```hcl
+   resource "aws_instance" "example" {
+     instance_type = local.instance_type
+     ami           = local.ami_id
+     // other arguments
+   }
+   ```
+
+By using locals, you can make your Terraform configurations more concise, easier to read, and maintainable by centralizing the definition of reusable values. It also helps in avoiding duplication of values and promotes consistency across your infrastructure code.
+
+______________________________________________________________________________________________________________________________________________________________________________________
+
 Drawbacks
 
 
