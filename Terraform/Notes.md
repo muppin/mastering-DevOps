@@ -83,6 +83,14 @@ By using locals, you can make your Terraform configurations more concise, easier
 
 ______________________________________________________________________________________________________________________________________________________________________________________
 
+### Difference between Variables and locals
+
+- **Scope:** Variables are globally accessible within a module or configuration, while locals are scoped to the module or block where they are defined.
+- **Mutability:** Variables can have their values changed dynamically, while locals are immutable.
+- **Use Cases:** Variables are primarily used for configuration customization and parameterization, while locals are used for defining reusable values or expressions within a single 
+    module or configuration block.
+
+In summary, variables are used for input configuration and customization, while locals are used for internal configuration and reducing duplication within your Terraform code.
 Drawbacks
 
 
