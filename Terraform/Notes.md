@@ -45,7 +45,7 @@ Advantages of State file
 - Plan Configuration - tf uses statefile to display difference between desired state(tf code) and actual state(infrastructure)
 - Resource Metadata - stores all metadata about each resource, like unique identifiers which is crucial for managing resources.
 
-  ___________________________________________________________________________________________________________________________________________________________________________________________
+Drawbacks  ___________________________________________________________________________________________________________________________________________________________________________________________
 
 ### Terraform Locals
 
@@ -215,8 +215,46 @@ Here's a basic overview of how dynamic blocks work:
    - Care should be taken to ensure that dynamic configurations remain manageable and understandable, especially as complexity increases.
 
 Overall, dynamic blocks are a powerful feature of Terraform that enable more dynamic, concise, and data-driven configurations, particularly in scenarios where repetitive configurations need to be generated based on dynamic data or conditions.
-____________________________________________________________________________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________________
 
-Drawbacks
+### Terraform datasources
+
+Certainly! In Terraform, data sources are used to retrieve information from an existing infrastructure or external source, and then use that information within the Terraform configuration. Data sources are defined using the `data` block in a Terraform configuration file. Here is a basic syntax for a data source block:
+
+```hcl
+data "aws_ami" "latest_amazon_linux" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+  }
+}
+```
+
+In this example, the data source is named `aws_ami` and has the alias `latest_amazon_linux`. It retrieves information about the latest Amazon Linux AMI (Amazon Machine Image) from AWS. This data source does not create any resources; instead, it allows you to refer to attributes of the retrieved AMI within your Terraform configuration.
+
+Here's a breakdown of the key components:
+
+- `data`: Indicates the beginning of a data source block.
+- `aws_ami`: The type of data source, in this case, fetching information about an Amazon Machine Image on AWS.
+- `latest_amazon_linux`: An alias for this specific instance of the data source. This alias is used to refer to the data source in other parts of your Terraform configuration.
+- `most_recent` and `owners`: Parameters specific to the AWS data source, indicating that you want the most recent AMI owned by the specified AWS account.
+- `filter`: A block inside the data source to further filter the results based on certain criteria.
+
+You can then reference attributes of the data source elsewhere in your configuration. For example:
+
+```hcl
+resource "aws_instance" "example" {
+  ami           = data.aws_ami.latest_amazon_linux.id
+  instance_type = "t2.micro"
+  # other configuration...
+}
+```
+
+In this case, the `ami` attribute of the `aws_instance` resource is set to the `id` attribute of the `latest_amazon_linux` data source, effectively using the information retrieved by the data source in the creation of a new AWS instance.
+
+Data sources are powerful because they allow you to dynamically incorporate information from your infrastructure or external services into your Terraform configuration. This makes your configurations more flexible and adaptable to changes in the environment.
 
 
