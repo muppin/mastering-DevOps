@@ -259,7 +259,7 @@ Data sources are powerful because they allow you to dynamically incorporate info
 
 __________________________________________________________________________________________________________________________________________________________________________________________
 
-Certainly! Let's delve into the concepts of implicit and explicit dependencies in Terraform with an example:
+## Terraform Dependencies
 
 ### Implicit Dependencies:
 
