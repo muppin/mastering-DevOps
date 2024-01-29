@@ -257,4 +257,75 @@ In this case, the `ami` attribute of the `aws_instance` resource is set to the `
 
 Data sources are powerful because they allow you to dynamically incorporate information from your infrastructure or external services into your Terraform configuration. This makes your configurations more flexible and adaptable to changes in the environment.
 
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+Certainly! Let's delve into the concepts of implicit and explicit dependencies in Terraform with an example:
+
+### Implicit Dependencies:
+
+Implicit dependencies in Terraform are those that Terraform automatically detects based on how resources are referenced within your configuration files. Terraform analyzes these references to determine the order in which resources should be created, updated, or destroyed.
+
+Consider an example where we have an S3 bucket and an AWS Lambda function. The Lambda function requires the S3 bucket to be created before it can be deployed because it needs to read from or write to the bucket.
+
+```hcl
+// Define the S3 bucket
+resource "aws_s3_bucket" "example_bucket" {
+  bucket = "example-bucket"
+  // Additional configuration...
+}
+
+// Define the Lambda function
+resource "aws_lambda_function" "example_lambda" {
+  function_name = "example_lambda_function"
+  // Additional configuration...
+
+  // Lambda function requires access to the S3 bucket
+  // Terraform detects this reference and creates an implicit dependency
+  s3_bucket = aws_s3_bucket.example_bucket.id
+}
+```
+
+In this example:
+
+- Terraform detects that the Lambda function references the S3 bucket through the `s3_bucket` attribute.
+- Therefore, it automatically creates a dependency where the Lambda function depends on the S3 bucket.
+- When Terraform executes the configuration, it ensures that the S3 bucket is created before attempting to create the Lambda function.
+
+### Explicit Dependencies:
+
+Explicit dependencies in Terraform are defined using the `depends_on` parameter within a resource block. You use explicit dependencies when you need to specify dependencies that Terraform cannot infer automatically or when you want to enforce a specific order of resource creation, update, or deletion.
+
+Let's extend the previous example to include an IAM role that the Lambda function assumes. We want to ensure that the IAM role is created before the Lambda function is deployed.
+
+```hcl
+// Define the IAM role
+resource "aws_iam_role" "example_role" {
+  name = "example_lambda_role"
+  // Additional configuration...
+}
+
+// Define the Lambda function
+resource "aws_lambda_function" "example_lambda" {
+  function_name = "example_lambda_function"
+  // Additional configuration...
+
+  // Lambda function requires access to the S3 bucket
+  s3_bucket = aws_s3_bucket.example_bucket.id
+
+  // Lambda function assumes the IAM role
+  // We specify an explicit dependency using depends_on
+  depends_on = [aws_iam_role.example_role]
+}
+```
+
+In this example:
+
+- We define an IAM role (`aws_iam_role.example_role`) before the Lambda function.
+- We use the `depends_on` parameter in the Lambda function resource block to specify that the Lambda function depends explicitly on the IAM role.
+- This ensures that Terraform creates the IAM role before attempting to create the Lambda function.
+
+Explicit dependencies give you control over the order of resource creation, especially in complex scenarios where implicit dependencies might not be sufficient or accurate.
+
+______________________________________________________________________________________________________________________________________________________________________________________
+
 
