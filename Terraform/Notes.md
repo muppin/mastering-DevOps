@@ -415,4 +415,43 @@ resource "aws_lambda_function" "example_lambda" {
   depends_on = [aws_iam_role_policy_attachment.example]
 }
 ```
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+### AWS Lambda with Terraform
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7dab9235-df31-4fc4-8af2-dca35cf192c4)
+
+- here code means, python code + terraform code (main.tf)
+- then in second step, we need to zip the python code
+- after that upload the zipped file to AWS lambda
+
+**Project structure**
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/21a14cf1-bf0e-462c-845d-9592ff1c1802)
+
+- Once we execute the main.tf, it will create zip file with the help of data block.
+- This zip file will be created inside the python folder
+- ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/18d63b8d-a3a7-4073-809b-d8704b78c0cb)
+
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+### AWS S3 
+
+```hcl
+/ Define the S3 bucket
+resource "aws_s3_bucket" "example_bucket" {
+  bucket = "example-bucket45678"
+  
+}
+
+resource "aws_s3_object" "example_object" {
+  bucket = aws_s3_bucket.example_bucket.id
+  key    = "ayushi/hello-python.zip"  # Specify your desired key for the object
+  source = "C:/Users/avasishtha/learningTerraform/terraform-zero-to-hero/Dependencies/python/hello-python.zip"  # Specify the local file path you want to upload
+  
+  # Additional optional configurations
+  acl    = "private"  # Access Control List (ACL) for the object (e.g., private, public-read)
+}
+```
+________________________________________________________________________________________________________________________________________________________________________________________
+
 
