@@ -454,4 +454,38 @@ resource "aws_s3_object" "example_object" {
 ```
 ________________________________________________________________________________________________________________________________________________________________________________________
 
+### Null resource
+
+- Null resource will not create any resource
+- it is used to run commands, scripts, playbooks etc.
+- ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/58fcf3d6-46e6-4a03-8fe3-88fb3bb7abca)
+
+- If the id is changed then it will trigger the provisioner (local exec
+- If u write a null resource without trigger, it will only execute once.
+- When u again do terraform apply, null resource will not be created
+- Therefor null resource will only be executed if there is a change in ID.
+
+
+```hcl
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "Instance1" {
+  instance_type = "t2.micro"
+  ami = "ami-0c7217cdde317cfec" # change this
+  subnet_id = "subnet-0e74b3f0aec8bc739" # change this
+}
+
+
+resource "null_resource" "Null_example" {
+
+    triggers = {
+        id = timestamp()
+    }
+  provisioner "local-exec" {
+    command = "echo hello world!"
+  }
+}
+```
 
