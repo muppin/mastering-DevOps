@@ -328,4 +328,91 @@ Explicit dependencies give you control over the order of resource creation, espe
 
 ______________________________________________________________________________________________________________________________________________________________________________________
 
+### Code for AWS Lambda with S3 (using dependencies)
+
+```hcl
+// Define the S3 bucket
+resource "aws_s3_bucket" "example_bucket" {
+  bucket = "example-bucket45678"
+  
+}
+
+resource "aws_s3_object" "example_object" {
+  bucket = aws_s3_bucket.example_bucket.id
+  key    = "ayushi/hello-python.zip"  # Specify your desired key for the object
+  source = "C:/Users/avasishtha/learningTerraform/terraform-zero-to-hero/Dependencies/python/hello-python.zip"  # Specify the local file path you want to upload
+  
+  # Additional optional configurations
+  acl    = "private"  # Access Control List (ACL) for the object (e.g., private, public-read)
+}
+
+// Define the IAM role
+resource "aws_iam_role" "example_role" {
+  name = "example_lambda_role"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action = "sts:AssumeRole"
+      Effect = "Allow"
+      Principal = {
+        Service = "lambda.amazonaws.com"
+      }
+    }]
+  })
+}
+
+// Define the IAM policy
+resource "aws_iam_policy" "example" {
+  name        = "example-policy"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect = "Allow"
+      Action = [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ]
+      Resource = ["arn:aws:logs:*:*:*"]
+    },{
+      Effect = "Allow"
+      Action = [
+        "ec2:CreateNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DeleteNetworkInterface"
+      ]
+      Resource = ["*"]
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "example" {
+  policy_arn = aws_iam_policy.example.arn
+  role = aws_iam_role.example_role.name
+}
+
+# Generates an archive from content, a file, or a directory of files.
+
+data "archive_file" "zip_the_python_code" {
+ type        = "zip"
+ source_dir  = "C:/Users/avasishtha/learningTerraform/terraform-zero-to-hero/Dependencies/python/"
+ output_path = "C:/Users/avasishtha/learningTerraform/terraform-zero-to-hero/Dependencies/python/hello-python.zip"
+}
+
+// Define the Lambda function
+resource "aws_lambda_function" "example_lambda" {
+  function_name = "example_lambda_function"
+  role = aws_iam_role.example_role.arn
+  runtime = "python3.8"
+  handler = "hello-python.lambda_handler"
+
+  // Lambda function requires access to the S3 bucket
+  // Terraform detects this reference and creates an implicit dependency
+  s3_bucket = aws_s3_bucket.example_bucket.id
+  s3_key = aws_s3_object.example_object.key
+  // Lambda function assumes the IAM role
+  // We specify an explicit dependency using depends_on
+  depends_on = [aws_iam_role_policy_attachment.example]
+}
+```
 
