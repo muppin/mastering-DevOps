@@ -465,6 +465,8 @@ ________________________________________________________________________________
 - When u again do terraform apply, null resource will not be created
 - Therefor null resource will only be executed if there is a change in ID.
 
+  **Use Case** - Suppose we change the instance type/ami_id from t2-micro to t2-small, the id (aws_instance.example.type) inside the trigger block will be updated, which will trigger the provisioner to execute commands, scripts on a new instance.
+
 
 ```hcl
 provider "aws" {
