@@ -488,4 +488,21 @@ resource "null_resource" "Null_example" {
   }
 }
 ```
+___________________________________________________________________________________________________________________________
+
+### tfenv
+
+- It is a utility of terraform and this tool helps you to manage and install multiple different versions of terraform.
+- We need to install explicitly
+- why do we need this? to upgarde or rollback to the specific version.
+- Installation steps:
+   - git clone https://github.com/tfutils/tfenv.git ~/.tfenv
+   - echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> ~/.bashrc
+
+**Commands**
+- tfenv -v
+- tfenv list-remote
+- tfenv install *version*
+- tfenv install latest
+- tfenv use *version*
 
