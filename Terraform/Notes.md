@@ -500,11 +500,15 @@ ________________________________________________________________________________
 - Installation steps:
    - git clone https://github.com/tfutils/tfenv.git ~/.tfenv
    - echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> ~/.bashrc
+   - source ~/.bashrc
+
 
 **Commands**
 - tfenv -v
-- tfenv list-remote
+- tfenv list-remote  (List installable versions)
+- tfenv list (List installed versions)
 - tfenv install *version*
 - tfenv install latest
 - tfenv use *version*
+- tfenv uninstall *version*
 
