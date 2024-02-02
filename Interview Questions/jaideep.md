@@ -106,6 +106,7 @@
 - diff between deployment vs statefulset
 - what is pdb?
 - why is metrics server used?
+- what is init container?
 - what resources are created in default namespace when we create a cluster
 - why do we stop/start instance not reboot an ec2 instance 
 - A name vs AAAA name
