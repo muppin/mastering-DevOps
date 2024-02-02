@@ -89,4 +89,24 @@
 - what is the difference in instance health check vs system health check ? (hint 2/2 while provisioning).
 - how to connect ec2 with rds , what firewall rules will you apply.
 
-
+## Msys Tech (SRE Support)
+- write a script that can monitor apache service at an interval of 5 mins and if its not running then log the event in logs.txt and 
+  start the service
+- cron entry to run script at 8:30 pm every friday
+- diff between service and systemctl
+- kill the process in one command (dont know the process id)
+- difference between docker run vs docker exec
+- difference between docker run vs cmd in dockerfile.
+- how to create an image from running app
+- did you write any dockerfile 
+- what is kubedns, why is it used
+- components of worker plane 
+- what is headless service , types of services
+- types of controller managers
+- diff between deployment vs statefulset
+- what is pdb?
+- why is metrics server used?
+- what resources are created in default namespace when we create a cluster
+- why do we stop/start instance not reboot an ec2 instance 
+- A name vs AAAA name
+- steps to create a custom ami
