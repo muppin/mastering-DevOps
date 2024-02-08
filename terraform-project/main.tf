@@ -22,3 +22,27 @@ module "route_tables" {
   subnet_id6 = module.vpc.subnet_id6
   
 }
+
+module "security_groups" {
+  source = "./Modules/security_groups"
+  vpc_id = module.vpc.vpc_id
+  
+}
+
+module "application_load_balancer" {
+  source = "./Modules/application_load_balancer"
+  vpc_id = module.vpc.vpc_id
+  subnet_id1 = module.vpc.subnet_id1
+  subnet_id2 = module.vpc.subnet_id2
+  sgforlb = module.security_groups.sgforlb
+  
+}
+
+module "auto_scaling_group" {
+  source = "./Modules/auto_scaling_group"
+  subnet_id1 = module.vpc.subnet_id1
+  subnet_id2 = module.vpc.subnet_id2
+  target_group_arn = module.application_load_balancer.target_group_arn
+  sgforservers = module.security_groups.sgforservers
+  
+}
