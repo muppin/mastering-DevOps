@@ -35,6 +35,9 @@ module "application_load_balancer" {
   subnet_id1 = module.vpc.subnet_id1
   subnet_id2 = module.vpc.subnet_id2
   sgforlb = module.security_groups.sgforlb
+  sgforlbApp = module.security_groups.sgforlbApp
+  subnet_id3 = module.vpc.subnet_id3
+  subnet_id4 = module.vpc.subnet_id4
   
 }
 
@@ -44,5 +47,12 @@ module "auto_scaling_group" {
   subnet_id2 = module.vpc.subnet_id2
   target_group_arn = module.application_load_balancer.target_group_arn
   sgforservers = module.security_groups.sgforservers
+  sgforserversapp = module.security_groups.sgforserversapp
+  subnet_id3 = module.vpc.subnet_id3
+  subnet_id4 = module.vpc.subnet_id4
+  target_group_arn_APP = module.application_load_balancer.target_group_arn_APP
   
 }
+
+#-------------------------------------------------APP TIER-------------------------------------
+

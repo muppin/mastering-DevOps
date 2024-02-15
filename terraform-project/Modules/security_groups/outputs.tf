@@ -6,3 +6,11 @@ output "sgforservers" {
     value = aws_security_group.sgforservers.id
   
 }
+
+output "sgforlbApp" {
+  value = aws_security_group.sgforlbApp.id
+}
+
+output "sgforserversapp" {
+  value = aws_security_group.sgforserversapp.id
+}
