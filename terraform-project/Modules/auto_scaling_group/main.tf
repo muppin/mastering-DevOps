@@ -1,8 +1,8 @@
 resource "aws_launch_template" "foobar" {
-  name_prefix   = "foobar"
-  image_id      = "ami-0e83be366243f524a"
+  name  = "foobar"
+  image_id      = "ami-0c7217cdde317cfec"
   instance_type = "t2.micro"
-  security_group_names = [var.sgforservers]
+  vpc_security_group_ids = [var.sgforservers]
   }
 
   resource "aws_autoscaling_group" "bar" {
