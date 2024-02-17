@@ -54,5 +54,19 @@ module "auto_scaling_group" {
   
 }
 
-#-------------------------------------------------APP TIER-------------------------------------
+#-------------------------------------------------DB TIER-------------------------------------
+
+module "subnet_group" {
+  source = "./Modules/subnet_group"
+  subnet_id5 =module.vpc.subnet_id5
+  subnet_id6 = module.vpc.subnet_id6
+  
+}
+
+module "rds" {
+  source = "./Modules/rds"
+  sgforlbDB = module.security_groups.sgforlbDB
+  db_subnet_group_name = module.subnet_group.db_subnet_group_name
+  
+}
 

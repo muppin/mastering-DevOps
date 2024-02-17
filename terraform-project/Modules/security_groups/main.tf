@@ -91,3 +91,24 @@ resource "aws_security_group" "sgforserversapp" {
   }
   
 }
+
+#---------------------------DB TIER SECURITY GROUPS----------------------
+
+resource "aws_security_group" "sgforlbDB" {
+    vpc_id = var.vpc_id
+    ingress {
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = null
+    security_groups = [aws_security_group.sgforlbApp.id] # Allow incoming traffic from anywhere (update as needed)
+  }
+    egress {
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = null # Allow outgoing traffic to anywhere (update as needed)
+    security_groups = [aws_security_group.sgforlbApp.id]
+  }
+  
+}

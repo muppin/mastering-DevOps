@@ -55,7 +55,7 @@ resource "aws_lb" "example-alb-APP" {
 }
 
 resource "aws_lb_listener" "example_listener_APP" {
-    load_balancer_arn = aws_lb.example.arn
+    load_balancer_arn = aws_lb.example-alb-APP.arn
     port = 80
     protocol = "HTTP"
     default_action {

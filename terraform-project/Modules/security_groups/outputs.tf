@@ -14,3 +14,7 @@ output "sgforlbApp" {
 output "sgforserversapp" {
   value = aws_security_group.sgforserversapp.id
 }
+
+output "sgforlbDB" {
+  value = aws_security_group.sgforlbDB.id
+}
