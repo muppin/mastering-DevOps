@@ -15,6 +15,8 @@
 
 - this will update or pass the values to the variables.tf files, instead of hardcoding the variables.tf files we pass the values using .tfvars file
 - this is useful when there are multiple environments and you can have .tfvars for each one.
+- By default TF will take terraform.tfvars only, but suppose if u have prod.tfvars and staging.tfvars then you have to pass it in terraform apply command.
+- terraform apply -var-file=prod.tfvars 
 
 ### Condition expressions
 
