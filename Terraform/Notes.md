@@ -47,7 +47,18 @@ Advantages of State file
 - Plan Configuration - tf uses statefile to display difference between desired state(tf code) and actual state(infrastructure)
 - Resource Metadata - stores all metadata about each resource, like unique identifiers which is crucial for managing resources.
 
-Drawbacks  ___________________________________________________________________________________________________________________________________________________________________________________________
+**Drawbacks**
+The statefile in Terraform serves as a crucial component for tracking the state of the infrastructure managed by Terraform. However, it does come with some drawbacks:
+
+- Centralized Management: The statefile is typically stored in a centralized location (e.g., local file system, remote storage), which means that it can become a single point of failure. If the statefile becomes corrupted or inaccessible, it can lead to inconsistencies and difficulties in managing the infrastructure.
+
+- Security Risks: Depending on where the statefile is stored, there may be security risks associated with exposing sensitive infrastructure details. For example, storing the statefile in a version control system without proper access controls could expose infrastructure secrets to unauthorized users.
+
+- Limited Visibility and Tracking: The statefile provides a snapshot of the infrastructure at a particular point in time. However, it may not offer comprehensive visibility into the history of changes or detailed tracking of modifications over time. This can make it difficult to troubleshoot issues or audit changes effectively.
+
+- Scaling Challenges: As the complexity and scale of the infrastructure managed by Terraform grow, the size of the statefile can also increase significantly. This can lead to performance issues, longer processing times, and challenges in maintaining and managing the statefile efficiently.
+
+___________________________________________________________________________________________________________________________________________________________________________________________
 
 ### Terraform Locals
 
