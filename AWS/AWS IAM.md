@@ -80,7 +80,15 @@ ________________________________________________________________________________
 
 - These security control policies can be attached at different organisational units(OUs) and also can be attached to accounts.
 - It allows everything for the management account even though any deny polices are attached to it.
-- Root SCP is inherited to all the accounts and OUs 
+- Root SCP is inherited to all the accounts and OUs
+
+_________________________________________________________________________________________________________________________
+
+ ### IAM - Advanced Policies (Condition)
+
+ ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/01ffafcd-4905-41c3-af1d-a0f109973a39)
+
+ In the above we see we can restrict/allow the api calls from a range of Ip addresses and also from certain regions.
 
 
 
