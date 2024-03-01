@@ -45,8 +45,9 @@ In summary, IAM Users are directly managed within AWS and have their credentials
 *****************************************************************************************************************************************************************************************
 
 **AWS Role : Assume Role**
-In this demo, we will create generic role and then will create a user and that user will assume that role.
-The policies attached to this role is not directly added to the user, he/she has to first assume it and then the permissions are reflected.
+- In this demo, we will create generic role and then will create a user and that user will assume that role.
+- The policies attached to this role is not directly added to the user, he/she has to first assume it and then the permissions are reflected.
+- when you assume a role, you give up your origin permissions and take the permissions assigned to the role.
 
 **Steps**
 - **Step 1**- Create standalone user, which is not part of any group.
@@ -61,6 +62,9 @@ The policies attached to this role is not directly added to the user, he/she has
   - Now test the assume role functionality.
   - Go to the role -> copy the link to switch the role -> use this url to switch the role. For this you should be already logged in to the user.
   - To switch back to user again click on switch back from top right corner.
+ 
+  **Resource based policy**
+  In AWS (Amazon Web Services), a Resource-Based Policy is a type of access control policy that is attached directly to an AWS resource. This policy defines who has permission to access the resource and what actions they can perform. Resource-Based Policies are commonly used with services like Amazon S3 buckets, Lambda functions, and others.
  
 _________________________________________________________________________________________________________________________
 
