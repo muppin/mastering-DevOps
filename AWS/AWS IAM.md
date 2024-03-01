@@ -67,16 +67,23 @@ ________________________________________________________________________________
 
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/06adfd04-2733-489b-8542-c26558d581dc)
-![image](https://github.com/muppin/mastering-DevOps/assets/121821200/83baedeb-ccf8-4817-b66b-b2a338cfc51e)
-![image](https://github.com/muppin/mastering-DevOps/assets/121821200/ed96d630-491e-4040-8f69-f74f1a514d4b)
-![image](https://github.com/muppin/mastering-DevOps/assets/121821200/50aa651a-c0f3-4e45-b3cb-eead43cb0314)
-
-
-
-
 - basically with the help of aws organisation we create oragnisation unit and then create a account inside the ou
 - the new account should have different email address.
 - we can have seperate environments with the help of aws organisation for ex Test, sandbox, Dev, pre-prod, prod.
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/83baedeb-ccf8-4817-b66b-b2a338cfc51e)
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/ed96d630-491e-4040-8f69-f74f1a514d4b)
+
+**Security Control Policies**
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/50aa651a-c0f3-4e45-b3cb-eead43cb0314)
+
+- These security control policies can be attached at different organisational units(OUs) and also can be attached to accounts.
+- It allows everything for the management account even though any deny polices are attached to it.
+- Root SCP is inherited to all the accounts and OUs 
 
 
-- 
+
+
+
+
+
