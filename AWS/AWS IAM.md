@@ -41,3 +41,25 @@ In AWS, Federated Users and IAM (Identity and Access Management) Users are two d
    - Federation supports single sign-on (SSO) and can enhance security by reducing the number of credentials to manage.
 
 In summary, IAM Users are directly managed within AWS and have their credentials, whereas Federated Users leverage an external identity provider for authentication and receive temporary credentials to access AWS resources. The choice between IAM Users and Federated Users depends on the organization's requirements, existing identity systems, and security preferences.
+
+*****************************************************************************************************************************************************************************************
+
+**AWS Role : Assume Role**
+In this demo, we will create generic role and then will create a user and that user will assume that role.
+
+**Steps**
+- **Step 1**- Create standalone user, which is not part of any group.
+- **Step 2** - Create IAM role. While creating role select "AWS Account" as the entity type. Select "This account"
+- Both user and role are not related.
+- **Step 3** - Create policy and attach it to role.
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/23b8c008-9b55-4a2e-8b56-67382ca386ef)
+- **Step 4** - Attach role to the user.
+- Navigate to User -> select user -> add permissions -> create inline policy -> specify permissions
+  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c54b1d4f-3d40-4092-9bad-0474f429378a)
+  - Under resource give role arn.
+  - Now test the assume role functionality.
+  - Go to the role -> copy the link to switch the role -> use this url to switch the role. For this you should be already logged in to the user.
+  - To switch back to user again click on switch back from top right corner.
+
+
+- 
