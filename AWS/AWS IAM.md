@@ -60,6 +60,23 @@ In this demo, we will create generic role and then will create a user and that u
   - Now test the assume role functionality.
   - Go to the role -> copy the link to switch the role -> use this url to switch the role. For this you should be already logged in to the user.
   - To switch back to user again click on switch back from top right corner.
+ 
+_________________________________________________________________________________________________________________________
+
+### AWS Organisation
+
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/06adfd04-2733-489b-8542-c26558d581dc)
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/83baedeb-ccf8-4817-b66b-b2a338cfc51e)
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/ed96d630-491e-4040-8f69-f74f1a514d4b)
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/50aa651a-c0f3-4e45-b3cb-eead43cb0314)
+
+
+
+
+- basically with the help of aws organisation we create oragnisation unit and then create a account inside the ou
+- the new account should have different email address.
+- we can have seperate environments with the help of aws organisation for ex Test, sandbox, Dev, pre-prod, prod.
 
 
 - 
