@@ -46,6 +46,7 @@ In summary, IAM Users are directly managed within AWS and have their credentials
 
 **AWS Role : Assume Role**
 In this demo, we will create generic role and then will create a user and that user will assume that role.
+The policies attached to this role is not directly added to the user, he/she has to first assume it and then the permissions are reflected.
 
 **Steps**
 - **Step 1**- Create standalone user, which is not part of any group.
