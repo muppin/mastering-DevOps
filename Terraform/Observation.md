@@ -102,4 +102,34 @@ ________________________________________________________________________________
 terraform apply -target=aws_instance.example_instance
 __________________________________________________________________________________________________________________________________________________________________________________
 
+**TF Logs**
+
+To check Terraform logs, you have a few options depending on the level of detail you need and the environment in which you're running Terraform:
+
+1. **Console Output**: By default, Terraform logs its operations to the console during execution. When you run `terraform apply`, `terraform plan`, or any other Terraform command, you'll see output indicating what Terraform is doing. This includes information about which resources are being created, modified, or destroyed, as well as any errors encountered.
+
+2. **Log Files**: Terraform can also write logs to files. To enable file-based logging, you can set the `TF_LOG` environment variable to one of the log levels: `TRACE`, `DEBUG`, `INFO`, `WARN`, or `ERROR`. For example:
+
+   ```bash
+   export TF_LOG=DEBUG
+   ```
+
+   Then, when you run Terraform commands, it will log to a file named `terraform.log` in the current working directory.
+
+3. **Remote State Backends**: If you're using a remote state backend like Amazon S3 or Azure Blob Storage, Terraform can log HTTP requests and responses sent to and received from the backend. You can enable this by setting the `TF_LOG` environment variable to `DEBUG`.
+
+   ```bash
+   export TF_LOG=DEBUG
+   ```
+
+   This will output the HTTP request and response information to the console or log file, depending on your configuration.
+
+4. **Third-Party Logging Solutions**: Some organizations prefer to centralize their logs using third-party logging solutions like Splunk, ELK Stack (Elasticsearch, Logstash, Kibana), or CloudWatch Logs. You can integrate Terraform with these solutions by configuring logging drivers or agents to capture and forward Terraform logs.
+
+5. **Custom Logging**: If you need more control over logging, you can implement custom logging within your Terraform configurations using the `local-exec` provisioner or external scripts. This allows you to capture specific events or information and log it to files or other destinations as needed.
+
+When troubleshooting Terraform-related issues, it's essential to check the logs for any error messages or unexpected behavior. The level of detail you need in the logs depends on the nature of the problem you're encountering. Adjust the logging level accordingly to provide the necessary information for debugging.
+
+__________________________________________________________________________________________________________________________________________________________________________________
+
 
