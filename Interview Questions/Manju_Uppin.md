@@ -26,7 +26,7 @@
 - what are provisioners in terraform? why they are used?
 - what are the types of provisioners?
 - what are types of resource dependencies in terraform?
-- what is number of parallelism that is present in terraform? (how many resources terraform can create at a particular point?)
+- what is number of parallelism that is present in terraform? (how many resources terraform can create at a particular point?)- By default, Terraform sets the -parallelism option to 10, meaning it will execute up to 10 resource operations concurrently. However, you can adjust this value **terraform apply -parallelism=n**
 - to see what are the resources created in terraform, what is that command?
 - have you used Terraform function??
 - have you seen terraform logs??
