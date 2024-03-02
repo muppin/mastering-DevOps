@@ -77,4 +77,23 @@ Backups: If you have regular backups of your state file, you can restore it from
 
 **Rebuilding and Testing:** In the worst-case scenario where the state is entirely lost and there are no backups or documentation available, you might need to start from scratch. This involves recreating your infrastructure configuration, testing thoroughly, and making sure the new resources match the desired state.
 
+_________________________________________________________________________________________________________________________________________________________________________________________
+
+**What happens if we click  ctrl C after hitting terraform apply ?**
+
+**Immediate Interruption:** If you press Ctrl + C early in the process, before Terraform has made any significant changes or modifications, the process will likely be halted immediately, and Terraform will exit gracefully. No changes will be applied to your infrastructure.
+
+**Interrupting During Resource Creation/Updates:** If Ctrl + C is pressed while Terraform is in the process of creating or updating resources, Terraform will attempt to gracefully stop the ongoing operations. However, depending on the timing, some resources might already have been created or updated before the interruption, while others may not have been started at all.
+
+**What happens if we click terraform apply after the interreuption?**
+- If Terraform was able to make some changes before the interruption and the state file was updated accordingly, subsequent terraform apply commands may only apply the remaining changes that were not completed before the interruption. Terraform is designed to be idempotent, meaning it should be safe to run multiple times without causing harm if the configuration hasn't changed.
+ - It will refresh the created ones,
+ - create the remaining ones
+ - destroy & recreate the tainted ones.
+
+**Tainted Resources**
+- If a resource becomes tainted after you press Ctrl + C during a Terraform operation, it typically indicates that Terraform detected an unexpected or incomplete state change in that resource. This can happen if Terraform is interrupted during a critical operation such as resource creation, modification, or deletion.
+- When Terraform detects that a resource has become tainted, it means that the resource's state is now uncertain or inconsistent with what Terraform expects based on its configuration files and the current state.
+
+__________________________________________________________________________________________________________________________________________________________________________________________
 
