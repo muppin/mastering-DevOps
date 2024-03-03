@@ -1,3 +1,5 @@
+### IP Addresses
+
 **Public IP Address:**
 - Used for internet-facing resources, dynamically assigned by default.
 - Public IP addresses may change when you stop and restart an instance unless it is associated with an Elastic IP address.
@@ -35,4 +37,6 @@
 ### Elastic Network Interfaces (ENI)
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9543f726-c8e9-4d6c-8066-cc11ad5720cf)
+
+For more info https://youtu.be/X6YPNciA8z8?si=8Mm8mtLKSNxLBMym
 
