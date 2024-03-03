@@ -18,7 +18,7 @@
 - placement groups are used to influence the way instances are placed within the underlying infrastructure. 
 - They are relevant when considering factors such as latency and network traffic between instances
 
-#### There are 3 types
+**There are 3 types**
 
 **Cluster**
 - Cluster placement groups are used for applications that need low-latency and high-throughput communication between instances. Instances in a cluster placement group are placed in close proximity to each other within a single Availability Zone.
@@ -39,4 +39,11 @@
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9543f726-c8e9-4d6c-8066-cc11ad5720cf)
 
 For more info https://youtu.be/X6YPNciA8z8?si=8Mm8mtLKSNxLBMym
+
+### EC2 Hibernate
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/97c342e5-ec48-4c98-b83c-cd06c1527129)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/a8342755-4c68-4bb9-8f4a-ecdcbdab0c05)
+
 
