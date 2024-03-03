@@ -108,8 +108,8 @@ ________________________________________________________________________________
 
 ### Difference between Variables and locals
 
-- **Scope:** Variables are globally accessible within a module or configuration, while locals are scoped to the module or block where they are defined.
-- **Mutability:** Variables can have their values changed dynamically, while locals are immutable.
+- **Scope:** Variables are globally accessible within a module or configuration, while locals are scoped to the module or block where they are defined. A variable can be scoped globally, while a local is only accessible within the local module.
+- **Mutability:** Variables can have their values changed dynamically, while locals are immutable. A local's value doesn't change once assigned, while a variable's value can be manipulated via expressions.
 - **Use Cases:** Variables are primarily used for configuration customization and parameterization, while locals are used for defining reusable values or expressions within a single 
     module or configuration block.
 
