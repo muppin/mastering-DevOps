@@ -16,11 +16,21 @@
 - this will update or pass the values to the variables.tf files, instead of hardcoding the variables.tf files we pass the values using .tfvars file
 - this is useful when there are multiple environments and you can have .tfvars for each one.
 - By default TF will take terraform.tfvars only, but suppose if u have prod.tfvars and staging.tfvars then you have to pass it in terraform apply command.
-- terraform apply -var-file=prod.tfvars 
+- terraform apply -var-file=prod.tfvars
+- If u don't want to push sensitive info to git repo, in that case also tfvars file is useful, we can ignore this particular file in gitignore.
 
 ### Condition expressions
 
 - refer this *https://github.com/iam-veeramalla/terraform-zero-to-hero/blob/main/Day-2/08-conditional-expressions.md#conditional-expressions*
+
+### Modules:
+**Advantages**
+- Provides ownership to the code.
+- Maintenance of code is easy.
+- Easy to debug and test.
+- Reusability.
+
+Without modules, you write all the code in one main.tf file, that is difficult to understand, debug and test. That's why modules are used.
 
 ### Terraform functions
 
