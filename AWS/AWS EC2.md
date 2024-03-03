@@ -6,7 +6,7 @@
 
 **Private IP Address:**
 - Used for communication within a VPC, not accessible from the internet.
-- Private IP addresses are generally stable as long as the associated resource exists, but they may change if the resource is stopped and restarted.
+- Private IP addresses are generally stable as long as the associated resource exists.
 
 **Elastic IP Address:**
 - A static, persistent IP address designed for dynamic cloud computing, associated with a specific AWS account.
