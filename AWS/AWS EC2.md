@@ -62,6 +62,43 @@ For more info https://youtu.be/X6YPNciA8z8?si=8Mm8mtLKSNxLBMym
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/065ee6b9-87c7-4fcf-a676-aab6826b32bc)
 
+#### EC2 instance store
+
+
+Amazon EC2 instance store, also known as ephemeral storage, refers to the temporary block-level storage that comes with certain types of EC2 instances. Unlike Amazon EBS (Elastic Block Store), which provides persistent and durable storage, instance store is volatile storage that is directly attached to the physical hardware of the EC2 instance.
+
+Here are key characteristics and considerations regarding EC2 instance store:
+
+**Volatile Nature:**
+
+Instance store volumes are temporary and will be lost if the associated EC2 instance is stopped or terminated. They are suitable for temporary data and should not be used for critical, persistent storage.
+
+**Performance:**
+
+Instance store volumes are typically faster in terms of I/O performance compared to Amazon EBS volumes. This is because they are physically attached to the host server.
+
+**Instance Types with Instance Store:**
+
+Certain EC2 instance types come with instance store volumes. These are often labeled as "instance store" or "ephemeral storage" in the instance type description.
+
+#### Amazon EFS 
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/f9acfca6-4251-47d7-85d2-e105e073e704)
+
+#### EBS vs EFS
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/6c2bccbb-68dc-4a52-a7ee-77588f8a133c)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/75eb6372-d9bd-441c-a73f-eecce6034402)
+
+
+
+
+### AMI
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/d90a7e60-4eb9-46aa-96d5-1e0c9e292c1c)
+
+
 
 
 
