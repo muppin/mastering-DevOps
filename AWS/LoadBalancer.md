@@ -24,6 +24,37 @@ ________________________________________________________________________________
 
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
+## Why do we use NLB on top of ALB
+
+In AWS (Amazon Web Services), having a Network Load Balancer (NLB) on top of an Application Load Balancer (ALB) can provide several advantages, depending on the specific requirements of your application architecture. Here are some potential benefits:
+
+1. **TCP/UDP Load Balancing:**
+   - NLB operates at the transport layer (Layer 4) of the OSI model, allowing it to perform TCP and UDP load balancing. This is particularly useful for applications that require raw TCP/UDP handling without the additional processing introduced by higher-level protocols.
+
+2. **High Performance and Low Latency:**
+   - NLB is designed for high performance and low-latency workloads. It can handle millions of requests per second, making it suitable for applications with demanding performance requirements.
+
+3. **Static IP Addresses:**
+   - NLB provides a static IP address that remains constant even if instances behind the load balancer are replaced or scaled. This can be beneficial for applications that rely on a fixed IP address for communication or for scenarios where IP address changes are undesirable.
+
+4. **Direct Server Return (DSR) Mode:**
+   - NLB supports Direct Server Return (DSR) mode, allowing traffic to bypass the load balancer for certain scenarios. This can be advantageous for applications where the backend servers need to directly communicate with clients for specific types of responses.
+
+5. **Handling Non-HTTP/HTTPS Traffic:**
+   - NLB is well-suited for handling non-HTTP/HTTPS traffic. If your application involves protocols other than HTTP/HTTPS, NLB might be a more appropriate choice.
+
+6. **Simple Health Checks:**
+   - NLB provides basic health checks at the TCP/UDP level, simplifying the health check process. For applications that don't require the advanced health checks provided by ALB at the application layer, NLB's simplicity might be advantageous.
+
+7. **Connection Draining:**
+   - NLB supports connection draining, allowing in-flight requests to complete even when instances are being deregistered. This ensures a smooth transition during instance updates or scaling activities.
+
+8. **Cost Efficiency:**
+   - NLB tends to be more cost-effective for certain use cases due to its simplified feature set. If the advanced features of ALB are not required, using NLB might result in cost savings.
+
+It's important to note that the choice between NLB and ALB depends on the specific requirements of your application. ALB is often preferred for web applications due to its advanced features such as content-based routing, SSL termination, and support for HTTP/HTTPS protocols. Consider the needs of your application, such as the type of traffic, protocols, and desired features, when choosing between NLB and ALB or a combination of both in your AWS architecture.
+___________________________________________________________________________________________________________________________
+
 ## Gateway Load Balancer
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/349da9e7-4015-418b-9e25-00829c336b0b)
