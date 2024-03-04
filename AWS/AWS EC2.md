@@ -36,6 +36,12 @@
 
 ### Elastic Network Interfaces (ENI)
 
+- ENIs are fundamental building blocks for constructing scalable and highly available applications within the AWS cloud.
+- when you create a instance, the instance comes up with primary network interface i.e. Eth0
+- you can attach many more interfaces to the instance, based on the instance type.
+- the secondary interface comes the private ip and you can attach a public ip by assoaciating with elastic ip
+- each eni can have seperate security groups.
+
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9543f726-c8e9-4d6c-8066-cc11ad5720cf)
 
 For more info https://youtu.be/X6YPNciA8z8?si=8Mm8mtLKSNxLBMym
@@ -45,5 +51,21 @@ For more info https://youtu.be/X6YPNciA8z8?si=8Mm8mtLKSNxLBMym
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/97c342e5-ec48-4c98-b83c-cd06c1527129)
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/a8342755-4c68-4bb9-8f4a-ecdcbdab0c05)
+
+### EC2 Storage (EBS and EFS)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/ae8b3a74-f789-4d3f-a934-fa911cf33187)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/027df425-8efb-4705-bbb1-35e8d5be18c7)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/78583988-ac61-4f64-8e78-5410d51c32fc)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/065ee6b9-87c7-4fcf-a676-aab6826b32bc)
+
+
+
+
+
+
 
 
