@@ -73,11 +73,11 @@ ________________________________________________________________________________
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/6d3a42cc-7e7a-4cbe-989c-512838bcf5ae)
 
-![image](https://github.com/muppin/mastering-DevOps/assets/56094875/16bf15d2-d8d9-4d9b-825e-25b536a72f10)
-
 ____________________________________________________________________________________________________________________________________________________________________________________________
 
 ## SSL & TLS Certificates
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/16bf15d2-d8d9-4d9b-825e-25b536a72f10)
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8e107189-e33b-47b7-83f5-2732bc94eb29)
 
