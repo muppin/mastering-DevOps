@@ -85,8 +85,6 @@ ________________________________________________________________________________
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/984bdb0a-b5ab-473d-8176-5f19443df933)
 
-![image](https://github.com/muppin/mastering-DevOps/assets/121821200/abc18337-a644-4a5a-99ed-05601f176c79)
-
 **To configure SSL certs-**
 - Go to ALB/NLB
 - Add listners
@@ -103,6 +101,8 @@ ________________________________________________________________________________
 _________________________________________________________________________________________________________________________________________________________________________________
 
 ## Auto Scaling Groups
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/abc18337-a644-4a5a-99ed-05601f176c79)
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/5262ca00-5473-4fd4-ae5f-3059f2a9915a)
 
