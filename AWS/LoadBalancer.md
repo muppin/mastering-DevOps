@@ -53,15 +53,13 @@ ________________________________________________________________________________
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/349da9e7-4015-418b-9e25-00829c336b0b)
 
-![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d4f5947e-1c67-454e-a4fd-a3eea11004cb)
-
 ____________________________________________________________________________________________________________________________________________________________________________________________
 
 ## Sticky sessions for ELB
 
-![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8bc50a4c-bbe5-4c4b-b6c2-b7e1bc9a8080)
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d4f5947e-1c67-454e-a4fd-a3eea11004cb)
 
-![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8320c56c-270e-44ba-82d1-4aef49d6c07f)
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8bc50a4c-bbe5-4c4b-b6c2-b7e1bc9a8080)
 
 **To enable sticky session-**
 - Navigate to target group
@@ -70,6 +68,8 @@ ________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________________________________________________________
 
 ## Cross Zone Load Balancing
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8320c56c-270e-44ba-82d1-4aef49d6c07f)
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/6d3a42cc-7e7a-4cbe-989c-512838bcf5ae)
 
