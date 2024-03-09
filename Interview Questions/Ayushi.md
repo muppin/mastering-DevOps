@@ -18,3 +18,32 @@
 - What is ACL?
 - Write TF script to create EC2 instance and use data block to call security group.
 - Difference between t3.small and t3a.small.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## KPIT - AWS DevOps Engineer
+
+- Tell me your roles and responsibilities?
+- Explain your current project and domain
+- What is jenkins plugins?
+- What plugins you have used in your pipeline?
+- How to add credentials in jenkins.
+- How to create EC2 instance and what is 2/2 health checks passed?
+- What is instance type?
+- What is autoscaling? Autoscaling group? traget group?
+- What is horizontal and vertical scaling?
+- What is load balancer and its types?
+- Bash script to swap two variables without third variable?
+- Write a docker file.
+- What is S3? Versioning? Replication?
+- What is VPC? What is subnet? What is the use of subnet?
+- Explain terraform flow (init -> plan -> apply)
+- Terraform import
+- What is spot and on-demand instances?
+- How to reduce cost? Cost and billing in AWS?
+- What is git?
+- Merge conflict?
+- What is git pull and git push?
+- Naming convention for branches in git.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
