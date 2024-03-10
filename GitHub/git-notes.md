@@ -37,6 +37,10 @@
    git status
    ```
 
+## git stash
+
+- 
+git stash is a Git command used to temporarily save changes in your working directory that are not yet ready to be committed. This is useful when you need to switch branches, but you don't want to commit your changes or when you want to apply your changes to a different branch later. The git stash command allows you to save your changes and revert your working directory to the last committed state.
 3. **Open the Conflicted Files:**
    Open the conflicted files in your code editor. Git will mark the conflicting sections with special markers such as `<<<<<<<`, `=======`, and `>>>>>>>`.
 
