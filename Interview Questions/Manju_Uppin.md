@@ -63,5 +63,59 @@
 - what is shadow file and passwd file?
 - which type of pipeline that you guys are using and explain me the steps involved in it?
 - what is difference between Continuous delivery and continous Deployment?
-- 
-- 
+
+
+## Press Ganey
+
+- How do you create the EKS clusters?
+- how do you create EKS using terraform?
+- how do you ensure the nodes are scaling?
+- what kind of applications you have managed?
+- can you eloborate how you are deploying the python application, can you explain the stages of a CI-CD stages?
+- write down the Dockerfile for that Python application?
+- do you have any experience in Helm?
+- how you are monitoring the application logs?
+- Have you created any custom Modules in terraform?
+- can you write down the syntax of module block?
+- explain the error crashloopbackoff in kubernetes pods?
+- what are the things we need to do to establish the connection to an eks cluster in aws account from our laptop?
+- if ec2 instance is showing 100% disk occupied, how to find which folder is consuming the more space?
+
+## IDC 
+
+- Inroduce yourself?
+- what is your day to day activities in dxc?
+- what is k8s?
+- what is orchestration in software and DevOps?
+- expalin Continous Integration?
+- how are kubernetes and docker related?
+- what are differences docker swarm and Kubernetes?
+- Docker requires a third party tools, can you name that third party tool?
+- what is ELK?
+- wht are the differences when you deploy application in Docker and Hosts(Virtual Machines)?
+- What are the main components Kubernets architecture?
+- what are nodes and pods in kubernetes?
+- what is scheduler?
+- what is cluster of containers in k8s?
+- what is google container engine?
+- what is Demon set?
+- what is heapster in K8s?
+- what is minikube?
+- what is kubernetes controller manager?
+- what is load balancer in k8s ?
+- what is Elastic load balancing?
+- what is the use of terraform ?
+- what are the key features of terraform?
+- what is Iac?
+- what are the terraform commands that you use?
+- are the callbacks possible on terraform azure?
+- what is terraform init?
+- what is terraform d?
+- why terraform is used form DevOps? what is the language ?
+- what is terraform null?
+- what terraform cloud?
+- what is terraform backend?
+- what are modules in terraform?
+- what are helm charts?
+- what is ansible?
+- what is the methodology that you are following?
