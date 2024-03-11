@@ -84,3 +84,53 @@ bash
 Copy code
 cd /var/lib/docker/volumes/my_volume/_data
 
+______________________________________________________________________________________________________________________________________________________________________________________
+
+**Docker Compose**
+
+simple example of a Docker Compose configuration file (`docker-compose.yml`) that defines a web application composed of two services: a web server (running nginx) and a database server (running PostgreSQL):
+
+```yaml
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/usr/share/nginx/html
+    networks:
+      - my_network
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - my_network
+
+networks:
+  my_network:
+
+volumes:
+  pgdata:
+```
+
+In this example:
+
+- The `version` key specifies the version of the Docker Compose file format being used (in this case, version 3.8).
+- Under the `services` key, two services are defined: `web` and `db`.
+- The `web` service uses the `nginx:latest` image, exposes port 8080 on the host and mounts the `./app` directory on the host to `/usr/share/nginx/html` in the container.
+- The `db` service uses the `postgres:latest` image, sets environment variables for the PostgreSQL database (`POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`), and mounts a named volume (`pgdata`) to persist the database data.
+- Both services are connected to a custom network named `my_network`.
+- The `networks` and `volumes` sections at the bottom define a custom network and a named volume.
+
+With this Docker Compose file, you can use the `docker-compose up` command to start both services defined in the file. Docker Compose will automatically create the necessary network and volume if they do not already exist.
+
+This example demonstrates how Docker Compose simplifies the process of defining and managing multi-container applications, allowing you to specify the configuration of each service and their relationships in a single YAML file.
+
