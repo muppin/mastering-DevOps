@@ -43,3 +43,6 @@ docker-compose up - command to start your application
 docker-compose down - command to stop your application
 docker-compose logs - command to can view the logs of the containers
 docker-compose config - command can inspect the current configuration of your application
+docker-compose up -d <container_name> - brings up one single container from the compose file
+docker-compose stop <container_name> - stops that specific containerised app
+docker-compose down app1 -  removes the specific container
