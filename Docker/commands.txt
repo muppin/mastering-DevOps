@@ -20,6 +20,7 @@ docker container prune - removes all stopped containers
 docker image prune - removes all unused images
 docker container rm -f $(docker container ls -aq) - removes all containers
 docker image rm -f $(docker image ls -aq) - removes all images
+docker run -d --name my_container <image_name> tail -f /dev/null - In this command, tail -f /dev/null will keep the process running indefinitely, effectively preventing the container from exiting.
 
 #### Docker Volumes ####
 docker volume create my-vol - Create a volume
