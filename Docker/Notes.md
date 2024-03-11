@@ -42,7 +42,7 @@ Dockerfile
 Copy code
 FROM alpine:latest
 
-# Set default command to execute when container starts
+#### Set default command to execute when container starts
 CMD ["echo", "Hello, World!"]
 In this example, the default command echo "Hello, World!" will be executed when the container starts. If no command is specified when running the container, this default command will be executed. However, if a command is specified when running the container (e.g., docker run <image> <command>), it will override the default command specified in the CMD instruction.
 
@@ -52,10 +52,10 @@ Dockerfile
 Copy code
 FROM alpine:latest
 
-# Set entry point for the container
+#### Set entry point for the container
 ENTRYPOINT ["echo", "Hello,"]
 
-# Set default arguments to be passed to the entry point
+#### Set default arguments to be passed to the entry point
 CMD ["World!"]
 In this example, the main command echo "Hello," is specified using the ENTRYPOINT instruction. The CMD instruction provides default arguments "World!" to be passed to the entry point. When the container starts, the main command (ENTRYPOINT) will always be executed, with the default arguments (CMD) appended to it. If a command is specified when running the container, it will be passed as arguments to the ENTRYPOINT command.
 
@@ -141,4 +141,107 @@ ________________________________________________________________________________
 Dockerfile should be efficient enough, it should be written such that the top stages are kept constant and not made any changes frequently so that build time is very less on the later builds.
 
 For more info: https://www.baeldung.com/ops/docker-build-cache
+
+___________________________________________________________________________________________________________________________
+
+**How to ensure docker container stays up and running**
+
+To ensure that Docker containers stay up and running, even if the system or Docker service restarts, you can use a combination of Docker restart policies and possibly a process manager or orchestration tool. Here's a general guide:
+
+### 1. **Restart Policies:**
+
+Docker provides restart policies that define what should happen when a container exits (either successfully or due to an error). You can use the `--restart` option with the `docker run` command to set the restart policy.
+
+- **Always Restart:**
+  ```bash
+  docker run --restart always -d your_image
+  ```
+
+  This restart policy ensures that the container restarts automatically unless explicitly stopped.
+
+- **Unless Stopped:**
+  ```bash
+  docker run --restart unless-stopped -d your_image
+  ```
+
+  This restart policy is similar to "always," but it won't restart containers that were manually stopped.
+
+- **No Restart (Default):**
+  ```bash
+  docker run --restart no -d your_image
+  ```
+
+  This restart policy means that the container will not automatically restart.
+
+### 2. **Use Docker Compose:**
+
+If you are managing multiple containers as part of an application, consider using Docker Compose. Compose allows you to define multi-container applications in a single file and provides additional features, including restart policies.
+
+Example `docker-compose.yml`:
+
+```yaml
+version: '3'
+services:
+  your_service:
+    image: your_image
+    restart: always
+    # Add other service configurations as needed
+```
+
+Then, run your services using:
+
+```bash
+docker-compose up -d
+```
+
+### 3. **Process Managers or Orchestration Tools:**
+
+For more advanced scenarios, especially if you have a larger set of containers or are working in a clustered environment, you might want to consider using orchestration tools like Docker Swarm or Kubernetes. These tools provide more advanced management features and can help ensure high availability.
+
+### 4. **Monitoring and Health Checks:**
+
+Implement health checks within your containers to ensure that the application inside the container is healthy. Docker provides health check options that you can include in your Dockerfile.
+
+Example in Dockerfile:
+
+```Dockerfile
+HEALTHCHECK --interval=5m --timeout=3s \
+  CMD curl -f http://localhost/ || exit 1
+```
+
+### 5. **Logging and Monitoring:**
+
+Set up logging and monitoring for your containers to detect issues early and take appropriate actions.
+
+Remember to adapt these suggestions based on your specific use case, system architecture, and infrastructure. Always test your setup thoroughly to ensure that it meets your requirements.
+
+________________________________________________________________________________________________________________________
+
+**How to remove Dangling images**
+
+Dangling images are those that have no associated containers and are not tagged. To remove dangling images in Docker, you can use the `docker image prune` command. Here's how you can do it:
+
+```bash
+docker image prune
+```
+
+This command will remove all dangling images. Docker will prompt you for confirmation before proceeding, and you can type `y` to confirm or `n` to cancel.
+
+If you want to bypass the confirmation prompt, you can use the `-f` or `--force` option:
+
+```bash
+docker image prune -f
+```
+
+This command will forcefully remove all dangling images without asking for confirmation.
+
+Keep in mind that this operation is irreversible, and it permanently deletes the dangling images. Make sure you don't need any of these images before running the prune command. If you want to see a list of images that would be deleted without actually removing them, you can use the `docker image ls -q -f dangling=true` command:
+
+```bash
+docker image ls -q -f dangling=true
+```
+
+This command lists the IDs of the dangling images. If the list looks safe to remove, you can then run the `docker image prune` command to clean them up.
+
+Remember that the commands provided here might need administrative privileges, so you might need to use `sudo` or run the commands in a privileged shell depending on your system configuration.
 
