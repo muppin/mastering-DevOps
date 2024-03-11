@@ -23,6 +23,7 @@ docker image rm -f $(docker image ls -aq) - removes all images
 docker run -d --name my_container <image_name> tail -f /dev/null - In this command, tail -f /dev/null will keep the process running indefinitely, effectively preventing the container from exiting.
 docker volume create <volume_name> - to create volume in host file system
 docker run -it -v <volume_name>:/data <image_name> /bin/bash - Once a volume is created, you can mount it to a container using the -v or --mount option when running a docker run command.
+docker run -it -v <host_path>:<container_path> <image_name> /bin/bash - mount a directory from the host file system into a container
 
 #### Docker Volumes ####
 docker volume create my-vol - Create a volume
