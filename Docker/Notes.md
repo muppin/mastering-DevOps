@@ -74,4 +74,13 @@ we can persist data using two methods
 - Volumes - here the directory is created inside the docker host vm to persist the data from the container.
 - Bind Mounts - here we mention our local directory, so that the data is persisted in our local system.
 
+____________________________________________________________________________________________________________________________________________________________________________________________
+
+**Access the Volume on the Host:**
+
+Once the container is running, you can access the volume on the host system by navigating to the directory where Docker volumes are stored. By default, Docker volumes are stored in /var/lib/docker/volumes.
+
+bash
+Copy code
+cd /var/lib/docker/volumes/my_volume/_data
 
