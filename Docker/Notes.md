@@ -134,3 +134,11 @@ With this Docker Compose file, you can use the `docker-compose up` command to st
 
 This example demonstrates how Docker Compose simplifies the process of defining and managing multi-container applications, allowing you to specify the configuration of each service and their relationships in a single YAML file.
 
+___________________________________________________________________________________________________________________________
+
+**Docker build cache**
+
+Dockerfile should be efficient enough, it should be written such that the top stages are kept constant and not made any changes frequently so that build time is very less on the later builds.
+
+For more info: https://www.baeldung.com/ops/docker-build-cache
+
