@@ -1,11 +1,12 @@
 **Dockerfile**
 
-FROM: will specify the base image
-LABEL: setting the author of the image
-COPY/ ADD : adding files or directories into the image
-RUN: Run the commands
-EXPOSE: to expose the ports
-CMD/ENTRYPOINT: choosing what command to run when the container is launched from the image
+- FROM: will specify the base image
+- LABEL: setting the author of the image
+- WORKDIR : Set the working directory in the image
+- COPY/ ADD : adding files or directories into the image
+- RUN: Run the commands
+- EXPOSE: to expose the ports
+- CMD/ENTRYPOINT: choosing what command to run when the container is launched from the image
 
 
 ________________________________________________________________________________________________________________________________________________________________________________
