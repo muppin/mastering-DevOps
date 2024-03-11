@@ -245,3 +245,55 @@ This command lists the IDs of the dangling images. If the list looks safe to rem
 
 Remember that the commands provided here might need administrative privileges, so you might need to use `sudo` or run the commands in a privileged shell depending on your system configuration.
 
+__________________________________________________________________________________________________________________________
+
+**how to create an image from running app**
+
+To create a Docker image from a running container, you can use the `docker commit` command. This command takes a snapshot of the file system and configuration of a running container and creates a new image from it.
+
+Here's a step-by-step guide:
+
+1. **Run Your Application in a Container:**
+   
+   Make sure your application is running in a Docker container. If it's not already running, start your application using the appropriate Docker run command.
+
+   ```bash
+   docker run -d --name my_running_app my_image
+   ```
+
+   Replace "my_running_app" with the desired name for your running container and "my_image" with the image name or ID.
+
+2. **Get the Container ID:**
+
+   To use the `docker commit` command, you need the Container ID of the running container.
+
+   ```bash
+   docker ps
+   ```
+
+   Find the Container ID of your running application container.
+
+3. **Create a Docker Image from the Running Container:**
+
+   Use the `docker commit` command to create a new image from the running container.
+
+   ```bash
+   docker commit <container_id> my_new_image
+   ```
+
+   Replace `<container_id>` with the actual Container ID of your running container, and "my_new_image" with the desired name for your new Docker image.
+
+4. **Check the Newly Created Image:**
+
+   After running the `docker commit` command, you can check if the new image was created successfully.
+
+   ```bash
+   docker images
+   ```
+
+   You should see the newly created image in the list.
+
+Now, you have a Docker image created from your running application container. Keep in mind that this approach captures the current state of the container, including the file system and configuration. However, it doesn't capture the container's history or metadata.
+
+Note: While `docker commit` can be useful in certain situations, it's generally recommended to use Dockerfiles and version-controlled build processes for creating reproducible and maintainable images.
+
