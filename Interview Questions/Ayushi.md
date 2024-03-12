@@ -47,3 +47,11 @@
 - Naming convention for branches in git.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Jenkins
+
+- Difference between freestyle and pipelien project?
+- What is credentials plugin?
+- What is the purpose of jenkinsfile?
+- How to distribute jenkins pipeline to multiple agents?
