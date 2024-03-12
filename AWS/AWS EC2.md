@@ -99,6 +99,28 @@ Certain EC2 instance types come with instance store volumes. These are often lab
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/d90a7e60-4eb9-46aa-96d5-1e0c9e292c1c)
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**What are 2/2 health checks passed in EC2?**
+
+
+In Amazon EC2, there are two types of health checks that are performed on instances: system status checks and instance status checks.
+
+1. **System Status Check**:
+   - The system status check monitors the health of the underlying infrastructure that supports your EC2 instance. It checks for issues at the hypervisor level, such as power or network connectivity problems.
+   - System status checks are performed by AWS and are independent of the operating system running on the instance.
+   - Examples of issues detected by system status checks include loss of network connectivity, failure of underlying hardware, or issues with the hypervisor.
+
+2. **Instance Status Check**:
+   - The instance status check monitors the health of the EC2 instance itself, including the operating system and any applications running on it.
+   - Instance status checks verify that the instance's operating system is responding correctly and that any applications running on the instance are functioning properly.
+   - Examples of issues detected by instance status checks include failed system checks (e.g., kernel panics), failed system status checks, or misconfigured networking.
+   
+These health checks are performed periodically by AWS and are essential for ensuring the availability and reliability of your EC2 instances. When an issue is detected during a health check, the instance may be marked as unhealthy, and actions can be taken based on the configured monitoring and recovery settings, such as terminating the instance or initiating auto-recovery processes.
+
+By monitoring both system status and instance status, AWS helps ensure that your EC2 instances are operating properly and that any issues are detected and addressed promptly, minimizing downtime and maintaining the overall health of your infrastructure.
+
+
 
 
 
