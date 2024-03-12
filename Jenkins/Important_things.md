@@ -36,3 +36,99 @@ In general, Freestyle projects are suitable for simple build tasks, while Pipeli
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The Credentials Plugin in Jenkins is a critical component that allows you to securely manage and use sensitive information, such as usernames, passwords, API tokens, SSH keys, and certificates, within Jenkins jobs and pipelines. This plugin provides a centralized storage for credentials and allows you to securely access them in your Jenkins jobs without exposing them directly in your configurations.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**How to distribute jenkins pipeline to multiple agents?**
+
+To distribute a Jenkins Pipeline to multiple agents, you can leverage the parallel execution feature of Jenkins Pipeline. By defining stages or steps within your Pipeline script that can run concurrently, you can distribute the workload across multiple agents. Here's how you can achieve this:
+
+1. **Define Stages or Steps for Parallel Execution**:
+   Within your Jenkins Pipeline script (Jenkinsfile), identify stages or steps that can run concurrently. These could be independent tasks or steps that do not have dependencies on each other.
+
+   ```groovy
+   pipeline {
+       agent any
+
+       stages {
+           stage('Build') {
+               steps {
+                   // Build your application
+               }
+           }
+           stage('Test') {
+               steps {
+                   // Run tests
+               }
+           }
+           stage('Deploy') {
+               steps {
+                   // Deploy your application
+               }
+           }
+       }
+   }
+   ```
+
+2. **Use Parallel Directive**:
+   Use the `parallel` directive within your Pipeline script to define which stages or steps should run concurrently. You can specify multiple branches within the `parallel` directive, each representing a set of parallel execution steps.
+
+   ```groovy
+   pipeline {
+       agent any
+
+       stages {
+           stage('Parallel Tasks') {
+               steps {
+                   parallel(
+                       "Build": {
+                           // Build your application
+                       },
+                       "Test": {
+                           // Run tests
+                       },
+                       "Deploy": {
+                           // Deploy your application
+                       }
+                   )
+               }
+           }
+       }
+   }
+   ```
+
+3. **Distribute Workload Across Agents**:
+   Jenkins will automatically distribute the workload across available agents based on the resources and labels specified in your Pipeline script. Make sure that you have multiple agents configured and available in your Jenkins environment.
+
+4. **Agent Selection**:
+   You can specify agent labels or node names in your Pipeline script to control which agents should execute specific stages or steps. This allows you to distribute the workload based on agent capabilities or requirements.
+
+   ```groovy
+   pipeline {
+       agent {
+           label 'linux'
+       }
+
+       stages {
+           stage('Parallel Tasks') {
+               steps {
+                   parallel(
+                       "Build": {
+                           // Build your application
+                       },
+                       "Test": {
+                           // Run tests
+                       },
+                       "Deploy": {
+                           agent {
+                               label 'windows'
+                           }
+                           // Deploy your application on a different agent
+                       }
+                   )
+               }
+           }
+       }
+   }
+   ```
+
+By using the `parallel` directive and agent selection mechanisms in your Jenkins Pipeline script, you can effectively distribute the workload across multiple agents and parallelize the execution of your CI/CD pipeline.
