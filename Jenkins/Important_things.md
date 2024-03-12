@@ -4,7 +4,7 @@
 
 
 
-**Freestyle Vs. Pipelien project**
+**Freestyle Vs. Pipeline project**
 
 In the context of Jenkins, a continuous integration and continuous delivery (CI/CD) tool, there are two main project types: Freestyle projects and Pipeline projects. Here's a comparison of the two:
 
