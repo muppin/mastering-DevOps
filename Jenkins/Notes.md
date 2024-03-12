@@ -76,7 +76,16 @@ example- http://52.91.12.115:8080/github-webhook/
 
   ----------------------------------------------------------------------------------------------------------------------
 **Configuring Build tools inside jenkins file**
+
 ![Uploading image.png…]()
+
+
+- It can be done with the help of "tools" command also
+- Works with only 3 tools- maven, gradle and jdk
+
+tools{
+gradle "version"
+}
 
   
 
