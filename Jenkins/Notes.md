@@ -76,6 +76,7 @@ example- http://52.91.12.115:8080/github-webhook/
 
   ----------------------------------------------------------------------------------------------------------------------
 **Configuring Build tools inside jenkins file**
+with wrappers-
 
 ![Uploading image.png…]()
 
