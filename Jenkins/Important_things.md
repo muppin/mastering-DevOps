@@ -31,3 +31,8 @@ Here's a summary of the differences between Freestyle and Pipeline projects:
 - **Reusability**: Pipeline scripts can be shared and reused across multiple projects, promoting code reuse and standardization of build processes.
 
 In general, Freestyle projects are suitable for simple build tasks, while Pipeline projects are preferred for more complex and automated CI/CD workflows. The choice between the two depends on the specific requirements of your project and the level of automation and flexibility you need.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The Credentials Plugin in Jenkins is a critical component that allows you to securely manage and use sensitive information, such as usernames, passwords, API tokens, SSH keys, and certificates, within Jenkins jobs and pipelines. This plugin provides a centralized storage for credentials and allows you to securely access them in your Jenkins jobs without exposing them directly in your configurations.
