@@ -28,7 +28,7 @@
 **Trigger Jenkins Build Automatically**
 As a best practice to use both webhook and polling, as webhooks are sometimes unreliable.
 
-![Uploading image.png…]()
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/437716d5-04d2-4646-ba4e-513451079660)
 
 
 Payload url- for webhook
@@ -73,6 +73,10 @@ example- http://52.91.12.115:8080/github-webhook/
 - WithCredentials() wrapper -
 
   ``` With
+
+  ----------------------------------------------------------------------------------------------------------------------
+**Configuring Build tools inside jenkins file**
+![Uploading image.png…]()
 
   
 
