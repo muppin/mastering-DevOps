@@ -55,3 +55,9 @@
 - What is credentials plugin?
 - What is the purpose of jenkinsfile?
 - How to distribute jenkins pipeline to multiple agents?
+- What happens when a Jenkins agent is offline and what is the best practice in that situation?
+- How can we share information between different build steps or stages in a Jenkins Job?
+- How to create & use a Shared Library in Jenkins?
+
+For more questions : https://www.interviewbit.com/jenkins-interview-questions/#ways-to-trigger-jenkins-job
+
