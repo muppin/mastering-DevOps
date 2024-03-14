@@ -13,6 +13,8 @@
 - An Elastic IP address remains associated with an AWS account until it is explicitly released. It does not change even if the associated instance is stopped and restarted.
 - There may be charges associated with an Elastic IP address if it is not associated with a running instance, so it's advisable to release EIPs when not in use to avoid charges.
 
+**CIDR** - Classless Inter-Domain Routing - Method for allocating IP addresses.
+
 ### Placement groups
 
 - placement groups are used to influence the way instances are placed within the underlying infrastructure. 
