@@ -25,3 +25,10 @@ Here's how a VPC can have multiple CIDR blocks and how it works:
 7. **VPC Peering and VPN Connections**: VPC peering connections and VPN connections can span multiple CIDR blocks within the same VPC or between different VPCs. This allows for communication between resources across different CIDR blocks while maintaining network isolation and security.
 
 By allowing multiple CIDR blocks in a single VPC, AWS provides flexibility in managing IP address space and accommodating varying requirements for resource allocation, segmentation, and connectivity within the VPC environment.
+
+
+## Subnets
+In Amazon Web Services (AWS), a Virtual Private Cloud (VPC) subnet is a segmented portion of a VPC's IP address range. Subnets are used to divide a VPC's IP address space into smaller, manageable blocks and are associated with specific availability zones (AZs) within a region. 
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d4549257-aa53-4475-bacc-287c1483bf73)
+
