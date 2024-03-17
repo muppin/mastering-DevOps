@@ -32,3 +32,62 @@ In Amazon Web Services (AWS), a Virtual Private Cloud (VPC) subnet is a segmente
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d4549257-aa53-4475-bacc-287c1483bf73)
 
+## INternet Gateway
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/f58b9a51-3182-4bfd-9c4c-007c46c13413)
+
+## Bastion Host 
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/4f4ca606-5afa-4cd9-a76f-7983333131d2)
+
+## Nat Instance 
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/2e8ab88c-bbe8-485d-9b6e-ffeea4b62779)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/e7a9b398-d201-4d47-948b-ccf86fead71e)
+
+## Nat Gateway
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/eec2442e-e812-45f2-95ec-6705d207dbd4)
+
+**Difference Btwn Nat Instance and Nat Gateway**
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/a3d3ff0e-b7f4-41c3-a991-bf603e6dc70c)
+
+## NACL and SG
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/7c115949-f6fc-43fe-b85c-44faad45b971)
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/c19d358e-baae-46a3-928b-1fbaaee255c4)
+
+**Ephimeral ports**
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/e93cdea2-11ce-4ecd-a318-53a15fbdcbcf)
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/7103e020-2056-4e5e-a93e-cb968e5c78a5)
+
+
+**Statefull vs stateless**
+
+*Security Groups (Stateful*):
+- Security groups are stateful, meaning they keep track of the state of each connection (such as incoming/outgoing traffic, source/destination IP, port numbers, etc.).
+- When you create a security group rule to allow inbound traffic, the corresponding return traffic is automatically allowed, regardless of any outbound rules explicitly defined.
+- For example, if you allow inbound traffic on port 80 (HTTP), the corresponding outbound traffic for responses on port 80 is automatically allowed. You don't need to explicitly create an outbound rule for it.
+
+*Network Access Control Lists (NACLs) Stateless*:
+- NACLs, on the other hand, are stateless, meaning they do not maintain any information about the state of the traffic.
+- Each rule in a NACL is evaluated independently, regardless of any other rules.
+- If you want to allow return traffic, you must explicitly create rules for it in both directions (inbound and outbound).
+
+**Dif btwn NACL and SG**
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/a22e175a-fbf5-4a1e-aa02-f5b213fd5ec6)
+
+
+
+
+
+
+
+
+
