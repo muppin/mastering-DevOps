@@ -85,6 +85,19 @@ In Amazon Web Services (AWS), a Virtual Private Cloud (VPC) subnet is a segmente
 
 
 
+## VPC Peering
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/44d0b814-7209-4ddd-963e-e41e55b63abb)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/5baccba5-c68c-42dc-870f-86d3700d6fb5)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/5cf1641a-5204-470a-899d-7e6a4a834ce0)
+
+
+
+
+
+
 
 
 
