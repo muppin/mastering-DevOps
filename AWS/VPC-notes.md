@@ -95,6 +95,18 @@ In Amazon Web Services (AWS), a Virtual Private Cloud (VPC) subnet is a segmente
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/5cf1641a-5204-470a-899d-7e6a4a834ce0)
 
 
+## VPC Endpoints
+
+**Types of endpoints**
+
+
+
+
+
+### Creating VPC_
+
+*What is Tenancy*
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c4fc6903-a66b-4df4-ae22-6fdcb0ffd790)
 
 
 
