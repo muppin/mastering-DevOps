@@ -116,6 +116,32 @@ In Amazon Web Services (AWS), a Virtual Private Cloud (VPC) subnet is a segmente
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/9ff174b9-fd1b-4ff5-ac63-35796681e675)
 
 
+## VPC Flow logs 
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/057c1bab-a9db-45d7-b54a-95e5cd7acea2)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c67198d8-565e-4d22-905e-78af7935b594)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/9c8f55f6-c78b-4801-a6ed-b1b6e38aad6e)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7f3df304-9fc3-4818-8bf2-d9db9f8fae71)
+
+
+## Site to site VPN
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/e5b281d3-3b99-40c9-ae61-f0492865b3a8)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/e7bb99ac-9585-4590-8c51-3df111131d7d)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/e13407ec-a456-4e36-bc38-32e94334e84e)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/f6757ba7-fa57-4740-9394-db27ae747941)
+
+
+
+
+
+
 
 ### Creating VPC_
 
