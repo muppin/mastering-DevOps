@@ -94,12 +94,26 @@ In Amazon Web Services (AWS), a Virtual Private Cloud (VPC) subnet is a segmente
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/5cf1641a-5204-470a-899d-7e6a4a834ce0)
 
+**How to connect two VPC's using VPC peering**
+- Create peering connection, give requestor & acceptor VPC. Make sure CIDR's doesnt overlap.
+- Add routes in public/private route table of each VPC. (2 way handshake)
+
 
 ## VPC Endpoints
 
+- VPC endpoint is deployed in VPC, allows resources inside private subnet to access other AWS services directly. Network will never leave AWS.
+- AWS VPC Endpoint is a service that enables you to privately connect your VPC to supported AWS services without requiring internet gateway, NAT devices, VPN connections, or direct peering connections. It allows communication between resources within your VPC and AWS services via a private link.
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/b27b7dd9-5db1-4280-a84d-1eb272753033)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/818cc8d8-e0f7-4a81-9162-9385f7faeb9f)
+
+
 **Types of endpoints**
 
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/2e625a17-9602-4efb-b5e8-ccc79ac26fa9)
 
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/9ff174b9-fd1b-4ff5-ac63-35796681e675)
 
 
 
