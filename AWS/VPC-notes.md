@@ -138,6 +138,33 @@ In Amazon Web Services (AWS), a Virtual Private Cloud (VPC) subnet is a segmente
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/f6757ba7-fa57-4740-9394-db27ae747941)
 
 
+## Direct Connect (DX)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d3aa977a-bf03-4fcb-85e3-52b62c3cb666)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/35523157-2f8f-4752-82da-634cfc2af6d8)
+
+**Direct Connect Gateway**
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/13f2ac23-0bf6-48a3-ae77-c8e404f3a7f2)
+
+**Direct Connect: Connection Types**
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7cc875a7-2de8-4c74-ad8d-ac7fda9b35c4)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7a88bed1-8c10-4904-8343-76c4023f1d88)
+
+*******************************************************************************************************************************************************************************************************************
+
+## Direct Connect + Site to site VPN
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/20068d39-82a2-430c-a3d2-0f35026c1e69)
+
+********************************************************************************************************************************************************************************************************************
+
+## Transit Gateway
+
+
 
 
 
