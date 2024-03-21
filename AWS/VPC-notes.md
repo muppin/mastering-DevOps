@@ -164,6 +164,63 @@ In Amazon Web Services (AWS), a Virtual Private Cloud (VPC) subnet is a segmente
 
 ## Transit Gateway
 
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/e712f286-e882-4787-933d-f21c53329293)
+
+***********************************************************************************************************************************************************************************************************************
+## VPC Traffic Mirroring
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/170ae1cc-44ac-495b-b98b-6fb199a8dd1e)
+
+***********************************************************************************************************************************************************************************************************************
+## IPv6 addresses
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ef45b3a5-3294-4822-97b0-d3c858eeab04)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c7a19bd7-b556-44bd-979f-c6b0777191fe)
+
+## Igress only Internet Gateway
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/9e55e553-5040-4295-8ad9-6f79e3020890)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/e5fa31c6-ba10-4311-a646-b0b137bdedf2)
+
+***********************************************************************************************************************************************************************************************************************
+
+## Networking Cost in AWS
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/54b3ec7f-d4cd-4b71-bb58-8ff7b497cc9d)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/b61653f3-2017-4865-9af9-37faa722378b)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/df6812c7-db3c-438d-b9cd-f968619d10de)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/05b74e65-c267-4425-b227-c8eba8ea72d2)
+
+**********************************************************************************************************************************************************************************************************************
+
+## Network protection on AWS
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/5f0f0ef9-131d-4edb-9eb7-7a9b416f4708)
+
+*What if we want to protect entire VPC?*
+
+## AWS Network Firewall
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/a765d003-b6fa-430c-8da8-2f3e247e4573)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/98b74fb2-22fc-4ab6-9501-68be614659bf)
+
+*********************************************************************************************************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
 
 
 
