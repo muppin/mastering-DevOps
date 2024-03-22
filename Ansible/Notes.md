@@ -13,3 +13,12 @@
 - Limited Visibility and Control: Manual configuration management often lacks centralized visibility and control. It can be difficult to track changes, enforce policies, and ensure compliance across the infrastructure without a centralized automation tool like Ansible.
 
 
+## Ansible:
+
+Ansible is an open-source automation tool that simplifies the process of configuration management, application deployment, and task automation. It uses a simple and human-readable language (YAML) to define configurations and tasks, allowing users to automate repetitive tasks efficiently across multiple systems. Ansible operates over SSH, which means it doesn't require any additional software to be installed on target machines, making it easy to set up and use.
+
+## Why Ansible? over Puppet
+
+
+
+
