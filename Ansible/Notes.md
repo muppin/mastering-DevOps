@@ -41,6 +41,21 @@
 - We can run ansible in debugging mode, but still debugging logs are not that much easy to understand by devops engineers.
 - Performance issues.
 
+  **********************************************************************************************************************************************************************************************
+
+  ### Ansible installation
+
+  ``sudo apt update
+  sudo apt install ansible``
+
+
+  **Verify**
+  
+  ``ansible --version``
+**********************************************************************************************************************************************************************************************
+
+ssh-keygen
+
 
 
 
