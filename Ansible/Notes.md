@@ -19,6 +19,16 @@ Ansible is an open-source automation tool that simplifies the process of configu
 
 ## Why Ansible? over Puppet
 
+**Puppet** -
+- Works on pull mechanism.
+- Master| slave model- laptop will act as master and all other remote servers will act as slaves.
+
+
+
+**Ansible** -
+- Works on push mechanism: you write playbooks on ur laptop and then push it to remote servers.
+- Agentless
+
 
 
 
