@@ -27,7 +27,7 @@ Ansible is an open-source automation tool that simplifies the process of configu
 
 **Ansible** -
 - Works on push mechanism: you write playbooks on ur laptop and then push it to remote servers.
-- Agentless
+- Agentless: will just give list of remote servers in inventory file. Scale up and down is easy.
 
 
 
