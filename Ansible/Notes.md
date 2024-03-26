@@ -15,19 +15,31 @@
 
 ## Ansible:
 
-Ansible is an open-source automation tool that simplifies the process of configuration management, application deployment, and task automation. It uses a simple and human-readable language (YAML) to define configurations and tasks, allowing users to automate repetitive tasks efficiently across multiple systems. Ansible operates over SSH, which means it doesn't require any additional software to be installed on target machines, making it easy to set up and use.
+- Ansible is an open-source automation tool that simplifies the process of configuration management, application deployment, and task automation. It uses a simple and human-readable language (YAML) to define configurations and tasks, allowing users to automate repetitive tasks efficiently across multiple systems. Ansible operates over SSH, which means it doesn't require any additional software to be installed on target machines, making it easy to set up and use.
+- Ansible is written in python. You can write your own modules.
 
 ## Why Ansible? over Puppet
 
 **Puppet** -
 - Works on pull mechanism.
 - Master| slave model- laptop will act as master and all other remote servers will act as slaves.
-
+- Config lang is puppet lang.
 
 
 **Ansible** -
 - Works on push mechanism: you write playbooks on ur laptop and then push it to remote servers.
 - Agentless: will just give list of remote servers in inventory file. Scale up and down is easy.
+- It has dyanamic inventory- it will automatically sense the server and do the config changes.
+- Provides good Support to both windows and linux as comapred to other config mgmt tools.
+- Simple, written in yaml.
+
+
+## Drawbacks of Ansible
+
+- Still config mgmt is difficult for windows servers.
+- Not good with debugging.
+- We can run ansible in debugging mode, but still debugging logs are not that much easy to understand by devops engineers.
+- Performance issues.
 
 
 
