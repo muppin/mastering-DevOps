@@ -46,7 +46,7 @@
   ### Ansible installation
 
   ``sudo apt update
-  sudo apt install ansible``
+    sudo apt install ansible``
 
 
   **Verify**
@@ -54,7 +54,16 @@
   ``ansible --version``
 **********************************************************************************************************************************************************************************************
 
-ssh-keygen
+### For passwordless Authentication
+
+- Do ssh-keygen in ansible host.
+- Copy the public key
+- Do ssh-keygen in target host also
+- Paste this public key in the authorised keys of target host.
+- Now access the target host on ansible host without any password.
+- ssh private_ip of target server.
+  
+************************************************************************************************************************************************************************************************
 
 
 
