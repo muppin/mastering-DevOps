@@ -6,8 +6,6 @@
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/b81b79b0-3c18-4480-aea0-e7da63c25823)
 
-![image](https://github.com/muppin/mastering-DevOps/assets/56094875/898159b6-379b-4130-a8e6-84445ea42305)
-
 
 **What is Amazon route 53?**
 it performs 3 main functions
@@ -19,10 +17,24 @@ it performs 3 main functions
 
  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/621e4634-05ad-4fdb-bd64-50927527c5e5)
 
+ ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7c514000-2c2d-41b5-a87a-d4933423713a)
 
 ### Benefits of using route 53
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/68055e8f-78bb-4067-9211-3e74d1ad9d0d)
+
+
+
+### Steps to create hosted zone
+- Create hosted zone.
+- By default NS and SOA records will be created.
+- Now copy NS records from hosted zone to Registered Domain.
+- Then create A name record.
+
+  ## TTL
+
+  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/4d7664f2-6e02-490a-9aaa-eff5f7442b13)
+
 
 ### Different types of routing policies
 When you create a record, you choose a routing policy, which determines how Amazon Route 53 responds to queries:
