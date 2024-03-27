@@ -47,4 +47,11 @@ There are 2 types of Variables:
 - **use Snake_casing/camelCasing**
 - **Should be descriptive enough**
 
+**Note**: fstrring in python which allow variables to be inserted directly into the string.
+for ex:
+```
+server_name = "my_server"
+print(f"Server Name: {server_name}")
+```
+
 
