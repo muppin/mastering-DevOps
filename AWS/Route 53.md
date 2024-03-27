@@ -4,8 +4,9 @@
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/cbab1cca-7c15-4cce-80a2-482d3dac0c7d)
 
-![Uploading image.png…]()
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/b81b79b0-3c18-4480-aea0-e7da63c25823)
 
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/898159b6-379b-4130-a8e6-84445ea42305)
 
 
 **What is Amazon route 53?**
@@ -13,6 +14,11 @@ it performs 3 main functions
 - if a website needs a name, route 53 registers a name for the website(domain name)
 - Route 53 helps to connect the browser(client) to the website(server), when the user enter the domain name.
 - Route 53 checks the health of the resources by sending automated requests
+
+ ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/f4e88654-0374-4347-86c7-3959d046fc63)
+
+ ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/621e4634-05ad-4fdb-bd64-50927527c5e5)
+
 
 ### Benefits of using route 53
 
