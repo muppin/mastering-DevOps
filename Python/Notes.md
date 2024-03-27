@@ -54,4 +54,40 @@ server_name = "my_server"
 print(f"Server Name: {server_name}")
 ```
 
+## Functions, Modules and packages
+
+### Functions
+
+- A function in Python is a block of code that performs a specific task. Functions are defined using the def keyword and can take inputs, called arguments. They are a way to encapsulate and reuse code.
+- for ex:
+```
+  def greet(name):
+    return f"Hello, {name}!"
+
+message = greet("Alice")
+print(message)
+```
+
+### Modules
+
+- Module is collection of functions.
+- module is a Python script containing Python code. It can define functions, classes, and variables that can be used in other Python scripts. Modules help organize and modularize your code, making it more maintainable
+- for ex: Suppose you have a Python file named my_module.py:
+```
+def square(x):
+    return x ** 2
+
+pi = 3.14159265
+```
+
+You can use this module in another script:
+```
+import my_module
+
+result = my_module.square(5)
+print(result)
+print(my_module.pi)
+```
+  
+
 
