@@ -1,5 +1,13 @@
 ## Route 53
 
+## DNS
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/cbab1cca-7c15-4cce-80a2-482d3dac0c7d)
+
+![Uploading image.png…]()
+
+
+
 **What is Amazon route 53?**
 it performs 3 main functions
 - if a website needs a name, route 53 registers a name for the website(domain name)
