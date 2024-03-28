@@ -59,3 +59,12 @@ When you create a record, you choose a routing policy, which determines how Amaz
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/a8a3122f-7ad9-42e9-8b3e-cdff09fc2cc9)
 
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/f72e3a81-1fa1-4b8a-9809-a07b1f1ca93e)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/03a8b610-f77c-4d44-9b0e-e0afe86dd04b)
+
+you can't set TTL for ALIAS record
+
+
+
