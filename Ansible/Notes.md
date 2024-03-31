@@ -171,7 +171,7 @@ db2.example.com
 
 ``` - name: My first playbook
   hosts: all
-  become: root
+  become: true
     
   tasks:
     - name: Install nginx
@@ -183,4 +183,36 @@ db2.example.com
       service:
         name: nginx
         state: started
-      ```
+```
+
+**Give below ansible-playbook command to execute the playbook**
+     
+```ansible-playbook -i inventory playbook.yaml```
+
+
+**Verbosity** - To get the debug logs, add -v to the command.
+
+```ansible-playbook -vvv-i inventory playbook.yaml```
+
+-vvv: This option enables verbose mode with increased verbosity level. By specifying -vvv, you'll get more detailed output during playbook execution, which can be helpful for troubleshooting and understanding what Ansible is doing at each step.
+
+***********************************************************************************************************************************************************************************************************************
+
+### Real time Usecases:
+
+Using ansible playbooks to configure K8s cluster:
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/601342c1-8dab-4cf0-8b7b-9a9f4709b630)
+
+************************************************************************************************************************************************************************************************************************
+
+### Ansible Roles
+
+Ansible roles are a way to organize and package sets of tasks, handlers, variables, and other Ansible artifacts into reusable units. Roles provide a structured approach to organizing automation logic and promoting code reuse across multiple projects and playbooks. They help simplify playbook management, enhance modularity, and improve maintainability of Ansible codebases.
+
+```ansible-galaxy role init kubernetes```
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/79d90e8d-c6fe-4c4d-a72a-31f21498973b)
+
+
+
