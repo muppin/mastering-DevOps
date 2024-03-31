@@ -161,3 +161,28 @@ db2.example.com
 
 ***************************************************************************************************************************************************************************************************************************
 
+### Playbook
+
+- An Ansible playbook is a YAML file that defines a set of tasks or configurations to be executed on remote hosts managed by Ansible. Playbooks are used to automate and orchestrate complex workflows, allowing for the provisioning, configuration, and management of infrastructure as code.
+- start the playbook with 3 hyphens (---), which indicated that it is a yaml file.
+- Palybbok.yaml can have multiple playbooks. Playbooks are lists.
+
+  *Example*
+
+  ```
+  ---
+- name: My first playbook
+  hosts: all
+  become: root
+    
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+      ```
