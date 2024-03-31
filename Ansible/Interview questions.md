@@ -51,3 +51,8 @@
    - **Playbooks**: Playbooks promote reusability and maintainability as they can be version-controlled, shared, and reused across different projects and environments. They facilitate modularization and abstraction of automation logic.
 
 In summary, while ad-hoc commands are quick and useful for simple tasks or troubleshooting, playbooks provide a more structured and scalable approach to automation, allowing for complex workflows and better maintainability of infrastructure code.
+
+***************************************************************************************************************************************************************************************************************************
+
+- **How can you group servers OR how can u execute a certain task on only some specific servers?**  Groups: Hosts can be grouped together using square brackets [].
+
