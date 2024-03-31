@@ -214,5 +214,14 @@ Ansible roles are a way to organize and package sets of tasks, handlers, variabl
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/79d90e8d-c6fe-4c4d-a72a-31f21498973b)
 
+Main Components:
+
+- tasks/: This directory contains the main set of tasks to be executed by the role. Each task file typically contains one or more tasks defined in YAML format.
+- handlers/: Handlers are tasks that are triggered by other tasks based on specific conditions. Handlers are defined in separate files within the handlers/ directory.
+- defaults/, vars/: These directories contain default variables used by the role. Variables defined in defaults/main.yml are overridden by variables defined in vars/main.yml.
+- files/, templates/: These directories contain static files and Jinja2 templates, respectively, which can be copied or rendered by tasks in the role.
+- meta/: This directory contains metadata for the role, including dependencies, supported platforms, and other information.
+- README.md: A README file providing documentation and usage instructions for the role.
+
 
 
