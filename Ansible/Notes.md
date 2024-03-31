@@ -115,15 +115,15 @@ Here are a few common ad hoc commands and their purposes:
 
 Ad hoc commands are convenient for quick tasks or troubleshooting, but for more complex and reusable tasks, writing playbooks is recommended.
 
-***************************************************************************************************************************************************************************************************************************************************************
+***************************************************************************************************************************************************************************************************************************
 
 ### Inventory File
 
 An inventory file in Ansible is a text file that contains a list of hosts and groups of hosts that Ansible will manage. It serves as a centralized location where you define the infrastructure that Ansible can interact with. The inventory file is a fundamental component of Ansible, as it determines the scope of hosts on which Ansible can execute tasks.
 
-******************************************************************************************************************************************************************************************************************************************************************
+***************************************************************************************************************************************************************************************************************************
 
-example
+**example**
 
 ```ansible -i inventory all -m "shell" -a "touch devopsclass" ```
 
@@ -143,4 +143,15 @@ So, when you execute this Ansible ad-hoc command, it will create a file named `d
 
 *************************************************************************************************************************************************************************************************************************
 
+**Groups:** Hosts can be grouped together using square brackets []. This allows you to target multiple hosts with a single command. For example:
+
+```[webservers]
+webserver1.example.com
+webserver2.example.com
+
+[databases]
+db1.example.com
+db2.example.com ```
+
+           
 
