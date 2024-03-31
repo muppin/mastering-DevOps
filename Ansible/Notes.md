@@ -145,13 +145,19 @@ So, when you execute this Ansible ad-hoc command, it will create a file named `d
 
 **Groups:** Hosts can be grouped together using square brackets []. This allows you to target multiple hosts with a single command. For example:
 
-```[webservers]
+```
+[webservers]
 webserver1.example.com
 webserver2.example.com
 
 [databases]
 db1.example.com
-db2.example.com ```
+db2.example.com
+```
 
-           
+**Command**
+
+```ansible -i inventory webservers -m "shell" -a "touch devopsclass" ```
+
+***************************************************************************************************************************************************************************************************************************
 
