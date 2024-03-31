@@ -20,6 +20,77 @@ For more info: https://github.com/iam-veeramalla/python-for-devops/blob/main/Day
 - Python is a Dynamically typed programming language
 - For each datatypes in python you have built-in functions
 
+## Data Types
+
+In programming, a data type is a classification or categorization that specifies which type of value a variable can hold. Data types are essential because they determine how data is stored in memory and what operations can be performed on that data. Python, like many programming languages, supports several built-in data types. Here are some of the common data types in Python:
+
+1. **Numeric Data Types:**
+   - **int**: Represents integers (whole numbers). Example: `x = 5`
+   - **float**: Represents floating-point numbers (numbers with decimal points). Example: `y = 3.14`
+   - **complex**: Represents complex numbers. Example: `z = 2 + 3j`
+
+2. **Sequence Types:**
+   - **str**: Represents strings (sequences of characters). Example: `text = "Hello, World"`
+   - **list**: Represents lists (ordered, mutable sequences). Example: `my_list = [1, 2, 3]`
+   - **tuple**: Represents tuples (ordered, immutable sequences). Example: `my_tuple = (1, 2, 3)`
+
+3. **Mapping Type:**
+   - **dict**: Represents dictionaries (key-value pairs). Example: `my_dict = {'name': 'John', 'age': 30}`
+
+4. **Set Types:**
+   - **set**: Represents sets (unordered collections of unique elements). Example: `my_set = {1, 2, 3}`
+   - **frozenset**: Represents immutable sets. Example: `my_frozenset = frozenset([1, 2, 3])`
+
+5. **Boolean Type:**
+   - **bool**: Represents Boolean values (`True` or `False`). Example: `is_valid = True`
+
+6. **Binary Types:**
+   - **bytes**: Represents immutable sequences of bytes. Example: `data = b'Hello'`
+   - **bytearray**: Represents mutable sequences of bytes. Example: `data = bytearray(b'Hello')`
+
+7. **None Type:**
+   - **NoneType**: Represents the `None` object, which is used to indicate the absence of a value or a null value.
+
+8. **Custom Data Types:**
+   - You can also define your custom data types using classes and objects.
+
+### Difference between Lists and Tuples
+
+In Python, both lists and tuples are used to store collections of items, but they have some key differences:
+
+1. **Mutability**:
+   - Lists: Lists are mutable, meaning their elements can be modified after creation. You can add, remove, or change elements in a list.
+   - Tuples: Tuples are immutable, meaning their elements cannot be modified after creation. Once a tuple is created, its elements cannot be changed.
+
+2. **Syntax**:
+   - Lists are defined using square brackets `[]`, with elements separated by commas.
+   - Tuples are defined using parentheses `()`, with elements separated by commas.
+
+3. **Use Cases**:
+   - Lists are commonly used for collections of items where the order and contents may change, or where modification of the elements is needed. For example, lists are suitable for storing a list of tasks, a list of numbers, or a list of user inputs.
+   - Tuples are often used for fixed collections of items that should not change, or where immutability is desired. For example, tuples are used for representing coordinates, dates, or configuration settings.
+
+4. **Performance**:
+   - Lists typically have slightly larger memory overhead than tuples because they are mutable. However, this difference is usually negligible for small collections.
+   - Tuples can be faster than lists for certain operations due to their immutability. For example, iterating over a tuple can be faster than iterating over a list.
+
+Here's a quick example demonstrating the syntax and mutability difference between lists and tuples:
+
+```python
+# List example
+my_list = [1, 2, 3, 4, 5]
+my_list[0] = 10  # Modify the first element
+print(my_list)   # Output: [10, 2, 3, 4, 5]
+
+# Tuple example
+my_tuple = (1, 2, 3, 4, 5)
+# Attempting to modify a tuple will result in an error:
+# my_tuple[0] = 10  # This will raise a TypeError
+print(my_tuple)     # Output: (1, 2, 3, 4, 5)
+```
+
+In summary, use lists when you need a mutable collection of items, and use tuples when you want an immutable collection of items or when you need to ensure the integrity of the data.
+
 ## Variables and Keywords 
 
 ### Keywords
