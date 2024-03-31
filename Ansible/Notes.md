@@ -169,9 +169,7 @@ db2.example.com
 
   *Example*
 
-  ```
-  ---
-- name: My first playbook
+``` - name: My first playbook
   hosts: all
   become: root
     
