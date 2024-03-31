@@ -115,12 +115,16 @@ Here are a few common ad hoc commands and their purposes:
 
 Ad hoc commands are convenient for quick tasks or troubleshooting, but for more complex and reusable tasks, writing playbooks is recommended.
 
-**********************************************************************************************************************************************************************************************
+***************************************************************************************************************************************************************************************************************************************************************
 
 ### Inventory File
 
 An inventory file in Ansible is a text file that contains a list of hosts and groups of hosts that Ansible will manage. It serves as a centralized location where you define the infrastructure that Ansible can interact with. The inventory file is a fundamental component of Ansible, as it determines the scope of hosts on which Ansible can execute tasks.
 
+******************************************************************************************************************************************************************************************************************************************************************
 
+example
+
+```ansible -i inventory all -m "shell" -a "touch devopsclass" ```
 
 
