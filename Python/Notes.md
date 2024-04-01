@@ -159,6 +159,46 @@ result = my_module.square(5)
 print(result)
 print(my_module.pi)
 ```
+
+### Packages
+
+- Package is a collection of modules.
+- A package is a directory that contains one or more Python modules and an optional special file called __init__.py. The __init__.py file is used to initialize the package and can contain initialization code or define variables and functions that are available when the package is imported.
+- Example:
+Consider the following directory structure:
+
+
+```
+mypackage/
+├── __init__.py
+├── module1.py
+├── module2.py
+└── subpackage/
+    ├── __init__.py
+    └── submodule.py
+```
+
+
+mypackage/: The top-level package directory.
+__init__.py: Initialization file for the package.
+module1.py, module2.py: Python modules within the package.
+subpackage/: A subpackage directory.
+subpackage/__init__.py: Initialization file for the subpackage.
+subpackage/submodule.py: Python module within the subpackage.
+**PIP** - Python Package installer
+
+
+### Virtual Environment
+
+- Logical separation for python projects.
+- A virtual environment in Python is a self-contained directory hierarchy that contains its own Python interpreter and libraries.
+- It allows you to create isolated environments for different Python projects, each with its own set of dependencies, without interfering with the system-wide Python installation or other projects.
+
+**Steps**
+- Install virtualenv-  ```pip install virtualenv```
+- Create your virtualenv- ```python -m venv myenv```
+- Activate- ```source myenv/bin/activate```
+- Deactivate- ```conda deactivate```
   
 
 
