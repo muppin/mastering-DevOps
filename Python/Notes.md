@@ -199,6 +199,33 @@ subpackage/submodule.py: Python module within the subpackage.
 - Create your virtualenv- ```python -m venv myenv```
 - Activate- ```source myenv/bin/activate```
 - Deactivate- ```conda deactivate```
+
+
+
+### Command Line Arguments and Environment variables
+
+- Command line Arguments are used to pass the arguments to the python programme while running the programme.
+- These are dynamically passed by the user while running the programme.
+- The command line arguments are read by sys module
+- for ex:
+- ```
+  import sys
+
+  num1 = int(sys.argv[1])  #by default the arguments read are String type.
+  num2 = int(sys.argv[2])
+  ```
+
+  **Environment Variables**
+
+  - When you want to store some sensitive information, we use environment variables
+  - to create env variable ``` export <env_name>="<env_value>"```
+  - using os madule, we can read the env variables
+    ```
+    import os
+
+    print(os.getenv("<env_name>")
+    ```
+  
   
 
 
