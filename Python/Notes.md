@@ -67,8 +67,8 @@ In Python, both lists and tuples are used to store collections of items, but the
    - Tuples are defined using parentheses `()`, with elements separated by commas.
 
 3. **Use Cases**:
-   - Lists are commonly used for collections of items where the order and contents may change, or where modification of the elements is needed. For example, lists are suitable for storing a list of tasks, a list of numbers, or a list of user inputs.
-   - Tuples are often used for fixed collections of items that should not change, or where immutability is desired. For example, tuples are used for representing coordinates, dates, or configuration settings.
+   - Lists are commonly used for collections of items where the order and contents may change, or where modification of the elements is needed. For example, lists are suitable for storing a list of tasks, a list of numbers, or a list of user inputs, list of EC2 instances, list of S3 buckets.
+   - Tuples are often used for fixed collections of items that should not change, or where immutability is desired. For example, tuples are used for representing coordinates, dates, or configuration settings or storing list of admins, which should not be modified.
 
 4. **Performance**:
    - Lists typically have slightly larger memory overhead than tuples because they are mutable. However, this difference is usually negligible for small collections.
@@ -90,6 +90,8 @@ print(my_tuple)     # Output: (1, 2, 3, 4, 5)
 ```
 
 In summary, use lists when you need a mutable collection of items, and use tuples when you want an immutable collection of items or when you need to ensure the integrity of the data.
+
+For more info- https://github.com/iam-veeramalla/python-for-devops/tree/main/Day-08
 
 ## Variables and Keywords 
 
@@ -225,7 +227,15 @@ subpackage/submodule.py: Python module within the subpackage.
 
     print(os.getenv("<env_name>")
     ```
-  
+
+
+  ### Conditional Statements-
+
+  - if
+  - elif
+  - else
+
+  - https://github.com/iam-veeramalla/python-for-devops/blob/main/Day-07/README.md
   
 
 
