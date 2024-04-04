@@ -217,7 +217,7 @@ subpackage/submodule.py: Python module within the subpackage.
   num2 = int(sys.argv[2])
   ```
 
-  **Environment Variables**
+**Environment Variables**
 
   - When you want to store some sensitive information, we use environment variables
   - to create env variable ``` export <env_name>="<env_value>"```
@@ -228,14 +228,60 @@ subpackage/submodule.py: Python module within the subpackage.
     print(os.getenv("<env_name>")
     ```
 
-
-  ### Conditional Statements-
+### Conditional Statements-
 
   - if
   - elif
   - else
 
   - https://github.com/iam-veeramalla/python-for-devops/blob/main/Day-07/README.md
-  
+ 
+### Loops
+
+- To perform the repetitive action on a block of code we use loops.
+- There are two types of loops:
+   - for -  this is used when there is definite number of executions (fixed number of executions)
+   - while - the number of executions is decided dynamically
+
+#### for
+
+**syntax**
+
+```
+for variable in sequence:
+    # Code to be executed for each item in the sequence
+```
+sequence can be range(n), lists, tuples
+
+**example**
+
+```
+for i in range(n):
+   print("something"
+```
+in the above example range(n) is a function that returns a list of numbers i.e from [0, 1, 2...., n-1]
+
+#### while
+
+**Syntax**
+
+```
+while condition:
+    # Code to be executed as long as the condition is true
+```
+
+**Example**
+
+```
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+```
+
+#### Loop controls
+
+- **break**: The "break" statement is used to exit the loop prematurely
+- **continue**: The "continue" statement is used to skip the current iteration of the loop and proceed to the next one.
 
 
