@@ -31,5 +31,27 @@
 - **sudo** -> superuser do -> to execte commands that administrative permissions.
 - **df** -> display the free disk space
 - **df -hg** -> h stands for human readable and g in GB
+- **du** -> disk usage stats
+- **head -n 4 file.txt** -> shows the first 4 lines of the file, by default it shows 10 lines
+- **tail -n 2 file.txt** -> shows the last 2 lines of the file, by default last 10 lines
+- **diff file1.txt file2.txt** -> shows the difference between 2 files
+- **locate "*.txt"** -> locates all the files ending with *.txt.
+- **find .** -> gives contents of current directory.
+- **find . -type d/f** -> finds directories/files in the current directory
+- **find . -type f -name "*.txt"** -> finds files of name .txt in the current directory
+- **find . -type f -mmin -20** -> finds files which are modified in less than 20 minutes ago
+- **find . -type f -mmin +20** -> finds files which are modified more than 20 minutes ago
+- **find . -type f -mmin +20 -mmin -30** -> finds files which are modified more than 20 minutes ago and less than 30 mins ago.
+- **find . -type f -mtime -10** -> finds files which are modified in less than 10 days ago
+- **find . -type f -maxdepth 1** -> finds files in current folder because maxdepth is 1
+- **find . -type f -maxdepth 2** -> finds files in current folder and one sub folder because maxdepth is 2
+- **find . -type f -mindepth 2**-> starts finding files from 1st sub folder till last sub folder recursively
+- **find . -type f -size +10k** -> finds files in current directory of size more that 10kb
+- **find . -empty** -> finds empty files and folders
+- **find . -perm 777** -> finds files with the permissions of read, write and execute.
+
+
+- 
+- 
 -  
 - 
