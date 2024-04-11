@@ -288,6 +288,17 @@ while count < 5:
 
 refer: https://github.com/muppin/python-for-devops/tree/main/Day-11
 
+_________________________________________________________________________________________________________________________________________________________________________________________
+
 ### BOTO3
+
+- BOTO3 is a module used to create resources on AWS or interact with AWS API's programatically using python.
+
+**AWS CLI/BOTO3  Vs.  CFT/Teraaform**
+
+- AWS CLI/BOTO3 is a scripting langauge, where as CFT/TF is a templating language.
+- AWS CLI/BOTO3 is good for quick actions for example (aws s3 ls).
+- BOTO3 supports serverless programming also. Ex. lambda functions
+- 
 
 
