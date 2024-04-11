@@ -108,6 +108,7 @@ Deployments focus on managing the overall lifecycle and updates of Pods, includi
 What is the ideal pod size?
 It depends on number of concurrent users and number of connections one replica of  POD can handle.
 
+### Example
 
 ```
 apiVersion: apps/v1
@@ -153,6 +154,23 @@ ________________________________________________________________________________
 - **Cluster IP** - Its the default service. App will be still accessible only inside Cluster. It only provides Service discovery and Load balancing.
 - **NodePort** - It allows to access application inside ur organization, which means only ppl who have access to worker node IP, and they don't have access to cluster can access the app.
 - **Load Balancing** - this mode of service exposes the application to the internet/external world, where it creates a public IP address. It will only work on cloud providers.
+
+
+### Example
+
+ ```
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app.kubernetes.io/name: MyApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+ ```
 
 ______________________________________________________________________________________________________________________________________________________________________________________
 
