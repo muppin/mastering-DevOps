@@ -17,6 +17,10 @@
 - **Solution 3** - K8s has Replica sets and HPA feature, which supports auto scaling.
 - **Solution 4** - K8s provide Enterpise level support.
 
+**NOTE**
+- Container will be restarted.
+- For pod, new pod will created.
+
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
 ## DAY31
