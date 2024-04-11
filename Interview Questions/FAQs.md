@@ -44,6 +44,30 @@
 - Netcat Command, i will Use the nc command to test network connectivity and measure latency between two machines by establishing a TCP connection.
   ```nc -z IP_address or hostname port_number```
   - **What is -z in the above command?**
-  - So when you use -z you're telling nc to check if the specified port on the target machine is open or reachable. If the port is open, you'll typically receive a response indicating that it's open, and if it's closed, you won't receive any response. 
+  - So when you use -z you're telling nc to check if the specified port on the target machine is open or reachable. If the port is open, you'll typically receive a response indicating that it's open, and if it's closed, you won't receive any response.
+ 
 
-  
+### AWS Based questions 
+
+**My client has a highly sensitive application deployed in an Amazon hashtag#VPC (Virtual Private Cloud) within their AWS account. The application needs to securely access AWS services such as Amazon S3 and Amazon DynamoDB without the public internet. Additionally, these services are restricted to only the resources within their VPC. How will you achieve this, and could you explain step by step?**
+- VPC endpoints will allow the servers inside the VPC to communicate with other AWS services internally without going through the internet. We have two types of endpoints:
+Gateway endpoints and Interface Endpoints.
+- Gateway endpoints are used for S3 and DynamoDB, while Interface endpoints will create a network interface on a corresponding subnet. By implementing VPC Endpoints, we can avoid the cost of NAT gateway which is $0.045/hour and S3 $0.045/GB, along with the data transmission prices.
+
+**You lost both PEM and PPk file how will you try to connect to your Instance ?**
+- Create a role > select Ec2 >search for  “managed instance core”  select it > again search for “ ssmf “  > and click on create a role
+- Attach the iam role to the instances you want to login
+- Got to management and governance > click on  “AWS systems manager”  > under drop down select “ Sessions Manager  ” > start session > her you will see you server > Select the server you wanted to login and start session.
+-         Bash 
+-         Sudo su –
+-         Nano etc/ssh/sshd_config
+-         Come down and search for “password authentication disabled “
+-         change it to "PasswordAuthentication yes
+-         Save and Exit
+-         sudo service ssh restart
+-         Set a password for the user you want to use to log in: sudo passwd username
+
+- Connect to the instance using SSH: ssh username@instance_ip. When prompted, enter the password you set for the user.
+
+**Walk me through the concept of VPC flow logs and explain their significance in a cloud environment**
+- refer this https://www.youtube.com/watch?v=6CjIT068Ss0&t=6s
