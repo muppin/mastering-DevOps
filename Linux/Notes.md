@@ -49,9 +49,10 @@
 - **find . -type f -size +10k** -> finds files in current directory of size more that 10kb
 - **find . -empty** -> finds empty files and folders
 - **find . -perm 777** -> finds files with the permissions of read, write and execute.
-
-
+- **chmod 777 file.txt/folder** -> providing read, write, execute permissions to users, groups and others for file.txt.
+- **chmod 400 file.txt/folder** -> providing read to user and no permissions to groups and others
+- **chown root file.txt/folder** -> changing the owner of a file to root
+- **whoami** -> shows the current user
+- **find . -mindepth 3 -type f -name "*.txt" -exec rm -rf {} +** deletes the files called .txt at the subfolder level 3
 - 
-- 
--  
 - 
