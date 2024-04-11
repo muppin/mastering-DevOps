@@ -156,6 +156,10 @@ ________________________________________________________________________________
 - **Load Balancing** - this mode of service exposes the application to the internet/external world, where it creates a public IP address. It will only work on cloud providers.
 
 
+![Uploading image.png…]()
+
+
+
 ### Example
 
  ```
