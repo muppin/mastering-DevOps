@@ -1,0 +1,3 @@
+- **Difference between Continous Delivery and Continous Deployment**
+      - Continuous delivery automates the software release process, but requires manual approval to update to production.
+      - Continuous deployment, on the other hand, automatically releases updates into the production environment.
