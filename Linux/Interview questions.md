@@ -115,4 +115,41 @@ Here's a basic example of how to use `crontab` to schedule a task:
 That's it! The cron daemon will now execute the specified command or script according to the schedule you defined in your crontab file.
 
 
+**How to open a file in read only mode**
+
+vim -r file.txt
+
+**What is the difference between soft and hard link**
+Soft links (symbolic links) and hard links are two types of links used in Unix-like operating systems to create references to files. While both types of links serve similar purposes, they have distinct characteristics and behaviors. Here's a comparison between soft links and hard links:
+
+**Soft Links (Symbolic Links):**
+
+A soft link, also known as a symbolic link, is a special type of file that points to another file or directory.
+Symbolic links contain the path to the target file or directory, rather than containing the actual data of the target.
+Soft links can reference files or directories on different filesystems.
+Deleting or moving the target file or directory does not affect the soft link. However, if the target is deleted, the soft link becomes a dangling link.
+Symbolic links can be created using the ln -s command.
+
+
+**Hard Links:**
+
+A hard link is another name (directory entry) for an existing file or directory. It directly points to the inode of the target file or directory.
+Hard links share the same inode and file data as the target file or directory.
+Hard links cannot reference directories or files on different filesystems.
+Deleting or moving the original file does not affect hard links; they still refer to the original file's inode and data. However, deleting all hard links will remove the file's data from the filesystem.
+Hard links can be created using the ln command without any options.
+
+
+**Difference between break and continue statements**
+
+- Break- breaking the execution
+- Continue - skip the current and continue with the next
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c89ed51e-029b-4fb8-b4a7-f85c32a329f7)
+
+**Shell is dynamically typed or statically typed?**
+- both python and shell are dyanamically typed means no need to specify that a variable is a string, int or float.
+
+
+
 
