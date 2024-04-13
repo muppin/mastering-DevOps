@@ -106,7 +106,27 @@
 - **useradd <username>** -> add a new user
 - **passwd <username>** -> adds the new password.
 - **userdel <username>** -> deletes the user
-- 
+- **groupadd <groupname>** -> adds group
+- **groupdel <groupname>** -> deletes group
+- **usermod -aG groupname username** -> adds username to the group
+- **groups username** -> dispalys the groups of user
+- **id username** -> Displays information about the current user or a specified user, including user ID (UID) and group ID (GID).
+- **su username** -> switches the user
+- **sudo command** -> Allows users to execute commands with the security privileges of another user (usually the root user).
+- **cat /etc/passwd** -> file which shows the user related info
+- **sudo cat /etc/shadow** -> The /etc/shadow file is only readable by the root user to prevent unauthorized access to sensitive password information.
+- **cat /etc/groups** -> The /etc/group file in Linux contains information about user groups on the system.
+- **sudo cat /etc/gshadow** -> The /etc/gshadow file in Linux is a system file that contains encrypted password and group membership information for group accounts on the system.
+
+##### uaseradd vs adduser
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/4557c869-46fe-4d1c-bbb5-74780e452a3a)
+- By default, useradd only creates the user account without setting up additional configurations like creating a home directory, setting the default shell, or adding the user to groups.
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/0aa18770-56c1-4d1b-b653-79ee51110092)
+- adduser takes care of setting up default configurations, creating the user's home directory, and adding the user to common groups like the users group.
+  
+
 
 #### Networking commands
 
