@@ -37,14 +37,14 @@ The main difference between ps -ef and ps -aux is in the output format:
   then 
   echo $i
   fi
-done```
+done
+```
 
-
-        -
 **Write a command to print number of "s" in "mississipi**
 
 ```x=mississipi
-grep -o "s" <<<"$x" | wc -l```
+grep -o "s" <<<"$x" | wc -l
+```
 
 - -o is used for only
 - <<< used for standard input
