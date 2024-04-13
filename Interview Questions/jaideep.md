@@ -20,6 +20,8 @@
 - NFS config file?   --> /etc/exports file
 - Explain boot process in linux?
 - write a cron expression to schedule a job every 1 hour --> 0 * * * * ./script.sh
+- write shell script to print all process - ps -ef
+- to list only id of process - ps -ef | awk -F" " '{print $2}'
 
 ## Grafana
 - How did you setup grafana in your project?
