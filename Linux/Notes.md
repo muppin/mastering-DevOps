@@ -37,6 +37,7 @@
 - **nproc** ->  number of processing units available to the current process
 - **free -m** -> to check memory
 - **df -h** -> to check disk size
+- **top** -> to monitor all CPU, memory and disk size.
 - **mkdir <folder_name>** -> create a new directory
 - **mkdir -p abc/def/xyz** -> creating a folder inside folder
 - **pwd** -> present working directory
