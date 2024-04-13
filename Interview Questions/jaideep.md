@@ -259,3 +259,37 @@ The traditional runlevels in Linux are numbered from 0 to 6, with each runlevel 
 When a Linux system boots, it typically starts in a default runlevel specified in the system configuration files. The system administrator can also switch between runlevels manually using the `init` command or its alternatives like `telinit`, `systemctl`, or `runlevel`.
 
 While traditional runlevels are still used conceptually, many modern Linux distributions have adopted systemd, which introduces the concept of targets as a more flexible and powerful replacement for runlevels. However, the basic idea of defining different system states for different purposes remains the same.
+
+********************************************************************************************************************************************************************************************************************
+**What is swap memory in linux**
+
+In Linux, swap memory (also known as swap space or swap) is a designated area of the hard disk that the operating system uses as virtual memory when physical RAM (Random Access Memory) is full. Swap allows the system to temporarily move data from RAM to disk and vice versa, thereby freeing up physical memory for other processes.
+
+Here's how swap memory works:
+
+1. **Memory Management**: When a system's RAM is fully utilized, the operating system moves less frequently accessed or inactive memory pages from RAM to the swap space on the disk. This process is called swapping or paging.
+
+2. **Performance Impact**: While swap provides a way to increase the total amount of available memory, accessing data from disk is slower than accessing data from RAM. Therefore, excessive swapping can lead to degraded performance, known as "thrashing," as the system spends more time moving data between RAM and disk than executing actual tasks.
+
+3. **Configuration**: Swap space is typically configured during the installation of the Linux operating system. However, it's also possible to create or resize swap space after installation.
+
+   - **Creating Swap Space**: To create a swap partition or file, you can use tools like `mkswap` and `swapon`. For example, to create a swap file named `swapfile` with a size of 1 GB:
+     ```
+     sudo fallocate -l 1G /swapfile
+     sudo mkswap /swapfile
+     sudo swapon /swapfile
+     ```
+
+   - **Enabling Swap**: To enable the swap space permanently, you need to add an entry for it in the `/etc/fstab` file. For the `swapfile` example above, you would add the following line to `/etc/fstab`:
+     ```
+     /swapfile   none    swap    sw    0   0
+     ```
+
+   - **Swappiness**: Swappiness is a kernel parameter that controls the tendency of the system to move processes out of physical memory and onto swap space. It ranges from 0 to 100, with lower values indicating less swapping. You can adjust the swappiness value by editing the `/etc/sysctl.conf` file or using the `sysctl` command. For example, to set swappiness to 10:
+     ```
+     sudo sysctl vm.swappiness=10
+     ```
+
+4. **Monitoring**: You can monitor swap usage and performance using tools like `free`, `top`, or `vmstat`. High swap usage or frequent swapping may indicate that your system is under memory pressure and may benefit from additional physical RAM.
+
+Overall, swap memory plays a crucial role in Linux systems by providing a mechanism to handle memory overflow situations and ensure system stability, but it should be used judiciously to avoid performance degradation.
