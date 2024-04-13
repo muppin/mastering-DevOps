@@ -42,7 +42,7 @@ Dockerfile
 Copy code
 FROM alpine:latest
 
-#### Set default command to execute when container starts
+#### Set default command to execute when container starts - can be overriden
 CMD ["echo", "Hello, World!"]
 In this example, the default command echo "Hello, World!" will be executed when the container starts. If no command is specified when running the container, this default command will be executed. However, if a command is specified when running the container (e.g., docker run <image> <command>), it will override the default command specified in the CMD instruction.
 
@@ -52,12 +52,15 @@ Dockerfile
 Copy code
 FROM alpine:latest
 
-#### Set entry point for the container
+#### Set entry point for the container -will append 
 ENTRYPOINT ["echo", "Hello,"]
 
 #### Set default arguments to be passed to the entry point
 CMD ["World!"]
 In this example, the main command echo "Hello," is specified using the ENTRYPOINT instruction. The CMD instruction provides default arguments "World!" to be passed to the entry point. When the container starts, the main command (ENTRYPOINT) will always be executed, with the default arguments (CMD) appended to it. If a command is specified when running the container, it will be passed as arguments to the ENTRYPOINT command.
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/a11ed957-4bfe-4f16-bae6-449c3e077642)
+
 
 __________________________________________________________________________________________________________________________________________________________________________________________
 
