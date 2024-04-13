@@ -1,6 +1,6 @@
 ## Linux
 - port no of http / https / ftp / dns / ssh / grafana / jenkins ? --> 80,443,21,53,22,3000,8080
-- What is KERNEL PANIC Error in Linux? --> initramfs file gets corrupted or deleted
+- What is KERNEL PANIC Error in Linux? --> initramfs file gets corrupted or deleted.  an error that occurs when the kernel encounters a critical system failure or an unrecoverable error. It's the Linux equivalent of the Blue Screen of Death (BSOD) in Windows systems
 - scp in linux , diff between scp & rsync ? scp command --> scp -pr <file_name> root@serverip:/<path>
 - What is a process in Linux ? diff between orphan process vs zombie process?
 - what is run level in Linux?
