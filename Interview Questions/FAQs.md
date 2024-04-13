@@ -28,6 +28,37 @@
   - Provisioning infrastructure on AWS.
   - Participating in on-call rotations, including PagerDuty calls.
   - Addressing incidents and alerts, such as those related to memory/CPU utilization or pod crashes.
+ 
+
+### Explain CI/CD pipeline used in your project**
+
+*Checking out the code from source code repo* -  Checkoiut happens automatically since jenkins file is present in repo.
+while creating CI/CD pipeline - Configure:
+- For that we have configured both push notifications(from github webhook) and polling (jenkins will continously look for changes and poll it).
+- We have configured polling for every 30 mins.
+
+**Stage 1 - Build** 
+- We have dockerfile in our git repo
+- We are using docker build to build the image out of the dockerfile
+
+**Stage 2 - Push to image repo**
+- we are pushing the images to AWS ECR.
+- ECR - Amazon Elastic Container Registry (Amazon ECR) is a fully managed container registry, its a private repo.
+- Authenticate to AWS ECR, docker and then tag it and push it
+
+**Stage 3 - Update Deployment File**
+- Once the images are build and pushed to the ECR, then in order to use the latest image in K8s cluster, we have dedicated stage
+- We have written a shell script to update the git manifest repo, git maifest repo holds all the k8s manifests
+- sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+- Basically the above command wil replace the image tag with the build number so that latest image in used in k8s cluster
+
+**ArgoCD Application Configuration:**
+Define the application configuration for ArgoCD, specifying details like the Git repository URL, path to Kubernetes manifests, and synchronization settings.
+
+**ArgoCD Deployment:**
+ArgoCD continuously monitors the Git repository for changes. When changes are detected, ArgoCD deploys the updated application to the EKS cluster, ensuring the desired state matches the configuration in the Git repository.
+
+****************************************************************************************************************************************************************************************************************
 
 ### Linux based questions
 
