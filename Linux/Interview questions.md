@@ -124,20 +124,20 @@ Soft links (symbolic links) and hard links are two types of links used in Unix-l
 
 **Soft Links (Symbolic Links):**
 
-A soft link, also known as a symbolic link, is a special type of file that points to another file or directory.
-Symbolic links contain the path to the target file or directory, rather than containing the actual data of the target.
-Soft links can reference files or directories on different filesystems.
-Deleting or moving the target file or directory does not affect the soft link. However, if the target is deleted, the soft link becomes a dangling link.
-Symbolic links can be created using the ln -s command.
+- A soft link, also known as a symbolic link, is a special type of file that points to another file or directory.
+- Symbolic links contain the path to the target file or directory, rather than containing the actual data of the target.
+- Soft links can reference files or directories on different filesystems.
+- Deleting or moving the target file or directory does not affect the soft link. However, if the target is deleted, the soft link becomes a dangling link.
+- Symbolic links can be created using the ln -s command.
 
 
 **Hard Links:**
 
-A hard link is another name (directory entry) for an existing file or directory. It directly points to the inode of the target file or directory.
-Hard links share the same inode and file data as the target file or directory.
-Hard links cannot reference directories or files on different filesystems.
-Deleting or moving the original file does not affect hard links; they still refer to the original file's inode and data. However, deleting all hard links will remove the file's data from the filesystem.
-Hard links can be created using the ln command without any options.
+- A hard link is another name (directory entry) for an existing file or directory. It directly points to the inode of the target file or directory.
+- Hard links share the same inode and file data as the target file or directory.
+- Hard links cannot reference directories or files on different filesystems.
+- Deleting or moving the original file does not affect hard links; they still refer to the original file's inode and data. However, deleting all hard links will remove the file's data from the filesystem.
+- Hard links can be created using the ln command without any options.
 
 
 **Difference between break and continue statements**
