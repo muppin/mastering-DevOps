@@ -2,12 +2,21 @@
 
 - In summary, git merge is a safer and simpler option when you want to integrate changes while preserving the commit history. On the other hand, git rebase provides a cleaner history but should be used with caution, especially in a collaborative environment where the commit history is shared among multiple developers. It's generally not recommended to rebase commits that have been pushed to a shared repository, as it can cause confusion and conflicts for collaborators.
 
-- **Git Merge** - Puuls the latest changes from the main into the feature branch, creating a new merge commit in the process. Its like tying two branches together with a knot.
-  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/22ffc685-3db6-4eb1-8a83-c0c39d88353c)
-
+**Git Merge** -
+- Pulls the latest changes from the main into the feature branch, creating a new merge commit in the process. Its like tying two branches together with a knot.
+- ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/22ffc685-3db6-4eb1-8a83-c0c39d88353c)
 - merge will preserve the commit history,
-- In rebase all the commits of feature branch sits on top of target branch
 
+**Git Rebase** -
+- Git rebase changes the base of our feature branch to the latest commit on the main and then displays our changes from there.
+- In rebase all the commits of feature branch sits on top of target branch.
+- It gives a straightforward and clean commit history.
+- ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/dbd347f8-6dd1-4298-a65e-73a475d73609)
+
+**Git Squash**-
+- All the feature branch commits are squeezed into a single commit and merged into main.
+- ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/62abdb29-b891-470a-be99-1dd87528c343)
+- This keeps main's history liner as rebasing while still creating a single merge commit.
 
 
 ## Git merge vs git squash?
