@@ -212,3 +212,28 @@ Here's a comparison of `scp` and `rsync`:
    - **rsync**: Typically faster and more efficient, especially for large files or directories, due to its delta-transfer algorithm and ability to skip files that haven't changed.
 
 In summary, while both `scp` and `rsync` are used for transferring files, `scp` is simpler and suitable for basic file copying tasks, especially when security is a concern, while `rsync` is more powerful and efficient for synchronization tasks, especially when dealing with large files or directories.
+
+_________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+**What is a process in Linux ? diff between orphan process vs zombie process?**
+
+In Linux, a process is a running instance of a program. It's the basic unit of execution in an operating system, and each process has its own memory space, program code, data, and system resources.
+
+**Orphan Process**:
+- An orphan process is a process whose parent process has terminated or ended unexpectedly.
+- Orphan processes are adopted by the init process (process ID 1), which is the ancestor of all processes on the system.
+- When the parent process of a child process terminates, the child process becomes an orphan and is adopted by the init process.
+- Orphan processes continue to run normally under the init process until they complete their execution or are terminated.
+
+**Zombie Process**:
+- A zombie process is a process that has completed execution but still has an entry in the process table.
+- Zombie processes occur when a child process terminates, but its parent process hasn't yet called the `wait()` system call to retrieve the termination status of the child.
+- Zombie processes consume system resources such as process table entries, but they don't consume CPU time or memory.
+- Zombie processes are typically harmless, but if too many accumulate, they can exhaust system resources.
+
+**Difference**:
+- The key difference between orphan and zombie processes is their state and behavior after the parent process terminates:
+  - Orphan processes are still actively running and are adopted by the init process, while zombie processes have already completed execution but still have an entry in the process table waiting for the parent process to retrieve their termination status.
+- Orphan processes are potentially still performing tasks and consuming system resources, while zombie processes are essentially "dead" and are waiting to be cleaned up by the parent process.
+
+In summary, orphan processes are active but have lost their parent process, while zombie processes are terminated but haven't been cleaned up yet.
