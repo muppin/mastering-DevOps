@@ -237,3 +237,25 @@ In Linux, a process is a running instance of a program. It's the basic unit of e
 - Orphan processes are potentially still performing tasks and consuming system resources, while zombie processes are essentially "dead" and are waiting to be cleaned up by the parent process.
 
 In summary, orphan processes are active but have lost their parent process, while zombie processes are terminated but haven't been cleaned up yet.
+
+****************************************************************************************************************************************************************************************************************
+**what is run level in Linux?**
+
+
+In Linux, runlevels are predefined operating states or configurations that determine which services, daemons, and processes are started or stopped when the system boots up or switches to a different runlevel. Each runlevel is associated with a specific set of system services and behaviors.
+
+Historically, Unix-like systems used runlevels to define system states, with different runlevels representing different modes of operation. While modern Linux distributions often use other mechanisms, such as systemd targets, runlevels are still used conceptually and are often referenced.
+
+The traditional runlevels in Linux are numbered from 0 to 6, with each runlevel having its own purpose:
+
+- **Runlevel 0**: Halt/Shut down the system. This runlevel shuts down all processes, unmounts filesystems, and powers off the system.
+- **Runlevel 1**: Single user mode or maintenance mode. This runlevel boots the system into a minimal environment, typically with only a single user logged in as the root user. It is used for system maintenance and recovery tasks.
+- **Runlevel 2**: Multi-user mode without networking. Similar to runlevel 3 but without network services.
+- **Runlevel 3**: Multi-user mode with networking. This runlevel starts the system with full multi-user capabilities and networking services enabled. It is the default runlevel for many server distributions.
+- **Runlevel 4**: Unused or user-defined runlevel. It is not standardized and is often left unused or used for user-defined purposes.
+- **Runlevel 5**: Graphical multi-user mode. This runlevel is similar to runlevel 3 but includes a graphical user interface (GUI), typically provided by a display manager such as GNOME Display Manager (GDM) or KDE Display Manager (KDM).
+- **Runlevel 6**: Reboot the system. This runlevel reboots the system by shutting down all processes, unmounting filesystems, and restarting the system.
+
+When a Linux system boots, it typically starts in a default runlevel specified in the system configuration files. The system administrator can also switch between runlevels manually using the `init` command or its alternatives like `telinit`, `systemctl`, or `runlevel`.
+
+While traditional runlevels are still used conceptually, many modern Linux distributions have adopted systemd, which introduces the concept of targets as a more flexible and powerful replacement for runlevels. However, the basic idea of defining different system states for different purposes remains the same.
