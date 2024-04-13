@@ -150,6 +150,15 @@ Hard links can be created using the ln command without any options.
 **Shell is dynamically typed or statically typed?**
 - both python and shell are dyanamically typed means no need to specify that a variable is a string, int or float.
 
+**Traceroute command**
+- it will check how many hops its taking to reach the destination or server and how much time each hop is taking.
+- Flow: trafiic from computer->router->{hops....} -> google.com
+
+**How will you manage logs of a system that generate huge log files everyday?**
+- with the help of **logrotate**
+- The logrotate command is a system utility in Unix-like operating systems, including Linux, used to manage and rotate log files.
+- It is typically configured to run as a daily cron job to ensure that log files do not grow too large and consume excessive disk space. logrotate renames, compresses, and/or deletes old log files according to a set of rules defined in its configuration files.
+
 
 
 
