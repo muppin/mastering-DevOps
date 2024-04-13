@@ -69,6 +69,7 @@ ArgoCD continuously monitors the Git repository for changes. When changes are de
 2. **DNS Resolution with Route 53:**
    - The domain name is resolved to an IP address using Route 53.
    - Route 53 is configured to direct traffic to an Application Load Balancer (ALB) or Network Load Balancer (NLB) in your public subnet.
+   - We have craeted a "A" record which is resolving the incoming Domain name to public DNS of ALB/NLB
 
 3. **ALB/NLB Handling Incoming Traffic:**
    - The ALB/NLB serves as the entry point for incoming HTTPS traffic.
