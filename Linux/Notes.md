@@ -94,8 +94,19 @@
    - if you want to take the cursor to the end of command press ctrl+e
    - if you want to delete everything after push, place the cursor after push and press ctrl+k
    - if you want to delete everything press ctrl+u
-- 
+- ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ff4d6819-b2ac-444d-bfd6-00ded7c36842)
+- **ls ; ls -la** -> ";" this allows you run multiple commands multiple commands one by one.
+- **sort -r file.txt** -> sorts file.txt in reverse order
 
-![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ff4d6819-b2ac-444d-bfd6-00ded7c36842)
+#### Networking commands
 
-- 
+- **ifconfig**: Display or configure network interface parameters.
+- **ip addr**: Another command to display or configure network interface parameters and versatile than ifconfig
+- **ping <ip_address>/<host_name>**: Used to test the reachability of a host on a network by sending ICMP echo request packets and waiting for ICMP echo reply packets
+- **traceroute google.com**: Displays the route that packets take to reach a specified destination.
+- **netstat -tuln**: Displays network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+- **hostname**: displays the syatem's hostname
+- **nslookup <domain_name>/<ip_address>**: nslookup is a powerful tool for troubleshooting DNS-related issues, such as verifying DNS records, diagnosing DNS configuration problems, and checking DNS propagation.
+- **ssh**: Secure Shell protocol for secure remote login and other secure network services over an insecure network.
+- **scp**: Securely copy files between hosts on a network.
+- **wget/curl**: Used to download files from the internet.
