@@ -38,6 +38,7 @@
 - **free -m** -> to check memory
 - **df -h** -> to check disk size
 - **top** -> to monitor all CPU, memory and disk size.
+- **kill <pid>** -> kill the process
 - **mkdir <folder_name>** -> create a new directory
 - **mkdir -p abc/def/xyz** -> creating a folder inside folder
 - **pwd** -> present working directory
@@ -76,6 +77,7 @@
 - **find . -type f -size +10k** -> finds files in current directory of size more that 10kb
 - **find . -empty** -> finds empty files and folders
 - **find . -perm 777** -> finds files with the permissions of read, write and execute.
+  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ff4d6819-b2ac-444d-bfd6-00ded7c36842)
 - **chmod 777 file.txt/folder** -> providing read, write, execute permissions to users, groups and others for file.txt.
 - **chmod 400 file.txt/folder** -> providing read to user and no permissions to groups and others
 - **chown root file.txt/folder** -> changing the owner of a file to root
@@ -94,9 +96,17 @@
    - if you want to take the cursor to the end of command press ctrl+e
    - if you want to delete everything after push, place the cursor after push and press ctrl+k
    - if you want to delete everything press ctrl+u
-- ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ff4d6819-b2ac-444d-bfd6-00ded7c36842)
 - **ls ; ls -la** -> ";" this allows you run multiple commands multiple commands one by one.
 - **sort -r file.txt** -> sorts file.txt in reverse order
+- **zip file.zip file.txt** -> zips file.txt and names it file.zip
+- **unzip file.zip** -> unzips the zipped file
+
+#### Users and groups
+ 
+- **useradd <username>** -> add a new user
+- **passwd <username>** -> adds the new password.
+- **userdel <username>** -> deletes the user
+- 
 
 #### Networking commands
 
@@ -106,6 +116,7 @@
 - **traceroute google.com**: Displays the route that packets take to reach a specified destination.
 - **netstat -tuln**: Displays network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
 - **hostname**: displays the syatem's hostname
+- **hostanme -i**: displays the ip address
 - **nslookup <domain_name>/<ip_address>**: nslookup is a powerful tool for troubleshooting DNS-related issues, such as verifying DNS records, diagnosing DNS configuration problems, and checking DNS propagation.
 - **ssh**: Secure Shell protocol for secure remote login and other secure network services over an insecure network.
 - **scp**: Securely copy files between hosts on a network.
