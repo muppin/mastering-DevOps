@@ -34,6 +34,9 @@
 - **cd**-> it will take you to home
 - **cd ..** -> one directory up
 - **cd ../..** -> two directories up
+- **nproc** ->  number of processing units available to the current process
+- **free -m** -> to check memory
+- **df -h** -> to check disk size
 - **mkdir <folder_name>** -> create a new directory
 - **mkdir -p abc/def/xyz** -> creating a folder inside folder
 - **pwd** -> present working directory
