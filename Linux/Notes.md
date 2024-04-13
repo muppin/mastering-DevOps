@@ -39,6 +39,7 @@
 - **df -h** -> to check disk size
 - **top** -> to monitor all CPU, memory and disk size.
 - **ps -ef** -> to list all the process
+- **awk** -> pattern search and processing
 - **kill <pid>** -> kill the process
 - **mkdir <folder_name>** -> create a new directory
 - **mkdir -p abc/def/xyz** -> creating a folder inside folder
