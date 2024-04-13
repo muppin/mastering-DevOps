@@ -49,3 +49,70 @@ grep -o "s" <<<"$x" | wc -l
 - -o is used for only
 - <<< used for standard input
 - wc -l for word count
+
+**How will you debug your shell script**
+- Set -x: Use the set -x command at the beginning of your script or before a specific section to enable debugging mode. 
+- This mode prints each command before it's executed, which can help identify where issues are occurring.
+
+```#!/bin/bash
+set -x
+# Your script here
+```
+
+
+**What is crontab in linux? can u provide an example?**
+
+In Linux, `crontab` (cron table) is a system utility that allows users to schedule tasks or commands to run periodically at fixed times, dates, or intervals. These scheduled tasks are known as cron jobs, and they can perform a wide range of operations, such as executing scripts, running commands, or invoking programs.
+
+Each user on a Linux system can have their own crontab file, which contains a list of cron jobs. The cron daemon (`cron`) reads these crontab files and executes the scheduled tasks accordingly.
+
+Here's a basic example of how to use `crontab` to schedule a task:
+
+1. **Open the Crontab Editor**: To edit your user's crontab file, you can use the `crontab -e` command:
+
+   ```bash
+   crontab -e
+   ```
+
+   This command opens the crontab file in the default text editor specified by the `EDITOR` environment variable (usually `vi` or `nano`).
+
+2. **Add a Cron Job**: In the crontab file, each line represents a cron job in the following format:
+
+   ```
+   * * * * * command_to_execute
+   ```
+
+   The fields in the cron job represent:
+   - Minute (0-59)
+   - Hour (0-23)
+   - Day of the month (1-31)
+   - Month (1-12)
+   - Day of the week (0-7, where 0 and 7 represent Sunday)
+
+   For example, to schedule a task to run a script named `backup.sh` every day at 2:00 AM, you would add the following line to your crontab file:
+
+   ```
+   0 2 * * * /path/to/backup.sh
+   ```
+
+   This cron job specifies:
+   - Minute: 0 (at the start of the hour)
+   - Hour: 2 (2:00 AM)
+   - Day of the month: * (every day)
+   - Month: * (every month)
+   - Day of the week: * (every day of the week)
+
+3. **Save and Exit**: After adding the cron job, save the changes and exit the crontab editor. In `vi`, you would press `Esc` followed by `:wq` and then Enter. In `nano`, you would press `Ctrl + O` to save and `Ctrl + X` to exit.
+
+4. **View Cron Jobs**: You can view your scheduled cron jobs by running `crontab -l`:
+
+   ```bash
+   crontab -l
+   ```
+
+   This command lists the contents of your crontab file.
+
+That's it! The cron daemon will now execute the specified command or script according to the schedule you defined in your crontab file.
+
+
+
