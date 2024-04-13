@@ -54,5 +54,19 @@
 - **chown root file.txt/folder** -> changing the owner of a file to root
 - **whoami** -> shows the current user
 - **find . -mindepth 3 -type f -name "*.txt" -exec rm -rf {} +** deletes the files called .txt at the subfolder level 3
+- **grep "<some_text>" file.txt** -> it will search for that text in file.txt.
+- **grep -w "<some_text>" file.txt** -> it will search for whole word, if the input is part of word it wont return the output.
+- **grep -i "<some_text>" file.txt** -> not case sensitive
+- **grep -n "<some_text>" file.txt** -> tells you the line number where your text is present.
+- **history** -> shows you all commands used
+- **!<command_number>** -> To rerun a command from the history by its number
+- **alias <alias_name>=<command>** -> temporary aliases, this works untill you close that session
+- **echo "alias ll='ls -alF'" >> ~/.bashrc** -> storing the alias file in bashrc file
+- **git push origin main**
+   - if you want to take the cursor to the beginning of command press ctrl+a
+   - if you want to take the cursor to the end of command press ctrl+e
+   - if you want to delete everything after push, place the cursor after push and press ctrl+k
+   - if you want to delete everything press ctrl+u
+- 
 - 
 - 
