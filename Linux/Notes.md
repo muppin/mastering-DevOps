@@ -1,5 +1,25 @@
 ## Linux
 
+
+**What is OS**
+- Operating System can be defined as an interface between user and the hardware. It provides an environment to the user so that, the user can perform its task in convenient and efficient way.
+
+  **Linux:**
+  - Free
+  - open source
+  - secure
+  - Many distributions
+  - Fast
+ 
+
+  **Kernel**
+  - It is the heart of linux operating system. Responsible for managing computer's hardware and operations.
+  - It has 4 primary responsibilities:
+      - Device mgmt
+      - Memory mgmt
+      - process mgmt
+      - handling system calls
+        
 - **Shell**: Shell is CLI which takes all my commands as input, interprets and tell the OS what to do.
 - **Commands**: commands are the executable files.
 - **Environment Variables**: to store the path, passwords(which you do not want to hardcode).
@@ -9,8 +29,11 @@
 - **ls -a** -> list all files with hidden files
 - **ls -la** -> list all files and folder with hidden files with more info(long details)
 - **ls -R** -> list all files inside a folder recursively
+- **ls -ltr** -> lists the content of the directory in longlisting, time stamped in reverse order. l====> Longlisting. t====> time stamp. r====> in reverse order. 
 - **cd <folder_name>** -> change directory
 - **cd**-> it will take you to home
+- **cd ..** -> one directory up
+- **cd ../..** -> two directories up
 - **mkdir <folder_name>** -> create a new directory
 - **mkdir -p abc/def/xyz** -> creating a folder inside folder
 - **pwd** -> present working directory
