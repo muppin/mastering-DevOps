@@ -1,6 +1,10 @@
 ## Git merge Vs. Git rebase?
 
 - In summary, git merge is a safer and simpler option when you want to integrate changes while preserving the commit history. On the other hand, git rebase provides a cleaner history but should be used with caution, especially in a collaborative environment where the commit history is shared among multiple developers. It's generally not recommended to rebase commits that have been pushed to a shared repository, as it can cause confusion and conflicts for collaborators.
+
+- **Git Merge** - Puuls the latest changes from the main into the feature branch, creating a new merge commit in the process. Its like tying two branches together with a knot.
+  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/22ffc685-3db6-4eb1-8a83-c0c39d88353c)
+
 - merge will preserve the commit history,
 - In rebase all the commits of feature branch sits on top of target branch
 
