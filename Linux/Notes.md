@@ -95,5 +95,7 @@
    - if you want to delete everything after push, place the cursor after push and press ctrl+k
    - if you want to delete everything press ctrl+u
 - 
-- 
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ff4d6819-b2ac-444d-bfd6-00ded7c36842)
+
 - 
