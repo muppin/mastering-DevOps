@@ -180,3 +180,35 @@
 - vpc resources created when we create a vpc
 - what is a federated user?
 - what are the types of file systems in Linux, which one is better among them?
+
+***************************************************************************************************************************************************************************************************************
+## ANSWERS FOR LINUX QUESTIONS
+
+
+**scp in linux , diff between scp & rsync**
+
+`scp` (secure copy) and `rsync` are both command-line tools used in Linux for transferring files between systems. However, they have some differences in terms of functionality and usage.
+
+Here's a comparison of `scp` and `rsync`:
+
+1. **Purpose**:
+   - **scp**: Primarily used for securely copying files between a local and a remote host or between two remote hosts over SSH.
+   - **rsync**: Designed for efficient file transfer and synchronization between directories, whether they are local or remote.
+
+2. **Transfer Mechanism**:
+   - **scp**: Transfers files one by one, similar to `cp` command, and uses SSH for encryption and authentication.
+   - **rsync**: Utilizes a delta-transfer algorithm to transfer only the differences between source and destination files. This results in faster transfers, especially for large files or when only a small portion of the files have changed.
+
+3. **Usage**:
+   - **scp**: Basic usage involves specifying the source file(s) and the destination, which can be local or remote. Example: `scp file.txt user@remotehost:/path/to/destination`.
+   - **rsync**: Offers more advanced options for synchronization, including options for excluding files, preserving permissions and ownership, and syncing entire directories. Example: `rsync -avz source_directory/ user@remotehost:/destination`.
+
+4. **Features**:
+   - **scp**: Provides basic file copying functionality with secure encryption.
+   - **rsync**: Offers features such as bandwidth throttling, partial file transfers, compression during transfer, and the ability to resume interrupted transfers.
+
+5. **Performance**:
+   - **scp**: Can be slower for large files or directories, as it transfers each file individually without optimization.
+   - **rsync**: Typically faster and more efficient, especially for large files or directories, due to its delta-transfer algorithm and ability to skip files that haven't changed.
+
+In summary, while both `scp` and `rsync` are used for transferring files, `scp` is simpler and suitable for basic file copying tasks, especially when security is a concern, while `rsync` is more powerful and efficient for synchronization tasks, especially when dealing with large files or directories.
