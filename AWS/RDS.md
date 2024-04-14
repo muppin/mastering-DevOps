@@ -13,19 +13,27 @@ A relational database schema is a blueprint or structure that defines how data i
 
 Here's a breakdown of key components typically found in a relational database schema:
 
-1. **Tables**: These are the main containers for storing data. Each table represents an entity (such as customers, products, orders) and consists of rows and columns. 
+1. **Tables**: These are the main containers for storing data. Each table represents an entity (such as customers, products, orders) and consists of rows and columns.
+```
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50),
+    JoinDate DATE
+);
+```
+3. **Columns/Attributes**: Columns represent the characteristics or properties of the entities stored in the table. Each column has a name and a data type (like text, integer, date, etc.), which determines the kind of data it can store.
 
-2. **Columns/Attributes**: Columns represent the characteristics or properties of the entities stored in the table. Each column has a name and a data type (like text, integer, date, etc.), which determines the kind of data it can store.
+4. **Rows/Tuples**: Each row in a table represents a single record or instance of the entity. It contains data values corresponding to each column defined in the table schema.
 
-3. **Rows/Tuples**: Each row in a table represents a single record or instance of the entity. It contains data values corresponding to each column defined in the table schema.
+5. **Primary Keys**: A primary key uniquely identifies each row in a table. It ensures that each record can be uniquely identified and helps establish relationships between tables.
 
-4. **Primary Keys**: A primary key uniquely identifies each row in a table. It ensures that each record can be uniquely identified and helps establish relationships between tables.
+6. **Foreign Keys**: Foreign keys establish relationships between tables. They are attributes in one table that refer to the primary key in another table. These keys enforce referential integrity, ensuring that data remains consistent across related tables.
 
-5. **Foreign Keys**: Foreign keys establish relationships between tables. They are attributes in one table that refer to the primary key in another table. These keys enforce referential integrity, ensuring that data remains consistent across related tables.
+7. **Constraints**: Constraints are rules enforced on the data in the database to maintain data integrity and consistency. Common constraints include primary key constraints, foreign key constraints, unique constraints, and check constraints.
 
-6. **Constraints**: Constraints are rules enforced on the data in the database to maintain data integrity and consistency. Common constraints include primary key constraints, foreign key constraints, unique constraints, and check constraints.
-
-7. **Indexes**: Indexes are structures used to speed up data retrieval operations. They provide quick access to specific rows based on the values of certain columns. Indexes are created on columns frequently used in search conditions.
+8. **Indexes**: Indexes are structures used to speed up data retrieval operations. They provide quick access to specific rows based on the values of certain columns. Indexes are created on columns frequently used in search conditions.
 
 Relational database schemas are designed using a data modeling technique such as Entity-Relationship (ER) modeling. ER diagrams are graphical representations of the schema, showing tables, columns, relationships, and constraints visually.
 
