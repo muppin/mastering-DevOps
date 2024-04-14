@@ -60,19 +60,23 @@
 
 # Shell Scripting
 - write a script to check if a service(nginx) is running or not?
-#!/bin/bash
-if systemctl is-active --quiet nginx; then
-    echo "Nginx is running."
-else
-    echo "Nginx is not running."
-fi
+     ```
+        #!/bin/bash
+        if systemctl is-active --quiet nginx; then
+        echo "Nginx is running."
+        else
+        echo "Nginx is not running."
+        fi
+     ```
 
 - write a script to check file exist and readable or not?
-#!/bin/bash
-filecheck="/etc/passwd"
-if [[ -f "$filecheck"  &&  -r "$filecheck" ]]; then
+     ```
+      #!/bin/bash
+      filecheck="/etc/passwd"
+      if [[ -f "$filecheck"  &&  -r "$filecheck" ]]; then
 		echo $filecheck exist and readable
-fi
+      fi
+          ```
 
 # Kenvue
 - how to check nfs mounts on server? (what to notice in df -hT)
