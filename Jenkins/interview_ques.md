@@ -198,6 +198,15 @@ By following these steps, you can configure a Shared Library in Jenkins and use 
   - In Jenkins Pipeline, a parallel stage allows you to execute multiple stages concurrently, enabling you to speed up your pipeline by running independent tasks simultaneously. Parallel stages are useful when you have tasks that can be executed independently and don't have dependencies on each other.
   - we can add parallel block and add stages into it, these stages will execute parallely.
 
+**************************************************************************************************************************************************************************************************************************
+
+**Difference between declarative and scripted pipeline?**
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/8c742056-ddf5-4d73-9436-1c60aedebd4e)
+
+*************************************************************************************************************************************************************************************************************************
+
+
 **********************************************************************************************************************************************************************************************************************
 
 **Pipeline as code?**
