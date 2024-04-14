@@ -93,3 +93,22 @@ In the Enrollments Table:
 - Similarly, the `course_id` column refers to the `course_id` column in the Courses Table. For example, enrollment_id 2 has course_id 102, which corresponds to the Science course in the Courses Table.
 
 By using foreign keys, we establish a relationship between the Enrollments Table and the Students/Courses Tables, ensuring that only valid student and course combinations can be stored in the Enrollments Table. This helps maintain data integrity and consistency in the database.
+
+### Databases on ec2 instances
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/4afaa22d-1ec1-47c8-a07f-f6b330953f00)
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/c9954ae7-6e32-40cc-a75d-9ca522cbc5dc)
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9b14d665-0790-4f60-998d-a820513570d5)
+
+### Relational Database Service 
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/f1bf36f7-6f35-46b1-a803-aabca80f9c85)
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/58cc645a-56da-4639-8e02-f6eb0ba7fb0e)
+
+
+
+
+
