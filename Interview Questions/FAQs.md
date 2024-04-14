@@ -58,6 +58,74 @@ Define the application configuration for ArgoCD, specifying details like the Git
 **ArgoCD Deployment:**
 ArgoCD continuously monitors the Git repository for changes. When changes are detected, ArgoCD deploys the updated application to the EKS cluster, ensuring the desired state matches the configuration in the Git repository.
 
+
+```pipeline {
+    agent any
+    
+    triggers {
+        pollSCM('H/30 * * * *')
+        githubPush()
+    }
+    
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    // Build Docker image from Dockerfile
+                    docker.build('your-image-name:latest', '-f path/to/Dockerfile .')
+                }
+            }
+        }
+        
+        stage('Push to Image Repo') {
+            steps {
+                script {
+                    // Authenticate to AWS ECR
+                    withCredentials([usernamePassword(credentialsId: 'aws-ecr-credentials', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                        sh 'aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.your-region.amazonaws.com'
+                    }
+                    
+                    // Tag and push Docker image to AWS ECR
+                    docker.image('your-image-name:latest').push("your-account-id.dkr.ecr.your-region.amazonaws.com/your-image-name:${env.BUILD_NUMBER}")
+                }
+            }
+        }
+        
+        stage('Update Deployment File') {
+            steps {
+                script {
+                    // Update deployment file with latest image tag
+                    sh 'sed -i "s/replaceImageTag/${env.BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml'
+                }
+            }
+        }
+        
+        stage('ArgoCD Application Configuration') {
+            steps {
+                // Define application configuration for ArgoCD
+                // Example: arcdocd app create my-app --repo https://github.com/your-repo.git --path path/to/manifests --sync-policy auto
+            }
+        }
+        
+        stage('ArgoCD Deployment') {
+            steps {
+                // Deploy application using ArgoCD
+                // Example: argocd app sync my-app
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'CI/CD pipeline completed successfully'
+        }
+        failure {
+            echo 'CI/CD pipeline failed'
+        }
+    }
+}
+```
+
 ****************************************************************************************************************************************************************************************************************
 
 - **Explain the traffic flow of an application that is deployed on eks, the eks is in the private subnets. Consider the incoming request as HTTPS and also use Route 53, WAF?** 
