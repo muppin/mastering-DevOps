@@ -82,7 +82,7 @@ Here you can talk about the projects that we did in this series
 - Exception handling in Python uses try, except, else, and finally blocks.
 - Example: Handling division by zero exception:
 
-```try:
+  ```try:
     result = 10 / 0
 except ZeroDivisionError:
     print("Division by zero is not allowed.")
@@ -97,17 +97,41 @@ finally:
 
 - append() adds a single element to the end of a list, while extend() adds multiple elements by appending elements from an iterable. Example:
 
-```Using append():
+  ```Using append():
 
 my_list = [1, 2, 3]
 my_list.append(4)
 print(my_list)  # Output: [1, 2, 3, 4]
-Using extend():```
+Using extend():
+```
 
-```my_list = [1, 2, 3]
+ ```my_list = [1, 2, 3]
 my_list.extend([4, 5])
-print(my_list)  # Output: [1, 2, 3, 4, 5]```
+print(my_list)  # Output: [1, 2, 3, 4, 5]
+```
 
 *********************************************************************************************************************************************************************************************************
+**Explain the use of lambda functions in Python.**
+- When u know this function will not be re-used, you can write lambda funtions instead of funtion definitions.
+- Lambda functions are anonymous functions used for short tasks.
+- Benefits- it will make code more concise, easy to read.
+- Example:
 
+Defining and using a lambda function:
+
+  ```square = lambda x: x**2
+     print(square(5))  # Output: 25
+```
+
+********************************************************************************************************************************************************************************************************
+
+**difference between for and while loop in python**
+
+- for Loop:The for loop is used for iterating over a sequence (such as a list, tuple, string, or range) or any iterable object.
+- The while loop is used for iterating until a specified condition evaluates to False.
+- for loop is generally preferred when the number of iterations is known or the iteration involves iterating over a sequence, while while loop is preferred when the number of iterations is not known in advance or when the iteration depends on a condition.
+
+******************************************************************************************************************************************************************************************************
+
+**
 
