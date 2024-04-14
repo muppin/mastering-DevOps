@@ -8,8 +8,8 @@ Here you can talk about the projects that we did in this series
 **Sample answer**- Github-jira integration
 - **Prolem statement**:
   - We have our sourcecode stored in github and all the work is tracked in jira
-  - So there was a requirement given to me by the development team, that when ever a developer commits a pull request and comments "/jira"
-  - a python script should be trigerred and that script should create a jira ticket with all the information available on pull request or github issue
+  - So there was a requirement given to me by the development team, that when ever a developer comments "/jira" in the github issue, a python script should be trigerred
+  - and that script should create a jira ticket with all the information available on pull request or github issue
   
 - **Solution**:
   - I wrote a python script which is a flask based application
