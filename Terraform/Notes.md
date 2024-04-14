@@ -19,6 +19,49 @@
 - terraform apply -var-file=prod.tfvars
 - If u don't want to push sensitive info to git repo, in that case also tfvars file is useful, we can ignore this particular file in gitignore.
 
+### Provioners
+
+Provisioners in Terraform are used to execute scripts or commands on a resource after it has been created or destroyed. They allow you to perform tasks such as installing software, configuring settings, or running initialization scripts on the provisioned resources.
+
+There are two types of provisioners in Terraform:
+
+1. **Remote Exec**: These provisioners execute scripts or commands on the provisioned resource over SSH or WinRM connections. They are typically used for tasks such as bootstrapping instances or configuring software.
+
+   - **`remote-exec`**: Executes commands on a remote resource over SSH or WinRM.
+   - **`file`**: Uploads files from the local machine to the remote resource over SSH or WinRM.
+
+   Example:
+   ```hcl
+   resource "aws_instance" "example" {
+     # Instance configuration...
+
+     provisioner "remote-exec" {
+       inline = [
+         "echo 'Hello, World!' > /tmp/hello.txt",
+         "sudo apt-get update",
+         "sudo apt-get install -y nginx",
+       ]
+     }
+   }
+   ```
+
+2. **Local Exec**: These provisioners execute scripts or commands on the machine running Terraform, rather than on the provisioned resource itself. They are typically used for tasks such as initializing local configurations or running post-deployment validation scripts.
+
+   - **`local-exec`**: Executes commands on the local machine running Terraform.
+
+   Example:
+   ```hcl
+   resource "null_resource" "example" {
+     # Resource configuration...
+
+     provisioner "local-exec" {
+       command = "echo 'Resource provisioned.'"
+     }
+   }
+   ```
+
+Provisioners are useful for performing tasks that cannot be managed directly by Terraform's resource configuration, such as complex initialization processes or post-deployment configuration. However, they should be used with caution, as they introduce dependencies and can lead to issues with idempotence and reproducibility in your infrastructure management workflow. Whenever possible, it's recommended to use configuration management tools or cloud-init scripts for more complex provisioning tasks.
+
 ### Condition expressions
 
 - refer this *https://github.com/iam-veeramalla/terraform-zero-to-hero/blob/main/Day-2/08-conditional-expressions.md#conditional-expressions*
