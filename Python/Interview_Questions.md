@@ -133,5 +133,23 @@ Defining and using a lambda function:
 
 ******************************************************************************************************************************************************************************************************
 
-**
+**Explain the difference between == and is operators.**
+
+- The == (equivalent) operator compares the values of two objects, 
+- while the **is** (equal) operator checks if two variables point to the same object in memory.
+
+Example:
+
+Using ==:
+
+a = [1, 2, 3]
+b = [1, 2, 3]
+print(a == b)  # Output: True (because values are equal)
+Using is:
+
+a = [1, 2, 3]
+b = a
+print(a is b)  # Output: True (because they reference the same object)
+
+*************************************************************************************************************************************************************************************************************
 
