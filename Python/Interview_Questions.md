@@ -69,3 +69,45 @@ Here you can talk about the projects that we did in this series
 ```source myenv/bin/activate```
 
 *************************************************************************************************************************************************************************************************
+
+**What are decorators in Python?**
+
+- Decorators modify the behavior of functions. They take a function as an argument, add some functionality, and return another function without modifying the original function's code. 
+- Real world example: suppose u want to validate if a user has a logged in session before invoking a API, you can use decorator.
+
+************************************************************************************************************************************************************************************************
+**How does exception handling work in Python?**
+
+- Instead for breaking or failing of python program, you want to continue.
+- Exception handling in Python uses try, except, else, and finally blocks.
+- Example: Handling division by zero exception:
+
+```try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Division by zero is not allowed.")
+else:
+    print("Division successful:", result)
+finally:
+    print("Execution completed.")```
+
+**********************************************************************************************************************************************************************************************
+
+**What's the difference between append() and extend() for lists?**
+
+- append() adds a single element to the end of a list, while extend() adds multiple elements by appending elements from an iterable. Example:
+
+```Using append():
+
+my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list)  # Output: [1, 2, 3, 4]
+Using extend():```
+
+```my_list = [1, 2, 3]
+my_list.extend([4, 5])
+print(my_list)  # Output: [1, 2, 3, 4, 5]```
+
+*********************************************************************************************************************************************************************************************************
+
+
