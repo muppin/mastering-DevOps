@@ -108,6 +108,14 @@ By using foreign keys, we establish a relationship between the Enrollments Table
 
 - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/58cc645a-56da-4639-8e02-f6eb0ba7fb0e)
 
+### RDS Multi AZ 
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/1fad859a-cbea-47e9-894a-ea81ff094c35)
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/0c266193-9428-43af-969d-70311347aa31)
+
+
+
 
 
 
