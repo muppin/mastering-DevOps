@@ -38,7 +38,7 @@
 - check running containers in docker?
 
 ## Kubernetes
-- Why do we use Kubernetes?
+-  Why do we use Kubernetes?
 -  componenents of control / woker plane?
 -  What is "Crash Loop Backoff" error in kubernetes?
 -  What is Replicaset and Replication Controller in Kubernetes?
@@ -58,8 +58,34 @@
 -  how to acess get conmtents of s3 buckets via cli?
 - what is vpc peering , how to configure?
 
-  
-## QBurst Tech (SRE Profile)
+# Shell Scripting
+- write a script to check if a service(nginx) is running or not?
+#!/bin/bash
+if systemctl is-active --quiet nginx; then
+    echo "Nginx is running."
+else
+    echo "Nginx is not running."
+fi
+
+- write a script to check file exist and readable or not?
+#!/bin/bash
+filecheck="/etc/passwd"
+if [[ -f "$filecheck"  &&  -r "$filecheck" ]]; then
+		echo $filecheck exist and readable
+fi
+
+# Kenvue
+- how to check nfs mounts on server? (what to notice in df -hT)
+- how to extend a filesystem?
+- One of your colleague run some commands , how to check which commands he ran (for audit purpose)?
+- how to perform kernel tuning?
+- what is special permission in linux?
+- which security tools are you using in banking environment?
+- I have added 1 disk , which command to check it added or not?
+- how to assign ip to newly created vm in vmware vsphere?
+
+
+ ## QBurst Tech (SRE Profile)
 - what is special permissions in linux, explain about sticky bit . --> setuid / setgid / stickybit
 - explain boot process in linux.
 - how to check which ports are open in server.
