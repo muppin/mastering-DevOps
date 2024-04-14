@@ -114,6 +114,17 @@ By using foreign keys, we establish a relationship between the Enrollments Table
 
 - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/0c266193-9428-43af-969d-70311347aa31)
 
+### RDS Backup and restores
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/18f10d52-a830-484e-834f-3adade50efff)
+
+- RPO - lets say your last backup time was at 6am and failure occured at 7am, time between this is RPO
+- RPO refers to the maximum acceptable amount of data loss measured in time.
+- RTO refers to the targeted duration within which a business process or application must be restored after a disruption or disaster to avoid significant impacts on the business.
+- RTO - It represents the maximum acceptable time frame within which an organization must recover its IT systems, applications, and data following a disruption or disaster event.
+- 
+
+
 
 
 
