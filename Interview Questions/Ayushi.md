@@ -61,3 +61,24 @@
 
 For more questions : https://www.interviewbit.com/jenkins-interview-questions/#ways-to-trigger-jenkins-job
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Dassault Systems
+
+- Tell me about yourself and explain your day to day task which u are doing in your project
+- Write a pipeline script with build, test and deploy stages.
+- Interviewer has given sample snippet of pipeline and asked what is missing.
+- how many types of pipelines are there in jenkins, explain them
+- difference between declarative and scripted pipeline
+- write a program, in which input is total of two numbers and output should be index of two numbers.
+- command to find a file
+- what is proxy server
+- what are the different types of services in kubernetes
+- what all task u are doing in docker and kubernetes
+- explain any script that you have written in python
+- how proficient are u in shell scripting
+- what is etcd
+- what is api server
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
