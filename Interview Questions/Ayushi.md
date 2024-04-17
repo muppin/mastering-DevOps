@@ -82,3 +82,26 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## Thomson Reuters
+
+- Tell me about yourself and explain your day to day task which u are doing in your project
+- What automation u have done with python
+- Write a python program which is taking input from user and printing max of a list
+- Which deployment strategy you are using in kubernetes
+- Explain pod and services and why aspect of that.
+- How u used terraform.
+- How u deployed terraform, manually?
+- if i already have a resource created on terraform and i want to create one more but i dont want to change the config of existing one, what to do?
+- how u are using terraform for different environments?
+- ueverytime u are switching the workspace, is there a way to automate it?
+- explain ur CI/CD pipeline
+- how you are connecting your pipeline to AWS.
+- How you are authenticating CI/CD Pipeline with AWS.
+- How you used boto3?
+- Do you know Helm?
+- what task you do on Ansible?
+- Difference between deamon set and deployment set?
+
+  _______________________________________________________________________________________________________________________________________________________________
+
+
