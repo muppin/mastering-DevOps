@@ -299,6 +299,11 @@ ________________________________________________________________________________
 - AWS CLI/BOTO3 is a scripting langauge, where as CFT/TF is a templating language.
 - AWS CLI/BOTO3 is good for quick actions for example (aws s3 ls).
 - BOTO3 supports serverless programming also. Ex. lambda functions
-- 
+- client = boto3.client('s3') -> same syntax for all resouces, just need to change s3 to whater ever resource we want.
+- It is basically creating a client to talk to AWS API.
+- OR
+- resouce = boto3.resource('s3') - not supported for new AWS services, comparitively easier than client. But recommended way is to use client
+- Resources represent an object-oriented interface to Amazon Web Services (AWS). They provide a higher-level abstraction than the raw, low-level calls made by service clients.
+- botocore- moldule which handles exceptions
 
 
