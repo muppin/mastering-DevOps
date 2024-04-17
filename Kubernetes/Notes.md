@@ -944,6 +944,14 @@ In Kubernetes, containers are encapsulated and portable units that can run appli
 
 While there is a diversity of containers and pod types in Kubernetes, it's crucial to choose the appropriate container types based on the specific requirements of your applications and workloads. The flexibility provided by different container types allows you to build complex and scalable systems within the Kubernetes ecosystem.
 
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- **Different types of errors in k8s**
+
+https://cloudtweaks.com/2023/01/common-kubernetes-errors/
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
 
 
 
