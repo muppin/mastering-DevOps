@@ -94,6 +94,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - if i already have a resource created on terraform and i want to create one more but i dont want to change the config of existing one, what to do?
 - how u are using terraform for different environments?
 - ueverytime u are switching the workspace, is there a way to automate it?
+- Where u have stored your config and .tf files?
 - explain ur CI/CD pipeline
 - how you are connecting your pipeline to AWS.
 - How you are authenticating CI/CD Pipeline with AWS.
