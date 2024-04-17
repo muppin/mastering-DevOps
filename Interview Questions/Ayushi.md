@@ -101,7 +101,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - How you used boto3?
 - Do you know Helm?
 - what task you do on Ansible?
-- Difference between deamon set and deployment set?
+- Difference between deamon set and stateful set?
 
   _______________________________________________________________________________________________________________________________________________________________
 
