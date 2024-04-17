@@ -306,4 +306,21 @@ ________________________________________________________________________________
 - Resources represent an object-oriented interface to Amazon Web Services (AWS). They provide a higher-level abstraction than the raw, low-level calls made by service clients.
 - botocore- moldule which handles exceptions
 
+___________________________________________________________________________________________________________________________________________________________________________________________
+
+### BOTO3 Project
+
+- Created a lambda funtion wriiten python.
+- To access AWS programatically by python , we have used a module called boto3.
+- which will do API calls to AWS
+- It will fetch the stale EBS volumes (6 months or later)
+
+**Identifying Stale EBS Snapshots**
+
+In this example, we'll create a Lambda function that identifies EBS snapshots that are no longer associated with any active EC2 instance and deletes them to save on storage costs.
+
+**Description:**
+
+The Lambda function fetches all EBS snapshots owned by the same account ('self') and also retrieves a list of active EC2 instances (running and stopped). For each snapshot, it checks if the associated volume (if exists) is not associated with any active instance. If it finds a stale snapshot, it deletes it, effectively optimizing storage costs.
+
 
