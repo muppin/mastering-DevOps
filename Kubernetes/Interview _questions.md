@@ -27,7 +27,11 @@
 
 - **What is PSP(Pod security policy)?**
 
+- **Stateful sts Vs. Deployments**
+
 - ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d76d1d43-aeaa-46ad-af60-dba9f600cc24)
+
+- A Pod Disruption Budget (PDB) is a Kubernetes policy that limits the number of pods of a replicated application that can be down simultaneously due to voluntary disruptions. PDBs can help ensure that applications are highly available, even when there are frequent voluntary disruptions.
 
 
 
