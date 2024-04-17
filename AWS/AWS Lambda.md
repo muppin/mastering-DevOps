@@ -8,6 +8,7 @@
 - Run on-demand
 - Scaling is automated!
 - **Event Driven Approach**
+- default execution time in lambda is 3 seconds.
   
 - **Benefits**- Cost optimization, secutity/compliance, reduces overhead of handling infrastructure
 - **Pricing**- Pay per request and compute time
