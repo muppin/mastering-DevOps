@@ -27,6 +27,9 @@
 
 - **What is PSP(Pod security policy)?**
 
+- ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/d76d1d43-aeaa-46ad-af60-dba9f600cc24)
+
+
 
 
 
