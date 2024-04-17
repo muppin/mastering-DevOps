@@ -1,3 +1,8 @@
+- Can you explain your project**
+- 
+
+
+
 - **What are your branching strategies?**
   
    Branching strategies means, how developer is fixing the bugs and taking care of branches.
@@ -62,3 +67,40 @@ Encourage the documentation of processes, procedures, and technical solutions to
 Encourage open and honest feedback to identify areas for improvement and address any concerns or issues proactively.
 
 **************************************************************************************************************************************************************************************************************************
+
+- **How will you handle a critical or negative feedback from your colleage?**
+
+  Handling critical or negative feedback from a colleague is an important aspect of professional growth and maintaining positive working relationships. Here's how I would approach it:
+
+1. **Remain Calm and Professional:**
+   - Upon receiving critical feedback, I would take a moment to compose myself and ensure that I respond in a calm and professional manner. It's essential not to react defensively or emotionally.
+
+2. **Listen Actively:**
+   - I would actively listen to the colleague's feedback without interrupting or dismissing their concerns. It's crucial to understand their perspective fully before responding.
+
+3. **Seek Clarification:**
+   - If the feedback is vague or unclear, I would ask for specific examples or instances where my actions or behavior caused concern. This helps me gain a better understanding of the issue and how it can be addressed.
+
+4. **Acknowledge and Validate:**
+   - I would acknowledge the colleague's feedback and validate their feelings or concerns. It's important to demonstrate empathy and show that their feedback is being taken seriously.
+
+5. **Reflect and Evaluate:**
+   - After the initial conversation, I would take some time to reflect on the feedback and evaluate its validity. I would honestly assess whether there is merit to the criticism and consider how I can improve based on the feedback received.
+
+6. **Address Constructively:**
+   - Once I've had time to process the feedback, I would take proactive steps to address any valid concerns raised by my colleague. This might involve apologizing for any mistakes made, clarifying misunderstandings, or committing to making changes in my behavior or approach.
+
+7. **Follow-Up and Check-In:**
+   - I would follow up with my colleague to ensure that they feel heard and to provide updates on any actions taken in response to their feedback. Maintaining open communication is essential for building trust and repairing any strained relationships.
+
+8. **Learn and Grow:**
+   - I would view negative feedback as an opportunity for personal and professional growth. By actively seeking feedback and using it to inform my development, I can become a more effective team member and leader in the long run.
+
+9. **Maintain Professionalism:**
+   - Throughout the process, I would maintain professionalism and integrity, refraining from engaging in personal attacks or escalating conflicts. It's important to focus on finding constructive solutions and moving forward positively.
+
+10. **Express Gratitude:**
+    - Finally, I would express gratitude to my colleague for their honesty and courage in providing feedback. Constructive criticism, although sometimes difficult to hear, ultimately helps us become better individuals and professionals.
+   
+**************************************************************************************************************************************************************************************************************************
+
