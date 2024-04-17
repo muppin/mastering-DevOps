@@ -7,7 +7,7 @@
 - Limited by time - short executions
 - Run on-demand
 - Scaling is automated!
-- Event Driven Approach
+- **Event Driven Approach**
   
 - **Benefits**- Cost optimization, secutity/compliance, reduces overhead of handling infrastructure
 - **Pricing**- Pay per request and compute time
@@ -21,4 +21,28 @@
 Lambda Vs. EC2
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/a3ff2040-5830-4c46-bb75-6d3974bceddd)
+
+
+## Real time Project - 
+
+### Project 1 - Cost Optimization
+
+- I wrote a lambda funtion using python
+- that will check if any ec2 instance is there with static IP for long time say 6 months but no one is using it
+- then this script should notify this and delete that EC2 instance
+- everyday at 10 am cloudwatch will trigger this lambda function 
+- so instead of creating EC2 instance daily, we can trigger a lambda function
+- which will spin up a temporary instance and once the execution of script is done, it will terminate it.
+- By this we are optimizing the cost.
+
+### Project 2 - Security and Compliance
+
+- There are some security vulnerabilities with GP2 type volume, so org has decided not to create any GP2 type volume
+- Suppose someone has create a GP2 type volume
+- I wrote a lambda function which will run everyday at 10 am to check if there is any GP2 type volume
+- If yes it will notify the management with SNS notification
+- and it will delete it
+
+
+### Similarly you can say S3 bucket with public access example.
 
