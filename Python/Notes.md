@@ -141,6 +141,8 @@ message = greet("Alice")
 print(message)
 ```
 
+  - The enumerate function is a built-in function that allows you to iterate through a sequence and keep track of the index of each element. This function can be useful if you need to access the index of each element in the sequence.
+
 ### Modules
 
 - Module is collection of functions.
@@ -287,6 +289,8 @@ while count < 5:
 ### Sets and Dictionaries
 
 refer: https://github.com/muppin/python-for-devops/tree/main/Day-11
+
+
 
 _________________________________________________________________________________________________________________________________________________________________________________________
 
