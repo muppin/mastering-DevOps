@@ -2,6 +2,7 @@
 **Serverless does not mean there are no servers…it means you just don’t manage / provision / see them**
 
 **AWS Lambda**
+- Belongs to the compute family and solves the problem of serverless.
 - Virtual functions – no servers to manage!
 - Limited by time - short executions
 - Run on-demand
@@ -16,3 +17,8 @@
 
 - **Layers**-AWS Lambda Layers are a way to centrally manage code and data that is shared across multiple functions. You can create a layer that includes libraries, custom runtimes, or other function dependencies. This helps in keeping your function code small and focused, and it allows for easy updates to shared code.
 - **Deafault invocation time in lambda is 3 seconds.**
+
+Lambda Vs. EC2
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/a3ff2040-5830-4c46-bb75-6d3974bceddd)
+
