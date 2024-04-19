@@ -311,7 +311,7 @@ when the tolerations value match the taint value added, based on the the taint e
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/1a10fe47-139b-4472-9a6c-8701d3874acd)
 
 
-## Autosacleing in kubernetes
+## Autoscaling in kubernetes
 
 Types of Autoscalers:
 - HPA(Horizontal pod autoscaler)
@@ -321,6 +321,9 @@ Types of Autoscalers:
 ### HPA
 
 - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/5f149bb0-af95-472e-a025-5629abf088aa)
+- cAdvisor collects the metrics from the pod every 1os and feeds it to Kubelet.
+- metrics server aggregates the metrics and expose it to API server.
+- HPA queries every 15s to check the usage as mentioned in the config file, if the usage exceeds it adds a new replica. if the usage falls below, deletes the replica.
 
 - increases/decreases the no of replicas when there is spike/no spike in memory, cpu or some other metrics.
 - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/8eef8241-429f-4805-99cd-5db4e56e8601)
