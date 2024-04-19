@@ -311,6 +311,39 @@ when the tolerations value match the taint value added, based on the the taint e
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/1a10fe47-139b-4472-9a6c-8701d3874acd)
 
 
+## Autosacleing in kubernetes
+
+Types of Autoscalers:
+- HPA(Horizontal pod autoscaler)
+- VPA(Vertical Pod autoscaler)
+- CA(Cluster autoscaler)
+
+### HPA
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/5f149bb0-af95-472e-a025-5629abf088aa)
+
+- increases/decreases the no of replicas when there is spike/no spike in memory, cpu or some other metrics.
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/8eef8241-429f-4805-99cd-5db4e56e8601)
+
+### VPA
+
+- increases/decreases the resources of existing pod, instead of creating new pods.
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/c840af7e-b9f2-4250-890d-b14f8614bfcf)
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/651cb98a-db03-47b2-9f50-af60310728ee)
+- update modes:
+    - Auto : kubernetes applies the resource limits to the pods recommended by VPA
+    - off : VPA just recommends not applies
+    - Initial : VPA applies the new recommended resource limits to the new pods.
+    - **Note: in production, update mode is set to off so that pods are not restarted and there is no application downtime**
+- By default VPA is not available in cluster, we need to install.
+
+### CA
+
+- it adds the nodes to the cluster if there are pods stuck at pending state due to lack of resources available in the cluster.
+- deletes the node whenever the resource usage falls below 50% in the node.
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/2af9ad86-1d40-4982-8930-0568554b1925)
+- every 10s cluster autoscaler checks for unscheduled pod and resource usage to add or remove nodes inside the cluster.
+
 
 
 
