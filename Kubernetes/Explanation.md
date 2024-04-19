@@ -348,6 +348,28 @@ Types of Autoscalers:
 - every 10s cluster autoscaler checks for unscheduled pod and resource usage to add or remove nodes inside the cluster.
 
 
+## Daemonset in Kubernetes
+
+- In the case of performing node specific stasks like collecting logs, metrics we have to use of DaemonSets.
+- DaemonSets runs pods on every single node even when the cluster adds the node dynamically to collect the logs, metrics.
+- DaemonSet also deletes the running pod if the node is deleted from the cluster.
+- with daemonset we make sure pod runs on every single node always.
+- Question may arise.. why can't you also use Deployments-Replica sets to run pods on nodes?
+  - deployements can deploy pods on available nodes, the new incoming node dynamically wont be having any pods unless we apply deployments.
+  - deployments cant guarantee the pods running on every single node.
+
+ ### Use cases
+
+ -  used for deploying logging agents like fluentd, logstash to collect logs from the node
+ -  used for monitoring agents like prometheus, grafana, datadog. this ensures collecting metrics from the nodes and have centralised location for analysis.
+ -  used for deploying network agents, ensures network policies on all nodes.
+
+**Note: whenever you create a cluster, kubernetes by default creates kube-proxy daemonset in kube-system namespace that deploy kube-proxy pod on all the nodes**
+
+- whenever you delete a ds, all associated pods gets deleted.
+- if you want to keep pods assoaciated with those ds, use --cascade=false while deleting the ds.
+
+
 
 
 
