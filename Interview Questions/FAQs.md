@@ -218,3 +218,20 @@ Gateway endpoints and Interface Endpoints.
 
 **Walk me through the concept of VPC flow logs and explain their significance in a cloud environment**
 - refer this https://www.youtube.com/watch?v=6CjIT068Ss0&t=6s
+
+### Python Projects
+
+**Can you explain me about your python project?**
+- we had a problem statement where QE Engineers comes across a bug and creates an GitHub issue.
+- one of the members of the GitHub repo has to respond to the created issue, if the issue is not valid they close it. if the issue is valid they create a jira ticket to track the amount of work being done.
+- so on daily basis there would be like multiples of issues, the repo member cannot go and create a jira for every single issue, so we have automated the process using python script to generate a jira ticket.
+- when a repo member comments /jira under the issue, the jira ticket is created.
+
+- the implementation is below shown:
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/11f64e53-b4e0-46b6-84e8-84fd3c11835e)
+
+![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9c5e50e1-f2db-4978-b454-852bb0996739)
+
+
+
+
