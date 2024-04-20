@@ -236,9 +236,9 @@ Gateway endpoints and Interface Endpoints.
 - Firstly GitHub will talk to python API, i.e. github webhooks will push the json input, then python script is interacting with JIRA API to create a JIRA ticket.
 - yeah we have written a python script that creates a jira issue.
 - we have converted the python script to API using FLASK
-- we have made use of decorators before the API for the authentication purpose, i.e. the authentication/authorisation action runs before function execution.
+- we have made use of decorators before the API/function definition for the authentication purpose, i.e. the authentication/authorisation action runs before function execution.
 - so this python API is running on an ec2 server and the ec2 url with port and path is configured in the github webhooks.
-- once the github webhook is congigured, now the automation works.
+- once the github webhook is congigured, now the automation works whenever /jira is commented under the issue a jira issue gets created.
 
 
 
