@@ -228,9 +228,9 @@ Gateway endpoints and Interface Endpoints.
 - when a repo member comments /jira under the issue, the jira ticket is created.
 
 - the implementation is below shown:
-![image](https://github.com/muppin/mastering-DevOps/assets/121821200/11f64e53-b4e0-46b6-84e8-84fd3c11835e)
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/11f64e53-b4e0-46b6-84e8-84fd3c11835e)
 
-![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9c5e50e1-f2db-4978-b454-852bb0996739)
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9c5e50e1-f2db-4978-b454-852bb0996739)
 
 
 
