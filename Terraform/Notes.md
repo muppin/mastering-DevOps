@@ -308,22 +308,31 @@ Here's a basic overview of how dynamic blocks work:
 1. **Syntax:**
    Dynamic blocks are defined using the `dynamic` keyword followed by the name of the block you want to generate dynamically. Within the dynamic block, you use the `for_each` or `content` argument to specify how the block should be generated.
 
-   ```hcl
-   resource "aws_security_group" "example" {
-     dynamic "ingress" {
-       for_each = var.ingress_rules
-       content {
-         from_port   = ingress.value.from_port
-         to_port     = ingress.value.to_port
-         protocol    = ingress.value.protocol
-         cidr_blocks = ingress.value.cidr_blocks
-       }
-     }
-   }
+   ```
+variable "ports" {
+  type = list(number)
+  default = [80, 443, 8080]
+}
+
+resource "aws_security_group" "example" {
+  name        = "example-security-group"
+  description = "Example security group"
+
+  dynamic "ingress" {
+    for_each = var.ports
+    content {
+      from_port   = ingress.value
+      to_port     = ingress.value
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  }
+}
+
    ```
 
 2. **`for_each` Argument:**
-   - When using `for_each`, you specify a collection (list, set, or map) and Terraform iterates over each element in the collection, dynamically creating a block for each element.
+   - When using `for_each`, you specify a collection (set, or map) and Terraform iterates over each element in the collection, dynamically creating a block for each element.
    - Each iteration provides access to the current element's attributes, which can be referenced within the dynamic block using the `value` keyword.
 
 3. **`content` Argument:**
