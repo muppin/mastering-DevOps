@@ -193,29 +193,65 @@ ________________________________________________________________________________
 
 In Terraform, you can use different constructs to iterate over lists or maps and perform actions based on each element. Three commonly used constructs for iteration are the `for` expression, the `for_each` meta-argument, and the `count` meta-argument.
 
-**1. `for` Expression:**
-The `for` expression allows you to iterate over a list or map and generate new values based on each element. It is often used within resource blocks to dynamically create multiple instances of a resource.
+**1. For**
 
-Example:
-```hcl
-variable "instance_names" {
-  type    = list(string)
-  default = ["web-1", "web-2", "web-3"]
-}
+- With for loops you can iterate through a list, a set, a tuple, a map, or an object.
 
-resource "aws_instance" "example" {
-  for_each = { for idx, name in var.instance_names : name => idx }
+- for loops can produce different results depending on how they are declared, the type of brackets decide the result type.
 
-  ami           = "ami-12345678"
-  instance_type = "t2.micro"
-  tags = {
-    Name = each.key
-    Index = each.value
-  }
+- **It’s important to know that for loops are used to manipulate and transform values and not delegate the creation of N instances of a resource - we use the count or for_each argument to achieve that.**
+
+#### Declaring a for loop that produces a tuple #
+
+Here we’re storing the names coming from a data source into a local named regions using a for loop.
+```
+data "aws_regions" "available" {}
+
+locals {
+  regions = [for name in data.aws_regions.available.names : name]
 }
 ```
 
-In this example, `for_each` iterates over the `instance_names` list, creating an instance for each element. It generates a map where the key is the instance name and the value is the index of the element in the list.
+#### Optionally we could extract the index from the for loop using a second symbol right after the for keyword.
+
+data "aws_regions" "available" {}
+```
+locals {
+  regions_indices = [for index, name in data.aws_regions.available.names : index]
+}
+```
+In the above example, regions_indices its value is a tuple containing the indices (0, 1, 2, etc) of the region names.
+
+#### Declaring a for loop that produces an object #
+
+- If we use curly braces to annotate our for loop, we produce an object. When producing an object we must provide an additional expression using =>, this constructs the values of the object for each key we iterate through.
+```
+locals {
+  numbers         = [2, 4, 6]
+  squared_numbers = {for number in local.numbers : number => number * number}
+}
+```
+The above example produces the following object:
+```
+$ terraform console
+> local.squared_numbers
+{
+  "2" = 4
+  "4" = 16
+  "6" = 36
+}
+```
+
+#### Declare a for loop that filters out elements #
+
+- Optionally you can include an if clause in the for loop to filter out elements.
+
+data "aws_regions" "available" {}
+```
+locals {
+  regions = [for name in data.aws_regions.available.names : name if != ""]
+}
+```
 
 **2. `for_each` Meta-Argument:**
 The `for_each` meta-argument allows you to create multiple instances of a resource or module based on the elements of a map. It's useful when you want to manage a collection of resources where each element has a unique identifier.
