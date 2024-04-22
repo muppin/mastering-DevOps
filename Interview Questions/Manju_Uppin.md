@@ -120,11 +120,16 @@
 - what is ansible?
 - what is the methodology that you are following?
 
+## Capgemini
+
+
+
 ## Ops Tree Telephonic round
 
 - Introduce yourself?
 - is s3 a block or object storage?
 - what are types of volumes in EBS?
+- differnence btwn public and Elastic IP?
 - what is CDN?
 - difference between stateful and stateless application?
 - How do you persist data in kubernetes?
@@ -146,5 +151,8 @@
 - write a shell script to reverse a string?
 - how do you build a microservices architecture in aws using Terraform?
 - what is Helm Chart? can you explain me about helm commands that you used?
+- how Helm charts are useful in the organisation?
 - how do you perform updates in aws when new versions are rolled out?
+- have you used boto3 SDK, explain me the task involved in that?
+- Explain me about the different layers of Lambda function?
 
