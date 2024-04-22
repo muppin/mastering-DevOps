@@ -119,3 +119,32 @@
 - what are helm charts?
 - what is ansible?
 - what is the methodology that you are following?
+
+## Ops Tree Telephonic round
+
+- Introduce yourself?
+- is s3 a block or object storage?
+- what are types of volumes in EBS?
+- what is CDN?
+- difference between stateful and stateless application?
+- How do you persist data in kubernetes?
+- what are the security services u have used in AWS?
+- what are the different types of aws services you have used?
+
+## Nielson Holdings
+
+- Introduce yourself?
+- in Terraform, how do you store secrects and sensitive data?
+- what are your day to day activities, can you brief me about?
+- can you explain me the terraform commands that you use on daily basis?
+- can you tell me about what are terraform providers and what all terraform providers that you have used?
+- can you explain me about your application architecture?
+- explain Route53 in AWS?
+- explain VPC peering, how do you accomplish?
+- write a program to sort numbers in python?
+- explain a CI/CD pipeline that you have implemented?
+- write a shell script to reverse a string?
+- how do you build a microservices architecture in aws using Terraform?
+- what is Helm Chart? can you explain me about helm commands that you used?
+- how do you perform updates in aws when new versions are rolled out?
+
