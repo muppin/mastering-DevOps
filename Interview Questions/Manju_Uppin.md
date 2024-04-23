@@ -159,3 +159,38 @@
 - Explain me about the different layers of Lambda function?
 - what is service mesh in kubernetes?
 
+## Opstree technical
+
+- can you explain me about the current project?
+- can you tell me about type of pipeline you have created(multibranch) and explain me the stages involved?
+- what are the resources that you are creating in kubernetes?
+- do you write the manifest files??????? bit confused
+- explain ingress resource?
+- why do we use stateful set and why not deployments for stateful applications?
+- explain daemon set and its importance?
+- what kind of services you have used in aws?
+- expalin the application architecture and how the traffic flows through the services in aws ?
+- explain ingress controller and which one do you use??
+- what types of scripting you have done? explain boto3 module and what scripts you have implementes?
+- can you implement shell scripting?
+- explain the different HTTP codes?
+- what are client side errors?
+- have you been involved in kubernetes, linux troubleshooting ??
+- linux troubleshooting using network commands?
+- lets say there is one ec2 instance, i am not able to another ec2 instance.. what are the possible reasons? sg rules, nacl rules(subnet level), peering is not done, incoming requests are not accepted because of memory spike
+- what are the databases that you used ?
+- what are the resource that you are creating in terraform?
+- what is structure of your terraform file?
+- have you used any Monitoring, logging tools?
+- how prometheus collects the data from k8s?
+- how do you achieve logging, what tools are you using??
+- logging using aws service? i told cloudwatch and explained
+- have you setup noSQL databases? DynamoDB
+- how do you achieve security in aws infra?
+- are you using VPN? what is the importance?
+- what is bastion server?
+- differnece between NACL and SG?
+- are you using SSL certificates?
+- what are types of hosted zone? what type of hosted zone you guys use??  
+
+
