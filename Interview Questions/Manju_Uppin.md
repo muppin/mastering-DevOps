@@ -157,4 +157,5 @@
 - how do you perform updates in aws when new versions are rolled out?
 - have you used boto3 SDK, explain me the task involved in that?
 - Explain me about the different layers of Lambda function?
+- what is service mesh in kubernetes?
 
