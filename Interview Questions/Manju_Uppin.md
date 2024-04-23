@@ -129,10 +129,12 @@
 - Introduce yourself?
 - is s3 a block or object storage?
 - what are types of volumes in EBS?
+- list different types of storage classes?
 - differnence btwn public and Elastic IP?
 - what is CDN?
 - difference between stateful and stateless application?
 - How do you persist data in kubernetes?
+- explain different probes in kubernetes?
 - what are the security services u have used in AWS?
 - what are the different types of aws services you have used?
 
