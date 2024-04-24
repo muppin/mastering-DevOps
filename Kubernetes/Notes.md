@@ -156,7 +156,7 @@ ________________________________________________________________________________
 - **Load Balancing** - this mode of service exposes the application to the internet/external world, where it creates a public IP address. It will only work on cloud providers.
 
 
-![Uploading image.png…]()
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ce2fb0f5-7447-4f55-a1cd-0215f1d49dff)
 
 
 
@@ -951,6 +951,54 @@ ________________________________________________________________________________
 https://cloudtweaks.com/2023/01/common-kubernetes-errors/
 
 ___________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+## Service Mesh
+
+  - Service mesh manages communication between micro services.
+ 
+  **Challenges**
+
+  - How will services know how to talk to each other
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/766eb184-e2b8-4ce7-a557-ac37ad398b1e)
+
+  - Security
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/ab6b00ad-31be-4e43-b71c-a88b8fbad02b)
+
+  - Developers are not able to focus on business logic
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/bddb9bd9-07b8-4cab-a6fd-7bd56abdd10f)
+
+ **Solution**
+
+- Solution is service mesh. It will encapsulate all the non-business logic into the sidecar proxy.
+ ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/e76aecf7-79a1-4d90-8502-b50ae5d51af9)
+
+- Service mesh will have a control plane that will inject the proxy directly to every micro service pod.
+  ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c351146f-7c17-4518-83bc-ac14d146795a)
+
+ **Features**
+ ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/0b7562eb-4832-4337-9626-d650409d2676)
+
+
+ ### Istio
+
+ - Istio is the implementaion of service mesh.
+   ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/61321043-070e-4d50-9c50-f36e42b4e991)
+
+   ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/eea9e5a1-9833-44c5-afd3-166bc4077fde)
+
+
+
+
+   **Istio Architecture**
+   ![Uploading image.png…]()
+
+   ******************************************************************************************************************************************************************************************************************
+
+
+
+
+
+
 
 
 
