@@ -10,10 +10,10 @@
        - This process of delaying is called BackOFF, thats why this error is called ImagePullBackOff error.
     
   - **Possible reasons of occurance?**
-          - Invalid image
-          - Non existing image
-          - If it a private image
-          - we have not created ImagePullSecret to authenticate
+       - Invalid image
+       - Non existing image
+       - If it a private image
+       - we have not created ImagePullSecret to authenticate
     
   - **How to troubleshoot:**
        - kubectl describe pod
