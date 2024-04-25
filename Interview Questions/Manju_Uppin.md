@@ -138,26 +138,6 @@
 - what are the security services u have used in AWS?
 - what are the different types of aws services you have used?
 
-## Nielson Holdings
-
-- Introduce yourself?
-- in Terraform, how do you store secrects and sensitive data?
-- what are your day to day activities, can you brief me about?
-- can you explain me the terraform commands that you use on daily basis?
-- can you tell me about what are terraform providers and what all terraform providers that you have used?
-- can you explain me about your application architecture?
-- explain Route53 in AWS?
-- explain VPC peering, how do you accomplish?
-- write a program to sort numbers in python?
-- explain a CI/CD pipeline that you have implemented?
-- write a shell script to reverse a string?
-- how do you build a microservices architecture in aws using Terraform?
-- what is Helm Chart? can you explain me about helm commands that you used?
-- how Helm charts are useful in the organisation?
-- how do you perform updates in aws when new versions are rolled out?
-- have you used boto3 SDK, explain me the task involved in that?
-- Explain me about the different layers of Lambda function?
-- what is service mesh in kubernetes?
 
 ## Opstree technical
 
@@ -191,6 +171,63 @@
 - what is bastion server?
 - differnece between NACL and SG?
 - are you using SSL certificates?
-- what are types of hosted zone? what type of hosted zone you guys use??  
+- what are types of hosted zone? what type of hosted zone you guys use??
+
+## Nielson Holdings
+
+- Introduce yourself?
+- in Terraform, how do you store secrects and sensitive data?
+- what are your day to day activities, can you brief me about?
+- can you explain me the terraform commands that you use on daily basis?
+- can you tell me about what are terraform providers and what all terraform providers that you have used?
+- can you explain me about your application architecture?
+- explain Route53 in AWS?
+- explain VPC peering, how do you accomplish?
+- write a program to sort numbers in python?
+- explain a CI/CD pipeline that you have implemented?
+- write a shell script to reverse a string?
+- how do you build a microservices architecture in aws using Terraform?
+- what is Helm Chart? can you explain me about helm commands that you used?
+- how Helm charts are useful in the organisation?
+- how do you perform updates in aws when new versions are rolled out?
+- have you used boto3 SDK, explain me the task involved in that?
+- Explain me about the different layers of Lambda function?
+- what is service mesh in kubernetes?
+
+## Nielsen 2nd round
+- Introduce yourself?
+- explain about your project?
+- List the resources that you have used in AWS?
+- can you brief me about how have you used AWS WAF and an example?
+- is there any limit on how many rules can you add in WAF?
+- can you brief about IAM service and how have you used in your project?
+- what is Federated user?
+- have you worked on API gateway and Lambda function?
+- explain lambda function and how did you use?
+- can you give me a difference between s3 and linux file system?
+- you have to list the buckets of different aws environments from the ec2 instances, how do you do it?
+- can you explain me about the subnets in aws and types of subnets, how to differntiate them as public and private?
+- differnce between NACL and SG's?
+- explain Autoscaling group and its types?
+- how can you enable communication between 2 ec2 instances which are on different network ?
+- explain CICD pipeline?
+- how will you configure argocd tool?
+- what is the file type that you are using while configuring argocd?
+- what branching stratagies you have used ?
+- for different environments how images are used in case of deploying?
+- how do disguinsh between different environments?
+- what do you mean by full fledged cluster?
+- what kind of clusters are you creating? (aws managed or normal kubernetes cluster)
+- are you creating clusters or any other team? (be cautious while answering)
+- how do you create the EKS and can you name the resources?
+- can you explain me how hosted zones are created and records in it?
+- explain k8s architecture?
+- can you give me examples of kubernetes troubleshooting scenario?
+- how to know why pod is using so much of memory when it exits with OOMKilled error?
+- when you have 2 pods in a same namespace and you do not want them to communicate each other.. how do you achieve it? use network policies 
+- explain null resource in terraform?
+- explain types terraform provisioners?
+- explain python scripting that you have implemented?
+
 
 
