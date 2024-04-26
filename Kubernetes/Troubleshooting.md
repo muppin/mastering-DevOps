@@ -17,6 +17,13 @@
   - **How to troubleshoot:**
        - kubectl describe pod
        - kubctl events
+   
+**************************************************************************************************************************************************************************************************
+
+### CrashLoopBackOff Error
+
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/b6ccf9ce-386a-45f4-8704-6e85fcc2dc46)
+
 
   ![Uploading image.png…]()
 
