@@ -23,6 +23,9 @@
          
          ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/71f662bb-fa89-4896-84d3-5a17e12645a5)
 
+  - **Solution:**
+       - Validate the image name/version and update it correctly in the deployment manifest.
+
 
    
 **************************************************************************************************************************************************************************************************
