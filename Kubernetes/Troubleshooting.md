@@ -18,4 +18,5 @@
        - kubectl describe pod
        - kubctl events
 
-  
+  ![Uploading image.png…]()
+
