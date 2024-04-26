@@ -13,10 +13,17 @@
        - Invalid image
        - Non existing image
        - If it is a private image and we have not created ImagePullSecret to authenticate
+         ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/35d7ed58-61b3-4cd8-8952-361a8766837d)
+
     
   - **How to troubleshoot:**
-       - kubectl describe pod
-       - kubctl events
+       - Use ```kubectl get events | grep <pod_Name>```  to get the events of the specific pod.
+       - describe command will not work as the resource(pod) is still not created.
+       - kubectl logs command will aslo not work as the container is failing to pull the image
+         
+         ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/71f662bb-fa89-4896-84d3-5a17e12645a5)
+
+
    
 **************************************************************************************************************************************************************************************************
 
