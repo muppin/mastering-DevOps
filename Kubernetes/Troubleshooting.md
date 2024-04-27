@@ -68,6 +68,11 @@
       - use ```kubectl describe pod <pod_name>``` and check the event section to check events.
       - use ```kubectl logs <pod_name>``` command will produce as the "python3: can't open file '/app/app1.py': [Errno 2] No such file or directory" (this is because of misconfiguration)
       - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/2a33c3b9-80a2-4854-bb59-b33bda218349)
+   
+  - **NOTE**
+  - If we have OOM killed error in a pod, follow below:
+    ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c2e916a8-8cfd-4787-8d8b-4e66fab4dbed)
+
 
                             -  
 
