@@ -53,6 +53,10 @@
 
        - Errors in the Liveness Probes :
              - If a liveness probe is incorrectly configured, it might falsely report that the container is unhealthy, causing Kubernetes to kill and restart the container repeatedly.
+         
+         ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/852dbfed-850c-4dd1-8d9e-0b0c2af9bcb9)
+         
+
        - The Memory Limits Are Too Low :
              - If the memory limits set for a container are too low, the application might exceed this limit, especially under load, leading to the container being killed by Kubernetes.
        - Wrong Command Line Arguments :
