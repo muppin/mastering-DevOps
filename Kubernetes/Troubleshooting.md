@@ -19,7 +19,7 @@
   - **How to troubleshoot:**
        - Use ```kubectl get events | grep <pod_Name>```  to get the events of the specific pod.
        - use ```kubectl describe pod <pod_name>``` and check the event section to check events
-       - kubectl logs command will produce as the container in a pod  is trying and failing to pull the image
+       - use ```kubectl logs <pod_name>``` command will produce as the container in a pod  is trying and failing to pull the image
          
          ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/71f662bb-fa89-4896-84d3-5a17e12645a5)
 
@@ -36,7 +36,32 @@
 
 ### CrashLoopBackOff Error
 
-![image](https://github.com/muppin/mastering-DevOps/assets/56094875/b6ccf9ce-386a-45f4-8704-6e85fcc2dc46)
+  - **What is the error**
+      - When you see "CrashLoopBackOff," it means that kubelet is trying to run the container, but it keeps failing and crashing. After crashing, Kubernetes tries to restart the container automatically, but if the container keeps failing repeatedly, you end up in a loop of crashes and restarts, thus the term "CrashLoopBackOff."
+      - ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/b6ccf9ce-386a-45f4-8704-6e85fcc2dc46)
+
+
+  - **Possible reasons of occurance?**
+       - Misconfigurations :
+             - Misconfigurations can encompass a wide range of issues, from incorrect environment variables to improper setup of service ports or volumes.
+             - These misconfigurations can prevent the application from starting correctly, leading to crashes.
+             - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/c26e9f60-da27-452b-8687-2a271f1429e1)
+
+       - Errors in the Liveness Probes :
+             - If a liveness probe is incorrectly configured, it might falsely report that the container is unhealthy, causing Kubernetes to kill and restart the container repeatedly.
+       - The Memory Limits Are Too Low :
+             - If the memory limits set for a container are too low, the application might exceed this limit, especially under load, leading to the container being killed by Kubernetes.
+       - Wrong Command Line Arguments :
+             - Containers might be configured to start with specific command-line arguments. If these arguments are wrong or lead to the application exiting (for example, passing an invalid option to a command), the container will exit immediately
+       - For more info : https://github.com/iam-veeramalla/kubernetes-troubleshooting-zero-to-hero/tree/main/02-CrashLoopBackOff
+
+  - **How to Trouble Shoot:**
+      - use ```kubectl get events | grep <pod_name>``` to get the events of the specific pod.
+      - use ```kubectl describe pod <pod_name>``` and check the event section to check events.
+      - use ```kubectl logs <pod_name>``` command will produce as the "python3: can't open file '/app/app1.py': [Errno 2] No such file or directory" (this is because of misconfiguration)
+      - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/2a33c3b9-80a2-4854-bb59-b33bda218349)
+
+                            -  
 
 
   ![Uploading image.png…]()
