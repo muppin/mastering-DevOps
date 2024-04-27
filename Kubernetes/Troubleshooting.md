@@ -23,6 +23,10 @@
          
          ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/71f662bb-fa89-4896-84d3-5a17e12645a5)
 
+      - If the issue is becuase of private image, below error can be seen
+        ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/e4d7b2a5-665e-4533-b441-7435f5d4b4a1)
+
+
   - **Solution:**
        - Validate the image name/version and update it correctly in the deployment manifest.
        - if the image is private, try to create a secret first and they apply
