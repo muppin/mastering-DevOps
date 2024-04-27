@@ -18,13 +18,17 @@
     
   - **How to troubleshoot:**
        - Use ```kubectl get events | grep <pod_Name>```  to get the events of the specific pod.
-       - describe command will not work as the resource(pod) is still not created.
-       - kubectl logs command will aslo not work as the container is failing to pull the image
+       - use ```kubectl describe pod <pod_name>``` and check the event section to check events
+       - kubectl logs command will produce as the container in a pod  is trying and failing to pull the image
          
          ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/71f662bb-fa89-4896-84d3-5a17e12645a5)
 
   - **Solution:**
        - Validate the image name/version and update it correctly in the deployment manifest.
+       - if the image is private, try to create a secret first and they apply
+          - to create ```kubectl create secret docker-registry demo --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>```
+          - create a imagePullSecret and specify in deployment
+          - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/8cec9ed1-cb83-4aed-bd2b-d60b22872bfb)
 
 
    
