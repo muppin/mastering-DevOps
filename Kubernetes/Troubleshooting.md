@@ -76,6 +76,6 @@
 
                             -  
 
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/4252826c-3fee-45e4-9a0c-b1a063fbdab8)
 
-  ![Uploading image.png…]()
 
