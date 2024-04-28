@@ -74,7 +74,7 @@
     ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c2e916a8-8cfd-4787-8d8b-4e66fab4dbed)
 
 
-                            -  
+https://www.linkedin.com/posts/schakraborty007_kubernetes-k8s-devops-activity-7156144230950727680-mTvL?utm_source=share&utm_medium=member_desktop                            -  
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/4252826c-3fee-45e4-9a0c-b1a063fbdab8)
 
