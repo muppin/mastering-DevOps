@@ -105,7 +105,7 @@ Basically, the repo is nothing but the collection of helm charts. There are five
 **Take an example to add on the prometheus monitoring to you kubernetes cluster**
 - firstly you will add the helm repo i.e. **helm repo add prometheus-community https://prometheus-community.github.io/helm-charts**
 - update the helm repo **helm repo update**
-- install the chart from the above repo **helm install prometheus prometheus-community/prometheus**
+- install the chart from the above repo **helm install prometheus prometheus-community/prometheus**  ( helm install release  repo-name/chart-name)
 
 #### NOTE-
 When you run helm repo update, Helm contacts the specified chart repositories and updates the local cache or index of charts. This ensures that you have the latest information about the charts and their versions available in those repositories. It's similar to running apt-get update or yum update on a package manager for a traditional operating system.
