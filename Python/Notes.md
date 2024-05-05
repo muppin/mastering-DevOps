@@ -303,6 +303,7 @@ ________________________________________________________________________________
 - AWS CLI/BOTO3 is a scripting langauge, where as CFT/TF is a templating language.
 - AWS CLI/BOTO3 is good for quick actions for example (aws s3 ls).
 - BOTO3 supports serverless programming also. Ex. lambda functions
+- First we have to authenticate to AWS, and then we have to talk to the particular service API, using the client connection.
 - client = boto3.client('s3') -> same syntax for all resouces, just need to change s3 to whater ever resource we want.
 - It is basically creating a client to talk to AWS API.
 - OR
