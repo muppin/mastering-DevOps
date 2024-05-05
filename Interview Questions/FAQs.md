@@ -144,14 +144,15 @@ ArgoCD continuously monitors the Git repository for changes. When changes are de
    - It may have a listener configured to terminate SSL/TLS and forward the decrypted traffic to the EKS cluster.
   
    ```AWS WAF Configuration:
-Create a Web ACL (Web Access Control List) in AWS WAF.
-Define the rules and conditions to filter incoming traffic based on your security requirements. This could include rules to block malicious requests, protect against common web vulnerabilities, or allow only specific IP addresses or user agents.
-Associate the Web ACL with the ALB listener to inspect and filter incoming requests.
-Integration:
-Update the ALB listener to forward incoming HTTPS traffic to the target group associated with your application servers.
-Ensure that the ALB security group allows inbound HTTPS traffic from the internet.
-Verify that the Route 53 DNS record is correctly configured to route traffic to the ALB.
-```
+      Create a Web ACL (Web Access Control List) in AWS WAF.
+     Define the rules and conditions to filter incoming traffic based on your security requirements. This could include rules to block malicious requests, protect against common web vulnerabilities, or allow only 
+     specific IP addresses or user agents.
+     Associate the Web ACL with the ALB listener to inspect and filter incoming requests.
+     Integration:
+     Update the ALB listener to forward incoming HTTPS traffic to the target group associated with your application servers.
+     Ensure that the ALB security group allows inbound HTTPS traffic from the internet.
+     Verify that the Route 53 DNS record is correctly configured to route traffic to the ALB.
+   ```
 
 4. **Ingress Controller in EKS Cluster:**
    - An Ingress controller within the EKS cluster manages external access to services.
