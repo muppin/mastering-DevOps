@@ -139,7 +139,7 @@
 - what are the different types of aws services you have used?
 
 
-## Opstree technical
+## Opstree 1st technical
 
 - can you explain me about the current project?
 - can you tell me about type of pipeline you have created(multibranch) and explain me the stages involved?
@@ -173,7 +173,35 @@
 - are you using SSL certificates?
 - what are types of hosted zone? what type of hosted zone you guys use??
 
-## Nielson Holdings
+## Opstree 2nd technical
+
+- what EKS cluster are you guys using?
+- types of EKS clusters?
+- Have you worked on ADD ons?
+- Have you been part of updating cluster?
+- differenve between core DNS and kube-proxy?
+- have you worked on ISTIO? what is mTLS?
+- suppose i have 3 EKS clusters, what sought of security practices do you take to have a communication between them, make sure this connection is not via external DNS..
+- what is NAT gateway and where it sits?
+- difference NACL and SG?
+- 3 vpcs A,B,C communication A-B, B-C, C-A has to achieve this?
+- what is transit gateway?
+- site-to-site VPN connection?
+- what is KONG?
+- what is service account ?
+- i have pod with multiple containers, for 1 container i want to s3 full access, for 2nd i want to give iam access, 3rd i want to give ec2 access .. how to achieve ??
+- write a script, get into multiple directories, list items in directories, identify the items if it is a file or anything else?
+- there are two links i.e. hard links and soft links...  explain?
+- write a command to get logic volumes?
+- write a command to mount a directory to path?
+- write a command to see a memory?
+- what is zombie process?
+- what is load average?
+- once you trigger a pipeline, that should go and create an entire infrastructure in AWS?
+- explian me CI-CD part where i dont want to have a human intervention?
+- how do you test the code in jenkins pipeline? for java code.
+
+## Nielsen Holdings
 
 - Introduce yourself?
 - in Terraform, how do you store secrects and sensitive data?
