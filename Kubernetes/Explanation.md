@@ -258,12 +258,12 @@ ________________________________________________________________________________
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/76034b8c-b327-4f8c-a6d7-dd4350653dbb)
 
 There may be cases where we need to deploy our pod onto a specific nodes then we need to guide the scheduler using the different ways
-- nodeName 
-- nodeSelector
+- nodeName - to deploy all pods on to a single node.
+- nodeSelector -  if you want to deploy pods based on label name.
 - Affinity
-   - Node Affinity
-   - Pod Affinity
-- Taints and Tolerations
+   - Node Affinity -  if you want to bring a pod and a node close to eachother
+   - Pod Affinity -  if you pods to be close to eachother
+- Taints and Tolerations - tainted nodes can have only pods that can tolerate the particular taint.
 
 **nodeName**
 to deploy all our replicas on one single node then we specify the nodename. not recommended way though.
