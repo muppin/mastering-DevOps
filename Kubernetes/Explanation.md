@@ -369,6 +369,32 @@ Types of Autoscalers:
 - whenever you delete a ds, all associated pods gets deleted.
 - if you want to keep pods assoaciated with those ds, use --cascade=false while deleting the ds.
 
+### Kubernetes ADD ons
+
+Kubernetes add-ons are additional components or functionalities that can be installed on a Kubernetes cluster to enhance its capabilities or provide additional features. These add-ons are often essential for managing and operating Kubernetes clusters effectively. Some common Kubernetes add-ons include:
+
+1. **Dashboard**: The Kubernetes Dashboard provides a web-based user interface for managing and monitoring Kubernetes clusters. It allows users to view and manage resources, inspect cluster metrics, and troubleshoot issues.
+
+2. **DNS**: Kubernetes clusters typically include a DNS add-on, such as CoreDNS or kube-dns, to provide DNS-based service discovery within the cluster. This allows pods and services to communicate with each other using DNS names.
+
+3. **Ingress Controller**: An Ingress controller manages external access to services running within the Kubernetes cluster. It provides features such as SSL termination, path-based routing, and load balancing for incoming traffic.
+
+4. **Container Network Interface (CNI)**: CNI plugins enable networking between pods and nodes in a Kubernetes cluster. They provide the necessary networking features, such as IP address management, routing, and isolation, to facilitate communication between containers.
+
+5. **Monitoring and Logging**: Add-ons such as Prometheus and Grafana are commonly used for monitoring Kubernetes clusters and applications running on them. These tools collect metrics and logs from various components of the cluster and provide dashboards for visualization and analysis.
+
+6. **Storage Provisioner**: Kubernetes storage add-ons, such as dynamic storage provisioners or CSI drivers, enable dynamic provisioning and management of storage volumes for persistent storage in Kubernetes clusters.
+
+7. **Service Mesh**: Service mesh technologies like Istio and Linkerd provide advanced networking and security features for microservices running on Kubernetes. They offer capabilities such as traffic management, load balancing, service discovery, and encryption.
+
+8. **Cluster Autoscaler**: The Cluster Autoscaler add-on automatically adjusts the size of the Kubernetes cluster based on resource utilization and workload demands. It scales the cluster by adding or removing nodes to maintain optimal resource usage.
+
+9. **Horizontal Pod Autoscaler (HPA)**: HPA automatically adjusts the number of replica pods for a deployment or replication controller based on CPU or custom metrics, ensuring that the application can handle varying levels of traffic.
+
+10. **Security Policies**: Kubernetes security add-ons, such as Pod Security Policies (PSPs) or admission controllers, enforce security policies and controls to protect the cluster and its workloads from malicious attacks or misconfigurations.
+
+These are just a few examples of Kubernetes add-ons. Depending on your specific requirements and use cases, you may choose to install additional add-ons to extend the functionality of your Kubernetes cluster.
+
 
 
 
