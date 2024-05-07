@@ -135,5 +135,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
   - What is route 53 used for?
   - Which deployment mechanism will you use for your Database?
   - Difference between deployment and statefulsets?
+  - Have you integradted your pipeline with any SCM?
+  - How to checkout the code from git?
 
 
