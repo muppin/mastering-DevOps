@@ -105,4 +105,35 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 
   _______________________________________________________________________________________________________________________________________________________________
 
+  ## PwC
+
+  - Tell me about yourself
+  - Day to day activities
+  - how will u bootstrap in linux
+  - do you know systemd init file
+  - how to check linux version
+  - Write a dockerfile for installation of abc jar file on top of tomcat server
+  - how will you delete container and remove associated error
+  - A pod is having 20GB of PV and pods claim also 20 GB. Space is exhausted. What will happen to pod?
+  - What is OOM error?
+  - Difference between limit and resource?
+  - Difference between Scripted and declarative pipeline?
+  - What is VPC?
+  - What are the components of VPC?
+  - What is config map and secrets?
+  - Which encoding will you use in K8s for your secrets?
+  - Is it good to use k8s provided in built encoding or u should use some other?
+  - What is CIDR routing in VPC?
+  - What is S3, how u have used S3 in ur achitecture?
+  - Explain coponents of worker node and master node?
+  - What is HPA and VPA?
+  - Does resource and limits signify with VPA?
+  - Why we use K8s over docker?
+  - What is PV?
+  - What is high availability?
+  - Explain the use case where u worked on HA?
+  - What is route 53 used for?
+  - Which deployment mechanism will you use for your Database?
+  - Difference between deployment and statefulsets?
+
 
