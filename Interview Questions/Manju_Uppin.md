@@ -175,16 +175,16 @@
 
 ## Opstree 2nd technical
 
-- what EKS cluster are you guys using?
-- types of EKS clusters?
-- Have you worked on ADD ons?
-- Have you been part of updating cluster?
-- differenve between core DNS and kube-proxy?
+- what EKS cluster are you guys using? - AWS managed
+- types of EKS clusters? AWS managed & self managed
+- Have you worked on ADD ons? examples- service mesh, prometheus, k8s dashboards, ingress controller
+- Have you been part of updating cluster? No (Need to be reviewed)
+- differenve between core DNS and kube-proxy? Kube-proxy is default N/W, CORE DNS- default DNS server in K8s clusters. It provides service discovery and DNS resolution capabilities within Kubernetes clusters.
 - have you worked on ISTIO? what is mTLS?
-- suppose i have 3 EKS clusters, what sought of security practices do you take to have a communication between them, make sure this connection is not via external DNS..
-- what is NAT gateway and where it sits?
+- suppose i have 3 EKS clusters, what sought of security practices do you take to have a communication between them, make sure this connection is not via external DNS.(need to be reviewed)
+- what is NAT gateway and where it sits? 
 - difference NACL and SG?
-- 3 vpcs A,B,C communication A-B, B-C, C-A has to achieve this?
+- 3 vpcs A,B,C communication A-B, B-C, C-A has to achieve this? Transit Gateway
 - what is transit gateway?
 - site-to-site VPN connection?
 - what is KONG?
