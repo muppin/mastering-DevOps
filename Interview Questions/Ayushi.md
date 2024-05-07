@@ -137,5 +137,6 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
   - Difference between deployment and statefulsets?
   - Have you integradted your pipeline with any SCM?
   - How to checkout the code from git?
+  - Have you taken backup of etcd anytime?
 
 
