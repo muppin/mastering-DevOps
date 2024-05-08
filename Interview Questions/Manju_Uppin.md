@@ -59,8 +59,8 @@
 - how to block the certain incoming traffic to the targets?
 - what is the identity provider that you guys are using?
 - what are the commands for network in linux?
-- which command do you use to know where the traffic is being blocked?
-- what is shadow file and passwd file?
+- which command do you use to know where the traffic is being blocked? ping, traceroute, netcat, telnet
+- what is shadow file and passwd file? Refer Notes
 - which type of pipeline that you guys are using and explain me the steps involved in it?
 - what is difference between Continuous delivery and continous Deployment?
 
