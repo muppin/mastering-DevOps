@@ -192,7 +192,7 @@
 - i have pod with multiple containers, for 1 container i want to s3 full access, for 2nd i want to give iam access, 3rd i want to give ec2 access .. how to achieve ??
 - write a script, get into multiple directories, list items in directories, identify the items if it is a file or anything else?
 - there are two links i.e. hard links and soft links...  explain?
-- write a command to get logic volumes?
+- write a command to get logic volumes? lvdisplay /dev/<VG_name> (VG - virtual group)
 - write a command to mount a directory to path?
 - write a command to see a memory?
 - what is zombie process?
