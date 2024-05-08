@@ -42,7 +42,8 @@ done
 
 **Write a command to print number of "s" in "mississipi**
 
-```x=mississipi
+```
+x=mississipi
 grep -o "s" <<<"$x" | wc -l
 ```
 
