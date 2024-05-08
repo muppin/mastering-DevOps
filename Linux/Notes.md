@@ -189,3 +189,36 @@ The separation of password-related information into the "passwd" and "shadow" fi
 ***************************************************************************************************************************************************************************************
 
 A logical volume (LV) is a virtualized storage device created from one or more physical volumes (PVs) in a logical volume management (LVM) setup. In simpler terms, it's a logical partition that can span multiple physical disks or partitions.
+
+********************************************************************************************************************************************************************************************************
+
+A zombie process, also known as a defunct process, is a process that has completed execution but still has an entry in the process table. In Unix-like operating systems, when a process completes execution, it becomes a zombie process until its parent process retrieves its exit status via the `wait()` system call.
+
+Here are some key points about zombie processes:
+
+1. **Completion of Execution**: A zombie process is created when a child process completes execution but the parent process has not yet retrieved its exit status using the `wait()` system call. The exit status contains information about how the child process terminated, such as whether it exited normally or due to an error.
+
+2. **Entry in Process Table**: Even though a zombie process has completed execution, it still has an entry in the process table to allow the parent process to retrieve its exit status.
+
+3. **No Longer Running**: A zombie process does not consume any system resources other than a small amount of memory for its process table entry. It does not use CPU time or have any other active state.
+
+4. **Cleanup by Parent Process**: It's the responsibility of the parent process to call `wait()` or a similar system call to retrieve the exit status of its terminated child processes. Once the parent process retrieves the exit status, the zombie process is removed from the process table, and its resources are released.
+
+Zombie processes are usually harmless and temporary, but they can accumulate if the parent process does not properly handle child process termination. In extreme cases, a large number of zombie processes can consume system resources and indicate a problem with the system's process management. Therefore, it's essential for parent processes to handle the termination of their child processes correctly to prevent the accumulation of zombie processes.
+
+***********************************************************************************************************************************************************************************************************
+An orphan process is a process whose parent process has terminated or finished execution before the orphan process has completed. As a result, the orphan process is reparented to the init process (process ID 1), which becomes its new parent.
+
+Here are some key points about orphan processes:
+
+1. **Parent Process Termination**: Orphan processes are created when the parent process terminates before the child process. This can happen due to various reasons, such as the parent process ending unexpectedly, exiting prematurely, or being forcibly terminated.
+
+2. **Reparenting to init Process**: When a process becomes an orphan, the init process adopts it as its child. The init process is always running and is responsible for starting and managing other processes during the system boot process.
+
+3. **No Impact on System**: Orphan processes typically do not cause any issues or harm to the system. They continue their execution as usual, now under the supervision of the init process.
+
+4. **Handling of Exit Status**: When an orphan process eventually completes execution, its exit status is collected by the init process using the `wait()` system call. This ensures that the system resources associated with the orphan process are properly released.
+
+5. **Common Scenario**: Orphan processes are a common occurrence in Unix-like operating systems, especially in scenarios where a parent process spawns multiple child processes and then exits without waiting for them to finish.
+
+Overall, orphan processes are a natural consequence of the process lifecycle in Unix-like systems. They are handled gracefully by the init process and do not pose a significant risk or burden to system stability.
