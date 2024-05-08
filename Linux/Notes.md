@@ -143,3 +143,44 @@
 - **ssh**: Secure Shell protocol for secure remote login and other secure network services over an insecure network.
 - **scp**: Securely copy files between hosts on a network.
 - **wget/curl**: Used to download files from the internet.
+
+***************************************************************************************************************************************************************************************
+
+The "passwd" file and the "shadow" file are both essential files in Unix-like operating systems (such as Linux) that store user account information. They are located in the "/etc" directory.
+
+1. **Passwd File (/etc/passwd)**:
+   - The "passwd" file contains basic information about user accounts, such as username, user ID (UID), group ID (GID), home directory, and default shell.
+   - Each line in the "passwd" file represents a user account, and fields are separated by colons (:).
+   - Example entry in the "passwd" file:
+     ```
+     username:x:UID:GID:User description:Home directory:Default shell
+     ```
+   - Example:
+     ```
+     john:x:1001:1001:John Doe:/home/john:/bin/bash
+     ```
+   - Note: The actual password is not stored in the "passwd" file. Instead, it is typically stored in an encrypted form in the "shadow" file for security reasons.
+
+2. **Shadow File (/etc/shadow)**:
+   - The "shadow" file contains encrypted passwords and other security-related information for user accounts.
+   - It is accessible only by the root user to enhance security.
+   - Each line in the "shadow" file represents a user account, and fields are separated by colons (:).
+   - Example entry in the "shadow" file:
+     ```
+     username:encrypted_password:password_last_changed:password_min_age:password_max_age:password_warning_period:password_inactive_period:account_expiration_date:
+     ```
+   - Example:
+     ```
+     john:$6$1234567890$...:18723:0:99999:7:::
+     ```
+   - The fields include:
+     - Username
+     - Encrypted password (typically using a hashing algorithm like MD5 or SHA-512)
+     - Password last changed (in days since Jan 1, 1970)
+     - Minimum password age
+     - Maximum password age
+     - Password warning period
+     - Password inactive period
+     - Account expiration date
+
+The separation of password-related information into the "passwd" and "shadow" files enhances security by restricting access to sensitive password data to privileged users only.
