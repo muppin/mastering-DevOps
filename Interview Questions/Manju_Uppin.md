@@ -193,9 +193,9 @@
 - write a script, get into multiple directories, list items in directories, identify the items if it is a file or anything else?
 - there are two links i.e. hard links and soft links...  explain?
 - write a command to get logic volumes? lvdisplay /dev/<VG_name> (VG - virtual group)
-- write a command to mount a directory to path?
-- write a command to see a memory?
-- what is zombie process?
+- write a command to mount a directory to path? sudo mount -o bind /source_directory /mount_point
+- write a command to see a memory? free -h
+- what is zombie process?  process that has completed execution but still has an entry in the process table.
 - what is load average?
 - once you trigger a pipeline, that should go and create an entire infrastructure in AWS?
 - explian me CI-CD part where i dont want to have a human intervention?
