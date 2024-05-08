@@ -9,7 +9,7 @@
 - how the containers in the pod communicate each other?
 - how the container in a pod can communicate to the container that is running on different pod?
 - Scripting scenario based question - how to get the things from the static file that contains 100s of application and has fields like name, cpu, memory, error status and 
-  get the application where it has no error?
+  get the application where it has no error? awk -F ',' '$NF == "no_error" {print $1}' static_file.csv
 - how to troubleshoot if you get a timeout error while accessing it from external world? 
 - how two vpcs can communicate in the aws?
 - how do you manage secrets? where do you store the credentials?
