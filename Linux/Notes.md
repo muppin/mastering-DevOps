@@ -184,3 +184,8 @@ The "passwd" file and the "shadow" file are both essential files in Unix-like op
      - Account expiration date
 
 The separation of password-related information into the "passwd" and "shadow" files enhances security by restricting access to sensitive password data to privileged users only.
+
+
+***************************************************************************************************************************************************************************************
+
+A logical volume (LV) is a virtualized storage device created from one or more physical volumes (PVs) in a logical volume management (LVM) setup. In simpler terms, it's a logical partition that can span multiple physical disks or partitions.
