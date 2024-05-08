@@ -196,7 +196,7 @@
 - write a command to mount a directory to path? sudo mount -o bind /source_directory /mount_point
 - write a command to see a memory? free -h
 - what is zombie process?  process that has completed execution but still has an entry in the process table.
-- what is load average?
+- what is load average? average number of processes in a runnable or uninterruptible state over a certain period of time.
 - once you trigger a pipeline, that should go and create an entire infrastructure in AWS?
 - explian me CI-CD part where i dont want to have a human intervention?
 - how do you test the code in jenkins pipeline? for java code.
@@ -232,7 +232,7 @@
 - what is Federated user?
 - have you worked on API gateway and Lambda function?
 - explain lambda function and how did you use?
-- can you give me a difference between s3 and linux file system?
+- can you give me a difference between s3 and linux file system? S3 is web based storage whereas Linux is having local disk or storage.
 - you have to list the buckets of different aws environments from the ec2 instances, how do you do it?
 - can you explain me about the subnets in aws and types of subnets, how to differntiate them as public and private?
 - differnce between NACL and SG's?
