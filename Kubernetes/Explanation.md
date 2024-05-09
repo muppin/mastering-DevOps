@@ -399,6 +399,10 @@ Kubernetes add-ons are additional components or functionalities that can be inst
 These are just a few examples of Kubernetes add-ons. Depending on your specific requirements and use cases, you may choose to install additional add-ons to extend the functionality of your Kubernetes cluster.
 
 
+**CoreDNS**
+CoreDNS is a flexible, extensible DNS server used as the default DNS server in Kubernetes clusters. It provides DNS-based service discovery and resolution within the cluster, allowing Kubernetes services, pods, and other resources to be accessed by their domain names.
+
+
 
 
 
