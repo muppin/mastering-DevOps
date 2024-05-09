@@ -222,3 +222,34 @@ Here are some key points about orphan processes:
 5. **Common Scenario**: Orphan processes are a common occurrence in Unix-like operating systems, especially in scenarios where a parent process spawns multiple child processes and then exits without waiting for them to finish.
 
 Overall, orphan processes are a natural consequence of the process lifecycle in Unix-like systems. They are handled gracefully by the init process and do not pose a significant risk or burden to system stability.
+
+*********************************************************************************************************************************************************************************************************************
+
+To check the Linux distribution and version you are using, you can use one of the following commands:
+
+1. **lsb_release**:
+   - Use the `lsb_release` command with the `-a` option to display all available information about the Linux distribution.
+   ```bash
+   lsb_release -a
+   ```
+
+2. **/etc/os-release**:
+   - Many modern Linux distributions provide version information in the `/etc/os-release` file. You can use the `cat` command to view its contents.
+   ```bash
+   cat /etc/os-release
+   ```
+
+3. **/etc/*-release**:
+   - Some Linux distributions store version information in specific files like `/etc/redhat-release`, `/etc/centos-release`, `/etc/debian_version`, etc.
+   - You can use the `cat` command to view the contents of these files.
+   ```bash
+   cat /etc/redhat-release
+   ```
+
+4. **uname**:
+   - The `uname` command with the `-a` option displays system information, including the kernel version.
+   ```bash
+   uname -a
+   ```
+
+Each of these commands will provide information about the Linux distribution and version you are using. Choose the one that works best for your specific system and preferences.
