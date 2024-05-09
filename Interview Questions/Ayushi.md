@@ -71,7 +71,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - how many types of pipelines are there in jenkins, explain them
 - difference between declarative and scripted pipeline
 - write a program, in which input is total of two numbers and output should be index of two numbers.
-- command to find a file
+- command to find a file - find <directory> -name "<filename>"
 - what is proxy server
 - what are the different types of services in kubernetes
 - what all task u are doing in docker and kubernetes
