@@ -136,6 +136,8 @@ ________________________________________________________________________________
 
 ### Ingress:
 
+**Ingress**- In Kubernetes, ingress is an API object that manages how external users access services within a cluster.
+
 **without ingress in the kubernetes, the application did not have the luxuries of Enterprise application like:**
 - Ratio based LoadBalancing : 40% of req has to go to one pod and 60% of req has to go to other
 - Sticky sessions - particular user traffic has to reach particular pod
@@ -146,6 +148,7 @@ ________________________________________________________________________________
 **Another problem was, if the application had some 1000 microservices then the service type of LoadBalancer will have 1000s of static public ip address which the cloud provider will create, so tthis would bear a huge cost on the company.**
 
 **Ingress Controller:**
+- An Ingress Controller is a Kubernetes resource and a controller that manages incoming HTTP and HTTPS traffic to your Kubernetes services. It acts as an entry point for incoming traffic to the cluster and routes requests to different services based on rules defined in Ingress resources.
 - This is a component which looks for a Ingress resouce. This is just Load Balancer and Api Gateway.
 - Make sure that IngressClass name is same for both Ingress resource and ingress controller.
 - To install the ingress controller: https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke
