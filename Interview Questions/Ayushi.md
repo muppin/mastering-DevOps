@@ -109,9 +109,9 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 
   - Tell me about yourself
   - Day to day activities
-  - how will u bootstrap in linux
-  - do you know systemd init file
-  - how to check linux version
+  - how will u bootstrap in linux - Most modern Linux distributions use systemd as the init system. To start a software automatically with systemd, you need to create a systemd service unit file.
+  - do you know systemd init file - Systemd unit files are used to describe how services, sockets, devices, mount points, and other system resources should be managed by systemd.
+  - how to check linux version: ```uname -a```  OR ```lsb_release -a```  OR  ```cat /etc/os-release```
   - Write a dockerfile for installation of abc jar file on top of tomcat server
   - how will you delete container and remove associated error
   - A pod is having 20GB of PV and pods claim also 20 GB. Space is exhausted. What will happen to pod?
