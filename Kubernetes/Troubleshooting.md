@@ -79,3 +79,37 @@ https://www.linkedin.com/posts/schakraborty007_kubernetes-k8s-devops-activity-71
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/4252826c-3fee-45e4-9a0c-b1a063fbdab8)
 
 
+### 3 scenarios that are common in production environment
+
+#### Resource Sharing
+
+- whenever the application starts using more memory or starts leaking memory, it affects other applications running in the cluster in a particular namespace which results in crash of a pod because of OOMKilled error and also other namespaces not getting enough resource. to overcome this we have to have resourcequota.yaml should be define at namespace level.
+- so here developers performs a performance benchmarking to know how much resource that the microservice might require and then devops engineer provides by writing resorcequota.yaml to the particular namespace.
+- this solves the problem at the cluster level i.e. by implementing the resorce quota manifest file.
+
+**but the proble still persists at the particular namesapce level.**
+- to troubleshoot this we come up with the requests and limits defined at the pod/microservice level.
+- here we ask the developers to make the performance benchmarking at each microservice level to address this issue
+
+**Blast radius**
+- Before introducing resource quote manifest, balst radius is for entire cluster, after that it reduces to namespace.
+- before introducing requests and limits, blast radius is for particular name, after that it reduces to pod. evntually that pod will be crashed because of OOMKilled error.
+
+#### How will you resolve the issue having OOMKilled error.
+
+- so whenevr we come accross this issue even after setting up the resource quote, requests and limits. we have to check the thread dump and heap dump and provide these details to the development team. so that developers work on this and come up with the new application.(thats all we devops engs can do)
+- In the context of a pod in Kubernetes or a similar container orchestration system, a thread dump and heap dump are diagnostic tools used for troubleshooting and understanding the behavior of an application running inside the pod.
+- in python you can use threading modules for thread dumps, garbage collector and objgraph modules for heap dumps.
+
+#### Cluster Upgrades.
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/6a05bd13-1b60-45ae-9e9f-1e43d2845211)
+- whenevr there is a scenario to upgrade the kubernetes cluster, we follow the detailed manual.
+- firstly uwe take a backup.
+- we have to go through the release notes and know what all functionalities are added and depricated.
+- we go towards control plane components and perfrom the upgrades.
+- then we upgrade the worked plane components
+     - we drain the node one by one, here the PDB also comes into picture while draining the nodes and upgrade them.
+
+
+
