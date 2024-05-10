@@ -168,6 +168,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Output of this command? What all fileds will come in output?
 - What is the significance of help and Man command?
 - What is Kernel?
+- command to check if port is accessible.
 - What is Canary deployment?
 - What is blue green deployment?
 - In canary deployment how will you make sure 90% traffic will go to one version and 10% will go to another version.
