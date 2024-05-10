@@ -171,6 +171,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - command to check if port is accessible.
 - What is Canary deployment?
 - What is blue green deployment?
+- What is the use of deployment?
 - In canary deployment how will you make sure 90% traffic will go to one version and 10% will go to another version.
 - You know Destination Rule?
 - How will you do resource planning of cluster?
