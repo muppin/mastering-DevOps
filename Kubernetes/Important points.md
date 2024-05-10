@@ -195,3 +195,24 @@ Kubernetes recommends (or can reliably support)
 - Azure Kubernetes Service (AKS): Allows up to 250 pods per node irrespective of the size of the node.
 - Amazon Elastic Kubernetes Service (EKS): Imposes a pod limit depending on the node size. For example, t3.small allows only 11 pods, while m5.4xlarge allows 234 pods.
 - **Note**: This article uses “nodes” and “worker nodes” synonymously. We don’t discuss master node sizing in this post.
+
+### Diff between blue-green and Canary deployment strategy
+
+Blue-green deployment and canary deployment are both deployment strategies used in software development and release management, but they have different approaches and purposes:
+
+1. **Blue-Green Deployment**:
+   - In a blue-green deployment, two identical production environments (blue and green) are maintained.
+   - Only one environment serves live user traffic at a time, while the other remains inactive.
+   - When a new version of the application needs to be deployed, it's deployed to the inactive environment (green).
+   - After thorough testing and verification, traffic routing is switched from the active environment (blue) to the newly deployed environment (green).
+   - Blue-green deployments aim to minimize downtime and reduce risk by providing a safe rollback mechanism if issues are discovered with the new version.
+   - Blue-green deployments are typically used for major releases or updates and involve switching traffic between entire environments.
+
+2. **Canary Deployment**:
+   - In a canary deployment, a small subset of production traffic (the "canary") is routed to the new version of the application while the majority of traffic continues to be served by the stable version.
+   - The canary deployment allows for gradual testing of the new version in a production environment, monitoring its performance, and gathering feedback.
+   - If the new version performs well and shows no issues, more traffic can gradually be shifted to it until all traffic is routed to the new version.
+   - If issues are detected with the canary deployment, traffic can be quickly reverted back to the stable version, minimizing the impact on users.
+   - Canary deployments are often used for incremental releases, A/B testing, or testing the impact of changes in a real-world environment before fully deploying them.
+
+In summary, the main difference between blue-green and canary deployments lies in their approach to deploying and testing new versions of an application. Blue-green deployments involve switching traffic between entire environments (blue and green), while canary deployments involve gradually routing a small subset of traffic to the new version for testing and validation before fully deploying it. Both strategies aim to minimize risk and downtime during deployments but use different mechanisms to achieve this goal.
