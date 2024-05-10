@@ -182,3 +182,16 @@ Always refer to your specific Kubernetes distribution's documentation and best p
 nd for incoming pod..
 - (solution) The warning you're seeing indicates that the Kubernetes scheduler is unable to schedule a pod because there are no nodes available for it. The error message specifically mentions that there are too many pods and preemption is not possible as there are no preemption victims found.
 - check the node resources using kubectl top nodes and kubectl describe node *nodename*
+
+### Quick reference for determining pod limits
+When considering Kubernetes cluster size best practices, it's essential to understand the recommended pod limits for various platforms.
+
+Kubernetes recommends (or can reliably support)
+- No more than 110 pods per node
+- No more than 5,000 nodes
+- No more than 150,000 total pods in a cluster
+- No more than 300,000 total containers
+- Google Kubernetes Engine (GKE): Limits it to 100 pods per node irrespective of the size of the node.
+- Azure Kubernetes Service (AKS): Allows up to 250 pods per node irrespective of the size of the node.
+- Amazon Elastic Kubernetes Service (EKS): Imposes a pod limit depending on the node size. For example, t3.small allows only 11 pods, while m5.4xlarge allows 234 pods.
+- **Note**: This article uses “nodes” and “worker nodes” synonymously. We don’t discuss master node sizing in this post.
