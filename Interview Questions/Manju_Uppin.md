@@ -257,5 +257,32 @@
 - explain types terraform provisioners?
 - explain python scripting that you have implemented?
 
+## CGI
+
+- can you explain the application architecture?
+- what is your run time?
+- what is the build tool that you have (source code build tool)?
+- explain CI-CD pipeline?
+- where do you use continuous delivery and continuous deployment?
+- sonarqube, how do you configure it and how will the pipeline know if code fails or passes?
+- what autoscaling have you used in kubernetes?
+- what service does autoscaling in kubernetes?
+- how manifests are different from helm charts?
+- what are the default services once you create the kuberenetes cluster?
+- how good you are in terraform?
+- what kind of modules you have written?
+- write a terraform file to create a ec2 instance with a existing subnets, dont hardcode subnet ids?
+- how do you resolve the merge-conflicts?
+- difference between git merge and git pull?
+- how to merge code between two branches?
+- when do you use git rebase?
+- have you created a repos?
+- suppose i dont want to push codes to certain branches? how to achieve this?
+- what is multibranch pipelines?
+- difference between normal pipeline vs multibranch pipeline?
+- difference between IAM user and IAM role?
+- suppose you dont want to allow certain CIDR block to certain port? how to achieve this..
+- 
+
 
 
