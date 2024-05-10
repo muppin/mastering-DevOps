@@ -149,36 +149,38 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Explain git branching strategy used?
 - Explain Git flow of this branching strategy?
 - Difference between Hotfix and bugfix?
-- How u are doing authentication EKS cluster?
+    - A bugfix is a correction made to resolve a known issue or bug in the software.
+    - A hotfix is a specific type of bugfix that is applied urgently to address a critical issue in a software product.
+- How u are doing authentication to EKS cluster? (have to be discussed)
 - How many environments you have?
-- How many worked nodes you have?
-- How many manager nodes you have?
-- Command to print nodes of k8s cluster
-- Will it show both master and worker
-- Write script to login into linux server, configure the repo, install jdk, tomcat, rpm, restart rpm
+- How many worked nodes you have? (have to be reviewed)
+- How many manager nodes you have? (have to be reviewed)
+- Command to print nodes of k8s cluster? 
+- Will it show both master and worker? (have to be reviewed)
+- Write a python script to login into linux server, configure the repo, install jdk, tomcat, rpm, restart rpm?
 - You worked on sonarqube?
 - Worked on Chef or Ansible?
-- Woeked on java based app?
+- Worked on java based app?
 - Which build tool you are using?
 - You know Maven and ANT?
 - What you are using for artifact generation?
 - How many repos are there in ur project?
-- repo, other than git???
-- Linux command to show java process running- ps -f | grep java
+- repo, other than git??? (have to be reviewed)
+- Linux command to show java process running? ps -ef | grep java
 - Output of this command? What all fileds will come in output?
-- What is the significance of help and Man command?
+- What is the significance of help and Man command? 
 - What is Kernel?
-- command to check if port is accessible.
+- command to check if port is accessible.? netcat -z <ip> <port_no>
 - What is Canary deployment?
-- What is blue green deployment?
-- What is the use of deployment?
+- What is blue green deployment? (have to be reviewed)
+- What is the use of deployment? 
 - In canary deployment how will you make sure 90% traffic will go to one version and 10% will go to another version.
-- You know Destination Rule?
-- How will you do resource planning of cluster?
-- App side vulnerabilities how will u check?
+- You know Destination Rule? (have to be reviewed)
+- How will you do resource planning of cluster? 
+- App side vulnerabilities how will u check? 
 - Server side vulnerabilities?
-- Any security tool integrated in your CI/CD pipeline?
-- How will u restrict certain traffic in ur pipeline?
+- Any security tool integrated in your CI/CD pipeline? (have to be reviewed)
+- How will u restrict certain traffic in ur pipeline? (have to be reviewed)
 - Do you know HELM?
 - What is HELM?
 - What are the templates in helm.
