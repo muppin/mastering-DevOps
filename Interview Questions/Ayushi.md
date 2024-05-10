@@ -162,6 +162,8 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Which build tool you are using?
 - You know Maven and ANT?
 - What you are using for artifact generation?
+- How many repos are there in ur project?
+- repo, other than git???
 - Linux command to show java process running- ps -f | grep java
 - Output of this command? What all fileds will come in output?
 - What is the significance of help and Man command?
