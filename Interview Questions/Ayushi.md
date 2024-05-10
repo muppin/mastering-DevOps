@@ -138,5 +138,55 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
   - Have you integradted your pipeline with any SCM?
   - How to checkout the code from git?
   - Have you taken backup of etcd anytime?
+ 
+************************************************************************************************************************************************************************************************
+
+## Visa
+
+- Introduce yourself
+- Explain CI/CD pipeline
+- How you are authenticating with argocd
+- Explain git branching strategy used?
+- Explain Git flow of this branching strategy?
+- Difference between Hotfix and bugfix?
+- How u are doing authentication EKS cluster?
+- How many environments you have?
+- How many worked nodes you have?
+- How many manager nodes you have?
+- Command to print nodes of k8s cluster
+- Will it show both master and worker
+- Write script to login into linux server, configure the repo, install jdk, tomcat, rpm, restart rpm
+- You worked on sonarqube?
+- Worked on Chef or Ansible?
+- Woeked on java based app?
+- Which build tool you are using?
+- You know Maven and ANT?
+- What you are using for artifact generation?
+- Linux command to show java process running- ps -f | grep java
+- Output of this command? What all fileds will come in output?
+- What is the significance of help and Man command?
+- What is Kernel?
+- What is Canary deployment?
+- What is blue green deployment?
+- In canary deployment how will you make sure 90% traffic will go to one version and 10% will go to another version.
+- You know Destination Rule?
+- How will you do resource planning of cluster?
+- App side vulnerabilities how will u check?
+- Server side vulnerabilities?
+- Any security tool integrated in your CI/CD pipeline?
+- How will u restrict certain traffic in ur pipeline?
+- Do you know HELM?
+- What is HELM?
+- What are the templates in helm.
+- Hvae you integradted HELM in argo cd?
+- Write a sample docker file?
+- Expalin FROM python:3.9?
+- From where this base image is coming?
+- Everytime you pull from internet? No we have private repo, there we manage
+- Explain WORKDIR /app and COPY . /app
+- Explain a usecase where u used python scripting?
+- Scenario- 1- You are working on a task and another task comes from dev team, how will you handle?
+- Scenario- 2- There is a prod incident call you have to join and dev wants you to join there call because they want to deliver a certain release to the client by today.
+- Scenario- 3- You have to cut a cake into 8 equal parts but only 3 cuts are allowed.
 
 
