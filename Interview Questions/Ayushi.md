@@ -151,12 +151,12 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Difference between Hotfix and bugfix?
     - A bugfix is a correction made to resolve a known issue or bug in the software.
     - A hotfix is a specific type of bugfix that is applied urgently to address a critical issue in a software product.
-- How u are doing authentication to EKS cluster? (have to be discussed)
+- How u are doing authentication to EKS cluster? we have to update the kubeconfig file using ``` aws eks update-kubeconfig --name your-cluster-name ```
 - How many environments you have?
-- How many worked nodes you have? (have to be reviewed)
-- How many manager nodes you have? (have to be reviewed)
+- How many worked nodes you have?
+- How many manager(master) nodes you have? It's common to have at least three nodes running control plane components to provide redundancy and fault tolerance, but larger clusters might have more.
 - Command to print nodes of k8s cluster? 
-- Will it show both master and worker? (have to be reviewed)
+- Will the above command show both master and worker? both
 - Write a python script to login into linux server, configure the repo, install jdk, tomcat, rpm, restart rpm?
 - You worked on sonarqube?
 - Worked on Chef or Ansible?
@@ -165,22 +165,22 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - You know Maven and ANT?
 - What you are using for artifact generation?
 - How many repos are there in ur project?
-- repo, other than git??? (have to be reviewed)
+- repo, other than git??? Linux repositories- These repositories contain software packages, along with metadata such as package descriptions, dependencies, and version information.
 - Linux command to show java process running? ps -ef | grep java
 - Output of this command? What all fileds will come in output?
 - What is the significance of help and Man command? 
 - What is Kernel?
 - command to check if port is accessible.? netcat -z <ip> <port_no>
 - What is Canary deployment?
-- What is blue green deployment? (have to be reviewed)
+- What is blue green deployment? 
 - What is the use of deployment? 
-- In canary deployment how will you make sure 90% traffic will go to one version and 10% will go to another version.
-- You know Destination Rule? (have to be reviewed)
+- In canary deployment how will you make sure 90% traffic will go to one version and 10% will go to another version.??? define istio virtualservice and mention the destination rules.
+- You know Destination Rule?
 - How will you do resource planning of cluster? 
-- App side vulnerabilities how will u check? 
-- Server side vulnerabilities?
-- Any security tool integrated in your CI/CD pipeline? (have to be reviewed)
-- How will u restrict certain traffic in ur pipeline? (have to be reviewed)
+- App side vulnerabilities how will u check? static code analysis
+- Server side vulnerabilities how will u check? Vulnerability Scanning with the tool named nessus, which will generate reports.
+- Any security tool integrated in your CI/CD pipeline? watch a video on DevSecOps pipeline
+- How will u restrict certain traffic in ur pipeline? watch a video on DevSecOps pipeline
 - Do you know HELM?
 - What is HELM?
 - What are the templates in helm.
