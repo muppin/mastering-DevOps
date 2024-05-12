@@ -6,7 +6,7 @@
 - Add path to jenkins file store in SCM (git)
 - Install docker pipeline plugin -> Dashboard - manage jenkins- plugins- avail.plugins
 - Maven is already installed here in docker container.
-- Install sonarqube plugin in jenkins. In same VPC. (java-maven-sonar-argocd-helm-k8s/spring-boot-app/README.md)
+- Install sonarqube plugin (sonarqubee scanner) in jenkins. In same VPC. (java-maven-sonar-argocd-helm-k8s/spring-boot-app/README.md)
 - Start sonar server
    ```bash
    cd sonarqube-9.4.0.54424/bin/linux-x86-64/
@@ -113,12 +113,18 @@ Explaining a CI/CD pipeline for deploying Java code, which is containerized and 
                  builds.
         - package: Compiles the source code, runs tests, and packages the application into a distributable format, 
                   typically a JAR file (for a Java project). The packaged artifact is placed in the target directory.
-
-### 5. **Artifact Generation:**
+  **Artifact Generation:**
    - Generate the Java artifacts, such as JAR files, that will be deployed to the EKS cluster.
 
+### 5. ** Static code analysis**
+   - mvn sonar:sonar target is used to do the static code analysis using sonarqube.
+       - detect bugs, code smells, and security vulnerabilities in programming languages such as Java
+       - The mvn sonar:sonar command is used to analyze a Maven project using SonarQube. It triggers the SonarQube 
+         analysis and sends the results to the SonarQube server for further inspection and reporting.
+
 ### 6. **Dockerization:**
-   - Containerize the Java application by building a Docker image. The Docker image includes the application code, dependencies, and necessary configurations. This step ensures a consistent and reproducible deployment environment.
+   - Containerize the Java application by building a Docker image. The Docker image includes the application code, dependencies, and necessary configurations. This step ensures a 
+     consistent and reproducible deployment environment.
    - Explain the dockerfile :
        - ```bash
          FROM adoptopenjdk/openjdk11:alpine-jre
@@ -137,14 +143,16 @@ Explaining a CI/CD pipeline for deploying Java code, which is containerized and 
          the command to run the application when the container starts. The use of build arguments allows flexibility in 
          specifying the location of the application artifact during the build process.
 
-### 7. ** Static code analysis**
-   - mvn sonar:sonar target is used to do the static code analysis using sonarqube.
-       - The mvn sonar:sonar command is used to analyze a Maven project using SonarQube. It triggers the SonarQube 
-         analysis and sends the results to the SonarQube server for further inspection and reporting.
 
-### 8. **Push Docker Image to Registry:**
+### 7. **Push Docker Image to Registry:**
    - Push the Docker image to a container registry (e.g., AWS ECR). The registry serves as a centralized repository for 
      storing and versioning Docker images.
+
+### 8. **Updating the manifest repo:**
+   - Once the images are build and pushed to the ECR, then in order to use the latest image in K8s cluster, we have dedicated stage
+   - We have written a shell script to update the git manifest repo, git maifest repo holds all the k8s manifests
+   - sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+   - Basically the above command wil replace the image tag with the build number so that latest image in used in k8s cluster
 
 ### 9. **ArgoCD Application Configuration:**
    - Define the application configuration for ArgoCD, specifying details like the Git repository URL, path to Kubernetes manifests, and synchronization settings.
