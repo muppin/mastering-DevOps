@@ -245,4 +245,7 @@ In SonarQube, code quality checks are performed through the analysis of various 
 
 By integrating SonarQube into your CI/CD pipeline, you can automatically run code quality checks on every code change, ensuring that issues are detected early and providing immediate feedback to developers. This helps maintain a high level of code quality and ensures that your applications are secure, reliable, and maintainable.
 
+**Qulaity Profiles**
+In SonarQube, a quality profile is a collection of rules and settings that define the criteria used to assess the quality of your code during static code analysis. Quality profiles are associated with specific languages and are used to enforce coding standards, identify potential issues, and maintain code quality across projects.
+
  
