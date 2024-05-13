@@ -149,8 +149,8 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Explain git branching strategy used?
 - Explain Git flow of this branching strategy?
 - Difference between Hotfix and bugfix?
-    - A bugfix is a correction made to resolve a known issue or bug in the software.
-    - A hotfix is a specific type of bugfix that is applied urgently to address a critical issue in a software product.
+    - Bugfix branches are created to address bugs or issues discovered in the software during development or testing phases.
+    - Hotfix branches are created to address critical issues or bugs found in the production environment that require immediate attention.
 - How u are doing authentication to EKS cluster? we have to update the kubeconfig file using ``` aws eks update-kubeconfig --name your-cluster-name ```
 - How many environments you have?
 - How many worked nodes you have?
