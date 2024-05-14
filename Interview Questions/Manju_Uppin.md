@@ -282,7 +282,31 @@
 - difference between normal pipeline vs multibranch pipeline?
 - difference between IAM user and IAM role?
 - suppose you dont want to allow certain CIDR block to certain port? how to achieve this..
-- 
+  
+
+## CGI onsite round
+
+- introduce yourself and what tools are you familiar with?
+- what tool are you using for CI-CD pipeline?
+- Do you know GitHub actions?
+- Explain CI-CD pipeline?
+- where do you run the pipeline?
+- what is master and slave architecture? have you configured it?
+- have you built any .net core applications?
+- which tool are you using for Iac?
+- how do you import infrastructure from the AWS?
+- where do you store your state file?
+- what all aws services do you create using terraform?
+- what is terraform vault?
+- what type of encryption do you use in s3?
+- have you used kubernetes openshift?
+- what type of service do you create in your application ?
+- which load balancer are you using?
+- what is aws secret manager?
+- what type of python scripts have you implemented?
+- where do you store your secrets in kubernetes?
+- where do you store your secrets in jenkins?
+- how do you authenticate to aws in the pipeline?
 
 
 
