@@ -209,9 +209,9 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Cross questions on stage(replacing latest image tag from build number)
 - Suppose the latest image is not there? Docker deamon will check in node first if its not there it will check in registry.
 - Which tools u have used in pipeline?
-- Which tools u have admin access and which tools u have only usage access? (have to be reviewed)
+- Which tools u have admin access and which tools u have only usage access? 
 - Explain deamon set
-- What all details will be having inside deamon set? (have to be reviewed)
+- What all details will be having inside deamon set? 
 - What is PV and PVC
 - Command to list pv and pvs?
 - Out of PV and PVC which is namespace scoped?
@@ -220,19 +220,20 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Command sonar scan? mvn sonar:sonar
 - You are using sonarqube directly or as a plugin?
 - What is target directory in sense of mvn clean package and how it is created?
-- Have u seen sandbox option in jenkins? What is use of that? (have to be reviewed)
+- Have u seen sandbox option in jenkins? What is use of that? 
 - Have u seen Manage jenkins option?
-- What all u have explored in manage jenkins? (have to be reviewed)
+- What all u have explored in manage jenkins? 
 - Do you know credentials plugin, how to install and configure?
-- Python script to parse json in python and print specific parsed data. Json data given by them. (have to be reviewed)
-- How would you troubleshoot docker deamon? Suppose a pod is not coming up on any node, how will you troubleshoot? (have to be reviewed)
-- Difference between service and virtual service in k8s? (have to be reviewed)
-- Suppose two applications have same name by mistake, how will service schedule? if both have same labels? Have u came accross such issue? (have to be reviewed)
+- Python script to parse json in python and print specific parsed data. Json data given by them. 
+- How would you troubleshoot docker deamon? Suppose a pod is not coming up on any node, how will you troubleshoot? 
+- Difference between service and virtual service in k8s? 
+- Suppose two applications have same name by mistake, how will service schedule? if both have same labels? Have u came accross such issue? 
 - What is service mesh?
 - What is ISTIO?
 - Why we use sidecar containers?
-- Why we can't deploy monitoring or logging apps in same containers? why to use separate sidecar containers? (have to be reviewed)
+- Why we can't deploy monitoring or logging apps in same containers? why to use separate sidecar containers? 
 - What is envoy proxy? What is the use of that?
+- diffewrence btwn istio and envoy proxy?
 - Have u worked on any monitoring solution?
 - Have u worked on any configuration mgmt tools?
 - List few config mgmt tools u have heard of?
