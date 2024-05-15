@@ -216,6 +216,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Difference between multibranch and normal pipeline?
 - Command to authenticate credentials? WithCredentials keyword
 - Command sonar scan? mvn sonar:sonar
+- You are using sonarqube directly or as a plugin?
 - What is target directory in sense of mvn clean package and how it is created?
 - Have u seen sandbox option in jenkins? What is use of that?
 - Have u seen Manage jenkins option?
