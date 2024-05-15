@@ -1,7 +1,7 @@
 **Interview Questions**
 
-- What is difference btwn Docker container and Virtual machine?
-  In summary, Docker containers are more lightweight, portable, and efficient for certain types of applications, especially in modern, cloud-native development. Virtual machines, on the other hand, provide stronger isolation and are more suitable for running legacy applications or scenarios where multiple operating systems are needed on the same infrastructure. The choice between containers and VMs depends on the specific requirements of the application and the infrastructure.
+ **What is difference btwn Docker container and Virtual machine?**
+- In summary, Docker containers are more lightweight, portable, and efficient for certain types of applications, especially in modern, cloud-native development. Virtual machines, on the other hand, provide stronger isolation and are more suitable for running legacy applications or scenarios where multiple operating systems are needed on the same infrastructure. The choice between containers and VMs depends on the specific requirements of the application and the infrastructure.
 
 - How to ensure that container starts whenever the docker host is startred?
   Basically just run the container with the --restart always
@@ -33,8 +33,8 @@
   use distroless images
 
 
-- How would you troubleshoot docker deamon? Suppose a pod is not coming up on any node, how will you troubleshoot?
-Troubleshooting a Docker daemon when a container is not coming up on any node involves several steps to identify and address potential issues. Here's a structured approach to troubleshoot:
+**How would you troubleshoot docker deamon? Suppose a pod is not coming up on any node, how will you troubleshoot?**
+- Troubleshooting a Docker daemon when a container is not coming up on any node involves several steps to identify and address potential issues. Here's a structured approach to troubleshoot:
 
 1. **Check Docker Daemon Status:**
    - Ensure that the Docker daemon is running on the affected node(s). You can check the status of the Docker daemon using the following command:
