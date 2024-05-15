@@ -72,6 +72,24 @@ A DaemonSet in Kubernetes ensures that all (or some) nodes run a copy of a speci
 
 By considering these details, you can deploy and manage DaemonSets effectively in your Kubernetes cluster, ensuring that the desired Pods are running on all or specific nodes as required.
 
+**Difference between service and virtual service in k8s?**
+In Kubernetes, both Services and Virtual Services are used to manage network traffic to applications, but they serve different purposes and are associated with different Kubernetes components.
+
+1. **Service:**
+   - A Service in Kubernetes is an abstraction that defines a logical set of Pods and a policy by which to access them. It provides a stable endpoint (IP address and port) for accessing a group of Pods that provide the same service.
+   - Services can be of different types:
+     - ClusterIP: Exposes the Service on an internal IP in the cluster, accessible only from within the cluster.
+     - NodePort: Exposes the Service on a specific port on each node's IP address. The Service is accessible externally using the Node's IP address and the allocated port.
+     - LoadBalancer: Creates an external load balancer in the cloud provider's network, and the Service is accessible externally through the load balancer's IP address.
+     - ExternalName: Maps the Service to the contents of the externalName field (e.g., DNS name).
+
+2. **Virtual Service (Istio):**
+   - Virtual Service is a concept specific to Istio, an open-source service mesh platform for Kubernetes. It is used to control the routing of traffic to services within the Istio service mesh.
+   - Virtual Services in Istio allow you to define routing rules and traffic management policies for HTTP, gRPC, and TCP traffic. These rules can include traffic splitting, traffic shifting, retries, timeouts, fault injection, and more.
+   - Virtual Services work in conjunction with other Istio resources like DestinationRules and Gateways to enable advanced traffic management, security, and observability features in a microservices architecture.
+
+In summary, while both Services and Virtual Services in Kubernetes are used for managing network traffic, Services are a core Kubernetes resource for exposing and accessing applications running in the cluster, whereas Virtual Services are specific to Istio and provide advanced traffic management capabilities within an Istio service mesh.
+
 
 
 
