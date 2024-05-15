@@ -200,12 +200,18 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 ## VISA - 2nd Round
 
 - Introduce yourself
+- Explain brancing strategy.
+- How to revert to certain version?
+- Git command to revert?
 - Explain, CI/CD pipeline
+- Cross questions on stage(replacing latest image tag from build number)
+- Suppose the latest image is not there? Docker deamon will check in node first if its not there it will check in registry.
 - Which tools u have used in pipeline?
 - Which tools u have admin access and which tools u have only usage access?
 - Explain deamon set
 - What all details will be having inside deamon set?
 - What is PV and PVC
+- Command to list pv and pvs?
 - Out of PV and PVC which is namespace scoped?
 - Difference between multibranch and normal pipeline?
 - Command to authenticate credentials? WithCredentials keyword
@@ -218,6 +224,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Python script to parse json in python and print specific parsed data. Json data given by them.
 - How would you troubleshoot docker deamon? Suppose a pod is not coming up on any node, how will you troubleshoot?
 - Difference between service and virtual service in k8s?
+- Suppose two applications have same name by mistake, how will service schedule? if both have same labels? Have u came accross such issue?
 - What is service mesh?
 - What is ISTIO?
 - Why we use sidecar containers?
@@ -227,6 +234,15 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Have u worked on any configuration mgmt tools?
 - List few config mgmt tools u have heard of?
 - Why we use config mgmt?
-- 
+- Have you heard of Kiali?
+- Which mounting stategy/options u use inside config maps?
+- Have u heard of Host path?
+- Apart from work what do you do?
+- Why u want to switch the job?
+- How will u achive work life balance with a challenging role?
+- What certifications you have?
+- Any future plans for personal improvement?
+- Are open to work on any cloud? also on local cloud or u are bound to specific cloud?
+  
 
 
