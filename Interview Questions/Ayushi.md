@@ -203,6 +203,8 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Explain brancing strategy.
 - How to revert to certain version?
 - Git command to revert?
+- How many environments do you have?
+- Do yo handle prod env also?
 - Explain, CI/CD pipeline
 - Cross questions on stage(replacing latest image tag from build number)
 - Suppose the latest image is not there? Docker deamon will check in node first if its not there it will check in registry.
