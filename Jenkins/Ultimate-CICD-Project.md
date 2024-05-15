@@ -74,7 +74,7 @@ ________________________________________________________________________________
 
 3. **Use Case:**
    - This command is used when you want to build, package, and install the artifact locally. It is especially useful in scenarios where you have a multi-module Maven project, and one module depends on another module's artifact.
-
+   
 ### Key Differences:
 
 1. **Local Repository:**
@@ -85,6 +85,31 @@ ________________________________________________________________________________
 
 3. **Team Collaboration:**
    - If you're collaborating with a team and want to share a snapshot of your project's artifact, you might prefer `mvn clean install`. Other team members can then use the installed artifact as a dependency.
+
+      
+### What is target directory in sense of mvn clean package and how it is created?
+
+In Maven, when you run the command `mvn clean package`, Maven executes the `clean` and `package` phases of the build lifecycle. Let's break down what happens and how the `target` directory fits into this process:
+
+1. **Clean Phase:**
+   - The `clean` phase is responsible for cleaning up the output of previous builds. It deletes the `target` directory, along with any files generated during previous builds.
+
+2. **Package Phase:**
+   - The `package` phase is responsible for packaging the compiled source code (e.g., Java classes) into a distributable format, such as a JAR (Java Archive) file.
+   - During the `package` phase, Maven compiles the source code, runs any necessary tests, and creates the artifact specified by the project's packaging type (e.g., JAR, WAR, etc.).
+   - The resulting artifact is placed in the `target` directory.
+
+3. **Target Directory:**
+   - The `target` directory is a standard directory created by Maven to store all output files generated during the build process. It is located in the root directory of the Maven project.
+   - After running `mvn clean package`, you will find the packaged artifact (e.g., JAR file) inside the `target` directory.
+   - Additionally, the `target` directory may contain other files and directories generated during the build process, such as compiled classes (`*.class` files), test reports, and other build-related metadata.
+
+4. **Creation of Target Directory:**
+   - Maven automatically creates the `target` directory when needed during the build process.
+   - During the `clean` phase, Maven deletes the existing `target` directory and its contents.
+   - During subsequent phases, such as `compile`, `test`, and `package`, Maven generates output files and stores them in the `target` directory.
+
+In summary, the `target` directory is a standard directory in Maven projects where output files, including packaged artifacts like JAR files, are stored during the build process. It is automatically created and managed by Maven.
 
 ### Summary:
 
