@@ -33,6 +33,45 @@
 
 - A Pod Disruption Budget (PDB) is a Kubernetes policy that limits the number of pods of a replicated application that can be down simultaneously due to voluntary disruptions. PDBs can help ensure that applications are highly available, even when there are frequent voluntary disruptions.
 
+- What all details are inside deamon set?
+
+A DaemonSet in Kubernetes ensures that all (or some) nodes run a copy of a specific Pod. Here are some details you might want to consider when working with DaemonSets:
+
+1. **Pod Template**: 
+   - DaemonSets use a Pod template to create Pods on each node. This template specifies the container(s) to run and other Pod-level configurations like volumes, service account, and labels.
+
+2. **Node Selector**:
+   - You can specify a node selector to control which nodes the DaemonSet should be deployed to. This allows you to target specific nodes based on labels.
+
+3. **Update Strategy**:
+   - DaemonSets do not have a rolling update strategy by default. When you update the DaemonSet, it will create new Pods with the updated configuration while retaining the old Pods until they are terminated or updated.
+
+4. **Tolerations**:
+   - Tolerations allow the DaemonSet to schedule Pods on nodes with taints. This is useful for running DaemonSets on nodes with special requirements or constraints.
+
+5. **Pod Affinity and Anti-Affinity**:
+   - You can use pod affinity and anti-affinity rules to control the placement of Pods created by the DaemonSet, ensuring they are co-located or spread across nodes based on certain criteria.
+
+6. **Resources**:
+   - Define resource requests and limits for the Pods created by the DaemonSet to ensure proper resource utilization and isolation.
+
+7. **Volumes**:
+   - Use volumes to provide persistent storage or share data between containers in the Pods created by the DaemonSet.
+
+8. **Service Account**:
+   - Specify a service account for the Pods created by the DaemonSet to control access to Kubernetes APIs and other resources.
+
+9. **Security Context**:
+   - Configure security context settings such as privilege levels, SELinux options, and capabilities for the containers in the Pods.
+
+10. **Annotations and Labels**:
+    - Add annotations and labels to the DaemonSet and Pods for better management, monitoring, and integration with other Kubernetes components.
+
+11. **Pod Lifecycle**:
+    - Understand the Pod lifecycle, including creation, termination, and restarting, to manage the Pods created by the DaemonSet effectively.
+
+By considering these details, you can deploy and manage DaemonSets effectively in your Kubernetes cluster, ensuring that the desired Pods are running on all or specific nodes as required.
+
 
 
 
