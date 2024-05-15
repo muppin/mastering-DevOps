@@ -195,4 +195,38 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Scenario- 2- There is a prod incident call you have to join and dev wants you to join there call because they want to deliver a certain release to the client by today.
 - Scenario- 3- You have to cut a cake into 8 equal parts but only 3 cuts are allowed.
 
+************************************************************************************************************************************************************************************************************
+
+## VISA - 2nd Round
+
+- Introduce yourself
+- Explain, CI/CD pipeline
+- Which tools u have used in pipeline?
+- Which tools u have admin access and which tools u have only usage access?
+- Explain deamon set
+- What all details will be having inside deamon set?
+- What is PV and PVC
+- Out of PV and PVC which is namespace scoped?
+- Difference between multibranch and normal pipeline?
+- Command to authenticate credentials? WithCredentials keyword
+- Command sonar scan? mvn sonar:sonar
+- What is target directory in sense of mvn clean package and how it is created?
+- Have u seen sandbox option in jenkins? What is use of that?
+- Have u seen Manage jenkins option?
+- What all u have explored in manage jenkins?
+- Do you know credentials plugin, how to install and configure?
+- Python script to parse json in python and print specific parsed data. Json data given by them.
+- How would you troubleshoot docker deamon? Suppose a pod is not coming up on any node, how will you troubleshoot?
+- Difference between service and virtual service in k8s?
+- What is service mesh?
+- What is ISTIO?
+- Why we use sidecar containers?
+- Why we can't deploy monitoring or logging apps in same containers? why to use separate sidecar containers?
+- What is envoy proxy? What is the use of that?
+- Have u worked on any monitoring solution?
+- Have u worked on any configuration mgmt tools?
+- List few config mgmt tools u have heard of?
+- Why we use config mgmt?
+- 
+
 
