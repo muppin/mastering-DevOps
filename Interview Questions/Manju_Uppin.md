@@ -307,6 +307,9 @@
 - where do you store your secrets in kubernetes?
 - where do you store your secrets in jenkins?
 - how do you authenticate to aws in the pipeline?
+- what is RBAC in kubernetes?
+- what is the difference between PV and PVC?
+
 
 
 
