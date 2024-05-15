@@ -293,4 +293,28 @@ Blue Ocean is a collection of plugins for Jenkins that lets users visualize, cre
 
 *******************************************************************************************************************************************************************************************************************
 
+**Have u seen sandbox option in jenkins? What is use of that?**
+Yes, Jenkins provides a "sandbox" option primarily in the context of pipeline scripts written in Jenkinsfile. The "sandbox" feature allows Jenkins administrators to control the execution environment and restrict certain operations within Pipeline scripts to enhance security.
+
+Here's what the "sandbox" option is used for:
+
+1. **Script Security:**
+   - Jenkins Pipeline scripts can execute arbitrary Groovy code, including potentially unsafe operations.
+   - The "sandbox" mode restricts the execution of certain operations that are deemed potentially unsafe, such as accessing the file system, executing shell commands, or loading classes from arbitrary locations.
+   - With sandboxing enabled, Jenkins evaluates Pipeline scripts in a secure environment where potentially harmful operations are restricted.
+
+2. **Security Policies:**
+   - Administrators can configure Jenkins to run Pipeline scripts in either "sandboxed" or "script approval" mode.
+   - In "sandboxed" mode, Jenkins restricts the execution of potentially unsafe operations based on predefined security policies.
+   - If a Pipeline script attempts to perform an operation that is not allowed in the sandbox, Jenkins throws a security exception, preventing the script from executing.
+
+3. **Enhanced Security:**
+   - By using the sandbox feature, Jenkins administrators can enhance the security of their CI/CD pipelines by preventing Pipeline scripts from executing potentially dangerous operations.
+   - It helps mitigate security risks associated with executing untrusted or poorly written scripts, reducing the likelihood of malicious code execution.
+
+4. **Debugging and Testing:**
+   - Developers can use the "sandbox" mode during script development and testing to identify and address security violations before running Pipeline scripts in production environments.
+   - Jenkins provides feedback on which operations are restricted in the sandbox, allowing developers to modify their scripts accordingly.
+
+Overall, the "sandbox" option in Jenkins Pipeline scripts is a security feature designed to mitigate potential risks associated with executing untrusted code. It helps ensure that Jenkins pipelines operate within a secure execution environment, reducing the likelihood of security vulnerabilities and malicious activities.
 
