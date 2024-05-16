@@ -220,6 +220,67 @@ In Kubernetes, secrets can be stored and managed in multiple ways, each offering
 
 Each approach to storing secrets in Kubernetes has its advantages and trade-offs in terms of security, ease of management, integration capabilities, and complexity. Organizations should evaluate their requirements and choose the approach that best fits their needs and infrastructure environment.
 
+**How to use AWS secrets manager to store kubernetes secrets**
+
+To store Kubernetes secrets using AWS Secrets Manager, you can leverage the AWS Secrets Store CSI Driver. This driver enables you to use secrets stored in AWS Secrets Manager as Kubernetes secrets.
+
+Here's how you can store Kubernetes secrets using AWS Secrets Manager:
+
+1. **Install the AWS Secrets Store CSI Driver:**
+   - Begin by installing the AWS Secrets Store CSI Driver on your Kubernetes cluster. You can find the installation instructions in the official AWS documentation.
+
+2. **Create a Secret in AWS Secrets Manager:**
+   - Use the AWS Management Console, AWS CLI, or SDK to create a secret in AWS Secrets Manager. The secret can contain key-value pairs of sensitive data.
+   - For example, you might create a secret named "my-secret" with key-value pairs for "username" and "password".
+
+3. **Define a Kubernetes SecretProviderClass:**
+   - Create a Kubernetes SecretProviderClass object that defines how to retrieve secrets from AWS Secrets Manager.
+   - Specify the ARN (Amazon Resource Name) of the secret in AWS Secrets Manager and any additional configuration parameters.
+   - For example:
+
+   ```yaml
+   apiVersion: secrets-store.csi.x-k8s.io/v1alpha1
+   kind: SecretProviderClass
+   metadata:
+     name: aws-secrets
+   spec:
+     provider: aws
+     parameters:
+       secretArn: arn:aws:secretsmanager:region:account-id:secret:secret-name
+   ```
+
+4. **Mount the Secret in Pods:**
+   - Define a Kubernetes Secret object that references the SecretProviderClass and specifies the desired secret keys to be mounted.
+   - Mount the secret as a volume or expose it as environment variables in your Pods.
+   - For example:
+
+   ```yaml
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     name: my-pod
+   spec:
+     containers:
+     - name: my-container
+       image: my-image
+       volumeMounts:
+       - name: secret-volume
+         mountPath: /etc/secrets
+     volumes:
+     - name: secret-volume
+       csi:
+         driver: secrets-store.csi.k8s.io
+         readOnly: true
+         volumeAttributes:
+           secretProviderClass: "aws-secrets"
+   ```
+
+5. **Access the Secrets in Pods:**
+   - Once the Pod is running, the secrets will be available at the specified mount path (/etc/secrets in the example).
+   - Your application running in the Pod can access the secrets from the mounted volume or environment variables as needed.
+
+By following these steps, you can store Kubernetes secrets using AWS Secrets Manager and access them securely from your Pods using the AWS Secrets Store CSI Driver.
+
 ___________________________________________________________________________________________________________________________
 
 ### Persistent Volume, Persistent volume claims and Storage classes
