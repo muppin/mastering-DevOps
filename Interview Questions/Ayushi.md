@@ -248,9 +248,35 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Any future plans for personal improvement?
 - Are open to work on any cloud? also on local cloud or u are bound to specific cloud?
 
-____________________________________________________________________________________________________________________________________________________________________________________________________________________
+*********************************************************************************************************************************************************************************************************************
 
 ## Cognizant - 1st Round
+
+- Introduce yourself
+- How good are you at Kubernetes? Rate yourself?
+- Can you write a Kubernetes manifest files?
+- Write a sample deployment manifest
+- Do you know security context in deployment file?
+- runAsUser and fsGroup option in k8s security policy?
+- Explain network policies in K8s?
+- Explain ingress and egress N/W policy type?
+- What is service account?
+- How to add DNS record in AWS? Which service is used?
+- Explain IAM roles?
+- What is terraform config?
+- Explain Terraform workspace?
+- Have u worked on Ansible?
+- Have u worked on AWS lambda function? explained delete stale EBS sanpshot usecase
+- How u are securing jenkins? Credentails plugin
+- Have u used Any other plugin other than credentails plugin gor security?
+- Explain sonarqube plugin?
+- What is shared library in jenkins?
+- What all instructions are there in dockerfile?
+- What certifications u did?
+
+********************************************************************************************************************************************************************************************************************
+
+
   
 
 
