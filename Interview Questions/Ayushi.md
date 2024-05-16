@@ -259,7 +259,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Do you know security context in deployment file?
 - runAsUser and fsGroup option in k8s security policy?
 - Explain network policies in K8s?
-- Explain ingress and egress N/W policy type?
+- Explain ingress and egress N/W policy type? Ingress network policies define rules for incoming traffic to pods and egress for outgoing traffic from pods.
 - What is service account?
 - How to add DNS record in AWS? Which service is used?
 - Explain IAM roles?
