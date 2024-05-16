@@ -994,7 +994,41 @@ ________________________________________________________________________________
 
    ******************************************************************************************************************************************************************************************************************
 
+### Sample Network policy.yaml
 
+Here's a sample NetworkPolicy YAML manifest that demonstrates how you can define a basic network policy to allow ingress traffic to pods with specific labels:
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-nginx-ingress
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: nginx
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          role: backend
+```
+
+Let's break down this YAML:
+
+- `apiVersion`: Specifies the API version for the NetworkPolicy resource.
+- `kind`: Specifies the type of Kubernetes resource, which is NetworkPolicy in this case.
+- `metadata`: Provides metadata about the NetworkPolicy, such as its name and namespace.
+- `spec`: Defines the specification for the NetworkPolicy.
+  - `podSelector`: Specifies the pods to which the policy applies. In this example, it selects pods with the label `app: nginx`.
+  - `policyTypes`: Specifies the types of policies. Here, we're only allowing Ingress traffic.
+  - `ingress`: Defines the rules for incoming traffic.
+    - `from`: Specifies the source of the traffic. In this case, it's allowing traffic from pods that have the label `role: backend`.
+
+This NetworkPolicy allows ingress traffic to pods labeled `app: nginx` only from pods labeled `role: backend` within the same namespace. All other ingress traffic to the `app: nginx` pods will be denied by default due to Kubernetes' default-deny policy.
 
 
 
