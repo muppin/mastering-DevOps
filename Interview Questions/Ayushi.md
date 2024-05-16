@@ -247,6 +247,10 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - What certifications you have?
 - Any future plans for personal improvement?
 - Are open to work on any cloud? also on local cloud or u are bound to specific cloud?
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+## Cognizant - 1st Round
   
 
 
