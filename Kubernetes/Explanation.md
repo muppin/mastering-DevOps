@@ -194,9 +194,63 @@ ________________________________________________________________________________
 - Secrets are used to store sensitive data, such as passwords, API tokens, and SSL certificates, in a more secure manner than ConfigMaps. They are base64-encoded by default but can be used to store binary data as well.
 - Secrets are typically used for storing sensitive data that should not be exposed in plain text. This data is often needed for authentication, encryption, or other security-related purposes.
 
+**Ways of storing secrets**
+
+In Kubernetes, secrets can be stored and managed in multiple ways, each offering different features and security characteristics. Here are the main ways to store secrets in Kubernetes:
+
+1. **Using Kubernetes Secrets:**
+   - Kubernetes provides a built-in resource called Secrets for storing sensitive information such as passwords, OAuth tokens, and SSH keys.
+   - Secrets are stored in etcd, the distributed key-value store used by Kubernetes, and are encrypted at rest by default.
+   - Secrets can be mounted as volumes or exposed as environment variables in Pods, allowing applications to access sensitive data securely.
+
+2. **Using External Vault or Key Management Services:**
+   - Kubernetes can integrate with external secret management systems such as HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, or Google Cloud KMS.
+   - These external systems provide advanced features for managing secrets, such as centralized access control, audit logging, automatic rotation, and integration with external identity providers.
+   - Kubernetes can use the SecretProviderClass or SecretProviderRef objects to dynamically retrieve secrets from external secret management systems and inject them into Pods at runtime.
+
+3. **Using Custom Controllers or Operators:**
+   - Organizations can develop custom controllers or operators to manage secrets in Kubernetes according to their specific requirements.
+   - These custom controllers can leverage Kubernetes custom resources or annotations to define and manage secrets and integrate with external systems or processes for secret generation, rotation, and distribution.
+   - Custom controllers offer flexibility and extensibility for implementing custom secret management workflows and integrating with existing infrastructure and tooling.
+
+4. **Using Configuration Management Tools:**
+   - Configuration management tools such as Helm, Kustomize, or Kubernetes ConfigMaps can be used to manage configuration data and secrets alongside other Kubernetes resources.
+   - Secrets can be stored as part of Helm charts, Kustomize overlays, or ConfigMaps and deployed along with other application components.
+   - While not designed specifically for secret management, these tools offer a convenient way to manage configuration data and secrets in Kubernetes deployments.
+
+Each approach to storing secrets in Kubernetes has its advantages and trade-offs in terms of security, ease of management, integration capabilities, and complexity. Organizations should evaluate their requirements and choose the approach that best fits their needs and infrastructure environment.
+
 ___________________________________________________________________________________________________________________________
 
 ### Persistent Volume, Persistent volume claims and Storage classes
+
+**Problem Statement 1**
+- Data loss when a container is deleted.
+
+**Problem Statement 2**
+- Data is not shared among the containers.
+
+- With k8s volumes above two problems are solved, it helps in sharing the data and in data persistence.
+- data will be stored on the node where pod is running.
+- storing data to empty dir volume is not a perfect solution.
+- Volume should be at container level.
+- Volume mount should be inside container.
+
+**Storing the data at container level**
+
+if a container is deleted or restarted, data will not persist and also it cant be shared between the containers inside the pod
+ 
+**Storing the data at pod level**
+- we user volume and volumeMounts to store the data at pod with emptyDir:{}
+- the data is shared between the containers
+- if the pod goes down the data will be lost and the data cant be shared between the pods.
+ 
+**Storing the data at Node level**
+- we use volume and volumeMounts to store data at the node level with hostPath:{}
+- the data is shared between the pods
+- if the node goes down the data will be lost and the data cant be shared among nodes.
+ 
+The best practice would be storing the data at Remote storage for ex: cloud storage(Recommended), Local storage
 
 **PV**:A Persistent Volume (PV) in Kubernetes is a resource that represents a piece of storage in a cluster, such as a physical disk or network storage. PVs are used to store data that should persist beyond the lifecycle of a single pod or container. They provide a way to manage and decouple storage from the application, making it possible to reuse storage across different pods, even if the pods are rescheduled or replaced.
 
