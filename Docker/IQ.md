@@ -33,6 +33,9 @@
    - implement least privilage
    - use non-root users
    - use distroless images
+ 
+- **Explain distroless images**
+  A Distroless image in Docker is a minimalistic Docker image that contains only the application and its runtime dependencies, without including any additional operating system packages or tools. These images are designed to be lightweight, secure, and efficient, making them ideal for running containerized applications in production environments.
 
 - **How would you troubleshoot docker deamon? Suppose a pod is not coming up on any node, how will you troubleshoot?**
     Troubleshooting a Docker daemon when a container is not coming up on any node involves several steps to identify and address potential issues. Here's a structured approach to troubleshoot:
