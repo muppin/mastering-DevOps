@@ -267,6 +267,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Explain Terraform workspace?
 - Have u worked on Ansible?
 - Have u worked on AWS lambda function? explained delete stale EBS sanpshot usecase
+- Difference between Freestyle project and pipeline?
 - How u are securing jenkins? Credentails plugin
 - Have u used Any other plugin other than credentails plugin gor security?
 - Explain sonarqube plugin?
