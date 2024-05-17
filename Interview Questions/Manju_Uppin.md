@@ -332,6 +332,17 @@
 - how db scripts are updated?
 - again have you worked on GitHub actions and .net applications?
 
+### Qure.ai
+
+- write a python program to remove duplicate rows
+[1,0,0,1,0],
+[1,1,0,1,1],
+[1,0,1,1,0],
+[1,0,0,1,0],
+[1,0,1,1,0],
+- how to iterate through directories and also print the files using bash scripting?
+- what is Docker?
+
 
 
 
