@@ -311,5 +311,27 @@
 - what is the difference between PV and PVC?
 
 
+### CGI CLient round
+
+- walk me through your background?
+- what tools have you worked on?
+- 30% improve in efficiency in the pipeline, how did you achieve it?
+- how did you find this out, was there any hindrance towards the pipeline or did you figure it out?
+- have you worked on GITHUB actions?
+- Explain me the complete CI-CD pipeline
+- explain me the tools that you have been working on?
+- why GITOPS tool?
+- what is the target of gitops tool?
+- have you worked on kubernetes openshift?
+- what is terraform used for?
+- how do you write terraform configuration files?
+- what code/modules have you written?
+- have you worked on any database?
+- is EKS cluster managed by you or any other team?
+- what day to dat tasks are carried out in Kubernetes?
+- how db scripts are updated?
+- again have you worked on GitHub actions and .net applications?
+
+
 
 
