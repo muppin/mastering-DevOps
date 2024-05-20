@@ -195,6 +195,75 @@ Choosing between declarative and imperative programming for infrastructure provi
 
 Both paradigms have their use cases, and sometimes a combination of both might be employed to leverage the strengths of each approach.
 
+## How do you manage sensitive information (like API keys) in Terraform configurations?
+
+Managing sensitive information, such as API keys, passwords, or tokens, in Terraform configurations is crucial to ensure the security of your infrastructure. Terraform provides several mechanisms to handle sensitive data securely:
+
+### 1. Environment Variables
+
+You can use environment variables to pass sensitive information to Terraform without storing it directly in your configuration files. Terraform automatically detects environment variables prefixed with `TF_VAR_` and uses them as input variables.
+
+Example:
+```bash
+export TF_VAR_api_key="your-api-key"
+```
+
+### 2. Input Variables
+
+Declare sensitive data as input variables and prompt users to provide them interactively or through input files. Use the `sensitive` argument to mark sensitive variables, preventing their values from being displayed in the console output or stored in the Terraform state file.
+
+Example:
+```hcl
+variable "api_key" {
+  description = "API key"
+  type        = string
+  sensitive   = true
+}
+```
+
+### 3. Secrets Management Systems
+
+Leverage secrets management systems, such as HashiCorp Vault or AWS Secrets Manager, to store and manage sensitive data securely. Terraform can interact with these systems to retrieve secret values during runtime.
+
+Example (Vault):
+```hcl
+data "vault_generic_secret" "api_key" {
+  path = "secret/api_key"
+}
+
+resource "aws_instance" "example" {
+  # Use the secret value retrieved from Vault
+  api_key = data.vault_generic_secret.api_key.data["api_key"]
+}
+```
+
+### 4. External Files
+
+Store sensitive data in external files (e.g., JSON, YAML, or plaintext files) and load them dynamically using Terraform's file() function or templatefile() function.
+
+Example (JSON file):
+```hcl
+variable "api_key" {
+  description = "API key"
+  type        = string
+  default     = file("api_key.json")
+}
+```
+
+### 5. Provider-Specific Solutions
+
+Some cloud providers offer specific solutions for managing sensitive data. For example, AWS Secrets Manager or Azure Key Vault can store and manage secrets securely, and Terraform can retrieve these secrets during runtime.
+
+### Best Practices
+
+1. **Least Privilege:** Only grant access to sensitive data to those who need it, and restrict access to production secrets.
+2. **Rotation:** Regularly rotate sensitive data such as passwords and API keys to minimize the risk of unauthorized access.
+3. **Audit Logs:** Monitor access to sensitive data and maintain audit logs to track changes and access.
+4. **Encryption:** Use encryption to protect data at rest and in transit, ensuring that sensitive information remains secure.
+5. **Review Configuration:** Regularly review your Terraform configurations to identify and remove any unintentionally exposed sensitive data.
+
+By following these best practices and leveraging Terraform's built-in features and external tools, you can effectively manage sensitive information in your infrastructure configurations while maintaining security and compliance.
+
 _____________________________________________________________________________________________________________________________________________________________________________
 
 ## Terraform commands used on a daily basis:
