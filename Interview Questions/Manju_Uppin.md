@@ -351,18 +351,20 @@
 - "          "       NACL and SG?
 - "          "       NACL and Route Tables?
 - "          "       EBS and EFS?
+- are ebs and efs both network type?
 - explain s3 lifecycle management ?
 - suppose you have 10 vpcs how do you connect each other?
 - what is the number of peerings happening in the above scenario ?
-- what is max number of peering connections?
+- what is max number of peering connections? 50 per VPC and 125 per AWS account per region
 - suppose you have ec2 instance in private subnet and it wants to connect to s3 bucket how do you achieve it?
 - what are types of endpoints?
-- have you heard of service endpoint and private endpoint?
-- h0w do you attach a 20TB of volume to a ec2 instance ? is it possible ?
+- have you heard of service endpoint and private endpoint? just expalin interface and gateway vpc endpoints
+- h0w do you attach a 20TB of volume to a ec2 instance ? is it possible ? no, depends on volume type.
 - what is terraform ?
 - what is terraform modules?
 - what is terraform tf.state file?
 - have you configured the terraform backend?
+- for what lock file is used? 
 - how to create multiple resources in multi clouds?
 - what is terraform import?
 - suppose some one goes and creates a resouces in aws console how to get that into state file?
