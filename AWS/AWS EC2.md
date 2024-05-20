@@ -122,8 +122,29 @@ These health checks are performed periodically by AWS and are essential for ensu
 
 By monitoring both system status and instance status, AWS helps ensure that your EC2 instances are operating properly and that any issues are detected and addressed promptly, minimizing downtime and maintaining the overall health of your infrastructure.
 
+*********************************************************************************************************************************************************
 
+**General Purpose SSD (gp3)**
+- 16TB
 
+**General Purpose SSD (gp2)**
+- 16TB
+
+**Provisioned IOPS SSD (io1)**
+- 16TB
+
+**Provisioned IOPS SSD (io2)**
+- 65 TB
+
+**COLD HDD**
+- 16TB
+
+**Throughput optimized HDD (st1)**
+  - 16TB
+
+**Magnetic Standard**
+- 1TB
+*****************************************************************************************************************************************************
 
 
 
