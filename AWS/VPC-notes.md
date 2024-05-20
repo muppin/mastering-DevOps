@@ -227,12 +227,27 @@ In Amazon Web Services (AWS), a Virtual Private Cloud (VPC) subnet is a segmente
 
 
 
+
 ### Creating VPC_
 
 *What is Tenancy*
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c4fc6903-a66b-4df4-ae22-6fdcb0ffd790)
 
 
+### Max no of VPC peering connections
+
+- The maximum number of VPC (Virtual Private Cloud) peering connections you can establish depends on the cloud service provider and, in some cases, the specific region or service limits set by the provider. Below are the limits for the major cloud providers as of the most recent information available:
+
+**AWS (Amazon Web Services)**
+In AWS, the maximum number of VPC peering connections varies depending on the VPC peering scenario:
+
+- VPC Peering Connections per VPC:
+
+- The default limit is 50 peering connections per VPC.
+- This limit can be increased upon request by submitting a service limit increase request to AWS support.
+- VPC Peering Connections per Account per Region:
+
+- The default limit is 125 peering connections per AWS account per region.
 
 
 
