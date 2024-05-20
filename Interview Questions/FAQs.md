@@ -1,4 +1,4 @@
-### How to explain DevOps project in an Interview?
+## How to explain DevOps project in an Interview?
 - I work in DXC Technology, I support multiple development teams, some of them are payments, transactions.
 - Their applications are written in python.
 - I support them as a DevOps Engineer by:
@@ -10,7 +10,7 @@
 
 
 
-### How do you typically begin your day? / What are your daily responsibilities?
+## How do you typically begin your day? / What are your daily responsibilities?
 
 - I initiate my day by checking Outlook, Slack, and Teams.
 - This allows me to see if any new Jira tasks have been assigned to me or if there are any updates on existing Jira tasks. I also review if my pull requests have been merged or approved, and I welcome any feedback on them.
@@ -30,7 +30,7 @@
   - Addressing incidents and alerts, such as those related to memory/CPU utilization or pod crashes.
  
 
-### Explain CI/CD pipeline used in your project**
+## Explain CI/CD pipeline used in your project**
 
 *Checking out the code from source code repo* -  Checkoiut happens automatically since jenkins file is present in repo.
 while creating CI/CD pipeline - Configure:
@@ -128,7 +128,7 @@ ArgoCD continuously monitors the Git repository for changes. When changes are de
 
 ****************************************************************************************************************************************************************************************************************
 
-- **Explain the traffic flow of an application that is deployed on eks, the eks is in the private subnets. Consider the incoming request as HTTPS and also use Route 53, WAF?** 
+## Explain the traffic flow of an application that is deployed on eks, the eks is in the private subnets. Consider the incoming request as HTTPS and also use Route 53, WAF?
   Certainly! Let's walk through the traffic flow of an application deployed on Amazon Elastic Kubernetes Service (EKS), where the EKS cluster is in private subnets. We'll include incoming HTTPS requests, Route 53 for DNS resolution, and AWS WAF (Web Application Firewall) for added security.
 
 1. **Client Request (HTTPS):**
@@ -188,7 +188,7 @@ By combining Route 53 and AWS WAF, you create a more comprehensive solution for 
 
 ********************************************************************************************************************************************************************************************************************
 
-### Linux based questions
+## Linux based questions
 
 **How can you diagnose latency between AWS resources?**
 - Initially il check with ping command followed by the IP address or hostname of the target resource to check connectivity and measure round-trip latency.
@@ -231,7 +231,7 @@ Gateway endpoints and Interface Endpoints.
 **Walk me through the concept of VPC flow logs and explain their significance in a cloud environment**
 - refer this https://www.youtube.com/watch?v=6CjIT068Ss0&t=6s
 
-### Python Projects
+## Python Projects
 
 **Can you explain me about your python project?**
 - we had a problem statement where QE Engineers comes across a bug and creates an GitHub issue.
@@ -251,6 +251,46 @@ Gateway endpoints and Interface Endpoints.
 - we have made use of decorators before the API/function definition for the authentication purpose, i.e. the authentication/authorisation action runs before function execution.
 - so this python API is running on an ec2 server and the ec2 url with port and path is configured in the github webhooks.
 - once the github webhook is congigured, now the automation works whenever /jira is commented under the issue a jira issue gets created.
+
+##  Do you write your own modules in terraform?
+
+When answering the question, "Do you write your own modules in Terraform?" you can provide a comprehensive response that showcases your understanding and experience with Terraform modules. Here’s a structured way to answer:
+
+### Affirmative Response with Details
+
+1. **Direct Affirmation**:
+   - **Yes, I write my own modules in Terraform.**
+
+2. **Describe the Purpose**:
+   - **Purpose of Writing Custom Modules**:
+     - I write custom Terraform modules to encapsulate and reuse common configurations across different projects. This helps in maintaining consistency, reducing code duplication, and simplifying complex infrastructure setups.
+
+3. **Examples of Modules**:
+   - **Examples of Custom Modules**:
+     - For instance, I have written modules for managing VPCs, EC2 instances, IAM roles, and security groups in AWS. These modules include parameterized inputs to allow flexibility and reusability.
+
+4. **Approach and Best Practices**:
+   - **Approach and Best Practices**:
+     - When writing modules, I follow best practices such as:
+       - Keeping modules focused on a single responsibility.
+       - Using meaningful variable names and providing default values where appropriate.
+       - Including comprehensive documentation and examples within the module.
+       - Writing outputs that provide necessary information for other parts of the infrastructure.
+       - Implementing versioning to manage changes and ensure backward compatibility.
+
+5. **Collaboration and Sharing**:
+   - **Collaboration and Sharing**:
+     - I also collaborate with team members to develop and maintain these modules. We host our modules in a version-controlled repository (e.g., GitHub) and use Terraform Registry or private registries for sharing within the organization.
+
+6. **Experience and Learning**:
+   - **Experience and Learning**:
+     - Writing my own modules has significantly improved my understanding of Terraform and infrastructure as code principles. It also enables me to contribute to the standardization of infrastructure practices within the team or organization.
+
+### Sample Response
+
+"Yes, I write my own modules in Terraform. I often create custom modules to encapsulate specific configurations, such as VPCs, EC2 instances, and security groups, to promote reusability and maintain consistency across different projects. When developing these modules, I adhere to best practices by focusing on single responsibilities, using clear variable names, and including thorough documentation. Additionally, I collaborate with my team to maintain these modules, hosting them in a version-controlled repository and sharing them through Terraform Registry. This practice not only streamlines our infrastructure management but also enhances my proficiency with Terraform and infrastructure as code."
+
+This answer demonstrates your technical expertise, understanding of best practices, and collaborative approach, providing a comprehensive overview of your capabilities with Terraform modules.
 
 
 
