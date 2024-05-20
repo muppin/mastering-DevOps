@@ -343,6 +343,38 @@
 - how to iterate through directories and also print the files using bash scripting?
 - what is Docker?
 
+### Delloite ( AWS DevOps Engineer)
+
+- Introduce yourself and tools that you have expertised?
+- difference between availability zones and availability sets?
+- "          "       reserve instances and spot instances?
+- "          "       NACL and SG?
+- "          "       NACL and Route Tables?
+- "          "       EBS and EFS?
+- explain s3 lifecycle management ?
+- suppose you have 10 vpcs how do you connect each other?
+- what is the number of peerings happening in the above scenario ?
+- what is max number of peering connections?
+- suppose you have ec2 instance in private subnet and it wants to connect to s3 bucket how do you achieve it?
+- what are types of endpoints?
+- have you heard of service endpoint and private endpoint?
+- h0w do you attach a 20TB of volume to a ec2 instance ? is it possible ?
+- what is terraform ?
+- what is terraform modules?
+- what is terraform tf.state file?
+- have you configured the terraform backend?
+- how to create multiple resources in multi clouds?
+- what is terraform import?
+- suppose some one goes and creates a resouces in aws console how to get that into state file?
+- what is terraform fmt?
+- whay is terraform sentinal configuration?
+- Explain kubernetes architecture?
+- explain what kubernetes handle?
+- explain auto healing?
+- explain ingress reosurce?
+- what is etcd?
+
+
 
 
 
