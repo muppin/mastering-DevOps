@@ -102,9 +102,7 @@ resource "aws_eip_association" "example_eip_assoc" {
 
 _____________________________________________________________________________________________________________________________________________________________________________
 
-Terraform commands used on a daily basis:
-
-#Terraform
+## Terraform commands used on a daily basis:
 
 1. terraform init:
 - Initializes a working directory containing Terraform configuration files.
@@ -211,3 +209,84 @@ Terraform commands used on a daily basis:
 35. terraform apply -var -file=filename.auto.tfvars:
 - Automatically loads variables from a file.
 
+________________________________________________________________________________________________________________________________________________________________________________________
+
+## What is terraform sentinal configuration?
+
+Terraform Sentinel is a policy-as-code framework used to enforce governance and compliance policies on Terraform infrastructure configurations. It allows organizations to define, enforce, and automate compliance policies across their infrastructure managed by Terraform.
+
+### Key Concepts of Terraform Sentinel
+
+1. **Policy-as-Code:** Policies are written as code, allowing them to be version-controlled, reviewed, and automated.
+2. **Enforcement Levels:** Policies can be enforced at different levels (e.g., advisory, soft-mandatory, hard-mandatory), allowing flexible policy enforcement.
+3. **Integration with Terraform Enterprise/Cloud:** Sentinel policies are integrated with Terraform Enterprise and Terraform Cloud, providing a way to enforce policies during the plan, apply, and destroy phases.
+
+### Components of Sentinel
+
+1. **Policies:** The rules that define what is and isn't allowed. These are written in the Sentinel language.
+2. **Imports:** Sentinel can import data from different sources, such as Terraform configurations, plans, and states, to use in policy evaluations.
+3. **Rules:** These define the logic within policies. Rules can be used to allow or deny actions based on specific conditions.
+
+### Writing a Basic Sentinel Policy
+
+#### Example Policy: Restricting Instance Types
+
+Let's say you want to enforce a policy that only allows certain EC2 instance types. Here's how you could write such a policy in Sentinel.
+
+1. **Create the Sentinel Policy File:**
+
+Create a file named `restrict_instance_types.sentinel`.
+
+```hcl
+# Import the tfplan/v2 import
+import "tfplan/v2" as tfplan
+
+# Define the list of allowed instance types
+allowed_instance_types = [
+  "t2.micro",
+  "t2.small",
+  "t3.micro"
+]
+
+# Get the planned resources
+instances = filter tfplan.resources as _, resource {
+  resource.type is "aws_instance"
+}
+
+# Define the main rule
+main = rule {
+  all instances as instance {
+    instance.applied.instance_type in allowed_instance_types
+  }
+}
+```
+
+### Steps to Implement Sentinel Policies
+
+1. **Write the Policy:**
+   Write your policies in the Sentinel language, saving them with a `.sentinel` extension.
+
+2. **Upload the Policy to Terraform Cloud/Enterprise:**
+   - Navigate to your Terraform Cloud/Enterprise workspace.
+   - Go to the "Policies" section.
+   - Add a new policy by uploading your `.sentinel` file.
+
+3. **Apply the Policy to Workspaces:**
+   Attach the policy to the relevant workspaces. This ensures the policy is enforced whenever a plan or apply action is performed.
+
+4. **Run Terraform Operations:**
+   When you run `terraform plan` or `terraform apply`, the Sentinel policies will be evaluated. Depending on the enforcement level, the operation might proceed, provide warnings, or be blocked entirely if the policies are violated.
+
+### Example Scenario: Enforcing the Policy
+
+When you run `terraform plan` or `terraform apply`, Terraform Cloud/Enterprise will evaluate the policy:
+
+- **Allowed Instance Type:**
+  If the instance type is in the allowed list (e.g., `t2.micro`), the operation proceeds.
+
+- **Disallowed Instance Type:**
+  If the instance type is not in the allowed list (e.g., `m4.large`), the operation will be blocked with a policy violation message.
+
+### Conclusion
+
+Terraform Sentinel is a powerful tool for enforcing compliance and governance policies in your infrastructure as code workflows. By writing policies in the Sentinel language and integrating them with Terraform Cloud/Enterprise, you can ensure that your infrastructure adheres to organizational standards and best practices. This helps in maintaining security, compliance, and operational consistency across your deployments.
