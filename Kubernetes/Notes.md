@@ -1030,6 +1030,46 @@ Let's break down this YAML:
 
 This NetworkPolicy allows ingress traffic to pods labeled `app: nginx` only from pods labeled `role: backend` within the same namespace. All other ingress traffic to the `app: nginx` pods will be denied by default due to Kubernetes' default-deny policy.
 
+- Two types- Ingress (control over incoming traffic) and Egress (control over out-going traffic)
+
+```
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: test-network-policy
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      role: db
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - ipBlock:
+        cidr: 172.17.0.0/16
+        except:
+        - 172.17.1.0/24
+    - namespaceSelector:
+        matchLabels:
+          project: myproject
+    - podSelector:
+        matchLabels:
+          role: frontend
+    ports:
+    - protocol: TCP
+      port: 6379
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 10.0.0.0/24
+    ports:
+    - protocol: TCP
+      port: 5978
+
+```
+
 **************************************************************************************************************************************************************************************************************
 
 ### Security Policy
