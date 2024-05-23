@@ -118,7 +118,7 @@ That's it! The cron daemon will now execute the specified command or script acco
 
 **How to open a file in read only mode**
 
-vim -r file.txt
+vim -R file.txt
 
 **What is the difference between soft and hard link**
 Soft links (symbolic links) and hard links are two types of links used in Unix-like operating systems to create references to files. While both types of links serve similar purposes, they have distinct characteristics and behaviors. Here's a comparison between soft links and hard links:
