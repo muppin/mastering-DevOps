@@ -364,12 +364,14 @@
 - what is terraform modules?
 - what is terraform tf.state file?
 - have you configured the terraform backend?
-- for what lock file is used? 
+- for what lock file is used?
+- can 2 members at a time modify the infrastructure?
 - how to create multiple resources in multi clouds?
 - what is terraform import?
 - suppose some one goes and creates a resouces in aws console how to get that into state file?
 - what is terraform fmt?
 - whay is terraform sentinal configuration?
+- what are tainted resources?
 - Explain kubernetes architecture?
 - explain what kubernetes handle?
 - explain auto healing?
