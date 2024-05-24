@@ -103,4 +103,5 @@ Encourage open and honest feedback to identify areas for improvement and address
     - Finally, I would express gratitude to my colleague for their honesty and courage in providing feedback. Constructive criticism, although sometimes difficult to hear, ultimately helps us become better individuals and professionals.
    
 **************************************************************************************************************************************************************************************************************************
-
+- **What problems you have encountered in CI part of pipeline and how did u solved it?**
+  We had lots of microservices and need to store lots of secrets. And we have to reference those secrets in our pipelines so to solve this problem we have stored the secrets in jenkins manage credentials plugin and from there we are referencing them into the pipeline using "WithCredentials()" keyword.
