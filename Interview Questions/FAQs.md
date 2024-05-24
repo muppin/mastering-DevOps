@@ -292,6 +292,82 @@ When answering the question, "Do you write your own modules in Terraform?" you c
 
 This answer demonstrates your technical expertise, understanding of best practices, and collaborative approach, providing a comprehensive overview of your capabilities with Terraform modules.
 
+## Normally what is the type of service used in your application?
+
+When you have an Ingress resource in Kubernetes, it typically routes external HTTP/HTTPS traffic to services within the cluster. The type of service that the Ingress routes to is generally a `ClusterIP` service. This is because `ClusterIP` services are intended to be accessible only within the cluster, and the Ingress controller handles the external accessibility.
+
+### Typical Setup with Ingress and Service Types
+
+1. **Ingress Resource**: Manages external access to the services, usually HTTP/HTTPS, providing load balancing, SSL termination, and name-based virtual hosting.
+2. **Service Resource**: Exposes the application running on a set of Pods as a network service.
+
+### Service Types in Kubernetes
+
+- **ClusterIP**: Exposes the service on a cluster-internal IP. This is the default type and makes the service only reachable from within the cluster.
+- **NodePort**: Exposes the service on each Node's IP at a static port (the NodePort). A ClusterIP service, to which the NodePort service routes, is automatically created.
+- **LoadBalancer**: Exposes the service externally using a cloud provider's load balancer. A ClusterIP and NodePort service, to which the external load balancer routes, are automatically created.
+
+### Typical Configuration
+
+#### Ingress Resource
+An Ingress resource defines how external HTTP/HTTPS traffic should be routed to services within the cluster.
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+  namespace: default
+spec:
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: example-service
+            port:
+              number: 80
+```
+
+#### Service Resource
+A ClusterIP service typically backs the Ingress resource.
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-service
+  namespace: default
+spec:
+  selector:
+    app: example
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: ClusterIP
+```
+
+### Explanation
+
+- **Ingress Resource**: Defines that HTTP traffic to `example.com` should be routed to `example-service` on port 80.
+- **Service Resource**: A `ClusterIP` service named `example-service` routes traffic to Pods with the label `app: example` on port 8080.
+
+### Why ClusterIP?
+
+- **Internal Routing**: `ClusterIP` services are designed to be used within the cluster. The Ingress controller can access these services directly.
+- **Security**: By using `ClusterIP`, you limit the exposure of your services to within the cluster. External access is managed and controlled by the Ingress, providing a single entry point and enhancing security.
+- **Simplicity**: Managing services with `ClusterIP` in conjunction with Ingress simplifies the architecture, focusing external exposure and management through Ingress rules.
+
+### Additional Considerations
+
+- **Ingress Controller**: Ensure that you have an Ingress controller (like NGINX, Traefik, etc.) deployed in your cluster, which watches for Ingress resources and configures the necessary routing.
+- **Annotations**: Depending on the Ingress controller, you might need to add specific annotations to the Ingress resource for additional configurations such as SSL, redirects, etc.
+
+By using a `ClusterIP` service with an Ingress resource, you leverage Kubernetes' internal networking capabilities while efficiently managing external traffic through a single entry point.
 
 
 
