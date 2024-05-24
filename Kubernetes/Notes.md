@@ -1070,6 +1070,101 @@ spec:
 
 ```
 
+This YAML configuration defines a Kubernetes `NetworkPolicy` named `test-network-policy` in the `default` namespace. Network policies in Kubernetes allow you to control the communication between pods and other network endpoints.
+
+**Breakdown of the Configuration**
+
+- `apiVersion: networking.k8s.io/v1`
+Specifies the API version of the `NetworkPolicy` resource.
+
+- `kind: NetworkPolicy`
+Indicates that this resource is a `NetworkPolicy`.
+
+- `metadata`
+Contains metadata about the NetworkPolicy.
+    - `name`: The name of the NetworkPolicy (`test-network-policy`).
+    - `namespace`: The namespace where the policy is applied (`default`).
+
+- `spec`
+Defines the behavior of the NetworkPolicy.
+
+- `podSelector`
+Selects the pods to which this policy applies. Here, it selects pods with the label `role: db`.
+```yaml
+podSelector:
+  matchLabels:
+    role: db
+```
+
+- `policyTypes`
+Specifies the types of traffic this policy applies to. It includes both `Ingress` (incoming traffic) and `Egress` (outgoing traffic).
+```yaml
+policyTypes:
+- Ingress
+- Egress
+```
+
+**`ingress`**
+Defines the rules for incoming traffic.
+
+- `from`: Specifies the sources from which the incoming traffic is allowed.
+  - `ipBlock`: Allows traffic from the IP range `172.17.0.0/16`, except for `172.17.1.0/24`.
+  - `namespaceSelector`: Allows traffic from pods in namespaces with the label `project: myproject`.
+  - `podSelector`: Allows traffic from pods with the label `role: frontend`.
+- `ports`: Specifies the allowed ports and protocols for the incoming traffic.
+  - `protocol`: Specifies the protocol (`TCP`).
+  - `port`: Specifies the port number (`6379`).
+```yaml
+ingress:
+- from:
+  - ipBlock:
+      cidr: 172.17.0.0/16
+      except:
+      - 172.17.1.0/24
+  - namespaceSelector:
+      matchLabels:
+        project: myproject
+  - podSelector:
+      matchLabels:
+        role: frontend
+  ports:
+  - protocol: TCP
+    port: 6379
+```
+
+**`egress`**
+Defines the rules for outgoing traffic.
+
+- `to`: Specifies the destinations to which the outgoing traffic is allowed.
+  - `ipBlock`: Allows traffic to the IP range `10.0.0.0/24`.
+- `ports`: Specifies the allowed ports and protocols for the outgoing traffic.
+  - `protocol`: Specifies the protocol (`TCP`).
+  - `port`: Specifies the port number (`5978`).
+```yaml
+egress:
+- to:
+  - ipBlock:
+      cidr: 10.0.0.0/24
+  ports:
+  - protocol: TCP
+    port: 5978
+```
+
+**Summary**
+
+This `NetworkPolicy` applies to all pods in the `default` namespace labeled with `role: db`. It enforces the following rules:
+
+- **Ingress Rules**:
+  - Allows TCP traffic on port 6379 from:
+    - IP addresses in the range `172.17.0.0/16` except those in `172.17.1.0/24`.
+    - Pods in namespaces labeled with `project: myproject`.
+    - Pods labeled with `role: frontend`.
+
+- **Egress Rules**:
+  - Allows TCP traffic on port 5978 to IP addresses in the range `10.0.0.0/24`.
+
+These rules provide fine-grained control over which sources can communicate with the selected `db` pods and which destinations these pods can communicate with.
+
 **************************************************************************************************************************************************************************************************************
 
 ### Security Policy
