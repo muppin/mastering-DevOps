@@ -564,9 +564,9 @@ Both HPA and VPA can be used together in a complementary manner. For example, yo
 
 In EKS, the Cluster Autoscaler interacts with ASGs to dynamically manage the node count in response to the needs of the Kubernetes cluster. Here’s how the integration works:
 
-Monitoring: The Cluster Autoscaler continuously monitors the state of the cluster, checking for unschedulable pods and underutilized nodes.
-Scaling Up: When the Cluster Autoscaler detects unschedulable pods due to resource constraints, it interacts with the ASGs to launch additional EC2 instances, thereby increasing the cluster size.
-Scaling Down: When the Cluster Autoscaler identifies underutilized nodes that can be safely drained and terminated without affecting running applications, it instructs the ASGs to terminate these nodes, thus reducing the cluster size.
+- Monitoring: The Cluster Autoscaler continuously monitors the state of the cluster, checking for unschedulable pods and underutilized nodes.
+- Scaling Up: When the Cluster Autoscaler detects unschedulable pods due to resource constraints, it interacts with the ASGs to launch additional EC2 instances, thereby increasing the cluster size.
+- Scaling Down: When the Cluster Autoscaler identifies underutilized nodes that can be safely drained and terminated without affecting running applications, it instructs the ASGs to terminate these nodes, thus reducing the cluster size.
 
 **Summary**
 - EKS uses both the Kubernetes Cluster Autoscaler and Amazon EC2 Auto Scaling Groups (ASGs) to scale worker nodes.
