@@ -560,7 +560,20 @@ Both HPA and VPA can be used together in a complementary manner. For example, yo
 - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/2af9ad86-1d40-4982-8930-0568554b1925)
 - every 10s cluster autoscaler checks for unscheduled pod and resource usage to add or remove nodes inside the cluster.
 
+### Integration of Cluster Autoscaler with ASGs
 
+In EKS, the Cluster Autoscaler interacts with ASGs to dynamically manage the node count in response to the needs of the Kubernetes cluster. Here’s how the integration works:
+
+Monitoring: The Cluster Autoscaler continuously monitors the state of the cluster, checking for unschedulable pods and underutilized nodes.
+Scaling Up: When the Cluster Autoscaler detects unschedulable pods due to resource constraints, it interacts with the ASGs to launch additional EC2 instances, thereby increasing the cluster size.
+Scaling Down: When the Cluster Autoscaler identifies underutilized nodes that can be safely drained and terminated without affecting running applications, it instructs the ASGs to terminate these nodes, thus reducing the cluster size.
+
+**Summary**
+- EKS uses both the Kubernetes Cluster Autoscaler and Amazon EC2 Auto Scaling Groups (ASGs) to scale worker nodes.
+- The Cluster Autoscaler adjusts the number of nodes based on the resource needs of the Kubernetes cluster.
+- ASGs manage the underlying EC2 instances, handling automatic scaling, health checks, and load balancing.
+
+  
 ## Daemonset in Kubernetes
 
 - In the case of performing node specific stasks like collecting logs, metrics we have to use of DaemonSets.
