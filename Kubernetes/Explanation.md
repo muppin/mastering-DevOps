@@ -476,6 +476,83 @@ Types of Autoscalers:
     - **Note: in production, update mode is set to off so that pods are not restarted and there is no application downtime**
 - By default VPA is not available in cluster, we need to install.
 
+## When to use HPA and VPA
+
+Horizontal Pod Autoscaler (HPA) and Vertical Pod Autoscaler (VPA) are both Kubernetes mechanisms for automatically adjusting the resources allocated to applications, but they are used in different scenarios based on the nature and requirements of the applications.
+
+### Horizontal Pod Autoscaler (HPA)
+
+**HPA** automatically scales the number of pods in a deployment or replication controller based on observed CPU utilization (or other select metrics). It is most effective for applications where the workload can be distributed across multiple instances. Here are typical use cases:
+
+1. **Stateless Applications**:
+   - **Web Servers**: Applications like web servers (e.g., Nginx, Apache) that can handle requests independently across multiple instances.
+   - **Microservices**: Microservice architectures where each service can scale out independently.
+
+2. **Batch Processing**:
+   - **Data Processing Jobs**: Applications that process data in parallel, such as data analysis or ETL (Extract, Transform, Load) jobs.
+   
+3. **Event-Driven Applications**:
+   - **Message Processing**: Applications that process messages from a queue (e.g., RabbitMQ, Kafka), where increasing the number of consumers can improve throughput.
+
+4. **High Availability Applications**:
+   - **API Services**: Services where you want to maintain high availability and quickly respond to increased traffic by adding more instances.
+
+**Example HPA YAML:**
+
+```yaml
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: example-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: example-deployment
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
+```
+
+### Vertical Pod Autoscaler (VPA)
+
+**VPA** adjusts the CPU and memory requests/limits of containers in a pod based on historical usage and current demands. It is suitable for applications where performance is more sensitive to the resources allocated per pod rather than the number of pods. Here are typical use cases:
+
+1. **Stateful Applications**:
+   - **Databases**: Applications like relational databases (e.g., MySQL, PostgreSQL) or NoSQL databases (e.g., MongoDB, Cassandra) that benefit from vertical scaling due to the complexity of data consistency and state management.
+   
+2. **In-Memory Data Stores**:
+   - **Caching Layers**: In-memory data stores like Redis or Memcached, which may perform better with more memory or CPU.
+
+3. **Machine Learning Models**:
+   - **Model Serving**: Serving machine learning models where the model inference requires significant CPU or memory and benefits from vertical scaling.
+
+4. **Monolithic Applications**:
+   - **Legacy Applications**: Monolithic applications that are difficult to scale horizontally but can benefit from additional CPU or memory.
+
+**Example VPA YAML:**
+
+```yaml
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: example-vpa
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind:       Deployment
+    name:       example-deployment
+  updatePolicy:
+    updateMode: "Auto"
+```
+
+### Summary
+
+- **HPA** is best suited for stateless applications, batch processing jobs, event-driven applications, and any workload that can easily be distributed across multiple instances.
+- **VPA** is best suited for stateful applications, in-memory data stores, machine learning model serving, and monolithic applications where resource demands are more sensitive to the capacity of individual pods.
+
+Both HPA and VPA can be used together in a complementary manner. For example, you might use HPA to scale the number of pods based on external demand while using VPA to ensure each pod has the optimal amount of resources for its workload. This combination can provide both flexibility and efficiency in resource management for various types of applications.
+
 ### CA
 
 - it adds the nodes to the cluster if there are pods stuck at pending state due to lack of resources available in the cluster.
