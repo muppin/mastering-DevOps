@@ -281,6 +281,15 @@ Here's how you can store Kubernetes secrets using AWS Secrets Manager:
 
 By following these steps, you can store Kubernetes secrets using AWS Secrets Manager and access them securely from your Pods using the AWS Secrets Store CSI Driver.
 
+
+### Why should we prefer volume mounts over SecretKeyRef
+
+- Secrets are exposed as env variables when we use SecretKeyRef where as in volume mounts secrets are exposed to only files within the filesystem.
+- We can impose file permissions for more security.
+- volume mounts can handle larger secrets.
+- Secrets mounted as volumes can be automatically updated by Kubernetes without requiring a pod restart.
+- The containerized application can read the updated secret directly from the filesystem. With environment variables, the container would need to be restarted to pick up changes, making secret rotation more cumbersome.
+
 ___________________________________________________________________________________________________________________________
 
 ### Persistent Volume, Persistent volume claims and Storage classes
