@@ -349,13 +349,13 @@ For AWS specifically, when a PVC requests storage from a StorageClass, Kubernete
 This dynamic provisioning mechanism allows Kubernetes to automate the creation of storage resources in the cloud provider (such as AWS) based on the defined policies in the StorageClass, providing users with on-demand storage that meets their specified requirements without manual intervention.
 
 **Normal Flow without Dynamic provisioning?**
-Create a PersistentVolume (PV)
-Create a PersistentVolumeClaim (PVC)
-Admission Controller Validation - When the PVC is created, the admission controller intervenes to validate the request.
-- Validation: The admission controller checks that the PVC’s requested storage and access modes match those of available PVs. This ensures that the PVC can be fulfilled by existing PVs.
-- Mutating: If necessary, the admission controller can also modify the PVC to align with policies or quotas defined by the cluster administrators.
-Binding the PVC to a PV
-Deploy a Pod that uses the PVC
+- Create a PersistentVolume (PV)
+- Create a PersistentVolumeClaim (PVC)
+- Admission Controller Validation - When the PVC is created, the admission controller intervenes to validate the request.
+   - Validation: The admission controller checks that the PVC’s requested storage and access modes match those of available PVs. This ensures that the PVC can be fulfilled by existing PVs.
+   - Mutating: If necessary, the admission controller can also modify the PVC to align with policies or quotas defined by the cluster administrators.
+- Binding the PVC to a PV
+- Deploy a Pod that uses the PVC
 
 ___________________________________________________________________________________________________________________________
 
