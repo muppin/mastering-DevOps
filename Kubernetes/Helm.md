@@ -8,10 +8,10 @@
 
 
 **Helm Chart Structure**
-- chart.yaml
-- templates
-- values.yaml
-
+- Chart.yaml: Metadata about the chart, such as name, version, and dependencies
+- templates/: YAML files defining Kubernetes resources (e.g., Deployments, Services, ConfigMaps).
+- values.yaml: Default configuration values for the chart.
+- 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/7847549a-2d14-47ad-b52f-b2a9408e66d1)
 
 
