@@ -105,3 +105,9 @@ Encourage open and honest feedback to identify areas for improvement and address
 **************************************************************************************************************************************************************************************************************************
 - **What problems you have encountered in CI part of pipeline and how did u solved it?**
   We had lots of microservices and need to store lots of secrets. And we have to reference those secrets in our pipelines so to solve this problem we have stored the secrets in jenkins manage credentials plugin and from there we are referencing them into the pipeline using "WithCredentials()" keyword.
+
+- **What problems do you faced related to docker and how u solved it?**
+  In our organization the docker image size was very huge and that was also concerning with the security of the docker Image. So what I have done is using the docker multi stage build and distroless images. By Doing so we have not only reduced the size but we have also added scurity by removing the packages that are installed in the docker images.
+  - NOTE: A distroless image in Docker is a type of image that contains only your application and its runtime dependencies. They do not contain package managers, shells or any other programs you would expect to find in a standard Linux distribution.
+ 
+- 
