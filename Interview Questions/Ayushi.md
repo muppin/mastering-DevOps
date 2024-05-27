@@ -255,6 +255,8 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Day to Day task/responsibilities
 - How you start your day?
 - What is your team size.
+- Is this your fiest job?
+- Where are u based at? Have you ever been to bangalore?
 - Which tool u are using to track work?
 - Do you work on docker also, what task you perform on docker?
 - Do you know jenkins?
