@@ -274,6 +274,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - In these 3.9 years have you worked in same team? How many mangers got changed?
 - Are you ready to reloacte and this will be work from office?
 - What is your expectation from the team?
+- What is your notice period and are u serving notice period?
 
 *********************************************************************************************************************************************************************************************************************
 
