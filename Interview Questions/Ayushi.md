@@ -272,6 +272,9 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - How will u tranfer in case of prod?
 - Explain canary deployment.
 - How tranfer traffic from 10% traffic to one and rest 90% to other? I forgot that k8s resource
+-  How to check active pods running?
+-  Which scripting u are comfortable in?
+-  Explain what script you have written in python?
 - Do you do field testing also?
 - In these 3.9 years have you worked in same team? How many mangers got changed?
 - Are you ready to reloacte and this will be work from office?
