@@ -249,6 +249,33 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Are open to work on any cloud? also on local cloud or u are bound to specific cloud?
 
 *********************************************************************************************************************************************************************************************************************
+## Visa - Hiring Manager Round
+
+- Introduce yourself
+- Day to Day task/responsibilities
+- How you start your day?
+- What is your team size.
+- Which tool u are using to track work?
+- Do you work on docker also, what task you perform on docker?
+- Do you know jenkins?
+- Explain your CI/CD pipeline.
+- In these three years what changes u did to make infra/piple more efficient? I talked about moving to AWS secret manager from credentials plugin and about distroless images, docker build cache
+- Then if a credentail is changed, how will it be updated in pipeline. I said AWS secret manger gives this feature of rotating credentails and dynamic updates.
+- Hvae you worked on any of these envs- QAT/ staging
+- How many container do you have in staging environment?
+- How many pods can be assigned to a user? - I talked about resource quota, performance bench marking, limits, resources - based on that we can assign pods
+- How many apps are there in staging env.
+- How will u transfer traffic in case of issues in staging env? I talked about blue green deployment.
+- explain blue green deployment?
+- How will u tranfer in case of prod?
+- Explain canary deployment.
+- How tranfer traffic from 10% traffic to one and rest 90% to other? I forgot that k8s resource
+- Do you do field testing also?
+- In these 3.9 years have you worked in same team? How many mangers got changed?
+- Are you ready to reloacte and this will be work from office?
+- What is your expectation from the team?
+
+*********************************************************************************************************************************************************************************************************************
 
 ## Cognizant - 1st Round
 
