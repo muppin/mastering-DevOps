@@ -116,7 +116,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
   - how will you delete container and remove associated image- docker stop, remove container then rmi (remove image)
   - A pod is having 20GB of PV and pods claim also 20 GB. Space is exhausted. What will happen to pod?
   - What is OOM error?
-  - Difference between limit and resource?
+  - Difference between limit and request?
   - Difference between Scripted and declarative pipeline?
   - What is VPC?
   - What are the components of VPC?
