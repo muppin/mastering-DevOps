@@ -48,6 +48,8 @@ In Amazon Web Services (AWS), a Virtual Private Cloud (VPC) subnet is a segmente
 
 ## Nat Gateway
 
+It masks the private IP address of the instance so that the public internet will not get to know the private IP of your instance.
+
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/eec2442e-e812-45f2-95ec-6705d207dbd4)
 
 **Difference Btwn Nat Instance and Nat Gateway**
