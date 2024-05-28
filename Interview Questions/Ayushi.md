@@ -123,7 +123,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
   - What is config map and secrets?
   - Which encoding will you use in K8s for your secrets?
   - Is it good to use k8s provided in built encoding or u should use some other?
-  - What is CIDR routing in VPC?
+  - What is CIDR routing in VPC? Determines the size of VPC, alloactes the IP address.
   - What is S3, how u have used S3 in ur achitecture?
   - Explain coponents of worker node and master node?
   - What is HPA and VPA?
