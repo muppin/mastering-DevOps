@@ -207,7 +207,36 @@ Resizing a **Persistent Volume (PV)** in Kubernetes can introduce certain risks 
    - After resizing, verify that the PV and PVC have the expected size.
    - Monitor application logs for any unexpected errors related to storage.
 
-Remember to test the resizing process in a non-production environment first. Document your steps and have a rollback plan in case anything goes wrong. 😊
+Remember to test the resizing process in a non-production environment first. Document your steps and have a rollback plan in case anything goes wrong. 
+
+********************************************************************************************************************************************************************************************************************
+
+### We have defined a limit to a pod, will VPA exceed this limit and assign resources to the pod?
+
+**Vertical Pod Autoscaling (VPA)** aims to optimize resource allocation for pods by adjusting their resource requests and limits based on historical usage. However, VPA **will not exceed the specified resource limits** set for a pod. Let's break it down:
+
+1. **Resource Limits:**
+   - When you define resource limits for a pod (e.g., CPU and memory), those limits act as hard boundaries.
+   - Kubernetes enforces these limits to prevent a pod from consuming more resources than allocated.
+   - If a pod reaches its resource limits, Kubernetes may throttle or terminate it.
+
+2. **VPA Behavior:**
+   - VPA analyzes historical resource usage data for pods.
+   - It then recommends optimal resource requests and limits based on observed patterns.
+   - The goal is to strike a balance between efficiency and performance.
+   - VPA adjusts the resource requests (minimum required) and limits (maximum allowed) within the specified bounds.
+
+3. **VPA Constraints:**
+   - VPA respects the limits you've set for a pod.
+   - It won't assign resources beyond those limits.
+   - If VPA suggests changes that violate the limits, Kubernetes won't apply them.
+
+4. **Example Scenario:**
+   - Suppose you set a pod's memory limit to 512 MB.
+   - VPA analyzes usage and recommends a higher memory request (e.g., 1 GB).
+   - However, it won't exceed the 512 MB limit you defined.
+
+In summary, VPA optimizes resource utilization while staying within the boundaries you've set. It won't violate the specified resource limits. 😊
 
 
 
