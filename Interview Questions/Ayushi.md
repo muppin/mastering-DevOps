@@ -118,8 +118,8 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
   - What is OOM error?
   - Difference between limit and request?
   - Difference between Scripted and declarative pipeline?
-  - What is VPC?
-  - What are the components of VPC?
+  - What is VPC? A Virtual Private Cloud (VPC) is a concept in cloud computing that allows an enterprise to create its own private network within a shared public cloud infrastructure. 
+  - What are the components of VPC? 
   - What is config map and secrets?
   - Which encoding will you use in K8s for your secrets?
   - Is it good to use k8s provided in built encoding or u should use some other?
