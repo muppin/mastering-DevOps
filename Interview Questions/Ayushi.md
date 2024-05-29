@@ -321,17 +321,25 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Explain auto scaling in AWS? And how it works, how to setuo?
 - how will EC2 get to know that it has to boot certain S/W while in autoscaling group?
 - Types of load balancer in AWS?
+- Steps to create  ALB in AWS
+- What is route53?
+- How to create record?
+- Difference between CNAME nad A type?
+- What is CDN?
 - write a script to take backup of logfile from one directory to another directory?
 - write a dockerfile for installation of abc jar file on top of tomcat server?
+- Difference between CMD and ENTRYPOINT?
+- how will you delete container and remove associated image
 - what is static pod?
 - What is config map and secrets?
 - which encoding will you use in K8s for your secrets?
 - Is it good to use k8s provided in built encoding or u should use some other?
+- A pod is having 50GB of PV and pods claim also 50 GB. Space is exhausted. What will happen to pod?
 - What is PV and PVC?
 - What is metrics server?
 - which monitoring tools u have worked on?
 - Explain prometheus architecture and grafana?
-- Node expoerter in prometheus?
+- Node exporter in prometheus?
 - Which deployment mechanism will you use for your Database?
 - Difference between deployment and statefulsets?
 - Explain ping command?
@@ -341,7 +349,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - command to check CPU?
 - Command to check memory?
 - command to check disk usage?
-- 
+- Do you know Ansible or Chef?
   
 
 
