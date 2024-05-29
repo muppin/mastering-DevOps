@@ -50,6 +50,36 @@ For more info https://youtu.be/X6YPNciA8z8?si=8Mm8mtLKSNxLBMym
 
 ### EC2 Hibernate
 
+Certainly! **EC2 hibernation** is a feature in Amazon Web Services (AWS) that allows you to pause and resume EC2 instances. Here's how it works:
+
+1. **Hibernation Process**:
+   - When you hibernate an instance, Amazon EC2 signals the operating system to perform hibernation (suspend-to-disk).
+   - The hibernation process freezes all processes, saves the contents of the RAM to the EBS root volume, and then performs a regular shutdown⁴.
+   - The instance's current state, including its RAM contents, is saved to the Amazon Elastic Block Store (EBS) root volume.
+   - Attached EBS data volumes are also persisted.
+   - When you start a hibernated instance:
+     - The EBS root volume is restored to its previous state.
+     - The RAM contents are reloaded.
+     - Previously attached data volumes are reattached.
+     - The instance retains its instance ID.
+
+2. **Prerequisites for Hibernation**:
+   - You can't enable hibernation on an existing EC2 instance (whether it's running or stopped).
+   - To enable hibernation, you must relaunch the required EC2 instance and configure hibernation at launch².
+
+3. **Billing and Storage**:
+   - You're not charged for instance usage when an instance is hibernated and in the stopped state.
+   - However, storage costs apply for EBS volumes, including storage for the RAM contents.
+   - If you no longer need an instance, you can terminate it even when it's in a hibernated state¹.
+
+Remember that hibernation is useful for pre-warming instances that take time to bootstrap and build a memory footprint. It allows you to resume an instance from the exact state it was in, preserving in-memory data³. Let me know if you need further assistance! 😊
+
+Source: Conversation with Copilot, 29/5/2024
+(1) How Amazon EC2 instance hibernation works. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-hibernate-overview.html.
+(2) EC2 Hibernation | Trend Micro. https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/hibernation.html.
+(3) Hibernate your Amazon EC2 instance - Amazon Elastic Compute Cloud. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html.
+(4) AWS EC2 Hibernate: The Future of Resource Optimization. https://medium.com/@akshay.nanavare/aws-ec2-hibernate-the-future-of-resource-optimization-cc3845b6585d.
+
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/97c342e5-ec48-4c98-b83c-cd06c1527129)
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/a8342755-4c68-4bb9-8f4a-ecdcbdab0c05)
