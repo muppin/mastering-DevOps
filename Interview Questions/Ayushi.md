@@ -310,7 +310,38 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 
 ********************************************************************************************************************************************************************************************************************
 
+## pwc Technical Round -1
 
+- Introduce yourself
+- what are your day to day responsibilities?
+- On which cloud do you work?
+- What AWS networking services, explain them?
+- Difference between NACL and security group?
+- which rule in NACL will get priority, explain?
+- Explain auto scaling in AWS? And how it works, how to setuo?
+- how will EC2 get to know that it has to boot certain S/W while in autoscaling group?
+- Types of load balancer in AWS?
+- write a script to take backup of logfile from one directory to another directory?
+- write a dockerfile for installation of abc jar file on top of tomcat server?
+- what is static pod?
+- What is config map and secrets?
+- which encoding will you use in K8s for your secrets?
+- Is it good to use k8s provided in built encoding or u should use some other?
+- What is PV and PVC?
+- What is metrics server?
+- which monitoring tools u have worked on?
+- Explain prometheus architecture and grafana?
+- Node expoerter in prometheus?
+- Which deployment mechanism will you use for your Database?
+- Difference between deployment and statefulsets?
+- Explain ping command?
+- Explain telnet command?
+- which command to use to check connectivity between two machines?
+- which command to use to check accessibility of port?
+- command to check CPU?
+- Command to check memory?
+- command to check disk usage?
+- 
   
 
 
