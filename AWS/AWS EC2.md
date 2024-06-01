@@ -66,6 +66,9 @@ Certainly! **EC2 hibernation** is a feature in Amazon Web Services (AWS) that al
 2. **Prerequisites for Hibernation**:
    - You can't enable hibernation on an existing EC2 instance (whether it's running or stopped).
    - To enable hibernation, you must relaunch the required EC2 instance and configure hibernation at launch².
+   - To enable a hibernation to the new launching instance
+       - you should select the root ebs volume as encrypted
+       - and enable the hibernate option, under advance settings.
 
 3. **Billing and Storage**:
    - You're not charged for instance usage when an instance is hibernated and in the stopped state.
@@ -73,12 +76,6 @@ Certainly! **EC2 hibernation** is a feature in Amazon Web Services (AWS) that al
    - If you no longer need an instance, you can terminate it even when it's in a hibernated state¹.
 
 Remember that hibernation is useful for pre-warming instances that take time to bootstrap and build a memory footprint. It allows you to resume an instance from the exact state it was in, preserving in-memory data³. Let me know if you need further assistance! 😊
-
-Source: Conversation with Copilot, 29/5/2024
-(1) How Amazon EC2 instance hibernation works. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-hibernate-overview.html.
-(2) EC2 Hibernation | Trend Micro. https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/hibernation.html.
-(3) Hibernate your Amazon EC2 instance - Amazon Elastic Compute Cloud. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html.
-(4) AWS EC2 Hibernate: The Future of Resource Optimization. https://medium.com/@akshay.nanavare/aws-ec2-hibernate-the-future-of-resource-optimization-cc3845b6585d.
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/97c342e5-ec48-4c98-b83c-cd06c1527129)
 
