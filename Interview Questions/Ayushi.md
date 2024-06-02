@@ -170,7 +170,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Output of this command? What all fileds will come in output?
 - What is the significance of help and Man command? 
 - What is Kernel?
-- command to check if port is accessible.? netcat -z <ip> <port_no>
+- command to check if port is accessible.? netcat -z <ip/hostname> <port_no>
 - What is Canary deployment?
 - What is blue green deployment? 
 - What is the use of deployment? 
