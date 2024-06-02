@@ -136,7 +136,8 @@
 - **ip addr**: Another command to display or configure network interface parameters and versatile than ifconfig
 - **ping <ip_address>/<host_name>**: Used to test the reachability of a host on a network by sending ICMP echo request packets and waiting for ICMP echo reply packets
 - **traceroute google.com**: Displays the route that packets take to reach a specified destination.
-- **netstat -tuln**: Displays network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+- **netstat**:shows active established internet connections on your computer.
+- **telnet <IP address or domain>** : is used to access remote server like SSH command, but not secure as it uses plain text.
 - **hostname**: displays the syatem's hostname
 - **hostanme -i**: displays the ip address
 - **nslookup <domain_name>/<ip_address>**: nslookup is a powerful tool for troubleshooting DNS-related issues, such as verifying DNS records, diagnosing DNS configuration problems, and checking DNS propagation.
