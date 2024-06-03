@@ -186,6 +186,12 @@ This setup ensures that your EKS cluster remains in private subnets for enhanced
 **Implement AWS WAF:** Once traffic is flowing through Route 53 to your AWS resources, consider implementing AWS WAF to enhance the security of your web applications.
 By combining Route 53 and AWS WAF, you create a more comprehensive solution for managing and securing incoming web traffic to your AWS environment.
 
+**How ALB is going to created**
+
+- We have IRSA created and attached to nginx controller pod , which is deployed by nginx controller.
+- so this pod will have the IAM role to create a ALB load balancer in the public subnet.
+- then the ALB gets created on the PUBLIC subnet.
+
 ********************************************************************************************************************************************************************************************************************
 
 ## Linux based questions
