@@ -129,8 +129,35 @@ ________________________________________________________________________________
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/168da490-c9ff-4eca-bf7c-abf4da2ffc02)
 
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+### Application Load Balancer
+
+- if you want to intercept user request at layer 7 (Application layer), depending upon path,host,domain use ALB.
+- ALB is ideal for distributing HTTP/HTTPS traffic to multiple targets.
+- It provides different routing mechanisms.
+- It can perform SSL mechanisms.
+- it is costly
+- it is slow
+
+### Network Load Balancer
+
+- if you want to intercept user request at layer 4 (transaport layer).
+- it performs routing TCP/UDP packets.
+- game servers, youtube streaming make use of this NLB.
+- data at Transpport layer is broke down in small chunks and transmitted from client to server without any latency and issues.
+- low latency, high transmission of data is observed while using NLB. It can handle millions of requests per second
+- less costly.
+- NLB supports connection draining, allowing in-flight requests to complete even when instances are being deregistered.
+- It can create sticky sessions
 
 
+### Gateway Load Balancer
+
+- It is used for virtual appliances.
+- Vpn, Firewall applications front faces GLB
+- It provides High security
+- it send highly encrypted packets to Virtual Appliances.
 
 
 
