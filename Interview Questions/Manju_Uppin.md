@@ -378,6 +378,47 @@
 - explain ingress reosurce?
 - what is etcd?
 
+### Infosys
+
+- Why do you want to change the company?
+- Introduce yourself?
+- Which cloud are you using?
+- my application is running on ec2 instance, ec2 is up and running, app is up and running, when i am hitting that web app url it is not working fine, what might be the issue?
+- you want to copy a fine s3 to ec2 instance, what is the command?
+- what is the port no of HTTPS, HTTP, DNS?
+- what is DNS?
+- difference btwn elastic IP and Public IP?
+- recently aws released a new thing about public ip what is that?
+- from 9-6 we are facing cpu utilisation, client is facing some performance issue, you have to find a solution which is cost effective .
+- what is VPC?
+- what is NAT gateway?
+- difference IGW and Nat Gateway?
+- what is mutable and immutable datatypes?
+- what is init in python?
+- default port of Jenkins?
+- how to change the port no of jenkins?
+- Changes that are made in local repo are not reflecting remote repo, what might be the issue?
+- i want to make the changes in the latest commit, how can we do that?
+- git commit -ammend, what is the use?
+- command to change the branchname?
+- command to create a branch?
+- difference between git pull and git fetch?
+- command to check the disk utilisation?
+- what is the use of du -sh ?
+- command for CPU utilisation?
+- memory utilisation?
+- if i have PID, how can i identify the service?
+- command to troubleshoot port conflict?
+- what is the use of netstat -tnpl?
+- you did some deployment in kubernetes pods got restarted and it shows 3/4 running, how to troubleshoot?
+- how to restart a pod manually? what is the command?
+- how to create namespace?
+- what is kube-proxy?
+- what is etcd?
+- kubernetes architecture?
+- what is PV and PVC?
+- 
+
 
 
 
