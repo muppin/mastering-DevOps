@@ -409,7 +409,7 @@
 - memory utilisation?
 - if i have PID, how can i identify the service?
 - command to troubleshoot port conflict?
-- what is the use of netstat -tnpl?
+- what is the use of netstat -tnpl? to list all the listening TCP ports
 - you did some deployment in kubernetes pods got restarted and it shows 3/4 running, how to troubleshoot?
 - how to restart a pod manually? what is the command?
 - how to create namespace?
