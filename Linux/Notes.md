@@ -273,3 +273,23 @@ To check the Linux distribution and version you are using, you can use one of th
    ```
 
 Each of these commands will provide information about the Linux distribution and version you are using. Choose the one that works best for your specific system and preferences.
+
+*******************************************************************************************************************************************************************************
+
+Certainly! The `netstat -lntp` command is used to display information about network connections and listening ports on a system. Let's break down what each part of the command does:
+
+- `netstat`: This is the command itself, which stands for "network statistics."
+- `-l`: Shows only listening sockets (i.e., ports that are actively waiting for incoming connections).
+- `-n`: Displays numerical addresses instead of resolving hostnames.
+- `-t`: Shows TCP connections.
+- `-p`: Displays the process ID (PID) and program name associated with each connection.
+
+When you run `netstat -lntp`, it will list all the listening TCP ports along with their associated processes. This can be helpful for troubleshooting port conflicts or identifying which services are using specific ports. 🚀🔧 ¹²³.
+
+Source: Conversation with Copilot, 11/6/2024
+(1) Netstat Command Cheat Sheet & Quick Reference. https://quickref.me/netstat.html.
+(2) Command line for looking at specific port - Stack Overflow. https://stackoverflow.com/questions/12010631/command-line-for-looking-at-specific-port.
+(3) Master the Linux ‘netstat’ Command: A Comprehensive Guide. https://hopeness.medium.com/master-the-linux-netstat-command-a-comprehensive-guide-6bb5a6f7e272.
+(4) Using the nstat network statistics command in Linux. https://www.redhat.com/sysadmin/nstat-command-linux.
+(5) How to use 'netstat' command on Windows 11 and 10. https://www.windowscentral.com/how-use-netstat-command-windows-10.
+(6) en.wikipedia.org. https://en.wikipedia.org/wiki/Netstat.
