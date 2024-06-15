@@ -8,7 +8,8 @@
 
 - command to create serviceaccount
   -
-  ``` eksctl create iamserviceaccount \
+  ```
+      eksctl create iamserviceaccount \
       --name ebs-csi-controller-sa \
       --namespace kube-system \
       --cluster demo \
