@@ -7,7 +7,6 @@
   - ``` eksctl utils associate-iam-oidc-provider --cluster demo --region eu-west-1 --approve ```
 
 - command to create serviceaccount
-  -
   ```
       eksctl create iamserviceaccount \
       --name ebs-csi-controller-sa \
