@@ -2,9 +2,14 @@
 
 - Check if eksctl is installed
   - ``` eksctl ```
+ 
+- command to login to EKS Cluster
+     ```aws eks --region <region> update-kubeconfig --name <cluster_name>```
+
 
 - The below command is used to associate an IAM OpenID Connect (OIDC) provider with your Amazon EKS cluster. This step is crucial for allowing your EKS cluster to interact with AWS services using IAM roles.
   - ``` eksctl utils associate-iam-oidc-provider --cluster demo --region eu-west-1 --approve ```
+  
 
 - command to create serviceaccount
   ```
