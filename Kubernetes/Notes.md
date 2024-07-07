@@ -1206,6 +1206,10 @@ By leveraging security context settings, you can enforce security best practices
 
 refer- https://cloudchamp.notion.site/Deployment-Strategies-to-definitely-know-7d6d59794dc74688bd2933eed72e920a
 
+- **max surge** - max number of pods that can be craeted beyond the desired number of pods.
+- **max unavaialble** - max number of pods that can be unavialable, during the rolling updates.
+- Both of them can be either in percentage or in numbers.
+
 
 
 
