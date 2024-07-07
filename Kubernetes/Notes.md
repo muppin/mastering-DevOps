@@ -1200,6 +1200,12 @@ In Kubernetes, security context allows you to set security-related attributes at
 
 By leveraging security context settings, you can enforce security best practices and policies within your Kubernetes clusters, reducing the risk of security breaches and ensuring the integrity and confidentiality of your applications and data.
 
+*************************************************************************************************************************************************************************
+
+## Deployment Strategies
+
+refer- https://cloudchamp.notion.site/Deployment-Strategies-to-definitely-know-7d6d59794dc74688bd2933eed72e920a
+
 
 
 
