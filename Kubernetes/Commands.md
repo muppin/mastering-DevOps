@@ -76,3 +76,10 @@ Basic Kubectl commands which are essential for a DevOps engineer to manage withi
 - 🔸 Get PVs/PVCs: kubectl get pv / kubectl get pvc
 - 🔸 Describe PV/PVC: kubectl describe pv <pv_name> / kubectl describe pvc <pvc_name>
 - 🔸 Delete PV/PVC: kubectl delete pv <pv_name> / kubectl delete pvc <pvc_name>
+
+**💠 Rolling Updates:**
+
+- **To pause the rolling update** - kubectl rollout pause deployment deploy_name
+- **To resume the rolling update** - kubectl rollout resume deployment deploy_name
+- **To undo the rolling update** - kubectl rollout undo deployment deploy_name
+- **To check the status rolling update** - kubectl rollout status deployment deploy_name
