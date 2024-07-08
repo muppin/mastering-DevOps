@@ -17,6 +17,7 @@
 - kubectl describe service SERVICE_NAME -n NAMESPACE -> To verify if services are aligned with the running Pods in Kubernetes.
 - kubectl get pods -v=7  -> used to retrieve information about pods in a K8s cluster with verbose output level 7. The -v flag is used to set the verbosity level, providing more detailed and verbose information about the pods.
 
+- kubectl exec -i nginx-deployment-576c6b7b6-j8944 -- bash
 
 **********************************************************************************************************************************************************************************************************************
 
