@@ -1218,6 +1218,13 @@ refer- https://cloudchamp.notion.site/Deployment-Strategies-to-definitely-know-7
 - **To check the status rolling update** - kubectl rollout status deployment deploy_name
 
 
+### Recreate
+
+- It will terminate the older version pods and then bring up the new version pods.
+- There will be a downtime associated with this strategy.
+- This strategy can be used when we have limited resources and we don't care about the downtime.
+
+
 
 
 
