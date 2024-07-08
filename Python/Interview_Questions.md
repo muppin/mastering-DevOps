@@ -155,4 +155,7 @@ print(a is b)  # Output: True (because they reference the same object)
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/44de52b7-117b-46ac-ab97-36b77bc81c9f)
 
+![image](https://github.com/muppin/mastering-DevOps/assets/56094875/776862a2-5532-4d39-bdea-a9315ad56a47)
+
+
 
