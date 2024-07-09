@@ -43,6 +43,7 @@
 - you can attach many more interfaces to the instance, based on the instance type.
 - the secondary interface comes the private ip and you can attach a public ip by assoaciating with elastic ip
 - each eni can have seperate security groups.
+- Attaching a secondary Elastic Network Interface (ENI) to an EC2 instance can increase network bandwidth, enable connections to multiple VPCs, and more.
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/9543f726-c8e9-4d6c-8066-cc11ad5720cf)
 
