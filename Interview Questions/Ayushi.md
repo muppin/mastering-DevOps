@@ -350,6 +350,29 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Command to check memory?
 - command to check disk usage?
 - Do you know Ansible or Chef?
+
+*********************************************************************************************************************************************************************************
+
+## Axcess.io
+
+- Tell me about yourself
+- Roles and responsibilities
+- Cloud experience
+- How would you rate yourself in AWS, out of 10
+- Which all services you have worked in AWS
+- Difference between NACL and Security group
+- A client want to deploy there application in AWS, suggest a highly available infra
+- have u ever configured alarms on AWS
+- Explain how to configure cloud watch alarms on EC2
+- When u hit kubectl apply, what all task each component of master plane and worker plane do?
+- components of dockerfile
+- trunc brancking strategy?
+- difference between replica set and daemon set?
+- difference between PV and PVC?
+- One application is running in private subnet, how will you access it on browser?
+- there is a node js application and you have to deploy it to EC2, how will you automate it?
+- 
+- 
   
 
 
