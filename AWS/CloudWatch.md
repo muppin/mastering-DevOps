@@ -50,7 +50,82 @@
 
 - By default, no logs from your EC2 machine will go to CloudWatch.
 - You need to run a CloudWatch agent on EC2 to push the log files you want.
-- The CloudWatch log agent can be setup on-premises too 
+- The CloudWatch log agent can be setup on-premises too
+
+**********************************************************************************************************************************
+
+### Explain how to configure cloud watch alarms on EC2
+
+
+Configuring CloudWatch alarms on EC2 instances involves setting up alarms that monitor specific metrics and take actions based on those metrics. Here’s a step-by-step guide on how to configure CloudWatch alarms for EC2 instances:
+
+### Step 1: Open CloudWatch Console
+1. Sign in to the AWS Management Console.
+2. Open the CloudWatch console by selecting **CloudWatch** from the AWS Management Console.
+
+### Step 2: Create an Alarm
+1. In the CloudWatch console, click on **Alarms** in the navigation pane on the left.
+2. Click on the **Create alarm** button.
+
+### Step 3: Select Metric
+1. Click on the **Select metric** button.
+2. Choose **EC2** from the list of available services.
+3. Select **Per-Instance Metrics** to view metrics for individual EC2 instances.
+4. Choose the specific EC2 instance and the metric you want to monitor (e.g., CPUUtilization, DiskReadOps, NetworkIn, etc.).
+5. Click **Select metric**.
+
+### Step 4: Configure Alarm
+1. **Specify metric and conditions**:
+   - **Metric name**: The name of the metric you selected (e.g., `CPUUtilization`).
+   - **Statistic**: Choose an appropriate statistic (e.g., `Average`).
+   - **Period**: The evaluation period for the metric (e.g., `5 minutes`).
+   - **Conditions**: Set the threshold type and value for the alarm (e.g., `Greater than 80%` for CPUUtilization).
+   - **Data points to alarm**: The number of consecutive periods the condition must be met (e.g., `3 out of 5`).
+
+2. **Configure actions**:
+   - **Send notification to**: Choose an existing SNS topic or create a new one to send notifications when the alarm state changes.
+   - **Auto Scaling action**: (Optional) Configure an Auto Scaling action to add or remove instances in an Auto Scaling group.
+   - **EC2 action**: (Optional) Choose to stop, terminate, reboot, or recover the EC2 instance when the alarm state changes.
+
+3. **Define alarm state**:
+   - **OK**: The state when the metric is within the defined threshold.
+   - **ALARM**: The state when the metric breaches the defined threshold.
+   - **INSUFFICIENT DATA**: The state when there is not enough data to determine the alarm state.
+
+### Step 5: Review and Create Alarm
+1. Review the settings and configuration of the alarm.
+2. Click on the **Create alarm** button to create the alarm.
+
+### Example: Creating a CPU Utilization Alarm
+Let’s create an example alarm to monitor CPU utilization of an EC2 instance and send an email notification if CPU usage exceeds 80% for more than 5 minutes.
+
+1. **Metric**: `CPUUtilization`
+2. **Statistic**: `Average`
+3. **Period**: `5 minutes`
+4. **Threshold**: `Greater than 80`
+5. **Data points to alarm**: `2 out of 2`
+6. **Actions**: Send notification to an SNS topic (e.g., `HighCPUNotification`).
+
+### Configuring SNS Topic for Notifications
+1. **Create SNS Topic**:
+   - Open the SNS console from the AWS Management Console.
+   - Click on **Create topic**.
+   - Enter a name for the topic (e.g., `HighCPUNotification`).
+   - Click on **Create topic**.
+
+2. **Subscribe to SNS Topic**:
+   - Click on the created topic.
+   - Click on **Create subscription**.
+   - Choose **Email** as the protocol.
+   - Enter the email address to receive notifications.
+   - Click on **Create subscription**.
+   - Confirm the subscription from the email received.
+
+### Verification
+1. Generate a high CPU load on the EC2 instance to test the alarm.
+2. Verify that you receive the notification via email when the CPU utilization exceeds 80%.
+
+By following these steps, you can configure CloudWatch alarms on EC2 instances to monitor specific metrics and automate actions based on those metrics.
 
 
   
