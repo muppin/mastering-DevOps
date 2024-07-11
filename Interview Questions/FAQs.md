@@ -432,7 +432,7 @@ To ensure a highly available infrastructure on AWS, you can design a multi-tier 
 
 This infrastructure ensures high availability, scalability, and fault tolerance for your client's application on AWS.
 
-*************************************************************************************************************************************************88What’s your salary expectation?
+*************************************************************************************************************************************************
 
 ## What’s your salary expectation?
 
@@ -452,7 +452,6 @@ Thank you for the offer. Based on my research and experience,
 I believe my skills and contributions align with best IT industry standards.
 However, I was hoping for a salary closer to [specific higher amount]. Given my [mention specific achievements or skills], I believe this adjustment reflects my value and commitment to driving results for {company_name}.
 
-Save it and do share with others
 
 
 
