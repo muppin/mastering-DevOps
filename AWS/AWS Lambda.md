@@ -19,6 +19,15 @@
 - **Layers**-AWS Lambda Layers are a way to centrally manage code and data that is shared across multiple functions. You can create a layer that includes libraries, custom runtimes, or other function dependencies. This helps in keeping your function code small and focused, and it allows for easy updates to shared code.
 - **Deafault invocation time in lambda is 3 seconds.**
 
+### AWS Lambda
+
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/2b974ddd-0bc6-4bd0-abdc-65a1080c9a72)
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/67c2c87f-a005-4148-bfed-df7074b7f8ba)
+- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/b7257347-3901-4c66-a7cb-0df80ab59d1b)
+
+
+
+
 Lambda Vs. EC2
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/a3ff2040-5830-4c46-bb75-6d3974bceddd)
