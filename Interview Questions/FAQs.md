@@ -432,4 +432,27 @@ To ensure a highly available infrastructure on AWS, you can design a multi-tier 
 
 This infrastructure ensures high availability, scalability, and fault tolerance for your client's application on AWS.
 
+*************************************************************************************************************************************************88What’s your salary expectation?
+
+## What’s your salary expectation?
+
+Case 1: You desperately need this job
+
+Ans: I am looking for a salary package which is align with market standards based on my skillset and job profile.
+
+
+Case 2: You already have at least 1 offer
+
+Ans: I am already getting interviewed for {this role} by couple of other companies. I am getting package in the range {X-Y}.
+Considering my skillset and vast experience in this technology, I feel my profile is very much aligned with job role. Hence looking for package in {X-Y} range 
+
+Case 3: Want to negotiate aggressively
+
+Thank you for the offer. Based on my research and experience, 
+I believe my skills and contributions align with best IT industry standards.
+However, I was hoping for a salary closer to [specific higher amount]. Given my [mention specific achievements or skills], I believe this adjustment reflects my value and commitment to driving results for {company_name}.
+
+Save it and do share with others
+
+
 
