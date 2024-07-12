@@ -468,7 +468,31 @@ Types of Autoscalers:
 
 - increases/decreases the resources of existing pod, instead of creating new pods.
 - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/c840af7e-b9f2-4250-890d-b14f8614bfcf)
-- ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/651cb98a-db03-47b2-9f50-af60310728ee)
+
+```
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: my-app-vpa
+  namespace: default
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind:       Deployment
+    name:       my-app
+  updatePolicy:
+    updateMode: "Auto"
+  resourcePolicy:
+    containerPolicies:
+    - containerName: '*'
+      minAllowed:
+        cpu: 100m
+        memory: 128Mi
+      maxAllowed:
+        cpu: 1
+        memory: 1Gi
+```
+
 - update modes:
     - Auto : kubernetes applies the resource limits to the pods recommended by VPA
     - off : VPA just recommends not applies
