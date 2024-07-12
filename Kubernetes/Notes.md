@@ -845,8 +845,8 @@ Here are the general steps to set up a `PodSecurityPolicy` to avoid running priv
 6. **Test:**
    Create a pod to test whether the `PodSecurityPolicy` is applied:
 
-   ```yaml
-   apiVersion: v1
+```yaml
+apiVersion: v1
 kind: Pod
 metadata:
   name: privileged-pod
@@ -856,7 +856,7 @@ spec:
     image: my-container-image
     securityContext:
       privileged: true
-   ```
+```
 
    Apply the pod manifest:
 
