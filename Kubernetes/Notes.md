@@ -847,13 +847,15 @@ Here are the general steps to set up a `PodSecurityPolicy` to avoid running priv
 
    ```yaml
    apiVersion: v1
-   kind: Pod
-   metadata:
-     name: test-pod
-   spec:
-     containers:
-     - name: test-container
-       image: nginx
+kind: Pod
+metadata:
+  name: privileged-pod
+spec:
+  containers:
+  - name: privileged-container
+    image: my-container-image
+    securityContext:
+      privileged: true
    ```
 
    Apply the pod manifest:
