@@ -21,6 +21,9 @@
 
 - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/b55e5c99-77ca-4c98-9a75-e3f7cb8082ae)
 
+- **What is a init container?**
+   - Init containers are specialized containers in Kubernetes that run to completion before the main application containers in a pod are started. They are used to perform initialization tasks or setup steps that must complete successfully before the main application can start.
+
 - **What is a custom controller?**
 
 - ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/1d199768-c07e-40ba-a629-85460a0b0757)
