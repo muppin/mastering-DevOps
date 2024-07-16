@@ -452,6 +452,16 @@ Thank you for the offer. Based on my research and experience,
 I believe my skills and contributions align with best IT industry standards.
 However, I was hoping for a salary closer to [specific higher amount]. Given my [mention specific achievements or skills], I believe this adjustment reflects my value and commitment to driving results for {company_name}.
 
+_____________________________________________________________________________________________________________________________________________________________________________________
+
+## Why Three master Nodes Specifically in Kubernetes Cluster?
+
+
+- Minimum for High Availability: Three nodes are the minimum number required to provide fault tolerance and high availability in a distributed system. With two nodes, the failure of one would result in a lack of majority, making the system unavailable. With three nodes, the system can tolerate the failure of one node and still maintain a majority(Quorum).
+- Cost and Complexity Balance: Three nodes strike a balance between the cost of additional resources and the complexity of managing the cluster. More nodes can provide higher availability, but also come with increased operational and financial costs. Three nodes are often seen as a sweet spot for many use cases.
+Conclusion
+- In summary, having three master nodes in a Kubernetes cluster is essential for ensuring high availability, fault tolerance, load balancing, redundancy, and reliability. This configuration allows the cluster to continue functioning smoothly even in the event of a node failure, providing a robust and resilient infrastructure for running applications.
+
 
 
 
