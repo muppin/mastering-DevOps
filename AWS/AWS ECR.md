@@ -47,3 +47,10 @@ docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-repository:latest
 ```
 
 Make sure to replace the placeholders (`<AWS_REGION>`, `<AWS_ACCOUNT_ID>`, `<REPOSITORY_NAME>`, `<IMAGE_NAME>`, and `<TAG>`) with your actual AWS configuration and Docker image information.
+
+### Lifecycle rules
+
+1. Filtering on image age (sinceImagePushed = 14) : it deletes/removes an image older than 14 days.
+2. Filtering on image count (imageCountMoreThan = 1) : if the policy has image tagged with wildcard i.e. v1*, the moment you add another image withv1 tag it will remove the older v1 image. (use the rules with precautions).
+
+
