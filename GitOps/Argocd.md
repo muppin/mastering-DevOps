@@ -85,7 +85,137 @@ ________________________________________________________________________________
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
 **Scenarios**
+
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/c3ae1f4b-d791-4f73-add4-965908eef8a3)
+
+**argocd considers git as single source of truth, how to handle entries made by admission contoller. then admission controller that adds resource requests and limits?**
+
+When using ArgoCD with an admission controller that automatically adds resource requests and limits, it can lead to discrepancies between the desired state defined in your Git repository and the actual state in the Kubernetes cluster. To handle this scenario while maintaining Git as the single source of truth, you can consider the following strategies:
+
+### 1. **Declarative Admission Controller Policies**
+
+If possible, define the policies and configurations of the admission controller in your Git repository. This way, you can version and manage these policies as part of your GitOps workflow.
+
+### 2. **Sync Options in ArgoCD**
+
+ArgoCD provides sync options that can help manage changes introduced by admission controllers. You can use the `ignoreDifferences` field to tell ArgoCD to ignore specific fields or annotations that are added by admission controllers.
+
+#### Example: Ignore Differences
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+spec:
+  source:
+    repoURL: https://github.com/my-org/my-repo
+    path: my-app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  ignoreDifferences:
+    - group: ""
+      kind: Deployment
+      jsonPointers:
+        - /spec/template/spec/containers/0/resources
+```
+
+In this example, ArgoCD is configured to ignore differences in the `resources` field of the first container in the `Deployment` resource.
+
+### 3. **Admission Controller Configuration**
+
+Configure the admission controller to add annotations or labels that ArgoCD can recognize and manage accordingly. This helps ensure that changes made by the admission controller are intentional and can be accounted for in the Git repository.
+
+### 4. **Post-Processing Hooks**
+
+ArgoCD supports lifecycle hooks that allow you to run custom scripts or commands at various stages of the synchronization process. You can use these hooks to manage changes introduced by the admission controller.
+
+#### Example: Post-Sync Hook
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+spec:
+  source:
+    repoURL: https://github.com/my-org/my-repo
+    path: my-app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  hooks:
+    - name: post-sync
+      exec:
+        command: ["sh", "-c", "kubectl annotate deployment my-deployment my-annotation=value"]
+```
+
+### 5. **Customize Application Definitions**
+
+Customize your application definitions to include the resource requests and limits that the admission controller would add. By defining these resources in Git, you ensure that the desired state matches the actual state.
+
+#### Example: Define Resources in Git
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-container
+          image: my-image:latest
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+```
+
+### 6. **Monitoring and Alerts**
+
+Set up monitoring and alerts to notify you when there are discrepancies between the desired state and the actual state. This can help you quickly identify and address any issues that arise due to changes made by the admission controller.
+
+#### Example: ArgoCD Notifications
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-notifications-cm
+  namespace: argocd
+data:
+  triggers.yaml: |
+    - name: on-sync-status-unknown
+      condition: app.status.operationState.phase == 'Unknown'
+      template: unknown-sync
+  templates.yaml: |
+    - name: unknown-sync
+      title: "Application {{app.metadata.name}} sync status is unknown"
+      body: |
+        Application {{app.metadata.name}} in namespace {{app.metadata.namespace}} has sync status unknown.
+```
+
+### Conclusion
+
+By using a combination of declarative policies, sync options, hooks, and monitoring, you can effectively manage changes introduced by admission controllers while maintaining Git as the single source of truth in ArgoCD. This approach ensures that your desired state remains consistent with the actual state in your Kubernetes cluster, even when admission controllers add resource requests and limits.
 
 
 
