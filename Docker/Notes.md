@@ -217,7 +217,7 @@ Docker provides restart policies that define what should happen when a container
   docker run --restart always -d your_image
   ```
 
-  This restart policy ensures that the container restarts automatically unless explicitly stopped.
+  In Docker, the always restart policy ensures that a container restarts automatically whenever it stops. Whether it’s manually stopped or exits due to an error, Docker will promptly restart it.
 
 - **Unless Stopped:**
   ```bash
