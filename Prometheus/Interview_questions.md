@@ -19,3 +19,65 @@ Certainly! Let's explore the differences between the **Node Exporter** and the *
    - **Caution**: Avoid using it as a general monitoring solution; consider Prometheus for that¹⁵.
 
 In summary, the Node Exporter is more focused on system-level metrics, while the Metrics Server is tailored for Kubernetes autoscaling. Let me know if you need further details! 😊
+
+### what is the use Pushgateway pod in Kubernetes?
+
+- The Pushgateway is a component in the Prometheus ecosystem that allows short-lived jobs to expose their metrics to Prometheus. It acts as an intermediary between short-lived job instances (which may not be consistently available for scraping) and Prometheus itself1. Essentially, it serves as a bridge for jobs that cannot be directly scraped by Prometheus due to their ephemeral nature. By pushing their metrics to a metrics cache via the Pushgateway, these jobs enable Prometheus to collect and monitor them2. Keep in mind that the Pushgateway is recommended only for specific use cases, such as capturing the outcome of service-level batch jobs
+
+### what is the use of kube state metrics in prometheus?
+
+- **kube-state-metrics** is an essential component in the **Prometheus ecosystem**. Let me break down its purpose:
+
+1. **What Is kube-state-metrics?**
+   - It's an **add-on agent** that generates and exposes **cluster-level metrics**.
+   - It listens to the **Kubernetes API server** and extracts information about various objects within the cluster.
+   - These objects include **Deployments**, **Pods**, **Services**, and **StatefulSets**.
+
+2. **Why Use kube-state-metrics?**
+   - Unlike monitoring individual Kubernetes components, it focuses on the **health of objects** inside the cluster.
+   - It ensures that features provided by kube-state-metrics have the same stability as the Kubernetes API objects themselves.
+   - Metrics are exposed via an **HTTP endpoint** (usually on port 8080) and can be consumed by **Prometheus** or compatible scrapers.
+
+3. **Raw Data from Kubernetes API**:
+   - kube-state-metrics exposes **raw, unmodified data** from the Kubernetes API.
+   - This means users have access to all necessary data and can apply their own heuristics.
+   - Metrics reflect the **current state** of the cluster, and deleted objects are no longer visible.
+
+Remember, kube-state-metrics enhances your monitoring capabilities by providing valuable insights into your Kubernetes environment! 🚀📊 ⁴⁵
+
+### Why there are 2 differnent pods that are named prometheus node exporter when we deploy prometheus helm chart
+
+- It's not uncommon to encounter **two different pods** named **Prometheus Node Exporter** in a Kubernetes cluster. Let me explain why:
+
+1. **Prometheus Node Exporter**:
+   - The **official Prometheus exporter** captures **Linux system-related metrics**.
+   - It collects hardware and OS-level metrics exposed by the kernel.
+   - These metrics include CPU usage, memory, disk I/O, and network statistics.
+   - The **node exporter** runs as a **daemonset** on all nodes, ensuring one instance per node.
+   - It exposes metrics via an **HTTP endpoint** on port 9100.
+
+2. **Cadvisor**:
+   - Cadvisor is another **container-level metrics agent** integrated with Kubernetes.
+   - It specifically monitors **individual containers** within pods.
+   - Cadvisor provides detailed insights into container resource usage.
+   - Metrics are available via the **/metrics** endpoint on port 4194.
+
+In summary, Prometheus Node Exporter focuses on **system-wide metrics**, while Cadvisor dives into **container-specific details**. Both are essential for comprehensive monitoring! 🚀📊 ¹³
+
+### what is the purpose of alertmanager pod in prometheus?
+
+- The **Alertmanager** handles alerts sent by client applications, such as the **Prometheus server**. Its key responsibilities include:
+
+1. **Deduplication**: Ensuring that duplicate alerts are eliminated.
+2. **Grouping**: Categorizing similar alerts into a single notification (useful during larger outages).
+3. **Routing**: Sending alerts to the correct receivers (e.g., email, PagerDuty, OpsGenie).
+4. **Silencing**: Temporarily muting alerts.
+5. **Inhibition**: Suppressing notifications for certain alerts based on others firing.
+
+In summary, the Alertmanager streamlines alert handling and ensures timely, relevant notifications! 🚀📊 ¹
+
+Source: Conversation with Copilot, 21/7/2024
+(1) Alertmanager | Prometheus. https://prometheus.io/docs/alerting/latest/alertmanager/.
+(2) How to build an alerting system with Prometheus and Alertmanager. https://blog.devops.dev/how-to-build-an-alerting-system-with-prometheus-and-alertmanager-cd75a28c2b74.
+(3) Prometheus Alerting with AlertManager | by Riya Sharma | DevOps.dev. https://blog.devops.dev/prometheus-alerting-with-alertmanager-d3ed40e2df4f.
+(4) en.wikipedia.org. https://en.wikipedia.org/wiki/Prometheus_(software).
