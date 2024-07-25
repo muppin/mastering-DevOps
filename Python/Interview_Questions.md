@@ -159,6 +159,97 @@ print(a is b)  # Output: True (because they reference the same object)
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/56094875/a3b9a088-fb91-4e35-beb6-04626a6f4eaa)
 
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+**Difference btwn repose.json() and json.loads()**
+
+- The difference between `response.json()` and `json.loads()` pertains to their use cases and the contexts in which they are applied. Here’s a detailed explanation:
+
+### `response.json()`
+- **Context**: This method is used with the `requests` library's `Response` object.
+- **Purpose**: It directly parses the JSON content of the HTTP response.
+- **Usage**: It’s a convenient method for converting the JSON content of a response to a Python dictionary or list.
+- **Example**:
+  ```python
+  import requests
+
+  response = requests.get("https://api.github.com/repos/kubernetes/kubernetes/pulls")
+  complete_details = response.json()  # Parses the JSON content from the HTTP response
+  ```
+
+### `json.loads()`
+- **Context**: This function is part of the built-in `json` module.
+- **Purpose**: It parses a JSON-formatted string into a Python dictionary or list.
+- **Usage**: You use it when you have a JSON string that you need to convert into a Python object.
+- **Example**:
+  ```python
+  import json
+
+  json_string = '{"name": "John", "age": 30, "city": "New York"}'
+  data = json.loads(json_string)  # Parses the JSON string into a Python dictionary
+  ```
+
+### Detailed Comparison
+
+#### 1. **Source of Data**:
+- **`response.json()`**:
+  - Extracts and parses JSON data directly from the `requests.Response` object.
+  - Suitable when dealing with HTTP responses.
+- **`json.loads()`**:
+  - Parses JSON data from a string.
+  - Suitable when you already have JSON data in string format.
+
+#### 2. **Convenience**:
+- **`response.json()`**:
+  - More convenient when dealing with HTTP responses as it combines fetching the data and parsing it into one step.
+- **`json.loads()`**:
+  - Requires the JSON data to be a string before parsing. You would need to extract the content from a response first and then parse it if using raw JSON strings.
+
+#### 3. **Error Handling**:
+- **`response.json()`**:
+  - Raises an exception if the response body does not contain valid JSON.
+  - Handles some cases where the response might not be valid JSON by providing a more user-friendly error message.
+- **`json.loads()`**:
+  - Raises a `json.JSONDecodeError` if the string is not valid JSON.
+
+### Example Using Both Together
+
+If you were to use `json.loads()` with an HTTP response, you would need to first extract the content of the response as a string, then parse it:
+
+```python
+import requests
+import json
+
+response = requests.get("https://api.github.com/repos/kubernetes/kubernetes/pulls")
+
+# Extract content as a string
+json_string = response.text
+
+# Parse JSON string to a Python object
+complete_details = json.loads(json_string)
+
+for i in range(len(complete_details)):
+    print(complete_details[i]["user"]["login"])
+```
+
+However, this approach is more cumbersome compared to simply using `response.json()`:
+
+```python
+import requests
+
+response = requests.get("https://api.github.com/repos/kubernetes/kubernetes/pulls")
+
+# Directly parse the JSON content
+complete_details = response.json()
+
+for i in range(len(complete_details)):
+    print(complete_details[i]["user"]["login"])
+```
+
+### Summary
+- Use `response.json()` for parsing JSON data from HTTP responses obtained using the `requests` library.
+- Use `json.loads()` for parsing JSON data from strings.
+
 
 
 
