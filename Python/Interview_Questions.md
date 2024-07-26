@@ -246,10 +246,96 @@ for i in range(len(complete_details)):
     print(complete_details[i]["user"]["login"])
 ```
 
+
 ### Summary
 - Use `response.json()` for parsing JSON data from HTTP responses obtained using the `requests` library.
 - Use `json.loads()` for parsing JSON data from strings.
 
+
+________________________________________________________________________________________________________________________________________________________________________________________
+
+**What is __name__ == "__main__" in python?**
+
+The `if __name__ == "__main__":` construct in Python is a common idiom used to determine whether a script is being run as the main program or being imported as a module into another script. Here’s a detailed explanation:
+
+### What is `__name__`?
+
+- **`__name__`** is a special built-in variable in Python.
+- When a Python file is run directly, the `__name__` variable is set to `"__main__"`.
+- When a Python file is imported as a module into another script, the `__name__` variable is set to the name of the module.
+
+### How `if __name__ == "__main__":` Works
+
+1. **Direct Execution**:
+   - When you run a Python script directly, the interpreter sets `__name__` to `"__main__"`.
+   - The block of code under `if __name__ == "__main__":` will be executed.
+
+2. **Imported as a Module**:
+   - When you import a Python script as a module into another script, the interpreter sets `__name__` to the name of the script (e.g., `"mymodule"` if the script is named `mymodule.py`).
+   - The block of code under `if __name__ == "__main__":` will not be executed.
+
+### Why Use `if __name__ == "__main__":`?
+
+- **Code Organization**: It allows you to organize code in a way that certain parts (e.g., function and class definitions) can be reused by importing, while other parts (e.g., test code or script execution) only run when the script is executed directly.
+- **Reusability**: It makes your code reusable as a module in other scripts without executing the main script code.
+- **Testing**: It allows you to include test code or examples that run only when the script is executed directly, not when imported.
+
+### Example
+
+Here’s an example to illustrate its usage:
+
+```python
+# mymodule.py
+
+def greet(name):
+    return f"Hello, {name}!"
+
+# This block will only run if the script is executed directly
+if __name__ == "__main__":
+    name = "Alice"
+    print(greet(name))
+```
+
+### Explanation of the Example
+
+1. **Function Definition**:
+   ```python
+   def greet(name):
+       return f"Hello, {name}!"
+   ```
+   - A simple function `greet` is defined that returns a greeting message.
+
+2. **Main Block**:
+   ```python
+   if __name__ == "__main__":
+       name = "Alice"
+       print(greet(name))
+   ```
+   - The `if __name__ == "__main__":` block contains code that will only run when `mymodule.py` is executed directly.
+   - If you run `mymodule.py` directly, it will print `Hello, Alice!`.
+
+### Importing the Module
+
+If you import `mymodule.py` into another script:
+
+```python
+# another_script.py
+
+import mymodule
+
+print(mymodule.greet("Bob"))
+```
+
+- The `if __name__ == "__main__":` block in `mymodule.py` will not be executed.
+- The function `greet` can be used in `another_script.py`, and it will print `Hello, Bob!`.
+
+### Summary
+
+- **`__name__`**: Special variable set to `"__main__"` when the script is run directly, or the module name when imported.
+- **`if __name__ == "__main__":`**: Ensures that code block runs only when the script is executed directly.
+- **Benefits**: Enhances code reusability, organization, and allows for test code or examples within the script.
+
+This construct is a widely adopted best practice in Python programming to distinguish between reusable modules and directly executable scripts.
 
 
 
