@@ -45,7 +45,7 @@
 - **mkdir -p abc/def/xyz** -> creating a folder inside folder
 - **pwd** -> present working directory
 - **cat <file_name>** -> lists the contents of the file
-- **echo "Hello world" > file.txt** -> ">" is a redirection, writing Hello world to file.txt
+- **echo "Hello world" > file.txt** -> ">" is a redirection, writing Hello world to file.txt  ('>' will overwrite and '>>' will append)
 - **man <any_command>** -> describes you about that command
 - **tr a-z A-Z** -> transalates all lower case letters to upper case letters
 - **echo "hello world" | tr a-z A-Z** -> "|" piping is taking the output of a first command and feeding to the second command.
