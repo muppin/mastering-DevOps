@@ -24,7 +24,7 @@ spec:
 
 #### Can you connect to your application locally without using a service, and explain how you would accomplish this?
 - Yes, you can connect to your application running in a Kubernetes cluster locally without using a Kubernetes Service by using port forwarding. Port forwarding allows you to forward a port on your local machine to a port on a pod in the Kubernetes cluster. This is useful for debugging or testing your application locally without exposing it through a Kubernetes Service.
-- kubectl port-forward <pod-name> <local-port>:<pod-port>
+- ```kubectl port-forward <pod-name> <local-port>:<pod-port>```
 - This is particularly useful for debugging, development, and testing. By forwarding a port from your local machine to a port on a pod, you can interact with your application as if it were running locally.
 
 #### You have mentioned that you are Intermediate in Kubernetes, May I know what are the different ways to deploy your deployment?
