@@ -72,3 +72,7 @@ EXPOSE 3000
 CMD ["node", "server.js"]
 ```
 
+#### How can you prevent your Docker build from using the previous cache when you run the build?
+- To prevent your Docker build from using the previous cache, you can use the --no-cache option with the docker build command. This ensures that Docker does not use any cached layers and builds the image from scratch
+- If you want to clear all the build cache before building the image, you can use docker builder prune: and then build the image from scratch
+
