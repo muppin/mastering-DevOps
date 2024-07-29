@@ -40,7 +40,7 @@ kubectl apply -f testpod.yml
 
 #### Imagine you are working on a Dockerfile for a web application. You need to ensure that your container does not run processes as the root user for security reasons, What steps you follow ?
 - To ensure a container doesn't run processes as the root user, I will create a non-root user within the Dockerfile and switch to that user before running the application. This can be done by adding a `useradd` command to create a new user and the `USER` directive to switch to that user. Additionally, i will make sure i will set a working directory with `WORKDIR` to organize the file structure. This enhances security by preventing processes from having unnecessary root privileges.
-- ```
+```
   # Use an official base image
 FROM node:14
 
