@@ -76,3 +76,75 @@ CMD ["node", "server.js"]
 - To prevent your Docker build from using the previous cache, you can use the --no-cache option with the docker build command. This ensures that Docker does not use any cached layers and builds the image from scratch
 - If you want to clear all the build cache before building the image, you can use docker builder prune: and then build the image from scratch
 
+#### can I overwrite the build ARG when running container , if not, what flag you pass to overwrite ?
+- No, you cannot directly overwrite a build-time argument (`ARG`) when running a container. Build arguments (`ARG`) are used only during the build process and are not available at runtime. To pass configuration values to a running container, you should use environment variables (`ENV`).
+
+##### Setting Environment Variables in Docker
+
+1. **During Build**: You can set default environment variables using the `ENV` instruction in the Dockerfile.
+2. **During Run**: You can override these environment variables when running the container using the `-e` flag.
+
+##### Example Dockerfile with `ARG` and `ENV`
+
+Here's an example Dockerfile that uses both `ARG` and `ENV`:
+
+```Dockerfile
+# Use a base image
+FROM node:14
+
+# Set a build-time argument
+ARG APP_VERSION=1.0
+
+# Set environment variables
+ENV APP_VERSION=${APP_VERSION}
+ENV APP_ENV=production
+
+# Create app directory
+RUN mkdir -p /app
+WORKDIR /app
+
+# Copy application files
+COPY . /app
+
+# Install dependencies
+RUN npm install
+
+# Expose the app port
+EXPOSE 3000
+
+# Start the app
+CMD ["node", "server.js"]
+```
+
+##### Building the Docker Image with `ARG`
+
+You can pass a build argument using the `--build-arg` flag when building the Docker image:
+
+```sh
+docker build --build-arg APP_VERSION=2.0 -t my-app .
+```
+
+##### Running the Docker Container with `ENV`
+
+You can override the environment variables using the `-e` flag when running the container:
+
+```sh
+docker run -e APP_ENV=development -e APP_VERSION=2.0 -p 3000:3000 my-app
+```
+
+##### Summary
+
+While you cannot overwrite a build argument (`ARG`) at runtime, you can achieve similar functionality by setting environment variables (`ENV`) and overriding them when running the container. Use `-e` flag with `docker run` to pass and override environment variables. This method provides flexibility to configure your application at runtime without needing to rebuild the image.
+
+####  if I wanted to deleted all stopped containers, all network which were not used by any containers and all dangling images . What is that one command, I can run?
+- You can clean up your Docker environment by removing all stopped containers, unused networks, and dangling images with a single command using docker system prune. This command will remove all unused data in your Docker environment.
+- ```docker system prune -a -f```
+
+#### Imagine you are managing Docker images on your system. How would you list all the dangling images, and then how would you delete ?
+- docker images --filter=dangling=true This command shows the unwanted none files
+- docker image prune -f = this command deletes the dangling images.
+
+#### During development or testing phases, if you want to ensure that Docker automatically removes a container once you stop it, how would you achieve this?
+- To ensure that Docker automatically removes a container once it stops, you can use the --rm flag when running the container. This flag is used to automatically clean up the container and remove it when it exits. This is particularly useful during development or testing phases when you want to avoid accumulating stopped containers.
+- ``` docker run --rm -d --name frontend -p 8001:80 containername ```
+
