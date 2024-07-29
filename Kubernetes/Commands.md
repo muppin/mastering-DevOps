@@ -19,6 +19,7 @@
 - kubectl exec -i nginx-deployment-576c6b7b6-j8944 -- bash
 - kubectl logs POD_NAME --since=1h  -> To view the logs from a Kubernetes pod for the past hour
 -  kubectl logs POD_NAME -c CONTAINER_NAME --since=1h -> If your pod contains multiple containers, you'll need to specify the container from which you want to view logs by adding the -c or --container flag.
+-  kubectl port-forward my-app-pod 80:8080 -> forwarding the traffic to port 80, here 8080 is target port(pod port) and 80 is local machine port.
 
 **********************************************************************************************************************************************************************************************************************
 
