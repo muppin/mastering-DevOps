@@ -33,3 +33,42 @@ kubectl run app1 --image nginx:latest --dry-run -o yaml
 - Declarative is commonly used with YAML or JSON, you write a manifest file and apply it:
 kubectl apply -f testpod.yml
 - There are other different ways as well like HELM and GITOPS way.
+
+#### So my client requires all their websites should use SSL termination. Currently, the websites run on port 80, but they need to be automatically redirected to port 443 for secure connections. How would you achieve this?
+
+#### Imagine you're building a Docker image for a Node.js application. What steps would you take to minimize the image size while ensuring all dependencies are included?
+
+#### Imagine you are working on a Dockerfile for a web application. You need to ensure that your container does not run processes as the root user for security reasons, What steps you follow ?
+- To ensure a container doesn't run processes as the root user, I will create a non-root user within the Dockerfile and switch to that user before running the application. This can be done by adding a `useradd` command to create a new user and the `USER` directive to switch to that user. Additionally, i will make sure i will set a working directory with `WORKDIR` to organize the file structure. This enhances security by preventing processes from having unnecessary root privileges.
+- ```
+  # Use an official base image
+FROM node:14
+
+# Create a non-root user and group
+RUN groupadd -r appgroup && useradd -r -g appgroup -d /home/appuser -s /sbin/nologin -c "Docker image user" appuser
+
+# Create a directory for the application and set permissions
+RUN mkdir -p /app && chown -R appuser:appgroup /app
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the application code
+COPY . /app
+
+# Install application dependencies
+RUN npm install
+
+# Change ownership of the application files
+RUN chown -R appuser:appgroup /app
+
+# Switch to the non-root user
+USER appuser
+
+# Expose the application port
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "server.js"]
+```
+
