@@ -371,8 +371,45 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - difference between PV and PVC?
 - One application is running in private subnet, how will you access it on browser?
 - there is a node js application and you have to deploy it to EC2, how will you automate it?
+
+******************************************************************************************************************************************************************************
+
+
+## LTIMindtree
+
+- Tell me about yourself
+- Why u want to switch the job
+- What all projects u have worked on
+- Do you only work on java based or python and node.js also?
+- latest version of python?
+- you worked on jdk or jre?
+- latest version of jdk?
+- Do you write dockerfiles?
+- Give a example when to use CMD and when to use ENTRYPOINT
+- Command to build docker image
+- command to run container
+- how to attach volume in docker, command?
+- Explain CI/CD pipeline
+- In which language u write pipelines, is it groovy?
+- Is it a declerative pipeline or a scripted one?
+- Do do write pipeline from strach?
+- Where you are deploying these build? On EC2 or on on-prem servers?
+- how to do sonar scan?
+- Do you write k8s manifests?
+- do you write infra code of TF by yourself?
+- Have you encountered any build failures, discuss some common cases as memory issues?
+- Do you do k8s troubleshooting? Talk about some scenarios?
+- What you will do if a container keeps failing?
+- What is Imagepullbackoff and possible reasons?
+- Where we will mention ImagePullSecret?
+- Possible reasons of Crashloopbackoff?
+- Apart from EKS, which other services u worked on AWS?
+- What all task you do on EC2, VPC, S3 and all?
+- which lang u are using for scripting?
+- explain a use case where u have written a python script?
+- how this script is having all details of jira?
+- how u are dynamically assigning create date, due date of jira?
 - 
-- 
-  
+ ************************************************************************************************************************************************************************************ 
 
 
