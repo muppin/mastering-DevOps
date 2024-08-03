@@ -1,4 +1,4 @@
-**Describe a real-world example of how you used Python to solve a DevOps challenge.**
+## Describe a real-world example of how you used Python to solve a DevOps challenge.
 
 Here you can talk about the projects that we did in this series
 - GitHub Webhooks
@@ -21,7 +21,7 @@ Here you can talk about the projects that we did in this series
 
   **********************************************************************************************************************************************************************************
 
-  **Discuss the challenges that you faced while using Python for DevOps and how did you overcome it.**
+## Discuss the challenges that you faced while using Python for DevOps and how did you overcome it.
 
   - I was not able to figure out the issue_type_ID: I explored the documentation
   - It was my first time with flask
@@ -29,7 +29,7 @@ Here you can talk about the projects that we did in this series
  
   **********************************************************************************************************************************************************************************
 
-  **How can you secure your Python code and scripts?**
+## How can you secure your Python code and scripts?
 
   - Any kind of sensitive data, I will not put in the code
   - I will try to use options such as command line arguments
@@ -38,19 +38,19 @@ Here you can talk about the projects that we did in this series
  
   **********************************************************************************************************************************************************************************
 
-  **Explain the difference between mutable and immutable objects.**
+## Explain the difference between mutable and immutable objects.
 
   - Mutable- can be changed
   - Immutable- can not be changed
  
   ********************************************************************************************************************************************************************************
 
-  **Difference between list and tuples?**
+## Difference between list and tuples?
   Lists are mutable and typically used for storing collections of items that can be changed, while tuples are immutable and commonly used to store collections of items that shouldn't change.
 
   ****************************************************************************************************************************************************************************************
 
-  **If two different teams that expect you to have two different versions of same python pakage or module, how to resolve?**
+## If two different teams that expect you to have two different versions of same python pakage or module, how to resolve?
 
   - use virtualenv
   - Virtualenv creates isolated Python environments, allowing different projects to use different versions of packages without conflicts. 
@@ -70,13 +70,13 @@ Here you can talk about the projects that we did in this series
 
 *************************************************************************************************************************************************************************************************
 
-**What are decorators in Python?**
+## What are decorators in Python?
 
 - Decorators modify the behavior of functions. They take a function as an argument, add some functionality, and return another function without modifying the original function's code. 
 - Real world example: suppose u want to validate if a user has a logged in session before invoking a API, you can use decorator.
 
 ************************************************************************************************************************************************************************************************
-**How does exception handling work in Python?**
+## How does exception handling work in Python?
 
 - Instead for breaking or failing of python program, you want to continue.
 - Exception handling in Python uses try, except, else, and finally blocks.
@@ -93,7 +93,7 @@ finally:
 
 **********************************************************************************************************************************************************************************************
 
-**What's the difference between append() and extend() for lists?**
+## What's the difference between append() and extend() for lists?
 
 - append() adds a single element to the end of a list, while extend() adds multiple elements by appending elements from an iterable. Example:
 
@@ -111,7 +111,7 @@ print(my_list)  # Output: [1, 2, 3, 4, 5]
 ```
 
 *********************************************************************************************************************************************************************************************************
-**Explain the use of lambda functions in Python.**
+## Explain the use of lambda functions in Python.
 - When u know this function will not be re-used, you can write lambda funtions instead of funtion definitions.
 - Lambda functions are anonymous functions used for short tasks.
 - Benefits- it will make code more concise, easy to read.
@@ -125,7 +125,7 @@ Defining and using a lambda function:
 
 ********************************************************************************************************************************************************************************************************
 
-**difference between for and while loop in python**
+## difference between for and while loop in python
 
 - for Loop:The for loop is used for iterating over a sequence (such as a list, tuple, string, or range) or any iterable object.
 - The while loop is used for iterating until a specified condition evaluates to False.
@@ -161,7 +161,7 @@ print(a is b)  # Output: True (because they reference the same object)
 
 __________________________________________________________________________________________________________________________________________________________________________________________
 
-**Difference btwn repose.json() and json.loads()**
+## Difference btwn response.json() and json.loads()
 
 - The difference between `response.json()` and `json.loads()` pertains to their use cases and the contexts in which they are applied. Here’s a detailed explanation:
 
@@ -254,7 +254,7 @@ for i in range(len(complete_details)):
 
 ________________________________________________________________________________________________________________________________________________________________________________________
 
-**What is __name__ == "__main__" in python?**
+## What is __name__ == "__main__" in python?
 
 The `if __name__ == "__main__":` construct in Python is a common idiom used to determine whether a script is being run as the main program or being imported as a module into another script. Here’s a detailed explanation:
 
@@ -336,6 +336,85 @@ print(mymodule.greet("Bob"))
 - **Benefits**: Enhances code reusability, organization, and allows for test code or examples within the script.
 
 This construct is a widely adopted best practice in Python programming to distinguish between reusable modules and directly executable scripts.
+
+## How to access the keys and values in Dictionary?
+
+In Python, you can access the keys and values in a dictionary using various methods. Here are some common ways to do this:
+
+### Iterating Over Keys, Values, and Items
+
+You can use loops to iterate over keys, values, and items.
+
+#### Iterating Over Keys
+
+```python
+# Iterate over keys
+for key in my_dict.keys():
+    print("Key:", key)
+```
+
+#### Iterating Over Values
+
+```python
+# Iterate over values
+for value in my_dict.values():
+    print("Value:", value)
+```
+
+#### Iterating Over Items
+
+```python
+# Iterate over key-value pairs
+for key, value in my_dict.items():
+    print("Key:", key, "Value:", value)
+```
+
+### Example
+
+Here's a complete example demonstrating all these methods:
+
+```python
+# Define a dictionary
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+
+# Access keys
+keys = my_dict.keys()
+print("Keys:", keys)  # Output: dict_keys(['a', 'b', 'c'])
+
+# Convert keys to a list
+keys_list = list(my_dict.keys())
+print("Keys list:", keys_list)  # Output: ['a', 'b', 'c']
+
+# Access values
+values = my_dict.values()
+print("Values:", values)  # Output: dict_values([1, 2, 3])
+
+# Convert values to a list
+values_list = list(my_dict.values())
+print("Values list:", values_list)  # Output: [1, 2, 3]
+
+# Access items
+items = my_dict.items()
+print("Items:", items)  # Output: dict_items([('a', 1), ('b', 2), ('c', 3)])
+
+# Convert items to a list
+items_list = list(my_dict.items())
+print("Items list:", items_list)  # Output: [('a', 1), ('b', 2), ('c', 3)]
+
+# Iterate over keys
+for key in my_dict.keys():
+    print("Key:", key)
+
+# Iterate over values
+for value in my_dict.values():
+    print("Value:", value)
+
+# Iterate over key-value pairs
+for key, value in my_dict.items():
+    print("Key:", key, "Value:", value)
+```
+
+These methods should cover most scenarios for accessing and manipulating keys and values in a dictionary.
 
 
 
