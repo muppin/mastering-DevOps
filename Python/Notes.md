@@ -127,6 +127,114 @@ server_name = "my_server"
 print(f"Server Name: {server_name}")
 ```
 
+## Lists, Tuples and sets
+
+In Python, lists, tuples, and sets are three fundamental data structures used to store collections of items. Each has its own characteristics and use cases:
+
+### Lists
+
+- **Ordered**: Elements are stored in a specific order.
+- **Mutable**: Elements can be added, removed, or changed.
+- **Indexed**: Elements can be accessed by their index.
+- **Duplicates Allowed**: Lists can contain duplicate elements.
+
+#### Example
+
+```python
+# Define a list
+my_list = [1, 2, 3, 4, 4, 5]
+
+# Accessing elements
+print("First element:", my_list[0])  # Output: 1
+
+# Modifying elements
+my_list[1] = 10
+print("Modified list:", my_list)  # Output: [1, 10, 3, 4, 4, 5]
+
+# Adding elements
+my_list.append(6)
+print("List after append:", my_list)  # Output: [1, 10, 3, 4, 4, 5, 6]
+
+# Removing elements
+my_list.remove(4)
+print("List after removal:", my_list)  # Output: [1, 10, 3, 4, 5, 6]
+```
+
+### Tuples
+
+- **Ordered**: Elements are stored in a specific order.
+- **Immutable**: Elements cannot be changed after creation.
+- **Indexed**: Elements can be accessed by their index.
+- **Duplicates Allowed**: Tuples can contain duplicate elements.
+
+#### Example
+
+```python
+# Define a tuple
+my_tuple = (1, 2, 3, 4, 4, 5)
+
+# Accessing elements
+print("First element:", my_tuple[0])  # Output: 1
+
+# Attempting to modify elements (will raise an error)
+# my_tuple[1] = 10  # TypeError: 'tuple' object does not support item assignment
+
+# Tuples can contain duplicates
+print("Tuple with duplicates:", my_tuple)  # Output: (1, 2, 3, 4, 4, 5)
+```
+
+### Sets
+
+- **Unordered**: Elements are not stored in a specific order.
+- **Mutable**: Elements can be added or removed, but the set itself cannot contain mutable elements like lists.
+- **Unindexed**: Elements cannot be accessed by an index.
+- **No Duplicates**: Sets automatically remove duplicate elements.
+
+#### Set Elements Must be Immutable
+
+The elements of a set must be hashable, and mutable types like lists cannot be added to a set. However, immutable types like tuples can be elements of a set.
+```
+my_set = {1,2,3,(1,2)}
+```
+in the above set, set contains a tuple which is immutable
+
+```
+my_set = {1,2,3,[1,2]}
+```
+in the above set, set contains a list which is mutable which throws an error
+#### Example
+
+```python
+# Define a set
+my_set = {1, 2, 3, 4, 4, 5}
+
+# Adding elements
+my_set.add(6)
+print("Set after adding an element:", my_set)  # Output: {1, 2, 3, 4, 5, 6}
+
+# Removing elements
+my_set.remove(2)
+print("Set after removal:", my_set)  # Output: {1, 3, 4, 5, 6}
+
+# Sets automatically remove duplicates
+print("Set with duplicates removed:", my_set)  # Output: {1, 3, 4, 5, 6}
+```
+
+### Summary
+
+| Feature              | List           | Tuple          | Set           |
+|----------------------|----------------|----------------|---------------|
+| Order                | Ordered        | Ordered        | Unordered     |
+| Mutability           | Mutable        | Immutable      | Mutable       |
+| Indexing             | Indexed        | Indexed        | Unindexed     |
+| Duplicate Elements   | Allowed        | Allowed        | Not Allowed   |
+
+Each of these data structures has its own strengths and is suitable for different scenarios:
+
+- **Lists** are ideal when you need an ordered collection that can be modified.
+- **Tuples** are best when you need an ordered collection that should not change after creation.
+- **Sets** are useful for collections where order does not matter, and you need to ensure all elements are unique.
+
 ## Functions, Modules and packages
 
 ### Functions
