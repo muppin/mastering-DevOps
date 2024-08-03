@@ -19,7 +19,7 @@ Here you can talk about the projects that we did in this series
   - Now this flask API will read the pull request and check if the comment is "/jira", it will tak to the jira api and it will create a ticket
 
 
-  **********************************************************************************************************************************************************************************
+**********************************************************************************************************************************************************************************
 
 ## Discuss the challenges that you faced while using Python for DevOps and how did you overcome it.
 
@@ -27,7 +27,7 @@ Here you can talk about the projects that we did in this series
   - It was my first time with flask
   - Issues with webhooks
  
-  **********************************************************************************************************************************************************************************
+ **********************************************************************************************************************************************************************************
 
 ## How can you secure your Python code and scripts?
 
@@ -36,19 +36,19 @@ Here you can talk about the projects that we did in this series
   - If there is a password or API tocken to put then an environment variable
   - Handle any sensetive information using Input variables, command line arguments or env vars.
  
-  **********************************************************************************************************************************************************************************
+**********************************************************************************************************************************************************************************
 
 ## Explain the difference between mutable and immutable objects.
 
   - Mutable- can be changed
   - Immutable- can not be changed
  
-  ********************************************************************************************************************************************************************************
+********************************************************************************************************************************************************************************
 
 ## Difference between list and tuples?
   Lists are mutable and typically used for storing collections of items that can be changed, while tuples are immutable and commonly used to store collections of items that shouldn't change.
 
-  ****************************************************************************************************************************************************************************************
+****************************************************************************************************************************************************************************************
 
 ## If two different teams that expect you to have two different versions of same python pakage or module, how to resolve?
 
@@ -68,14 +68,14 @@ Here you can talk about the projects that we did in this series
 - **On Unix or MacOS**
 ```source myenv/bin/activate```
 
-*************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************
 
 ## What are decorators in Python?
 
 - Decorators modify the behavior of functions. They take a function as an argument, add some functionality, and return another function without modifying the original function's code. 
 - Real world example: suppose u want to validate if a user has a logged in session before invoking a API, you can use decorator.
 
-************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************
 ## How does exception handling work in Python?
 
 - Instead for breaking or failing of python program, you want to continue.
@@ -91,7 +91,7 @@ else:
 finally:
     print("Execution completed.")```
 
-**********************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************
 
 ## What's the difference between append() and extend() for lists?
 
@@ -110,7 +110,7 @@ my_list.extend([4, 5])
 print(my_list)  # Output: [1, 2, 3, 4, 5]
 ```
 
-*********************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************
 ## Explain the use of lambda functions in Python.
 - When u know this function will not be re-used, you can write lambda funtions instead of funtion definitions.
 - Lambda functions are anonymous functions used for short tasks.
@@ -123,7 +123,7 @@ Defining and using a lambda function:
      print(square(5))  # Output: 25
 ```
 
-********************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************
 
 ## difference between for and while loop in python
 
@@ -131,7 +131,7 @@ Defining and using a lambda function:
 - The while loop is used for iterating until a specified condition evaluates to False.
 - for loop is generally preferred when the number of iterations is known or the iteration involves iterating over a sequence, while while loop is preferred when the number of iterations is not known in advance or when the iteration depends on a condition.
 
-******************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************
 
 **Explain the difference between == and is operators.**
 
@@ -336,6 +336,8 @@ print(mymodule.greet("Bob"))
 - **Benefits**: Enhances code reusability, organization, and allows for test code or examples within the script.
 
 This construct is a widely adopted best practice in Python programming to distinguish between reusable modules and directly executable scripts.
+
+**********************************************************************************************************************************************************************************
 
 ## How to access the keys and values in Dictionary?
 
