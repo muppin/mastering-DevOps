@@ -174,6 +174,10 @@ Soft links (symbolic links) and hard links are two types of links used in Unix-l
 - output: the date is
 - date command is a default shell command, The pipe operator | is used to send the stdout of the command on its left to the stdin of the command on its right. However, echo "the date is" does not read from stdin; it simply prints the provided string. Therefore, the output of date is ignored
 
-
-
+**What is set -x, set -e, set -o pipefail?**
+- set -x -> debug mode
+- set -e -> exits the script after it encounters an error
+- set -o pipefail -> exits the script when there is a pipe failure
+- always use set -o pipefail with set -e, because set -e considers the last command in a pipe, even if the previous commands are wrong it considers last command that is success and executes the script further.
+- example ```cde folder1 | touch file1``` here first command is wrong, the script will exit exit if we use both -e and -o pipefile
 
