@@ -106,7 +106,8 @@
    - pattern: A condition to match lines. If the pattern is omitted, all lines are matched.
    - action: A series of commands executed when the pattern matches. If the action is omitted, the default action is to print the matching lines.
    - -F : is a custom Field seperator, here is " " space. you can have comma or any seperators
-- **ps -ef | grep python | awk -F" " '{print$2}'** -> outputs the process ids of python
+- **ps -ef | grep python | awk -F" " '{print$2}'** -> outputs the process ids of python.
+- **trap "please dont use ctrl+c" SIGINT** -> trap command is used to trap the signals on the linux machine.
   
 #### Users and groups
  
