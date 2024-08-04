@@ -102,7 +102,12 @@
 - **sort -r file.txt** -> sorts file.txt in reverse order
 - **zip file.zip file.txt** -> zips file.txt and names it file.zip
 - **unzip file.zip** -> unzips the zipped file
-
+- **awk -F" " 'pattern { action }' file**
+   - pattern: A condition to match lines. If the pattern is omitted, all lines are matched.
+   - action: A series of commands executed when the pattern matches. If the action is omitted, the default action is to print the matching lines.
+   - -F : is a custom Field seperator, here is " " space. you can have comma or any seperators
+- **ps -ef | grep python | awk -F" " '{print$2}'** -> outputs the process ids of python
+  
 #### Users and groups
  
 - **useradd <username>** -> add a new user
