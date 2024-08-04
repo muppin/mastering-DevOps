@@ -160,6 +160,20 @@ Soft links (symbolic links) and hard links are two types of links used in Unix-l
 - The logrotate command is a system utility in Unix-like operating systems, including Linux, used to manage and rotate log files.
 - It is typically configured to run as a daily cron job to ensure that log files do not grow too large and consume excessive disk space. logrotate renames, compresses, and/or deletes old log files according to a set of rules defined in its configuration files.
 
+**why use touch when we have vim command to create files?**
+- touch can be used for automation purpose
+
+**what is #!/bin/bash?**
+- this tells the system which interpreter to use to execute the following script, and making script portable.
+
+**difference between #!/bin/sh and #!/bin/bash**
+- #!/bin/sh previously was linked to #!/bin/bash, but now it is linked to #!/bin/dash. #!/bin/sh is more lightweight and minimalistic.
+- #!/bin/bash provides rich set of features
+
+**what is the output of ```date | echo "the date is"```?**
+- output: the date is
+- date command is a default shell command, The pipe operator | is used to send the stdout of the command on its left to the stdin of the command on its right. However, echo "the date is" does not read from stdin; it simply prints the provided string. Therefore, the output of date is ignored
+
 
 
 
