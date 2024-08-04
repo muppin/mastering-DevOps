@@ -181,3 +181,8 @@ Soft links (symbolic links) and hard links are two types of links used in Unix-l
 - always use set -o pipefail with set -e, because set -e considers the last command in a pipe, even if the previous commands are wrong it considers last command that is success and executes the script further.
 - example ```cde folder1 | touch file1``` here first command is wrong, the script will exit exit if we use both -e and -o pipefile
 
+**What is the difference between curl and wget?**
+- Choose curl for complex interactions with web services and various protocols, and choose wget for robust, straightforward file downloads and recursive web scraping.
+- curl just extracts the information from the url
+- wget downloads the file and stores on localdisk
+
