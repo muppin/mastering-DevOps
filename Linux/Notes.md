@@ -108,6 +108,9 @@
    - -F : is a custom Field seperator, here is " " space. you can have comma or any seperators
 - **ps -ef | grep python | awk -F" " '{print$2}'** -> outputs the process ids of python.
 - **trap "please dont use ctrl+c" SIGINT** -> trap command is used to trap the signals on the linux machine.
+- **nslookup -type=A ayustudio.net** -> this gives details of A record that is being created in ayustudio.net
+
+- 
   
 #### Users and groups
  
@@ -146,6 +149,7 @@
 - **telnet <IP address or domain>** : is used to access remote server like SSH command, but not secure as it uses plain text.
 - **hostname**: displays the syatem's hostname
 - **hostanme -i**: displays the ip address
+- **curl ifconfig.me** -> this displays public ip of a machine.
 - **nslookup <domain_name>/<ip_address>**: nslookup is a powerful tool for troubleshooting DNS-related issues, such as verifying DNS records, diagnosing DNS configuration problems, and checking DNS propagation.
 - **ssh**: Secure Shell protocol for secure remote login and other secure network services over an insecure network.
 - **scp**: Securely copy files between hosts on a network.
