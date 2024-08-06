@@ -319,3 +319,11 @@ Here's what the "sandbox" option is used for:
 
 Overall, the "sandbox" option in Jenkins Pipeline scripts is a security feature designed to mitigate potential risks associated with executing untrusted code. It helps ensure that Jenkins pipelines operate within a secure execution environment, reducing the likelihood of security vulnerabilities and malicious activities.
 
+
+*******************************************************************************************************************************************************************************************************************
+
+Build Periodically
+Triggers builds on a pre-defined schedule, even if there are no changes in the Git repository. This feature can consume resources and lead to unnecessary builds.
+Poll SCM
+Periodically checks the version control system for changes, and only triggers a build if changes are detected. This is useful for continuous integration and automated testing scenarios, where builds need to be triggered automatically when changes are pushed into the repository.
+
