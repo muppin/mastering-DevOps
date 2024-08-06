@@ -375,7 +375,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 ******************************************************************************************************************************************************************************
 
 
-## LTIMindtree
+## LTIMindtree  - Technical Round 1
 
 - Tell me about yourself
 - Why u want to switch the job
@@ -412,4 +412,43 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - 
  ************************************************************************************************************************************************************************************ 
 
+## LTIMindtree  - Technical Round 2
+
+- Tell me about yourself
+- What are your day to day tasks
+- Have you worked on Ansible
+- What all playbooks you have written
+- what all ansible modules you have used?
+- Have you used ansible roles?
+- Write a sample deployment file? Explain it.
+- What is container port in deployment file.
+- Explain the use of ingress
+- which all manifest files we should write along with deployment in order to access the application in browser?
+- What all deployment strategies u know?
+- Difference between blue green and canary?
+- Difference between rolling updates and canary?
+- how will you tranfer 10% to v1 and 90% to v2 with the help of Load baalncer, explain the load balnc config here?
+- Explain git branching startegy?
+- Difference between git merge and git rebase?
+- Difference between git reset and git revert?
+- Write a sample jenkins file?
+- what chnages will u do if u want to run certain stages parallely?
+- Have you configured jenkins master, slave?
+- Can u explain why we need master and slave in jenkins?
+- Do you know jenkins shared library?
+- how to configure a existing shared library?
+- What all build triggers u have used?
+- difference between SCM polling and periodically build?
+- How will you do disaster recovery in jenkins, how will you take backup of jenkins master?
+- Have you worked on Terraform and what kind of resources you have created?
+- How will you achecive re-use in TF?
+- AMI_ID is dyanamic, what all practices will you use
+- Have u worked with variables and tfvars? Is it environment specific?
+- Which lang u are using for scripting?
+- Explain a usecase of python scripting?
+- which all modules and functions you have used in git-jira API script?
+- Do you know shell scripting?
+- Difference between DevOps and SRE?
+
+*************************************************************************************************************************************************************************************************************s
 
