@@ -52,10 +52,10 @@
 ### importing the infrastructure from the provider (Scenario-1)
 
 - **terraform plan -generate-config-out=generated.tf**
-  - It will create a file called generated.tf and import the details of the service
+  - when you need to regenerate configuration files for resources already tracked by Terraform but lacking corresponding configuration files.
 
 - **terraform import aws_resource_type.resource_name resource_id**
-   - This command allows you to bring existing resources under Terraform management without destroying or recreating them.
+   - when you have existing infrastructure resources that are not currently managed by Terraform and you want to start managing them with Terraform.
    - To import multiple resources, you'll need to run the terraform import command for each resource separately. There isn't a direct way to import multiple resources at 
      once using a single command in Terraform.
 
