@@ -93,7 +93,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - How u deployed terraform, manually?
 - if i already have a resource created on terraform and i want to create one more but i dont want to change the config of existing one, what to do?
 - how u are using terraform for different environments?
-- ueverytime u are switching the workspace, is there a way to automate it?
+- ueverytime u are switching the workspace, is there a way to automate it? We have a dedicated Infra pipeline, which is parameterised and should be trigerred manually. We have to give Env details while trigerring.
 - Where u have stored your config and .tf files?
 - explain ur CI/CD pipeline
 - how you are connecting your pipeline to AWS.
