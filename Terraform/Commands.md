@@ -26,6 +26,9 @@
 
 - **terraform apply -var-file=stage.tfvars**
   - Creates infrastructure using a specific tfvar file.
+ 
+- **terraform force-unlock LOCK_ID**
+   - release the lock when the process is stuck due to failed process
 
 ### Workspace Commands
 
