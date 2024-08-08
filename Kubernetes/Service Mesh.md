@@ -34,4 +34,20 @@ It provides below
 
 - An admission controller is a piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object, but after the request is authenticated and authorized.
 - Admission controllers may be validating, mutating, or both. Mutating controllers may modify objects related to the requests they admit; validating controllers may not.
-- Admission controllers limit requests to create, delete, modify objects. 
+- Admission controllers limit requests to create, delete, modify objects.
+
+#### Dynamic Admission controller
+- A Dynamic Admission Controller in Kubernetes is a customizable way to enforce and manage admission policies in your cluster.
+- They can be used to enforce policies on objects being created, modified, or deleted, ensuring that they meet specific criteria or follow certain rules.
+- has 2 types
+   - Mutating Admission Webhooks
+   - Validating Admission Webhooks
+
+**How does the communication between the ISTIO and API Server takes place?**
+
+- so ISTIO creates a Custom resource of kind: MutatingWebhookConfiguration
+- this custom resource is submitted to the API server
+- this custom resource is read by API server, it has like what rules are defined and at which webhook the request has to be intercepted.
+- Custom resource tells if there is a pod creation request, then simply forward the request to ISTIOD i.e Admission Webhook.
+- this ISTOD(Admission webhook) will inject the sidecar container and later send back the response to api server.
+- The API server then uses this modified specification as the final version of the resource that will be persisted in etcd.
