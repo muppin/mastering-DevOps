@@ -450,5 +450,15 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Do you know shell scripting?
 - Difference between DevOps and SRE?
 
-*************************************************************************************************************************************************************************************************************s
+*************************************************************************************************************************************************************************************************************
+
+## OPSTREE TELEPHONIC ROUND
+
+- Default docker network
+- If I want to connect two docker containers that are on different host.
+- What is admission webhook in k8s?
+- Best practices while deploying application on k8s.
+- How will you acheive kubernetes secure pod to pod communication
+- Headless service in k8s?
+- How will you take backup of k8s cluster
 
