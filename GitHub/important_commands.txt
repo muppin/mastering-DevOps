@@ -35,6 +35,9 @@ git switch <branch-name> - switches to a particular branch
 git checkout -b <new-branch-name> - creates a new branch and switches simultaneously
 git branch -d <branch-name> - deletes a branch if it has been pushed 
 git branch -D <branch-name> - forcefully deletes a branch even if hasnt been pushed to remote
+git branch - lists all local the branch
+git branch -a - lists all the branch
+git branch -r - lists all remote branches
 
 #### User add ####
 git config --global user.name "username"
