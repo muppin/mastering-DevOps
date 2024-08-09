@@ -462,3 +462,33 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Headless service in k8s?
 - How will you take backup of k8s cluster
 
+**************************************************************************************************************************************************************************************************************
+
+## Thomson Reuters - DevOps Enablement
+
+## Project Description- Majorly working into github, github actions, terraform, cloud formation, AWS/Azure/GCP, few applications are on K8s.
+
+- Tell me about yourself.
+- What are your daily task and responsibilities.
+- I need to pass build version in jenkins pipeline, how will I do it?
+- Suppose If need to pass in mid of the pipeline?
+- How will you authenticate AWS to jenkins.
+- There are multiple steps in jenkinsfile, suppose static code analysis stage fails, but I still want to continue the pipeline, what I should do?
+- What is the difference between quality gates and quality profiles?
+- Explain a CI/CD pipeline?
+- Where u will store maven dependencies?
+- What all resources are required to create EC2 instance.
+- App server and DB server are in same vpc in different subnet, how will they connect?
+- How to access resources in side private subnet?
+- Which type of resources we should store in public and what kind of resources in private?
+- Where should be DB server placed?
+- What all load balancers are there in AWS.
+- how will u recreate infra in Terraform.- TF replace.
+- Infra is created on TF and requirement is that before merging the PR, we want to do the dry run. How will you achieve this in github.
+- How to remove duplicate resources from TF.
+- How will you create empty git branch.
+- Difference between master node and worker node in kubernetes.
+- Explain ingress.
+
+***************************************************************************************************************************************************************************************************************
+
