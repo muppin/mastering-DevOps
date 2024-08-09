@@ -489,6 +489,8 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - How will you create empty git branch.
 - Difference between master node and worker node in kubernetes.
 - Explain ingress.
+- How comfortable you are in git?
+- Difference between git merge and rebase.
 
 ***************************************************************************************************************************************************************************************************************
 
