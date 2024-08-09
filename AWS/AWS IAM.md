@@ -70,6 +70,8 @@ ________________________________________________________________________________
 
 ### AWS Organisation
 
+AWS Organizations is an account management service that lets you consolidate multiple AWS accounts into an organization that you create and centrally manage. With Organizations, you can create member accounts and invite existing accounts to join your organization.
+
 
 ![image](https://github.com/muppin/mastering-DevOps/assets/121821200/06adfd04-2733-489b-8542-c26558d581dc)
 - basically with the help of aws organisation we create oragnisation unit and then create a account inside the ou
