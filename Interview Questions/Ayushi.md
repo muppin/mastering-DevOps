@@ -486,7 +486,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - how will u recreate infra in Terraform.- TF replace.
 - Infra is created on TF and requirement is that before merging the PR, we want to do the dry run. How will you achieve this in github.
 - How to remove duplicate resources from TF.
-- How will you create empty git branch.
+- How will you create empty git branch. -> git checkout --orphan <branch-name>
 - Difference between master node and worker node in kubernetes.
 - Explain ingress.
 - How comfortable you are in git?
