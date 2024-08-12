@@ -1,7 +1,4 @@
-- Can you explain your project**
-- 
-
-
+- **Can you explain your project**
 
 - **What are your branching strategies?**
   
@@ -53,7 +50,7 @@ Viewing the scenario of a build failure or bug at the production level from the 
 From a Git branching perspective, the master branch serves as the stable foundation from which fixes are developed and deployed, while feature branches and hotfix branches enable parallel development and rapid response to production issues. By leveraging Git branching effectively, teams can streamline the resolution process and maintain the stability and reliability of their production environments.
 
 
-************************************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************
 
 - **How will you collaborate/support various teams?**
 
@@ -66,7 +63,7 @@ Encourage the documentation of processes, procedures, and technical solutions to
 - **Implement Continuous Feedback Loops:** Establish feedback mechanisms, such as code reviews, peer reviews, and post-incident reviews, to facilitate continuous learning and improvement.
 Encourage open and honest feedback to identify areas for improvement and address any concerns or issues proactively.
 
-**************************************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************
 
 - **How will you handle a critical or negative feedback from your colleage?**
 
@@ -102,12 +99,21 @@ Encourage open and honest feedback to identify areas for improvement and address
 10. **Express Gratitude:**
     - Finally, I would express gratitude to my colleague for their honesty and courage in providing feedback. Constructive criticism, although sometimes difficult to hear, ultimately helps us become better individuals and professionals.
    
-**************************************************************************************************************************************************************************************************************************
+*****************************************************************************************************************************************************************************************
 - **What problems you have encountered in CI part of pipeline and how did u solved it?**
   We had lots of microservices and need to store lots of secrets. And we have to reference those secrets in our pipelines so to solve this problem we have stored the secrets in jenkins manage credentials plugin and from there we are referencing them into the pipeline using "WithCredentials()" keyword.
 
 - **What problems do you faced related to docker and how u solved it?**
   In our organization the docker image size was very huge and that was also concerning with the security of the docker Image. So what I have done is using the docker multi stage build and distroless images. By Doing so we have not only reduced the size but we have also added scurity by removing the packages that are installed in the docker images.
   - NOTE: A distroless image in Docker is a type of image that contains only your application and its runtime dependencies. They do not contain package managers, shells or any other programs you would expect to find in a standard Linux distribution.
+ 
+- **What measures would you take at the last minute in the release?**
+- If a change occurs at the last moment, my approach would be methodical and proactive. First, I would quickly assess the nature and impact of the change to understand how it affects the project. I would then communicate with all relevant stakeholders to ensure that everyone is aware of the change and its implications.
+
+- Next, I would collaborate with my team to revise our plan, reallocate resources if necessary, and adjust our timelines to accommodate the change. It's important to remain flexible and focus on finding solutions rather than getting stressed about the disruption.
+
+- I would also evaluate any potential risks introduced by the change and implement strategies to mitigate them. Throughout this process, I would keep a close eye on maintaining the quality of our deliverables.
+
+- Finally, I would use this experience to refine our processes and improve our readiness for future changes, ensuring that we handle similar situations more efficiently going forward."
  
 - 
