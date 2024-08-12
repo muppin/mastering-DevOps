@@ -116,4 +116,25 @@ Encourage open and honest feedback to identify areas for improvement and address
 
 - Finally, I would use this experience to refine our processes and improve our readiness for future changes, ensuring that we handle similar situations more efficiently going forward."
  
-- 
+
+**what will you do if there is a extra workload in the project**
+- When faced with an extra workload in a project, my first step would be to assess and prioritize the tasks that need to be completed. I would focus on the most critical tasks that have the highest impact on the project and organize them in a way that allows me to tackle them efficiently.
+
+- To manage my time effectively, I would adjust my schedule and potentially reallocate time from less urgent tasks. I believe in working smarter, not just harder, so I would also look for ways to streamline my work processes.
+
+- If the workload is too heavy to handle alone, I would communicate with my team or supervisor to see if tasks can be delegated or if additional resources are available to help manage the load. I believe in the power of teamwork and collaboration to overcome challenges.
+
+- Throughout this process, I would ensure that the quality of my work is not compromised. I stay focused on one task at a time and avoid multitasking, which helps me maintain a high standard of work even under pressure.
+
+- I also use stress management techniques, such as taking short breaks or practicing mindfulness, to stay calm and focused. After the project is complete, I would reflect on the experience to identify any areas for improvement, ensuring that I’m better prepared for similar situations in the future
+
+**what will you do if project demands you to learn new technology**
+- If a project demands that I learn a new technology, I would embrace the opportunity with enthusiasm. I believe that continuous learning is essential in the tech industry, and I’m always eager to expand my skill set.
+
+- My approach would start with thorough research to understand the basics of the new technology and how it applies to the project. I would then enroll in relevant online courses or training sessions to build a solid foundation. Alongside structured learning, I would engage in hands-on practice by working on small projects or experimenting with code to apply what I’ve learned.
+
+- I also find it valuable to tap into resources like official documentation, forums, and blogs to deepen my understanding. If possible, I would seek guidance from colleagues or industry experts who are already familiar with the technology. Collaboration and mentorship can be incredibly helpful in accelerating the learning process.
+
+- I’ve successfully done this in the past; for example, I had to learn [insert technology] for a previous project, and through focused learning and hands-on practice, I was able to apply it effectively and contribute to the project’s success.
+
+- While learning, I would manage my time carefully to ensure that I can balance acquiring the new skills with my existing project responsibilities. Ultimately, learning this new technology would not only benefit the current project but also equip me with skills that will be valuable for future challenges.
