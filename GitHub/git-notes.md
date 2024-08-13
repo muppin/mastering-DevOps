@@ -128,3 +128,5 @@ https://github.com/muppin/mastering-DevOps.git
 [branch "main"]
         remote = origin
         merge = refs/heads/main
+
+**How to edit existing commit message**
