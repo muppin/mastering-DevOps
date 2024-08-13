@@ -304,6 +304,10 @@ pipeline {
 This setup ensures that your Node.js application is automatically deployed to your EC2 instance every time there is a new commit to the repository, leveraging Jenkins for continuous integration and deployment.
 
 
+**what is the need of lifecycle manager in EBS?**
+**How will you automate the creation and retention of AMI and snapshots?**
+
+
 
 
 
