@@ -306,6 +306,8 @@ This setup ensures that your Node.js application is automatically deployed to yo
 
 **what is the need of lifecycle manager in EBS?**
 **How will you automate the creation and retention of AMI and snapshots?**
+**What are different types of instances?**
+**How will you do cost optimization in EC2 instances?**
 
 
 
