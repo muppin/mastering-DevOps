@@ -308,6 +308,7 @@ This setup ensures that your Node.js application is automatically deployed to yo
 **How will you automate the creation and retention of AMI and snapshots?**
 **What are different types of instances?**
 **How will you do cost optimization in EC2 instances?**
+**If you lost ppk/pem file, how will you connect to EC2 instance?**
 
 
 
