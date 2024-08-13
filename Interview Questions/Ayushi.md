@@ -494,3 +494,31 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 
 ***************************************************************************************************************************************************************************************************************
 
+## Quantiphi
+
+1. Introduce yourself
+2. what all services you have worked on AWS?
+3. Explain few usecases why u are creating EC2 instances.
+4. Do you have different AWS accounts for different environments? I talked about AWS Organizations.
+5. Do you know control towers?
+6. What all you are doing in VPC?
+7. Do you know VPC peering?
+8. Explain a usecase of VPC peering, where you have implemented peering?
+9. Is your EKS cluster accessible to internet.
+10. Which DB service you are using AWS?
+11. Both RDS instances and EKS will be in same subnet?
+12. How will you implement data security in AWS and in k8s?
+13. Explain one of your project, end to end?
+14. Explain CI/CD pipeline which you have worked on?
+15. Explain infra of ur project?
+16. What are the standard practices you follow writing a dockerfile?
+17. Who will write terraform modules?
+18. Write a python script using boto3 to list all S3 buckets.
+19. Why u used client instead of resource in above script.
+20. Suppose I don't want to authenticate with client, how will authenticate locally, wjat changes will you do in above script.
+21. Who is responsible for creating IAM roles/perm etc?
+22. Have you worked/explored on any other AWS services apart from what u said above? I taled about Lambda and EBS stale snapshot use case?
+23. Do you use shell scripts in ur pipeline.
+
+******************************************************************************************************************************************************************************************************************
+
