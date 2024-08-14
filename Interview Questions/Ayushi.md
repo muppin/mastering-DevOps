@@ -491,6 +491,7 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 - Explain ingress.
 - How comfortable you are in git?
 - Difference between git merge and rebase.
+- Difference between Terraform Validate and Plan command.
 
 ***************************************************************************************************************************************************************************************************************
 
