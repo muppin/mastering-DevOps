@@ -417,8 +417,43 @@
 - what is etcd?
 - kubernetes architecture?
 - what is PV and PVC?
-- 
 
+
+## SAP Cross LOB round
+
+- Introduce yourself
+- talk about CI-CD pipeline?
+- what are the complexities that you have solved in pipeline?
+- why are you using docker to containerize, why cant you use maven to dockerize..?
+- what mechanism are you using for ArgoCD? pull or push..?
+- Docker container as a agent.. every time you make a change to the dockerfile of an agent, you have to rebuild the image.. this takes quite lot of time to start up the agent.. this again becomes complex?
+- how will you use the caches, is it from the local maven repository?
+- where is local maven repository created?
+- how are you using the docker? where have you installed it?
+- doing all this, what outcome did you get?
+- Apart from Sonarqube? what is the security tool you are using?
+- how are you handling image vulnerabilities?
+- what is your team size?
+- how ArgoCD deploys the deployments into the cluster?
+- what is component in the ArgoCD?
+- what is CR?
+- what is Application Set?
+- what is application in ArgoCD?
+- if there are 100s of application , how will you manage and will you write all 100s of application?
+- what is appofapp?
+- what is controller?
+- what are types of controllers, can you name them?
+- ArgoCD is a controller..can you manage ArgoCD using ArgoCd ?
+- what is service-mesh?
+- what are the benefits that istio is providing?
+- how to achieve canary without using service-mesh?
+- how will the communication takes place?
+- how will you achieve blue green deployment?
+- how many services you will have to use for blue green deployments?
+- what is pushgateway?
+- what are the pillars of observability? metics, logs, trace
+- Using Trace you will find out which service is giving error.. read about Trace
+- what is crossplane?
 
 
 
