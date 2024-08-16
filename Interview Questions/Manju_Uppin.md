@@ -450,6 +450,7 @@
 - how will the communication takes place?
 - how will you achieve blue green deployment?
 - how many services you will have to use for blue green deployments?
+- how will achieve high availability of prometheus?
 - what is pushgateway?
 - what are the pillars of observability? metics, logs, trace
 - Using Trace you will find out which service is giving error.. read about Trace
