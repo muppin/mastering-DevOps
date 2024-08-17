@@ -418,6 +418,53 @@
 - kubernetes architecture?
 - what is PV and PVC?
 
+## SAP 1st Technical
+
+- Introduce yorself?
+- what is git fetch vs git pull?
+- what is git rebase?
+- if you want to merge one specific commit from the feature branch to master branch, what will you do?
+- what is git stash?
+- what are the plugins for static code analysis?
+- how do you setup sonarqube server?
+- explain what sonarqube does?
+- how will you notify the developers if there is qualitygate status is negative.. how will you do so?
+- explain Jenkinsfile?
+- what is parallel block?
+- lets say you have failure in certain stage, how will you take care of these interruptions?
+- how will you increase the efficiency and increase the network bandwith of the jenkins pipeline, what measures would you take? need to discuss..
+- what AWS services do you use?
+- What is IAM roles and IAM users?
+- the JAVA application is residing in the private subnet, how will it access the other AWS services and how will the authentication takes place?
+- In S3 what is full path?
+- what is mutable and immutable data types?
+- can list hold any type of datatypes?
+- what are the scopes in python?
+- she showed some lists and asked me the output?
+- function related debuging?
+- what is DynamoDB?
+- dcoker vs vms?
+- explain docker architecture?
+- explain docker lifecycle?
+- expalin dockerfile?
+- docker volumes vs bind mounts?
+- what is namespace and cgroups in linux?
+- how to reduce the size of docker image?
+- explain Kubernetes Architecture?
+- how will Kubectl apply command works? expalin end to end
+- explin Autoscaling?
+- what applications use VPA?
+- what is headless service?
+- what is meaning of pod stuck in pending state?
+- how will you troubleshoot the above case at namespace level?
+- Explain Crashloopbackoff error, what leads to crashloopbackoff
+- NACL vs SG?
+- Explain VPC peering?
+- How to access the RDS server that is residing in private subnet?
+- Explain ArgoCD architecture?
+- how to see the resources in kubernetes?
+- what are the default namespaces?
+- Have you worked on Monitoring part?
 
 ## SAP Cross LOB round
 
