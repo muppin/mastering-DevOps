@@ -480,6 +480,7 @@
 - doing all this, what outcome did you get?
 - Apart from Sonarqube? what is the security tool you are using?
 - how are you handling image vulnerabilities?
+- What are CVE databases?
 - what is your team size?
 - how ArgoCD deploys the deployments into the cluster?
 - what is component in the ArgoCD?
