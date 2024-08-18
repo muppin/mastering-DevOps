@@ -83,6 +83,20 @@ ________________________________________________________________________________
    - Hub-Spoke Model - here there is a centralised kubernetes cluster which has ArgoCD installed in it, this ArgoCD takes care of the deployments of all other kubernetes cluster environments.
    - Standalone Model - If there are different environments of clusters and ArgoCD is installed in each of the env, then its a Standalone Model.
    - ![image](https://github.com/user-attachments/assets/926dd729-0daa-4b0c-bee7-fab2d56b5640)
+ 
+#### How to implement Hub-Spoke model 
+
+- ![image](https://github.com/user-attachments/assets/cf92f240-c3b7-45c7-9c0b-e479d630d358)
+
+- Create a Hub Cluster and Create a spoke clusters
+- Update the kube config files for each of the clusters
+- Switch to hub cluster using ```kubectl config use-context <hub-cluster-context-name>```
+- Install the ArgoCD in the Hub Cluster
+- Now we need to add the spoke clusters to the ArgoCD
+- To add the spoke clusters, we need to install argocd cli.
+- Login to ArgoCD server ```argocd login <argocd-server> --username admin --password <password>```
+- Add each spoke cluster ```argocd cluster add <context-name>```
+- very the added clusters using cli ```argocd cluster list``` and Argocd UI
   
 
 
