@@ -184,146 +184,90 @@ While you cannot overwrite a build argument (`ARG`) at runtime, you can achieve 
 
 #### how to achieve canary without using service-mesh?
 
-Achieving canary deployments in Kubernetes without using a service mesh like Istio or Linkerd can be accomplished by leveraging native Kubernetes features and some additional tooling. Canary deployments allow you to gradually roll out a new version of an application to a subset of users or traffic, reducing the risk of introducing new features or changes.
+To achieve canary deployments with weighted traffic distribution using Kubernetes Ingress, you can utilize features from an Ingress controller that supports traffic splitting, such as Istio, NGINX, or Traefik.
 
-##### Steps to Achieve Canary Deployments Without a Service Mesh
+Here's how you can achieve this:
 
-##### 1. **Use Kubernetes Deployments**
-   - Create a new Kubernetes `Deployment` for the canary release with a different label or selector. The new deployment will be the canary version of your application.
-   - For example, you have `v1` running, and you deploy `v2` as the canary.
+##### 1. **Set Up Your Deployments:**
+   - **Stable Deployment**: This is the existing version of your application.
+   - **Canary Deployment**: This is the new version of your application that you want to test.
 
-   **Example Deployment for Canary Release:**
-   ```yaml
-   apiVersion: apps/v1
-   kind: Deployment
-   metadata:
-     name: my-app-v2
-   spec:
-     replicas: 1
-     selector:
-       matchLabels:
-         app: my-app
-         version: v2
-     template:
-       metadata:
-         labels:
-           app: my-app
-           version: v2
-       spec:
-         containers:
-         - name: my-app
-           image: my-app:v2
-   ```
+##### 2. **Create Services for Each Deployment:**
+   - **Stable Service**: Points to the stable deployment.
+   - **Canary Service**: Points to the canary deployment.
 
-##### 2. **Create Separate Services or Use Weighted Traffic Splitting**
-   - **Separate Services**: You can create a separate `Service` for the canary deployment or use the same service with label selectors to control traffic between different versions.
-   - **Traffic Splitting Using Ingress**: Use an Ingress controller with path-based or header-based routing to split traffic between the canary and the stable versions.
+##### 3. **Configure Ingress for Weighted Traffic Splitting:**
 
-   **Example of Service-Based Routing:**
-   ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: my-app
-   spec:
-     selector:
-       app: my-app
-     ports:
-     - port: 80
-       targetPort: 8080
-   ---
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: my-app-canary
-   spec:
-     selector:
-       app: my-app
-       version: v2
-     ports:
-     - port: 80
-       targetPort: 8080
-   ```
+###### **Using NGINX Ingress Controller:**
 
-   **Example of Ingress-Based Routing:**
-   ```yaml
-   apiVersion: networking.k8s.io/v1
-   kind: Ingress
-   metadata:
-     name: my-app-ingress
-   spec:
-     rules:
-     - host: my-app.example.com
-       http:
-         paths:
-         - path: /
-           pathType: Prefix
-           backend:
-             service:
-               name: my-app
-               port:
-                 number: 80
-         - path: /canary
-           pathType: Prefix
-           backend:
-             service:
-               name: my-app-canary
-               port:
-                 number: 80
-   ```
+You can use the `nginx.ingress.kubernetes.io/canary` annotations for this purpose.
 
-   - **Weighted Routing with Ingress Controllers**: Some Ingress controllers (like NGINX or Traefik) support weighted traffic splitting between services. You can configure them to direct a percentage of traffic to the canary service.
+Here's an example Ingress configuration:
 
-##### 3. **Progressively Increase Traffic to the Canary Deployment**
-   - Gradually increase the traffic directed to the canary deployment by adjusting the Ingress or Service configurations, such as changing the weights or labels.
-   - Monitor the performance, logs, and error rates for the canary version.
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/canary: "true"
+    nginx.ingress.kubernetes.io/canary-weight: "20"  # 20% traffic to Canary
+spec:
+  rules:
+  - host: my-app.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-app-stable
+            port:
+              number: 80
+```
 
-##### 4. **Monitoring and Rollback**
-   - Use monitoring tools like Prometheus, Grafana, or external logging services to track the performance of the canary deployment.
-   - If the canary deployment is stable, you can gradually increase the traffic until it serves 100% of the traffic and then deprecate the old version.
-   - If issues are detected, rollback by directing traffic back to the stable version and scaling down the canary deployment.
+And for the canary deployment:
 
-##### Example of a Canary Strategy with Progressive Traffic Splitting
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app-canary-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/canary: "true"
+    nginx.ingress.kubernetes.io/canary-weight: "20"
+spec:
+  rules:
+  - host: my-app.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-app-canary
+            port:
+              number: 80
+```
 
-Here’s how you might achieve progressive traffic splitting using the NGINX Ingress Controller:
+##### 4. **Gradually Increase Canary Traffic:**
+   - Initially, you might want to start with a low weight (e.g., 5-10%).
+   - Monitor the canary deployment’s performance.
+   - Gradually increase the weight if the canary version is stable.
+   - If issues arise, you can revert the canary traffic weight to 0%.
 
-1. **Initial Setup**:
-   - Create two Deployments: `my-app-v1` (stable) and `my-app-v2` (canary).
-   - Configure the Ingress to route 90% of traffic to `my-app-v1` and 10% to `my-app-v2`.
+##### 5. **Automate Traffic Shifting (Optional):**
+   - Use tools like Flagger or Argo Rollouts to automate and manage the canary release process.
+   - These tools can automatically shift traffic based on metrics (like response time, error rate) and handle rollbacks if the canary fails.
 
-2. **Ingress Configuration**:
-   ```yaml
-   apiVersion: networking.k8s.io/v1
-   kind: Ingress
-   metadata:
-     name: my-app-ingress
-     annotations:
-       nginx.ingress.kubernetes.io/canary: "true"
-       nginx.ingress.kubernetes.io/canary-weight: "10"
-   spec:
-     rules:
-     - host: my-app.example.com
-       http:
-         paths:
-         - path: /
-           pathType: Prefix
-           backend:
-             service:
-               name: my-app
-               port:
-                 number: 80
-   ```
+##### 6. **Monitor the Deployment:**
+   - Use monitoring tools to track the performance and stability of the canary deployment.
+   - Ensure you have metrics and logs to observe how the canary version is performing.
 
-3. **Gradual Rollout**:
-   - Monitor the canary deployment.
-   - Increase the `canary-weight` incrementally (e.g., 10% -> 25% -> 50% -> 100%) as you gain confidence in the new version.
+This approach allows you to safely test new versions of your application in production with a controlled amount of traffic before a full rollout.
 
-4. **Full Rollout**:
-   - Once confident, scale down or remove the `my-app-v1` deployment and update the Ingress to direct all traffic to `my-app-v2`.
-
-##### Summary
-
-Without using a service mesh, canary deployments can be achieved by leveraging Kubernetes features such as Deployments, Services, and Ingress controllers. You control traffic by creating separate deployments for each version and managing traffic distribution through service selectors, Ingress rules, or weighted routing. Monitoring and the ability to rollback are crucial to ensuring a safe canary release process.
 
 #### how will you achieve blue green deployment?
 
