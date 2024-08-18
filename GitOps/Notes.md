@@ -74,4 +74,15 @@ GitOps leverages Git as the source of truth for managing infrastructure and appl
 
 Both models have their strengths, and the choice between push and pull models in GitOps often depends on the specific requirements of the organization, infrastructure, and deployment workflows. Some organizations might prefer the immediate trigger of the push model, while others may value the autonomy and continuous reconciliation offered by the pull model.
 
+_________________________________________________________________________________________________________________________________________________________________________________________
+
+### ArgoCD
+
+- For Basic Understanding refer to Argocd.md notes
+- ArgoCD basically comes with two modes of deploy
+   - Hub-Spoke Model - here there is a centralised kubernetes cluster which has ArgoCD installed in it, this ArgoCD takes care of the deployments of all other kubernetes cluster environments.
+   - Standalone Model - If there are different environments of clusters and ArgoCD is installed in each of the env, then its a Standalone Model.
+   - ![image](https://github.com/user-attachments/assets/926dd729-0daa-4b0c-bee7-fab2d56b5640)
+  
+
 
