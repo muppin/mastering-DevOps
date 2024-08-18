@@ -1,34 +1,5 @@
-- **To create app via cli**
-  
-       ``` argocd app create app-2 --repo https://github.com/mabusaa/argocd-example-apps.git --path guestbook --dest-namespace app-2 --dest-server https://kubernetes.default.svc --revision master --sync-option CreateNamespace=true
-  
+## ArgoCD is a controller..can you manage ArgoCD using ArgoCd?
 
- - **To list apps**
-  
-       ``` argocd app list
-  
-
-- **To sync app**
-  
-       ``` argocd app sync app-name
-
-
-- **To list projects**
-  
-      ``` kubectl get appproject -n argocd
-
-
-- **To create token for role**
-
-      ``` argocd proj role create-token PROJECT-NAME ROLE-NAME
-
-
-- **To delete app with generated token**
-  
-      ``` argocd app delete demo --grpc-web --auth-token TOKEN_VALUE
-
-
-- **ArgoCD is a controller..can you manage ArgoCD using ArgoCd?**
 - Yes, you can manage ArgoCD using ArgoCD itself through a GitOps approach. Although ArgoCD does not directly "control" other instances of itself in the sense of operational management, it can be used to deploy and manage configurations for other ArgoCD instances as part of a broader GitOps workflow. Here’s how it can be done:
 
 ### Managing ArgoCD with ArgoCD
