@@ -187,7 +187,7 @@
 - 3 vpcs A,B,C communication A-B, B-C, C-A has to achieve this? Transit Gateway
 - what is transit gateway?
 - site-to-site VPN connection?
-- what is KONG?
+- what is KONG? Kong is widely used in various industries to simplify and enhance API and microservices management, providing a robust solution for handling modern application architectures.
 - what is service account ?
 - i have pod with multiple containers, for 1 container i want to s3 full access, for 2nd i want to give iam access, 3rd i want to give ec2 access .. how to achieve ??
 - write a script, get into multiple directories, list items in directories, identify the items if it is a file or anything else?
