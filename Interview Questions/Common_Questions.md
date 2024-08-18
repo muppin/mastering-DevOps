@@ -181,3 +181,305 @@ While you cannot overwrite a build argument (`ARG`) at runtime, you can achieve 
  - Service Discovery: Ensure that your deployment includes service discovery mechanisms to manage service interactions.
  - Monitoring & Logging: Enhance monitoring and logging to capture service-specific metrics and logs, and aggregate them for centralized monitoring.
 
+
+#### how to achieve canary without using service-mesh?
+
+Achieving canary deployments in Kubernetes without using a service mesh like Istio or Linkerd can be accomplished by leveraging native Kubernetes features and some additional tooling. Canary deployments allow you to gradually roll out a new version of an application to a subset of users or traffic, reducing the risk of introducing new features or changes.
+
+##### Steps to Achieve Canary Deployments Without a Service Mesh
+
+##### 1. **Use Kubernetes Deployments**
+   - Create a new Kubernetes `Deployment` for the canary release with a different label or selector. The new deployment will be the canary version of your application.
+   - For example, you have `v1` running, and you deploy `v2` as the canary.
+
+   **Example Deployment for Canary Release:**
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: my-app-v2
+   spec:
+     replicas: 1
+     selector:
+       matchLabels:
+         app: my-app
+         version: v2
+     template:
+       metadata:
+         labels:
+           app: my-app
+           version: v2
+       spec:
+         containers:
+         - name: my-app
+           image: my-app:v2
+   ```
+
+##### 2. **Create Separate Services or Use Weighted Traffic Splitting**
+   - **Separate Services**: You can create a separate `Service` for the canary deployment or use the same service with label selectors to control traffic between different versions.
+   - **Traffic Splitting Using Ingress**: Use an Ingress controller with path-based or header-based routing to split traffic between the canary and the stable versions.
+
+   **Example of Service-Based Routing:**
+   ```yaml
+   apiVersion: v1
+   kind: Service
+   metadata:
+     name: my-app
+   spec:
+     selector:
+       app: my-app
+     ports:
+     - port: 80
+       targetPort: 8080
+   ---
+   apiVersion: v1
+   kind: Service
+   metadata:
+     name: my-app-canary
+   spec:
+     selector:
+       app: my-app
+       version: v2
+     ports:
+     - port: 80
+       targetPort: 8080
+   ```
+
+   **Example of Ingress-Based Routing:**
+   ```yaml
+   apiVersion: networking.k8s.io/v1
+   kind: Ingress
+   metadata:
+     name: my-app-ingress
+   spec:
+     rules:
+     - host: my-app.example.com
+       http:
+         paths:
+         - path: /
+           pathType: Prefix
+           backend:
+             service:
+               name: my-app
+               port:
+                 number: 80
+         - path: /canary
+           pathType: Prefix
+           backend:
+             service:
+               name: my-app-canary
+               port:
+                 number: 80
+   ```
+
+   - **Weighted Routing with Ingress Controllers**: Some Ingress controllers (like NGINX or Traefik) support weighted traffic splitting between services. You can configure them to direct a percentage of traffic to the canary service.
+
+##### 3. **Progressively Increase Traffic to the Canary Deployment**
+   - Gradually increase the traffic directed to the canary deployment by adjusting the Ingress or Service configurations, such as changing the weights or labels.
+   - Monitor the performance, logs, and error rates for the canary version.
+
+##### 4. **Monitoring and Rollback**
+   - Use monitoring tools like Prometheus, Grafana, or external logging services to track the performance of the canary deployment.
+   - If the canary deployment is stable, you can gradually increase the traffic until it serves 100% of the traffic and then deprecate the old version.
+   - If issues are detected, rollback by directing traffic back to the stable version and scaling down the canary deployment.
+
+##### Example of a Canary Strategy with Progressive Traffic Splitting
+
+Here’s how you might achieve progressive traffic splitting using the NGINX Ingress Controller:
+
+1. **Initial Setup**:
+   - Create two Deployments: `my-app-v1` (stable) and `my-app-v2` (canary).
+   - Configure the Ingress to route 90% of traffic to `my-app-v1` and 10% to `my-app-v2`.
+
+2. **Ingress Configuration**:
+   ```yaml
+   apiVersion: networking.k8s.io/v1
+   kind: Ingress
+   metadata:
+     name: my-app-ingress
+     annotations:
+       nginx.ingress.kubernetes.io/canary: "true"
+       nginx.ingress.kubernetes.io/canary-weight: "10"
+   spec:
+     rules:
+     - host: my-app.example.com
+       http:
+         paths:
+         - path: /
+           pathType: Prefix
+           backend:
+             service:
+               name: my-app
+               port:
+                 number: 80
+   ```
+
+3. **Gradual Rollout**:
+   - Monitor the canary deployment.
+   - Increase the `canary-weight` incrementally (e.g., 10% -> 25% -> 50% -> 100%) as you gain confidence in the new version.
+
+4. **Full Rollout**:
+   - Once confident, scale down or remove the `my-app-v1` deployment and update the Ingress to direct all traffic to `my-app-v2`.
+
+##### Summary
+
+Without using a service mesh, canary deployments can be achieved by leveraging Kubernetes features such as Deployments, Services, and Ingress controllers. You control traffic by creating separate deployments for each version and managing traffic distribution through service selectors, Ingress rules, or weighted routing. Monitoring and the ability to rollback are crucial to ensuring a safe canary release process.
+
+#### how will you achieve blue green deployment?
+
+Blue-green deployment is a release management strategy that minimizes downtime and reduces risk by running two production environments, Blue and Green, where only one (usually Blue) serves live production traffic at any time. The idea is to deploy the new version of your application (Green) in parallel with the old version (Blue), and once the new version is tested and verified, traffic is switched from Blue to Green. If something goes wrong, you can quickly revert traffic back to Blue.
+
+Here’s how you can achieve Blue-Green Deployment in a Kubernetes environment:
+
+##### Steps to Achieve Blue-Green Deployment
+
+##### 1. **Prepare Two Separate Deployments**
+   - Create two deployments: one for the current (Blue) version and another for the new (Green) version.
+   - These deployments should have distinct labels or selectors to differentiate them.
+
+   **Example of Blue Deployment:**
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: my-app-blue
+   spec:
+     replicas: 3
+     selector:
+       matchLabels:
+         app: my-app
+         version: blue
+     template:
+       metadata:
+         labels:
+           app: my-app
+           version: blue
+       spec:
+         containers:
+         - name: my-app
+           image: my-app:1.0.0
+           ports:
+           - containerPort: 8080
+   ```
+
+   **Example of Green Deployment:**
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: my-app-green
+   spec:
+     replicas: 3
+     selector:
+       matchLabels:
+         app: my-app
+         version: green
+     template:
+       metadata:
+         labels:
+           app: my-app
+           version: green
+       spec:
+         containers:
+         - name: my-app
+           image: my-app:2.0.0
+           ports:
+           - containerPort: 8080
+   ```
+
+##### 2. **Create a Single Service**
+   - Create a single Kubernetes Service that routes traffic to the active deployment.
+   - Initially, the service should point to the Blue deployment.
+
+   **Example Service:**
+   ```yaml
+   apiVersion: v1
+   kind: Service
+   metadata:
+     name: my-app
+   spec:
+     selector:
+       app: my-app
+       version: blue
+     ports:
+     - port: 80
+       targetPort: 8080
+   ```
+
+##### 3. **Deploy the Green Version**
+   - Deploy the Green version of the application alongside the Blue version.
+   - Both deployments will be running, but only the Blue deployment will receive traffic initially.
+
+##### 4. **Test the Green Version**
+   - Before switching traffic, test the Green deployment. You can expose it temporarily via a separate Service or use port-forwarding for internal testing.
+   - Ensure that the Green deployment is functioning correctly.
+
+##### 5. **Switch Traffic to the Green Deployment**
+   - Update the Kubernetes Service selector to point to the Green deployment.
+
+   **Update Service to Point to Green Deployment:**
+   ```yaml
+   apiVersion: v1
+   kind: Service
+   metadata:
+     name: my-app
+   spec:
+     selector:
+       app: my-app
+       version: green
+     ports:
+     - port: 80
+       targetPort: 8080
+   ```
+
+   - After updating, the service will start routing traffic to the Green deployment.
+
+##### 6. **Monitor the Green Deployment**
+   - Monitor the performance of the Green deployment closely to ensure it is working as expected.
+   - If any issues arise, you can revert traffic to the Blue deployment by simply updating the Service selector back to the Blue version.
+
+##### 7. **Clean Up the Old Deployment (Optional)**
+   - Once the Green deployment is stable and you are confident that it works, you can scale down or delete the Blue deployment.
+
+   ```yaml
+   kubectl delete deployment my-app-blue
+   ```
+
+##### 8. **Rollback Plan**
+   - In case of issues with the Green deployment, you can quickly revert to the Blue deployment by updating the Service selector back to Blue.
+
+   **Revert to Blue Deployment:**
+   ```
+
+```yaml
+   apiVersion: v1
+   kind: Service
+   metadata:
+     name: my-app
+   spec:
+     selector:
+       app: my-app
+       version: blue
+     ports:
+     - port: 80
+       targetPort: 8080
+   ```
+
+##### Example Workflow
+
+1. **Blue Deployment:** Initially, your service is routing traffic to the Blue deployment.
+2. **Green Deployment:** Deploy the Green version alongside Blue without impacting the live traffic.
+3. **Testing:** Thoroughly test the Green version while it runs in parallel.
+4. **Switch Traffic:** Update the service to point to the Green deployment.
+5. **Monitor:** Keep an eye on the Green deployment's performance and user feedback.
+6. **Rollback:** If needed, quickly revert the service back to Blue by changing the service selector.
+
+##### Tools to Facilitate Blue-Green Deployment
+
+- **Helm:** Helm charts can be used to automate the process of deploying Blue and Green environments.
+- **ArgoCD:** If you’re using GitOps, ArgoCD can manage the Blue-Green deployment strategy.
+- **Ingress Controllers:** Use Ingress to route traffic based on headers or paths for more complex routing needs.
+
+##### Summary
+
+Blue-Green deployment in Kubernetes allows you to deploy new versions of your application with minimal risk and downtime. By running two separate environments and controlling traffic using a single service, you can safely switch between versions and roll back if necessary. This strategy provides a robust method for handling production releases, especially in environments that demand high availability and minimal disruption.
