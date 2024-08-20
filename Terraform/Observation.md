@@ -132,7 +132,7 @@ When troubleshooting Terraform-related issues, it's essential to check the logs 
 
 __________________________________________________________________________________________________________________________________________________________________________________
 
-** How to Generate TF Logs**
+**How to Generate TF Logs**
 
 Terraform provides several ways to generate and capture logs for debugging and troubleshooting purposes. Here’s how you can generate Terraform logs:
 
