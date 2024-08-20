@@ -132,4 +132,72 @@ When troubleshooting Terraform-related issues, it's essential to check the logs 
 
 __________________________________________________________________________________________________________________________________________________________________________________
 
+** How to Generate TF Logs**
 
+Terraform provides several ways to generate and capture logs for debugging and troubleshooting purposes. Here’s how you can generate Terraform logs:
+
+### 1. **Enable Terraform Logging:**
+Terraform uses the `TF_LOG` environment variable to control logging. This variable sets the logging level, and Terraform will output logs to the console or a file.
+
+#### Logging Levels:
+- `TRACE`: Logs every Terraform operation (most detailed).
+- `DEBUG`: Logs detailed information that is useful for debugging.
+- `INFO`: Logs informational messages (less detailed than DEBUG).
+- `WARN`: Logs warning messages.
+- `ERROR`: Logs error messages (least detailed).
+  
+To enable logging, you set the `TF_LOG` environment variable to one of the above levels.
+
+### 2. **Generate Logs in the Console:**
+You can enable logging by setting the environment variable in your terminal session:
+
+```bash
+export TF_LOG=DEBUG
+```
+
+Now, when you run Terraform commands (e.g., `terraform apply`, `terraform plan`), the logs will be printed to the console with detailed information.
+
+### 3. **Generate Logs in a File:**
+If you want to save the logs to a file instead of displaying them on the console, you can use the `TF_LOG_PATH` environment variable.
+
+For example:
+
+```bash
+export TF_LOG=DEBUG
+export TF_LOG_PATH=./terraform.log
+```
+
+This will write all the logs to a file named `terraform.log` in the current directory.
+
+### 4. **Unset Logging After Use:**
+Once you have finished troubleshooting or capturing logs, you can unset the environment variable to disable logging:
+
+```bash
+unset TF_LOG
+unset TF_LOG_PATH
+```
+
+### Example Workflow:
+1. Enable logging:
+   ```bash
+   export TF_LOG=DEBUG
+   export TF_LOG_PATH=./terraform.log
+   ```
+
+2. Run your Terraform commands:
+   ```bash
+   terraform apply
+   ```
+
+3. View the logs in `terraform.log`:
+   ```bash
+   cat terraform.log
+   ```
+
+4. Disable logging:
+   ```bash
+   unset TF_LOG
+   unset TF_LOG_PATH
+   ```
+
+This approach helps capture detailed information about the Terraform execution process, which can be invaluable for debugging complex infrastructure issues.
