@@ -62,6 +62,100 @@ There are two types of provisioners in Terraform:
 
 Provisioners are useful for performing tasks that cannot be managed directly by Terraform's resource configuration, such as complex initialization processes or post-deployment configuration. However, they should be used with caution, as they introduce dependencies and can lead to issues with idempotence and reproducibility in your infrastructure management workflow. Whenever possible, it's recommended to use configuration management tools or cloud-init scripts for more complex provisioning tasks.
 
+### Can you show me an example of using triggers in null resource with a real-world use case? 
+
+A real-world use case of using `triggers` in a Terraform `null_resource` might involve managing infrastructure dependencies that aren't natively supported by Terraform. Let's explore an example related to cloud infrastructure where a `null_resource` is used to execute a custom script when specific conditions are met.
+
+#### Scenario: Custom Script Execution after EC2 Instance IP Change
+
+Imagine you have an application running on an AWS EC2 instance, and you need to update a DNS record whenever the public IP address of the instance changes. Terraform does not have native support to handle this directly, so you use a `null_resource` with `triggers` to manage the execution of a script that updates the DNS record.
+
+#### Use Case: Update DNS Record When EC2 Public IP Changes
+
+1. **Infrastructure Setup**:
+   - You provision an EC2 instance using Terraform.
+   - The public IP address of this instance is assigned dynamically by AWS.
+
+2. **Requirement**:
+   - Whenever the EC2 instance's public IP changes, a DNS record (e.g., in Route 53) needs to be updated to point to the new IP.
+
+3. **Solution**:
+   - You use a `null_resource` with `triggers` to detect changes in the EC2 instance's public IP address.
+   - When the IP changes, the `null_resource` will run a script that updates the DNS record.
+
+Here’s a Terraform configuration example for this scenario:
+
+```hcl
+provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_instance" "app_server" {
+  ami           = "ami-12345678"
+  instance_type = "t2.micro"
+}
+
+# Fetch the public IP of the EC2 instance
+data "aws_instance" "app_instance" {
+  instance_id = aws_instance.app_server.id
+}
+
+# Null resource to trigger DNS update when the public IP changes
+resource "null_resource" "update_dns" {
+  triggers = {
+    instance_public_ip = data.aws_instance.app_instance.public_ip
+  }
+
+  provisioner "local-exec" {
+    command = <<EOT
+      ./update_dns.sh ${self.triggers.instance_public_ip}
+    EOT
+  }
+}
+```
+
+#### Breakdown:
+- **`aws_instance` Resource**: Provisions the EC2 instance.
+- **`data.aws_instance` Data Source**: Retrieves the public IP of the EC2 instance.
+- **`null_resource.update_dns`**: Uses the `triggers` block to monitor changes to the public IP. If the IP changes, the `null_resource` will execute the script `update_dns.sh` with the new IP address as an argument.
+
+#### Script Example (`update_dns.sh`):
+This script could be something simple that uses the AWS CLI to update a DNS record in Route 53:
+
+```bash
+#!/bin/bash
+
+NEW_IP=$1
+HOSTED_ZONE_ID="Z1234567890ABC"
+DNS_NAME="app.example.com"
+
+aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch '
+{
+  "Comment": "Update DNS record",
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "'"$DNS_NAME"'",
+        "Type": "A",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "'"$NEW_IP"'"
+          }
+        ]
+      }
+    }
+  ]
+}'
+```
+
+#### Explanation:
+- **Triggers**: The `triggers` block monitors the `instance_public_ip`. Whenever this value changes (e.g., if the instance is recreated or its IP is reassigned), Terraform will re-execute the `null_resource`.
+- **Script Execution**: The script `update_dns.sh` is executed via the `local-exec` provisioner to update the DNS record with the new public IP.
+
+This approach allows Terraform to handle custom operations based on changes in infrastructure state, even when those operations are outside Terraform's native functionality.
+
 ### Condition expressions
 
 - refer this *https://github.com/iam-veeramalla/terraform-zero-to-hero/blob/main/Day-2/08-conditional-expressions.md#conditional-expressions*
