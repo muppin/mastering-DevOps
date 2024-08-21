@@ -6,8 +6,8 @@
      - Deploying their applications to the EKS cluster using CI-CD
      - creating aws services (Infrastructure) using Iac tool Terraform
      - managing the configurations of VM's using Ansible.
- 
 
+ ________________________________________________________________________________________________________________________________________________________________________________________
 
 
 ## How do you typically begin your day? / What are your daily responsibilities?
@@ -28,103 +28,75 @@
   - Provisioning infrastructure on AWS.
   - Participating in on-call rotations, including PagerDuty calls.
   - Addressing incidents and alerts, such as those related to memory/CPU utilization or pod crashes.
+
+_________________________________________________________________________________________________________________________________________________________________________________________
  
 
 ## Explain CI/CD pipeline used in your project**
 
-*Checking out the code from source code repo* -  Checkoiut happens automatically since jenkins file is present in repo.
+*Checking out the code from source code repo* -  Checkout happens automatically since jenkins file is present in repo.
 while creating CI/CD pipeline - Configure:
 - For that we have configured both push notifications(from github webhook) and polling (jenkins will continously look for changes and poll it).
 - We have configured polling for every 30 mins.
 
-**Stage 1 - Build** 
-- We have dockerfile in our git repo
-- We are using docker build to build the image out of the dockerfile
+**Stage 1 - Build & Unit Test** 
+**Purpose**:
+- The Java application is built using Maven, and unit tests are executed to ensure the code's functionality. The build process generates a packaged artifact, typically a JAR file, that will be containerized later.
+**Key Actions**:
+- mvn clean package command:
+          - Clean: Deletes the previous build artifacts to ensure a fresh build.
+          - Package: Compiles the code, runs the unit tests, and packages the application into a JAR file.
+          - Outcome: The JAR file is generated in the target directory.
 
-**Stage 2 - Push to image repo**
-- we are pushing the images to AWS ECR.
-- ECR - Amazon Elastic Container Registry (Amazon ECR) is a fully managed container registry, its a private repo.
-- Authenticate to AWS ECR, docker and then tag it and push it
+**Stage 2 - Static Code Analysis**
+**Purpose**:
+- The code is analyzed using SonarQube to detect code quality issues such as bugs, code smells, and security vulnerabilities. This step improves code reliability and security.
+**Key Actions**:
+- he mvn sonar:sonar command runs the SonarQube analysis.
+- SonarQube: The results are sent to a SonarQube server, where the code's health is assessed and reported.
 
-**Stage 3 - Update Deployment File**
-- Once the images are build and pushed to the ECR, then in order to use the latest image in K8s cluster, we have dedicated stage
+**Stage 3 - Docker Build**
+- **Purpose**:
+The Java application is containerized by building a Docker image. The Docker image bundles the application with its dependencies and runtime environment, ensuring consistent deployment across different environments.
+- **Key Actions**:
+- A Docker image is built using a Dockerfile that specifies the base image (OpenJDK 11), copies the JAR file into the container, and sets the entry point to run the application.
+- Outcome: The Docker image is tagged with the build number to uniquely identify the version.
+
+**Stage 4 - Docker Image Scanning**
+- **Purpose**:
+The Docker image is scanned for vulnerabilities using Trivy. This ensures that the containerized application is free of known security issues before being deployed to production
+- **Key Actions**:
+- Trivy scans the Docker image and reports any vulnerabilities.
+- The scan can be configured to fail the pipeline if vulnerabilities of a certain severity (e.g., HIGH) are found, enforcing security best practices.
+
+**Stage 5 - Push Docker Image to registry**
+- **Purpose**:
+The built and scanned Docker image is pushed to a container registry (e.g., AWS ECR). This registry acts as a centralized location where the Docker images are stored and versioned.
+- **Key Actions**:
+The Docker image is pushed to the configured registry with the build number as the tag, making it available for deployment.
+
+**Stage 6 - Update Kubernetes Manifests**
+- **Purpose**:
+The Kubernetes manifests (YAML files) are updated to reference the new Docker image version. This ensures that the Kubernetes cluster uses the latest version of the application during deployment.
+- **Key Actions**:
+- The sed command replaces the placeholder image tag in the Kubernetes deployment manifest with the current build number.
+= The updated manifests are committed and pushed back to the Git repository, where they are monitored by ArgoCD.
 - We have written a shell script to update the git manifest repo, git maifest repo holds all the k8s manifests
 - sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-- Basically the above command wil replace the image tag with the build number so that latest image in used in k8s cluster
 
-**ArgoCD Application Configuration:**
-Define the application configuration for ArgoCD, specifying details like the Git repository URL, path to Kubernetes manifests, and synchronization settings.
+**ArgoCD Sync**
+- **Purpose**:
+ArgoCD is used to automatically deploy the updated application to the Amazon EKS cluster. ArgoCD continuously monitors the Git repository for changes and synchronizes the cluster to match the desired state defined in the manifests.
+- **Key Actions**:
+- ArgoCD detects the changes in the Git repository (i.e., the updated image tag) and deploys the new version of the application to the EKS cluster.
+- If manual sync is required, ArgoCD CLI or API can be used to trigger the deployment.
 
-**ArgoCD Deployment:**
-ArgoCD continuously monitors the Git repository for changes. When changes are detected, ArgoCD deploys the updated application to the EKS cluster, ensuring the desired state matches the configuration in the Git repository.
-
-
-```pipeline {
-    agent any
-    
-    triggers {
-        pollSCM('H/30 * * * *')
-        githubPush()
-    }
-    
-    stages {
-        stage('Build') {
-            steps {
-                script {
-                    // Build Docker image from Dockerfile
-                    docker.build('your-image-name:latest', '-f path/to/Dockerfile .')
-                }
-            }
-        }
-        
-        stage('Push to Image Repo') {
-            steps {
-                script {
-                    // Authenticate to AWS ECR
-                    withCredentials([usernamePassword(credentialsId: 'aws-ecr-credentials', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                        sh 'aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.your-region.amazonaws.com'
-                    }
-                    
-                    // Tag and push Docker image to AWS ECR
-                    docker.image('your-image-name:latest').push("your-account-id.dkr.ecr.your-region.amazonaws.com/your-image-name:${env.BUILD_NUMBER}")
-                }
-            }
-        }
-        
-        stage('Update Deployment File') {
-            steps {
-                script {
-                    // Update deployment file with latest image tag
-                    sh 'sed -i "s/replaceImageTag/${env.BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml'
-                }
-            }
-        }
-        
-        stage('ArgoCD Application Configuration') {
-            steps {
-                // Define application configuration for ArgoCD
-                // Example: arcdocd app create my-app --repo https://github.com/your-repo.git --path path/to/manifests --sync-policy auto
-            }
-        }
-        
-        stage('ArgoCD Deployment') {
-            steps {
-                // Deploy application using ArgoCD
-                // Example: argocd app sync my-app
-            }
-        }
-    }
-    
-    post {
-        success {
-            echo 'CI/CD pipeline completed successfully'
-        }
-        failure {
-            echo 'CI/CD pipeline failed'
-        }
-    }
-}
-```
+**Post Steps**
+- **Purpose**:
+The post-steps handle the outcome of the pipeline, whether it succeeds or fails. This stage is used to send notifications and perform any cleanup actions.
+- **Key Actions**:
+- **Success**: Send notifications (e.g., Slack, email) to inform the team that the deployment was successful.
+- **Failure**: Notify the team of any issues and trigger failure-handling mechanisms such as rolling back the deployment or marking the build as unstable.
 
 ****************************************************************************************************************************************************************************************************************
 
@@ -561,6 +533,12 @@ Reducing the size of a Docker image is essential for improving performance, redu
      ```
 
 By following these strategies, you can significantly reduce the size of your Docker images, leading to more efficient builds, faster deployments, and easier distribution.
+
+
+- Once the images are build and pushed to the ECR, then in order to use the latest image in K8s cluster, we have dedicated stage
+- We have written a shell script to update the git manifest repo, git maifest repo holds all the k8s manifests
+- sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+- Basically the above command wil replace the image tag with the build number so that latest image in used in k8s cluster
 
 
 
