@@ -124,6 +124,7 @@ In summary, the `target` directory is a standard directory in Maven projects whe
 
 __________________________________________________________________________________________________________________________________________________________________________________________
 
+## CI-CD pipeline
 
 Explaining a CI/CD pipeline for deploying Java code, which is containerized and deployed to an Amazon EKS cluster using Jenkins and ArgoCD, involves walking through the various stages of the pipeline. Below is a step-by-step explanation:
 
@@ -210,7 +211,7 @@ To integrate a Docker image scanner stage into the CI/CD pipeline, we can place 
 
 This approach ensures that your application is not only functional but also secure and compliant with best practices before being deployed to production.
 
-**********************************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************
 
 ## SonarQube
 
@@ -246,4 +247,78 @@ By integrating SonarQube into your CI/CD pipeline, you can automatically run cod
 **Qulaity Profiles**
 In SonarQube, a quality profile is a collection of rules and settings that define the criteria used to assess the quality of your code during static code analysis. Quality profiles are associated with specific languages and are used to enforce coding standards, identify potential issues, and maintain code quality across projects.
 
- 
+******************************************************************************************************************************************************************************************
+
+## TRIVY
+
+**Trivy** is an open-source vulnerability scanner developed by Aqua Security. It is designed to scan containers, filesystems, and Git repositories for vulnerabilities, misconfigurations, and other security issues. Trivy is popular for its ease of use, fast scanning, and support for multiple environments. Here's a detailed breakdown of Trivy:
+
+### Key Features of Trivy:
+1. **Vulnerability Scanning:**
+   - **Container Images:** Trivy scans container images for vulnerabilities in the installed operating system packages as well as programming language-specific dependencies (e.g., Python, Node.js, Ruby, Java, etc.).
+   - **Filesystem:** It can scan local files and directories for known vulnerabilities and misconfigurations.
+   - **Git Repositories:** Trivy can also scan Git repositories, including configuration files, for security issues.
+   
+2. **Misconfiguration Detection:**
+   - **Kubernetes:** Trivy detects misconfigurations in Kubernetes manifests, such as insecure configurations that could expose the cluster to attacks.
+   - **Infrastructure as Code (IaC):** It supports scanning IaC files, such as Terraform, to find potential security risks in infrastructure deployments.
+
+3. **Wide Range of Supported Environments:**
+   - Trivy supports container images from popular registries like Docker Hub, Amazon ECR, and others.
+   - It also integrates with CI/CD pipelines (e.g., Jenkins, GitLab CI, GitHub Actions) to automate security scanning as part of the development workflow.
+
+4. **High-Speed Scanning:**
+   - Trivy is designed to perform scans quickly by using a vulnerability database that is kept up-to-date. The first run may take some time as it downloads the database, but subsequent scans are faster.
+
+5. **Comprehensive Vulnerability Database:**
+   - Trivy uses several sources for its vulnerability database, including the National Vulnerability Database (NVD) and specific vulnerability data from Linux distributions such as Ubuntu, Debian, Alpine, and more.
+   - It also includes information from programming language vulnerability databases like the Node.js Security Working Group and Python's PyPI.
+
+6. **Severity Classification:**
+   - Trivy classifies vulnerabilities based on their severity (e.g., Critical, High, Medium, Low). This allows users to focus on fixing the most critical issues first.
+
+7. **Customizable Scans:**
+   - Users can customize the scan results by filtering based on severity, ignoring certain vulnerabilities, or configuring scanning policies.
+
+8. **Easy Integration:**
+   - Trivy can be integrated into CI/CD pipelines easily, allowing automated scanning of images and code repositories as part of the build and deployment process.
+
+9. **Lightweight and Portable:**
+   - Trivy is a single binary, making it easy to install and run on different systems, including development environments, CI/CD servers, and production clusters.
+
+### Trivy Usage Example:
+To scan a Docker image using Trivy, the following command can be executed:
+
+```bash
+trivy image your-image-name:tag
+```
+
+- **Example Output:**
+   The output will list the vulnerabilities found in the image, categorized by severity (e.g., Critical, High, Medium, Low) along with details about the vulnerabilities (CVE ID, description, affected package, fixed version, etc.).
+
+   ```plaintext
+   2024-08-21T08:00:00.123Z        INFO    Vulnerability scanning for local images is not supported
+   Total: 3 (HIGH: 2, LOW: 1)
+   
+   ┌──────────────┬───────────────────────┬──────────┬──────────────────────┬───────────────┬─────────────────────────────────────────────────────────────┐
+   │   Library    │ Vulnerability ID       │ Severity │ Installed Version    │ Fixed Version │ Title                                                       │
+   ├──────────────┼───────────────────────┼──────────┼──────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+   │ openssl      │ CVE-2022-0778          │ HIGH     │ 1.1.1d-0+deb10u5     │ 1.1.1d-0+deb10u7 │ openssl: Infinite loop in BN_mod_sqrt() reachable when parsing PEM data │
+   └──────────────┴───────────────────────┴──────────┴──────────────────────┴───────────────┴─────────────────────────────────────────────────────────────┘
+   ```
+
+### CI/CD Integration:
+Trivy can be integrated into CI/CD pipelines to automatically scan images during the build process. For example, in a Jenkins pipeline, you can run a Trivy scan after building a Docker image and configure it to fail the pipeline if any vulnerabilities of a certain severity are found.
+
+```bash
+trivy image --exit-code 1 --severity HIGH your-image-name:tag
+```
+
+- `--exit-code 1`: This option makes the scan fail if vulnerabilities of the specified severity (e.g., HIGH) are found.
+- `--severity HIGH`: This option limits the scan to only display vulnerabilities with the specified severity or higher.
+
+### Trivy in DevSecOps:
+Trivy plays a key role in DevSecOps by integrating security into every stage of the development and deployment lifecycle. It ensures that containers, infrastructure configurations, and codebases are free of known vulnerabilities, helping to prevent security breaches in production environments.
+
+### Conclusion:
+Trivy is a powerful yet simple-to-use security scanner that is crucial for modern containerized and cloud-native environments. It enhances the security of applications by detecting vulnerabilities and misconfigurations early in the development cycle, making it a valuable tool in the DevSecOps toolchain.
