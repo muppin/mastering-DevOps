@@ -81,3 +81,35 @@ Source: Conversation with Copilot, 21/7/2024
 (2) How to build an alerting system with Prometheus and Alertmanager. https://blog.devops.dev/how-to-build-an-alerting-system-with-prometheus-and-alertmanager-cd75a28c2b74.
 (3) Prometheus Alerting with AlertManager | by Riya Sharma | DevOps.dev. https://blog.devops.dev/prometheus-alerting-with-alertmanager-d3ed40e2df4f.
 (4) en.wikipedia.org. https://en.wikipedia.org/wiki/Prometheus_(software).
+
+### What are the 3 pillars of Monitoring
+
+- The **three pillars of monitoring** refer to the key types of telemetry data that are essential for monitoring and understanding the health and performance of distributed systems, such as microservices running in Kubernetes or cloud-native environments. These pillars are:
+
+1. **Metrics**:
+   - **Definition**: Metrics are numerical data points that measure the performance or behavior of a system over time. Metrics provide a quantitative understanding of how your system is performing.
+   - **Examples**: CPU usage, memory consumption, request latency, error rates, throughput, etc.
+   - **Use Cases**: Metrics are often used for alerting and triggering automated responses when certain thresholds are exceeded (e.g., CPU usage above 80%). They are also used to visualize trends over time, such as through dashboards in Prometheus or Grafana.
+   - **Tooling**: Prometheus, Datadog, CloudWatch, etc.
+
+2. **Logs**:
+   - **Definition**: Logs are time-stamped records of events or actions taken by an application or system. They provide detailed, human-readable information about specific events within your system.
+   - **Examples**: Error messages, status updates, exceptions, audit trails, transaction details.
+   - **Use Cases**: Logs are essential for debugging and troubleshooting specific issues, providing context on what went wrong in your system at a particular point in time. Logs can also be used for security audits and compliance purposes.
+   - **Tooling**: Elasticsearch, Fluentd, Kibana (EFK stack), Splunk, AWS CloudWatch Logs, etc.
+
+3. **Traces**:
+   - **Definition**: Traces represent the end-to-end journey of a request as it flows through a distributed system. Tracing captures the path of a single request or transaction as it interacts with multiple services or components, measuring the time spent at each stage.
+   - **Examples**: A trace might show how a request moves from a frontend service to a backend service, including all intermediary steps like database calls, network hops, and service-to-service communication.
+   - **Use Cases**: Tracing is crucial for identifying performance bottlenecks, latency issues, and failures in complex distributed systems. It helps you understand how different services interact and where issues may arise.
+   - **Tooling**: Jaeger, Zipkin, OpenTelemetry, AWS X-Ray, etc.
+
+### How the Three Pillars Work Together:
+
+- **Metrics** give you a high-level view of your system's health and can help you identify potential issues.
+- **Logs** provide detailed information on specific events, helping you to debug and understand what happened during a particular incident.
+- **Traces** allow you to follow the journey of individual requests, helping you pinpoint latency or bottlenecks across different services.
+
+By combining these three types of telemetry data, you can gain a comprehensive view of your system, enabling effective monitoring, troubleshooting, and optimization.
+
+Would you like to explore how these pillars are implemented in specific tools or platforms?
