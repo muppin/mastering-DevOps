@@ -504,6 +504,27 @@
 - Using Trace you will find out which service is giving error.. read about Trace
 - what is crossplane?
 
+## PWC 
+
+- Introduce yourself?
+- Suppose you accidently commit a sensitive info to git.. how will you deal with this?
+- suppose i am working a feature branch and you are working on another feature branch, i have made the changes and pushed it to git repo and you are not aware of these changes, what will happen?
+- design a script that helps in monitoring the metrics?
+- What is Log Rotation?
+- suppose, i have placed a script, i used to edit and do changes.. now i dont want to do it manually.. how will you achieve it?
+- there was a scenario where i had to tell to use them the ec2 user-data, talked to use custom AMI's?
+- how do you define terraform for different environments?
+- how do terraform knows particular environment?
+- someone deletes a tf.state file ? what happens
+- if suppose for different environments  have different backends(tf state file) how you are dynamically passing this file to particular environment?
+- Difference between ingress and load balancer?
+- Suppose i have 2 pods the app pod should start after db pod how will you achieve it?
+- design a Jenkins architure, that should be effiecient enough and that should have functionality of rollback should be achieved in one go?
+- what is istio and explain Cananry?
+- How do you optimse Docker for reduced image size and security?
+- Difference between CMD, ENTRYPOINT and RUN?
+- suppose a application is residing in ec2 and it is assigned to a autoscaling group, how would you toubleshoot/?
+- suppose i have ip address in a file and i want to use these ip's to ssh to the instance, how will you achieve using shell script?
 
 
 
