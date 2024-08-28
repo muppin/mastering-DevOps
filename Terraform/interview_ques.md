@@ -1,6 +1,34 @@
 # Interview Questions
 
 
+## How to 𝐯𝐚𝐥𝐢𝐝𝐚𝐭𝐞 𝐯𝐚𝐫𝐢𝐚𝐛𝐥𝐞𝐬 in Terraform?
+
+In Terraform variable, You can add validation rules to variables to ensure that the values provided are within certain constraints or meet specific criteria. Variable validation helps prevent incorrect or unexpected values from being used when applying your Terraform configuration.
+
+To add validation to a variable in Terraform, you can use the validation block within the variable definition. Here are a few examples of how to define and validate a variable:
+
+variable "instance_count" {
+ description = "Number of instances to create"
+ type       = number
+ default    = 2
+
+ validation {
+ condition = var.instance_count >= 1 && var.instance_count <= 5
+ error_message = "instance_count must be between 1 and 5"
+ }
+}
+
+variable "instance_type" {
+ description = "Type or Size of the instances"
+ type       = String
+ default    = t2.micro
+
+validation {
+ condition    = contains(["t2.micro", "t3.medium","t3.small"], var.instance_type)
+ error_message = "instance type must be t2.mirco, T3.medium, t3.small"
+ }
+}
+
 ## Discuss the concept of variable interpolation in Terraform.
 
 Variable interpolation in Terraform is a powerful feature that allows you to insert the values of variables and expressions into strings dynamically. This capability enhances the flexibility and dynamism of your infrastructure configurations, enabling more complex and parameterized setups.
