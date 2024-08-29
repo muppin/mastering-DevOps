@@ -526,5 +526,32 @@
 - suppose a application is residing in ec2 and it is assigned to a autoscaling group, how would you toubleshoot/?
 - suppose i have ip address in a file and i want to use these ip's to ssh to the instance, how will you achieve using shell script?
 
+## Genisys
+
+- Introduce yourself?
+- what is your day to day activities?
+- what is Git Stash?
+- how will you create Git token?
+- how will you protect the git branch?
+- what is git stash?
+- what is jenkins shared library?
+- which plugin do you use for secrets?
+- what tasks you have performed in Jenkins?
+- what is Jenkins stash?
+- what is ArgoCD?
+- how did you configure ArgoCD?
+- how will the Sync happens in argoCD?
+- what are terraform workspaces?
+- what is help.tnpl file in helm chart?
+- how and where do you define the dependency in helm charts?
+- what is Ingress in Kubernetes?
+- which all aws services you have worked on?
+- how do you design a VPC architecture, Explain?
+- suppose there is problem in connecting to ec2 instance, how will you troubleshoot?
+- Differnce between NACL and Security Groups?
+- what is command to find a process id?
+- how to kill a process?
+- 
+
 
 
