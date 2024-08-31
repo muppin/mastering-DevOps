@@ -566,8 +566,9 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 39. Explain significance of jenkins master and slave architecture?
 40. how o configure master and slave on jenkins?
 41. How amny master and slaves u have in ur project?
-42. how will you configure docker deamon on jenkins.
-43. IF I have 100s of jobs and few stages are common in all jobs, what u will do so that every time we should not write same stages?
-44. If I want to run few stages in parallel, what to do?
-45. Write a python program for fibonnaci series?
+42. How these masters will sync with each other.
+43. how will you configure docker deamon on jenkins.
+44. IF I have 100s of jobs and few stages are common in all jobs, what u will do so that every time we should not write same stages?
+45. If I want to run few stages in parallel, what to do?
+46. Write a python program for fibonnaci series?
 
