@@ -523,3 +523,50 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 
 ******************************************************************************************************************************************************************************************************************
 
+## GlobalLogic
+
+1. Introduce yourself
+2. What all tools and tech u have worked on?
+3. Which cloud?
+4. What all services u have worked on AWS?
+5. What is route53?
+6. Do you know lambda?
+7. U know IAM?,How to created cross account roles in AWS?
+8. Have u created VPC?
+9. Diff between IG and NG?
+10. How will you identify public and private subnets?
+11. what is route table?
+12. Can a subnet have one route table or more?
+13. Can we attach multiple route tables to a subnet?
+14. Steps to create EKS cluster?
+15. What is eksctl?
+16. what is cluster role and binding?
+17. What is diff between role and cluster role?
+18. How will you give read only access to the cluster?
+19. What is static pod?
+20. What is the role of API Server and kubelet in relation to static pod?
+21. What if we delete static pod?
+22. Diff between Deployment and stateful set?
+23. Give a example where u use deployment and statefulset?
+24. When we hot kubectl apply command to create a deployment, explain the flow, how the request goes to K8s components?
+25. Which all resources u have created in K8s?
+26. What is services?
+27. What is ingress?
+28. What are the types of services?
+29. Diff between node port and LB
+30. If we have LB why should we use ingress
+31. Have you created EKS cluster, say steps to create EKS cluster?
+32. which type of EKS cluster you have created private or public
+33. If suppose u have node port service and we have A type record in route53, will that domain be accessible to all?
+34. What is terraform rm command?
+35. What is module in TF?
+36. What are executers in jenkins?
+37. How will you integrate sonarqube with jenkins?
+38. Explain significance of jenkins master and slave architecture?
+39. how o configure master and slave on jenkins?
+40. How amny master and slaves u have in ur project?
+41. how will you configure docker deamon on jenkins.
+42. IF I have 100s of jobs and few stages are common in all jobs, what u will do so that every time we should not write same stages?
+43. If I want to run few stages in parallel, what to do?
+44. Write a python program for fibonnaci series?
+
