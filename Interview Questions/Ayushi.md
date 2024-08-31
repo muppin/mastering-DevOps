@@ -561,12 +561,13 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 34. What is terraform rm command?
 35. What is module in TF?
 36. What are executers in jenkins?
-37. How will you integrate sonarqube with jenkins?
-38. Explain significance of jenkins master and slave architecture?
-39. how o configure master and slave on jenkins?
-40. How amny master and slaves u have in ur project?
-41. how will you configure docker deamon on jenkins.
-42. IF I have 100s of jobs and few stages are common in all jobs, what u will do so that every time we should not write same stages?
-43. If I want to run few stages in parallel, what to do?
-44. Write a python program for fibonnaci series?
+37. Explain CI CD pipeline u have created?
+38. How will you integrate sonarqube with jenkins?
+39. Explain significance of jenkins master and slave architecture?
+40. how o configure master and slave on jenkins?
+41. How amny master and slaves u have in ur project?
+42. how will you configure docker deamon on jenkins.
+43. IF I have 100s of jobs and few stages are common in all jobs, what u will do so that every time we should not write same stages?
+44. If I want to run few stages in parallel, what to do?
+45. Write a python program for fibonnaci series?
 
