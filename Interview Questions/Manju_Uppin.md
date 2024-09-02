@@ -575,5 +575,26 @@
 - how will you release the lock, not forcefully? if you relase it forcefully it might affect some resorces? how tpo deal with this?
 - what is terraform backend?
 
+## First American India
+
+- Introduce Yourself?
+- what are your day-to-day tasks?
+- what all the things have you done on Terraform?
+- Have you configured any Infra Pipeline?
+- How will you configure the backend?
+- have you used Azure DevOps?
+- How do you create multiple Accounts in AWS?
+- Have you come accross any problems in AWS infra and did you troubleshoot any of them?
+- can you show me the infra of AWS how you are managing?
+- How aws access are given in the teams?
+- How to Connect two VPC?
+- if there are 50 vpcs , how will you connect each other?
+- what are VPC Flow logs?
+- EKS resides in Private Subnet, how will the public internet talk to application?
+- when do you use ALB and NLB.. which suits best for?
+- What monitoring tool u have used in AWS?
+- do you know about cloud trail?
+- Explain Python project u have been involved?
+- I will give you a terraform code can you explain that fail?
 
 
