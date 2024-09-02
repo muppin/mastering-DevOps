@@ -551,7 +551,26 @@
 - Differnce between NACL and Security Groups?
 - what is command to find a process id?
 - how to kill a process?
-- 
+
+## Ciphead(TekSystems)
+
+- Introduce yourseld?
+- What is AWS IAM?
+- how do you define Permissions and attach to user and roles?
+- What are differnet types of staorage classes of S3?
+- what task have you done on s3?
+- what are triggers in lambda?
+- what is SQS and SNS?
+- which is publisher/subscriber in SQS and SNS?
+- what is AWS Secret Manager?
+- how do ypou enable dynamic rotation of secrets in aws secret manager?
+- what type of deployment do you use for Production environment?
+- what is difference between CI and CD?
+- what is Declarative and multistage pipeline?
+- how do you checkout the code from Github to Jenkins server?
+- what tasks have you done on Terraform?
+- suppose some one has deleted a statefile, how to deal with this?
+- How will you create aws_secret_manager using terraform?
 
 
 
