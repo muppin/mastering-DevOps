@@ -571,6 +571,9 @@
 - what tasks have you done on Terraform?
 - suppose some one has deleted a statefile, how to deal with this?
 - How will you create aws_secret_manager using terraform?
+- what is terraform concurrency control?
+- how will you release the lock, not forcefully? if you relase it forcefully it might affect some resorces? how tpo deal with this?
+- what is terraform backend?
 
 
 
