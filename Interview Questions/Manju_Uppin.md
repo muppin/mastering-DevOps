@@ -597,4 +597,19 @@
 - Explain Python project u have been involved?
 - I will give you a terraform code can you explain that fail?
 
+## Capco Screening round
+
+- Introduce yourself?
+- how will you make sure application that is deployed in EKS cluster is highly available?
+- what is difference between replicaset and replicaset controller?
+- what is difference between pod and job?
+- what is kubectl command to see the revision?
+- you have a docker container running and i have not assigned a port to it, how will i do it now?
+- how to check the port that the container is running on?
+- describe docker lifecycle?
+- what is docker kill and stop?
+- Why Terraform is used?
+- how do you manage terraform variables?
+- steps to create EKS using terraform?
+- 
 
