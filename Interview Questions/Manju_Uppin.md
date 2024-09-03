@@ -597,6 +597,53 @@
 - Explain Python project u have been involved?
 - I will give you a terraform code can you explain that fail?
 
+## GlobalLogic
+
+- Introduce yousrself?
+- explain CI/Cd pipeline?
+- how do you create EKS cluster using terraform?
+- where do EKS cluster reside?
+- how will the cluster be accessed?
+- Explain Kubernetes Architecture?
+- what if etcd crashes, what will happen to the cluster?
+- if there are 10 pods and it has to be deployed on 10 different nodes, how to achieve this?
+- What are daemonsets? explain the usecase?
+- what are the possibilities of Crashloopbackoff error? explain? how to troubleshoot?
+- what is pending state in kubernetes?
+- what are limits and requests?
+- what is OOMkilled error?
+- write a Dockerfile for java application?
+- explain the layers?
+- difference between RUN and CMD?
+- difference between CMD and ENTRYPOINT?
+- difference btw COPY and ADD?
+- how will you copy the data from the running container, any way other than docker volume?
+- list running containers?
+- list all container?
+- how to go inside a container?
+- where have you configured the jenkins in your project?
+- explain jenkins master-slave architecture?
+- other way to launch jenkins slave apart from ssh?
+- how jenkins knows which agent the job has to use?
+- what plugins have you used?
+- why aws plugin is used?
+- can you explain how you bring secrets from aws secret manager?
+- is it require to use both secrets access id, key and IAM role assigned to ec2 server in order to make jenkins authenticate to aws ?
+- explain terraform lifecycle?
+- how to exclude certain resources from creating in terraform?
+- how do you manages secrets in Terraform? how will you import from AWS secret manager?
+- what all basic linux commands you know?
+- command to know the running process?
+- how to check the ports that are open?
+- how to print certain columns in a file ?
+- what all aws services u have worked on?
+- can you tell me how you build aws architecture for 3 tier application?
+- how can you distinguish between public and private route tables?
+- application having trouble in accessing the RDS instance ? what might be the issue?
+- Iam user should acces the eks cluster? how to configure?
+- what is IRSA?
+
+
 ## Capco Screening round
 
 - Introduce yourself?
@@ -611,5 +658,7 @@
 - Why Terraform is used?
 - how do you manage terraform variables?
 - steps to create EKS using terraform?
-- 
+- what all api services you have deployed in kubernetes cluster?
+
+
 
