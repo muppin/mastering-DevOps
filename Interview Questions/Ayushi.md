@@ -629,6 +629,7 @@ Mastercard and Visa are two different payment networks that run the transactions
 	• Looking for new and different challenges. 
 	• I was not paid according to my market worth.
 
+![image](https://github.com/user-attachments/assets/961c86e4-28eb-46f2-bc34-854717c66ce9)
 
 
 *******************************************************************************************
@@ -652,7 +653,7 @@ Work in Shifts: "I am open to working in shifts if the role requires it. I recog
 Extend Working Hours: "I am prepared to extend my working hours when there are critical projects, deadlines, or emergencies. Ensuring the smooth operation and reliability of our infrastructure is a priority, and I am committed to putting in the necessary effort to achieve this. While I am dedicated to my work, I also value effective time management and strive to maintain productivity within regular working hours whenever possible."
 
 	
-![Uploading image.png…]()
+
 
 
 
