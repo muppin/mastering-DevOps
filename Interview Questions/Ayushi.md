@@ -571,4 +571,88 @@ For more questions : https://www.interviewbit.com/jenkins-interview-questions/#w
 44. IF I have 100s of jobs and few stages are common in all jobs, what u will do so that every time we should not write same stages?
 45. If I want to run few stages in parallel, what to do?
 46. Write a python program for fibonnaci series?
+*************************************************************************************************************************************************************
+
+## manager round prep
+
+Pwc – director round
+
+Monday, June 03, 2024
+11:45 PM
+
+What is pwc known for?
+
+It’s a top accounting firm.
+
+Is called as big4 because of its huge size, good reputation, and worldwide reach in the field. 
+ 
+PricewaterhouseCoopers International Limited is a multinational professional services brand of firms, operating as partnerships under the PwC brand. It is the second-largest professional services network in the world and is considered one of the Big Four accounting firms, along with Deloitte, EY, and KPMG. 
+ 
+offers clients various professional business services, including accounting, auditing, human resources consulting, and strategy management. 
+ 
+In FY23, PwC firms provided services to 87% of the Global Fortune 500 companies. 
+
+
+******************************************************************************
+Why u want to join pwc?
+
+First, PwC has a strong reputation for providing excellent customer service. Second, PwC is known for its innovative approach to problem-solving
+
+I want to work for a company that encourages collaboration, and everyone helps each other become better. PwC is this. The firm's commitment to employee training and bringing unique perspectives to conversations is exactly what I need. I would love to be a part of such a driven environment.”
+
+When you start a career at PwC, you're joining a community of solvers who are encouraged and empowered to bring their ideas and experience to how we respond to the fundamental changes we see in the world today. We're investing in you and you're investing in us.![image](https://github.com/user-attachments/assets/f96de204-78ab-4584-96ff-a7a4c964eb76)
+
+
+Visa- Manager Round
+
+21 May 2024
+16:52
+
+Why you want to join visa?
+Visa is one of the world’s most advanced payment processing networks. As an employee, I'll have the opportunity to innovate and explore more.
+
+
+
+****************************************************
+What do you know about visa?
+Visa Inc is an American multinational payment card services corporation headquartered in San Francisco, California. Visa is a world leader in payments and technology.
+
+Mastercard and Visa are two different payment networks that run the transactions between merchants and card issuers.
+
+
+
+
+****************************************************
+	Why you want to switch the job?
+	
+	• I am seeking more opportunities to grow professionally.
+	• Looking for new and different challenges. 
+	• I was not paid according to my market worth.
+
+
+
+*******************************************************************************************
+Why should we hire you?
+	
+I believe I am an excellent fit for this DevOps engineer position because I bring a robust technical skill set combined with practical experience. I have over 4 years of experience working with CI/CD pipelines, container orchestration with Kubernetes, and cloud platforms such as AWS. In my previous role, I successfully led the migration to a microservices architecture, which improved our deployment speed by 50% and reduced downtime. Additionally, I am passionate about continuous learning, regularly updating my skills through courses and certifications. I also thrive in collaborative environments, having worked closely with developers, QA, and operations teams to streamline our processes and ensure smooth releases. My problem-solving mindset and dedication to efficient, reliable infrastructure make me confident that I can contribute significantly to your team.
+
+*********************************************************************************************
+
+
+What do you know about visa payments?
+transactions between merchants and card issuers.
+
+
+
+*******************************************************************************************
+Work on weekends, work in shifts, extend working hours
+
+Work on Weekends: "I understand that the nature of DevOps work can sometimes require weekend shifts, especially during critical deployments or when troubleshooting urgent issues. I am flexible and willing to work on weekends when necessary to ensure the stability and performance of our systems. However, I also believe in maintaining a healthy work-life balance and hope that weekend work is the exception rather than the norm."
+Work in Shifts: "I am open to working in shifts if the role requires it. I recognize that continuous support and monitoring are crucial in a DevOps role to maintain uptime and address issues promptly. My previous experience includes working in rotational shifts, so I am familiar with the demands and can adapt to different schedules to support the team’s needs."
+Extend Working Hours: "I am prepared to extend my working hours when there are critical projects, deadlines, or emergencies. Ensuring the smooth operation and reliability of our infrastructure is a priority, and I am committed to putting in the necessary effort to achieve this. While I am dedicated to my work, I also value effective time management and strive to maintain productivity within regular working hours whenever possible."
+
+	
+![Uploading image.png…]()
+
+
 
