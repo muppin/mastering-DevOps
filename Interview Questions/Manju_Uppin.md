@@ -687,5 +687,37 @@
 - steps to create EKS using terraform?
 - what all api services you have deployed in kubernetes cluster?
 
+## Esper.io
+
+- Introduce yourself?
+- what are day-to-day activities?
+- explain docker architecture?
+- difference between CMD and ENTRYPOINT?
+- difference between COPY and ADD?
+- what is IAM policy and IAM user?
+- what are components of VPC?
+- design a infra there will be 3 ec2 in 3 azs and rds for database, how will you design the architectur?
+- where are targets kept in vpc?
+- we have deployed a app in 3 ec2 in the 3 difeerent azs, i have to whitelist the ip addresses , how can i achieve?
+- difference between SG and NACL?
+- differnece between ALB and NLB?
+- u have linux box, perfomance of the application has been degraded? how the troubleshoot?
+- ec2 has a role attached to put some objects to s3, u have aws_access and secret_ket as well, now while uploading object which credentials comes into picture?
+- you and your colleague working on terraform config file, how will terraform consider this situation and allows which of you to modify the resource?
+- where do you define this locking mechanism?
+- what are null resources?
+- in terraform, if i have to get value from VPC, how can i achieve it?
+- how will you take care of multiple environments in terraform?
+- Write a Program that returns a list of duplicate elements from a given list as a command line arguments [1, 2, 3, 4, 4, 5, 5, 6, 7, 7].
+- Write a Python program that prints the numbers from 1 to 100. But for multiples of three, print "Hello 3x" instead of the number, and for the multiples of five, print "Hello 5x". For numbers which are multiples of both three and five, print "Hello 3x and 5x".
+- difference between git fetch and git pull?
+- you have did some 5 commits and how will commit only the fifth commit?
+- if there are 100s of commit, how will identify a faulty commit?
+- if there are 20 commit in feature, how will you merge 1 single commit combining them to main?
+- explain kubernetes architecture?
+- different types of services?
+- what is headless service?
+- what are pvcs?
+
 
 
