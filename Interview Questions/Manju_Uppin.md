@@ -643,6 +643,33 @@
 - Iam user should acces the eks cluster? how to configure?
 - what is IRSA?
 
+## GE Healthcare
+
+- what are your core expertise?
+- would you be able to highlight the issues you involved and you have troubleshooted those issues?
+- what type of Services you have used in AWS?
+- draw an architure in AWS and help me in understanding the traffic flow from one service to another?
+- what services are running on public and private instances?
+- difference between NAT and IGW?
+- your eks is running in private subnet, how to authenticate to EKS from your machine?
+- you are able to connect to EKS and how will you authenticate ?
+- how do you basically get your kubecongif file?
+- I am new joinee and i have to authenticate to EKS, how will you create a kubeconfig file?
+- does it mean anybody having kubeconfig file can able to connect the eks cluster?
+- can kubeconfig be borrowed from anybody and can we authenticate?
+- how does kubeconfig file know that the particular user is connecting to EKS? wether he should be allowed or not? 
+- what are the possible ways to create the EKS cluster?
+- walk me through how to create a EKS cluster using Terraform?
+- what kind of storage classes do we have ?
+- from the ec2 standpoint what are the steps to create in console?
+- which instance do you choose for certain scenarios?
+- how to identify which instance type is needed for the particular application?
+- what are ebs volumes?
+- what are efs? difference between EBS and EFS?
+- when would i choose EFS over EBS?
+- when i restart my ec2 what happens to data stored in ebs volume?
+- when i am attaching both ebs and efs, what happens to data stored when we restart the ec2 machine?
+
 
 ## Capco Screening round
 
