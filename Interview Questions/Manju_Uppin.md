@@ -719,5 +719,54 @@
 - what is headless service?
 - what are pvcs?
 
+## KPMG1
+
+- Introduce yourself?
+- what are your responsibilities?
+- how is jenkins configured?
+- what is static pod?
+- i have created a PV, which has node affinity of east-us and i have a deployment which is deplyed on us-west and has no affinity, explain if the pod gets scheduled?
+- pv got created in us-east, node and deployments are on us-west, what might happen in this scenario? will the deployment gets bound to other region pv?
+- how to basically taint a node?
+- i have 3 node pools, i want one of the node pools has gpu section, while the rest doesnt have, how to taint using terraform?
+- explain kubernets architectute?
+- what is image pull policy in deploy.yaml?
+- i have 4 namespaces, among the 4 one namespace is taking much resource. how to restrict the resource usage at namespace level?
+- i have a existing deployment , i want check that file without editing?
+- difference between entrypoint and cmd?
+- how to check network specification of a container?
+- you are creating a docker file, you are adding a base image, you dont add CMD and ENTRYPOINT, you build it, and try to run the container will it run?
+- what is docker prune?
+- in python have you came accross anything called celerie?
+- in a dockerfile how to run python application?
+- how to list the open files? lsof
+- command to check listening ports ?
+- what is zombie process?
+- how to kill the zombie process?
+- what is a sticky bit?
+- how to check os version?
+- how can i install different repos in unix?
+- your linux has a inbuilt default package repo instaed of that i want to use epel release repo how can i do that?
+
+  
+## KPMG2
+
+- introduce yourself?
+- what are your responsibilities?
+- how will you undo the commit that has been done on remote repo?
+- Explain the branching strategy?
+- is release branch merged back to both develop and master at a time? how the promotion happens?
+- what are release branches ? do you delete?
+- what are merging strategies?
+- how do you handle merge conflict?
+- if there are 100s of commits, when you do git merge, what happens to the no of commits?
+- if there are 100s of commits, when there is a conflicts, what happens to no of commits?
+- explain the infra pipeline u and stages in it?
+- what are terraform workspaces?
+- s3 bucket that is managing backend files (tfstate files), is it terraform managed?
+- explain crashloopbackoff error?
+- how to make connection between EKS and ECR to pull the images from it?
+- explain VPC endpoints?
+- how to connect corporate datacenters to AWS VPC?
 
 
