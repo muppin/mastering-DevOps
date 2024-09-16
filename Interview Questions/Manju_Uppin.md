@@ -769,4 +769,49 @@
 - explain VPC endpoints?
 - how to connect corporate datacenters to AWS VPC?
 
+## Thomson Reuters L1
+
+- Introduce yourself?
+- Explain Branching Strategy?
+- how do you promote the code and protect the branches?
+- do you tag a release?
+- what is squash and merge?
+- what is rebase and merge?
+- how do you merge specific commit to a target branch?
+- how do create empty branch?
+- what is bare repo?
+- how do yo handle LFS in git?
+- how did you work with CI/CD pipeline?
+- how did you make sure that 30% reduction in the build time? which plugin did you use?
+- how do you make use of docker build caches and increase the efficiency?
+- can we use different agents in different stage?
+- we have one main agent, and other stages have their own agent, which agent will be used for running a job?
+- how do you handle secrets in jenkins?
+- how do you pass a variable of first pipeline to second pipeline as an argunment?
+- how do you write jenkinsfile?
+- explain CI/CD pipeline?
+- how ecr images are pulled to EKS?
+- what are Services in k8s?
+- what is Ingress?
+- how service is attached to pod when the pod restarts and comes back?
+- how do you handle key-pair values in k8s, both sensitive and insensive?
+- what all aws services you have worked?
+- difference between CNAME vs ALIAS?
+- can we use CNAME in place of ALIAS?
+- which one do you use for route domains?
+- how do you install certain packages inside a provisioned resource using terraform?
+- how do you handle multi cloud infra using terraform?
+- how do you handle multiple environments in terraform?
+- how do you map backend to particular environments and how do you perform state locking?
+- what is NAT gateway?
+- what is NAT Instance?
+- What is bastion host?
+- what is VPC peering?
+- can two vpc cidr blocks be same?
+- what is NACL?
+- have you used any Monitoring tools?
+- what are Lifecycle policies in S3 bucket?
+- what is CORS?
+- how to identify that it is Public subnets and private subnets?
+- where your application server resides inside VPC?
 
